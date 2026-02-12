@@ -19,6 +19,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
+import SafariGalleryPreview from "@/components/sections/SafariGalleryPreview";
 import Card from "@/components/ui/Card";
 import {
   Compass,
@@ -265,6 +266,9 @@ export default function HomePage() {
           </motion.div>
         </Container>
       </Section>
+
+      {/* ═══════════════ GALLERY PREVIEW ═══════════════ */}
+      <SafariGalleryPreview />
 
       {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
       <Section spacing="lg" className="bg-dark-deep">
