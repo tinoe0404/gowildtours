@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { cn } from "@/lib/cn";
@@ -58,13 +59,16 @@ export default function Header() {
                     {/* Logo */}
                     <Link
                         href="/"
-                        className="flex items-center gap-2 group"
+                        className="flex items-center gap-2 group relative h-12 md:h-16 w-32 md:w-48 transition-transform hover:scale-105 duration-300"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        <span className="text-2xl">🦁</span>
-                        <span className="font-display text-xl md:text-2xl font-bold text-cream tracking-wide group-hover:text-accent transition-colors duration-300">
-                            {siteConfig.name}
-                        </span>
+                        <Image
+                            src={isScrolled ? "/images/logo/go-wild-tours-full-white.svg" : "/images/logo/go-wild-tours-full.svg"}
+                            alt={siteConfig.name}
+                            fill
+                            className="object-contain"
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Navigation */}

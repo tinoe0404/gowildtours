@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig, navLinks } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
@@ -20,11 +21,13 @@ export default function Footer() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                         {/* Brand Column */}
                         <div className="lg:col-span-1">
-                            <Link href="/" className="flex items-center gap-2 mb-4 group">
-                                <span className="text-2xl">🦁</span>
-                                <span className="font-display text-xl font-bold text-cream group-hover:text-accent transition-colors">
-                                    {siteConfig.name}
-                                </span>
+                            <Link href="/" className="relative block h-12 w-40 mb-4 group transition-transform hover:scale-105 duration-300">
+                                <Image
+                                    src="/images/logo/go-wild-tours-full-white.svg"
+                                    alt={siteConfig.name}
+                                    fill
+                                    className="object-contain object-left opacity-90 group-hover:opacity-100 transition-opacity"
+                                />
                             </Link>
                             <p className="text-sm leading-relaxed text-cream/60 mb-6">
                                 Premium safari experiences across Africa&apos;s most breathtaking
