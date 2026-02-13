@@ -23,6 +23,7 @@ interface FormData {
 export default function BookingForm({ packageTitle, className }: BookingFormProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const {
         register,
@@ -33,12 +34,30 @@ export default function BookingForm({ packageTitle, className }: BookingFormProp
 
     const onSubmit = async (data: FormData) => {
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        console.log("Form Data:", { ...data, package: packageTitle });
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        reset();
+        setError(null);
+        try {
+            const res = await fetch("/api/inquiries", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    ...data,
+                    type: "package_inquiry",
+                    packageId: packageTitle, // Sending title as ID for now or map properly
+                    preferredDate: data.date,
+                    numberOfTravelers: data.travelers,
+                }),
+            });
+
+            if (!res.ok) throw new Error("Failed to send inquiry");
+
+            setIsSuccess(true);
+            reset();
+        } catch (err) {
+            console.error(err);
+            setError("Something went wrong. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (isSuccess) {
@@ -151,6 +170,8 @@ export default function BookingForm({ packageTitle, className }: BookingFormProp
                         />
                     </div>
                 </div>
+
+                {error && <p className="text-xs text-red-500 text-center">{error}</p>}
 
                 <Button
                     type="submit"

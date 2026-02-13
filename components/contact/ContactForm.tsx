@@ -9,13 +9,32 @@ import { Send, CheckCircle2 } from 'lucide-react';
 export const ContactForm = () => {
     const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus('submitting');
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setStatus('success');
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            type: formData.get('type') === 'General Inquiry' ? 'contact' : 'custom_quote',
+            message: formData.get('message'),
+        };
+
+        try {
+            const res = await fetch('/api/inquiries', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (!res.ok) throw new Error('Failed to send message');
+            setStatus('success');
+        } catch (err) {
+            console.error(err);
+            setStatus('error');
+        }
     };
 
     if (status === 'success') {
@@ -47,22 +66,22 @@ export const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Full Name *</label>
-                    <SafariInput required placeholder="John Doe" />
+                    <SafariInput name="name" required placeholder="John Doe" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address *</label>
-                    <SafariInput required type="email" placeholder="john@example.com" />
+                    <SafariInput name="email" required type="email" placeholder="john@example.com" />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Phone Number</label>
-                    <SafariInput type="tel" placeholder="+263 71 635 5176" />
+                    <SafariInput name="phone" type="tel" placeholder="+263 71 635 5176" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Inquiry Type *</label>
-                    <select className="flex h-10 w-full rounded-lg border border-beige/50 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all appearance-none cursor-pointer">
+                    <select name="type" className="flex h-10 w-full rounded-lg border border-beige/50 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all appearance-none cursor-pointer text-dark-deep">
                         <option>General Inquiry</option>
                         <option>Safari Package Info</option>
                         <option>Booking Assistance</option>
@@ -74,8 +93,12 @@ export const ContactForm = () => {
 
             <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Message *</label>
-                <SafariTextarea required placeholder="Tell us about your safari plans..." className="min-h-[150px]" />
+                <SafariTextarea name="message" required placeholder="Tell us about your safari plans..." className="min-h-[150px]" />
             </div>
+
+            {status === 'error' && (
+                <p className="text-red-500 text-sm text-center">Something went wrong. Please try again or email us directly.</p>
+            )}
 
             <button
                 type="submit"

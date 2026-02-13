@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { packages } from "@/lib/packages-data";
+import prisma from "@/lib/db";
 import { Metadata } from "next";
 import Image from "next/image";
 import { MapPin, Clock, Users, Check, X } from "lucide-react";
@@ -11,7 +11,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const pkg = packages.find((p) => p.slug === slug);
+    const pkg = await prisma.package.findUnique({
+        where: { slug },
+    });
 
     if (!pkg) {
         return {
@@ -26,11 +28,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BrochurePage({ params }: Props) {
     const { slug } = await params;
-    const pkg = packages.find((p) => p.slug === slug);
+    const pkg = await prisma.package.findUnique({
+        where: { slug },
+    });
 
     if (!pkg) {
         notFound();
     }
+
+    // Extract values safely
+    const durationDays = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)/)?.[1] || "0"))
+        : (pkg.duration as any)?.days;
+
+    const categories = typeof pkg.category === "string" ? [pkg.category] : (pkg.category as any) || [];
+    const highlights = (pkg as any).highlights || [];
+    const inclusions = (pkg as any).inclusions || [];
+    const mainImage = (pkg as any).image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/placeholder.jpg");
+    const longDescription = pkg.description || (pkg as any).longDescription || "";
 
     return (
         <div className="bg-white min-h-screen text-dark-deep print:bg-white">
@@ -39,7 +54,7 @@ export default async function BrochurePage({ params }: Props) {
             {/* Header / Cover */}
             <div className="relative h-[400px] w-full print:h-[500px]">
                 <Image
-                    src={pkg.images[0]}
+                    src={mainImage}
                     alt={pkg.title}
                     fill
                     className="object-cover"
@@ -51,7 +66,7 @@ export default async function BrochurePage({ params }: Props) {
                         <h1 className="text-4xl font-bold text-accent uppercase tracking-widest">Go Wild Tours</h1>
                     </div>
                     <div className="flex flex-wrap gap-3 mb-4">
-                        {pkg.category.map(cat => (
+                        {categories.map((cat: string) => (
                             <span key={cat} className="px-3 py-1 bg-accent text-dark-deep text-xs font-bold uppercase rounded-full print:border print:border-dark-deep print:bg-transparent">
                                 {cat}
                             </span>
@@ -61,11 +76,11 @@ export default async function BrochurePage({ params }: Props) {
                     <div className="flex gap-6 text-lg font-medium print:text-xl">
                         <div className="flex items-center gap-2">
                             <Clock className="w-5 h-5 text-accent print:text-dark-deep" />
-                            <span>{pkg.duration.days} Days</span>
+                            <span>{durationDays} Days</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Users className="w-5 h-5 text-accent print:text-dark-deep" />
-                            <span>{pkg.groupSize.min}-{pkg.groupSize.max} Guests</span>
+                            <span>1-12 Guests</span>
                         </div>
                     </div>
                 </div>
@@ -76,7 +91,7 @@ export default async function BrochurePage({ params }: Props) {
                 <section>
                     <h2 className="text-3xl font-display font-bold mb-4 text-accent">Overview</h2>
                     <p className="text-lg leading-relaxed text-warm-gray whitespace-pre-line">
-                        {pkg.longDescription}
+                        {longDescription}
                     </p>
                 </section>
 
@@ -84,7 +99,7 @@ export default async function BrochurePage({ params }: Props) {
                 <section className="bg-beige/10 p-8 rounded-xl print:border print:border-beige">
                     <h2 className="text-2xl font-display font-bold mb-4 text-accent">Highlights</h2>
                     <div className="grid grid-cols-2 gap-4">
-                        {pkg.highlights.map((h, i) => (
+                        {highlights.map((h: string, i: number) => (
                             <div key={i} className="flex items-start gap-3">
                                 <Check className="w-5 h-5 text-accent shrink-0 mt-1" />
                                 <span>{h}</span>
@@ -97,14 +112,14 @@ export default async function BrochurePage({ params }: Props) {
                 <section>
                     <h2 className="text-3xl font-display font-bold mb-6 text-accent">Itinerary</h2>
                     <div className="border-l-2 border-accent/20 ml-3 space-y-8">
-                        {Array.from({ length: pkg.duration.days }).map((_, i) => (
+                        {Array.from({ length: durationDays || 1 }).map((_, i) => (
                             <div key={i} className="relative pl-8">
                                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-accent" />
-                                <h3 className="text-xl font-bold mb-2">Day {i + 1}: {i === 0 ? "Arrival" : i === pkg.duration.days - 1 ? "Departure" : "Exploration"}</h3>
+                                <h3 className="text-xl font-bold mb-2">Day {i + 1}: {i === 0 ? "Arrival" : i === (durationDays || 1) - 1 ? "Departure" : "Exploration"}</h3>
                                 <p className="text-warm-gray">
                                     {i === 0
                                         ? "Arrive and settle in to your accommodation. Welcome dinner."
-                                        : i === pkg.duration.days - 1
+                                        : i === (durationDays || 1) - 1
                                             ? "Morning breakfast and transfer to airport."
                                             : "Full day of scheduled activities and wildlife viewing."}
                                 </p>
@@ -120,7 +135,7 @@ export default async function BrochurePage({ params }: Props) {
                             <Check className="w-5 h-5 text-green-600" /> Included
                         </h3>
                         <ul className="space-y-2 text-sm">
-                            {pkg.inclusions.map((item, i) => (
+                            {inclusions.map((item: string, i: number) => (
                                 <li key={i}>{item}</li>
                             ))}
                         </ul>
@@ -146,7 +161,7 @@ export default async function BrochurePage({ params }: Props) {
                         www.gowildtours.com
                     </div>
                     <p className="text-sm text-gray-400 mt-2">
-                        info@gowildtours.com | +263 123 456 789
+                        info@gowildtours.com | +263 71 635 5176
                     </p>
                 </div>
             </div>

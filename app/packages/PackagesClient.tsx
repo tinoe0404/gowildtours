@@ -11,6 +11,9 @@ import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 import { cn } from "@/lib/cn";
 
 export default function PackagesClient() {
+    const [allPackages, setAllPackages] = useState<Package[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
     const [sortOption, setSortOption] = useState("featured");
 
@@ -23,11 +26,30 @@ export default function PackagesClient() {
         difficulty: [] as string[],
     });
 
+    // ── Fetch Data ──
+    useEffect(() => {
+        async function fetchPackages() {
+            try {
+                setIsLoading(true);
+                const res = await fetch("/api/packages");
+                if (!res.ok) throw new Error("Failed to fetch packages");
+                const data = await res.json();
+                setAllPackages(data);
+            } catch (err) {
+                console.error(err);
+                setError("Something went wrong while loading adventures. Please try again later.");
+            } finally {
+                setIsLoading(false);
+            }
+        }
+        fetchPackages();
+    }, []);
+
     // ── Derived Data ──
     const uniqueDestinations = useMemo(() => {
-        const allDestinations = packages.flatMap((pkg) => pkg.destinations);
+        const allDestinations = allPackages.flatMap((pkg) => pkg.destinations || []);
         return Array.from(new Set(allDestinations)).sort();
-    }, []);
+    }, [allPackages]);
 
     // ── Handlers ──
     const [searchQuery, setSearchQuery] = useState("");
@@ -35,9 +57,9 @@ export default function PackagesClient() {
     // ── Handlers ──
     const handleFilterChange = (type: string, value: string) => {
         setFilters((prev) => {
-            const current = prev[type as keyof typeof prev];
+            const current = (prev as any)[type];
             const updated = current.includes(value)
-                ? current.filter((item) => item !== value)
+                ? current.filter((item: string) => item !== value)
                 : [...current, value];
             return { ...prev, [type]: updated };
         });
@@ -56,32 +78,39 @@ export default function PackagesClient() {
 
     // ── Filtering Logic ──
     const filteredPackages = useMemo(() => {
-        return packages.filter((pkg) => {
+        return allPackages.filter((pkg) => {
             // Search Query
             if (searchQuery) {
                 const query = searchQuery.toLowerCase();
                 const matchesSearch =
                     pkg.title.toLowerCase().includes(query) ||
-                    pkg.shortDescription.toLowerCase().includes(query) ||
-                    pkg.destinations.some(d => d.toLowerCase().includes(query));
+                    (pkg.shortDescription || "").toLowerCase().includes(query) ||
+                    (pkg.destinations || []).some(d => d.toLowerCase().includes(query));
 
-                if (!matchesSearch) return false;
                 if (!matchesSearch) return false;
             }
 
             // Destinations
             if (filters.destinations.length > 0) {
-                const hasDestination = pkg.destinations.some((d) => filters.destinations.includes(d));
+                const hasDestination = (pkg.destinations || []).some((d) => filters.destinations.includes(d));
                 if (!hasDestination) return false;
             }
 
             // Duration
             if (filters.duration.length > 0) {
+                let days = 0;
+                if (typeof pkg.duration === "string") {
+                    const daysMatch = pkg.duration.match(/(\d+)\s+Days/);
+                    days = daysMatch ? parseInt(daysMatch[1]) : 0;
+                } else {
+                    days = pkg.duration.days;
+                }
+
                 const matchesDuration = filters.duration.some((range) => {
-                    if (range === "1-3 Days") return pkg.duration.days <= 3;
-                    if (range === "4-7 Days") return pkg.duration.days >= 4 && pkg.duration.days <= 7;
-                    if (range === "8-14 Days") return pkg.duration.days >= 8 && pkg.duration.days <= 14;
-                    if (range === "15+ Days") return pkg.duration.days >= 15;
+                    if (range === "1-3 Days") return days <= 3;
+                    if (range === "4-7 Days") return days >= 4 && days <= 7;
+                    if (range === "8-14 Days") return days >= 8 && days <= 14;
+                    if (range === "15+ Days") return days >= 15;
                     return false;
                 });
                 if (!matchesDuration) return false;
@@ -100,19 +129,22 @@ export default function PackagesClient() {
 
             // Category
             if (filters.categories.length > 0) {
-                // Check if package has AT LEAST ONE of the selected categories
-                const hasCategory = pkg.category.some((cat) => filters.categories.includes(cat));
-                if (!hasCategory) return false;
+                if (typeof pkg.category === "string") {
+                    if (!filters.categories.includes(pkg.category)) return false;
+                } else {
+                    const hasCategory = pkg.category.some((cat) => filters.categories.includes(cat));
+                    if (!hasCategory) return false;
+                }
             }
 
             // Difficulty
             if (filters.difficulty.length > 0) {
-                if (!filters.difficulty.includes(pkg.difficulty)) return false;
+                if (!filters.difficulty.includes(pkg.difficulty || "")) return false;
             }
 
             return true;
         });
-    }, [filters, searchQuery]);
+    }, [allPackages, filters, searchQuery]);
 
     // ── Sorting Logic ──
     const sortedPackages = useMemo(() => {
@@ -122,14 +154,52 @@ export default function PackagesClient() {
                 return items.sort((a, b) => a.price - b.price);
             case "price-high":
                 return items.sort((a, b) => b.price - a.price);
-            case "duration-short":
-                return items.sort((a, b) => a.duration.days - b.duration.days);
-            case "duration-long":
-                return items.sort((a, b) => b.duration.days - a.duration.days);
+            case "duration-short": {
+                const getDays = (d: any) => {
+                    if (typeof d === "string") {
+                        const m = d.match(/(\d+)/);
+                        return m ? parseInt(m[1]) : 0;
+                    }
+                    return d.days;
+                };
+                return items.sort((a, b) => getDays(a.duration) - getDays(b.duration));
+            }
+            case "duration-long": {
+                const getDays = (d: any) => {
+                    if (typeof d === "string") {
+                        const m = d.match(/(\d+)/);
+                        return m ? parseInt(m[1]) : 0;
+                    }
+                    return d.days;
+                };
+                return items.sort((a, b) => getDays(b.duration) - getDays(a.duration));
+            }
             default: // featured
-                return items.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+                return items.sort((a, b) => {
+                    const isAFeatured = a.isFeatured ?? a.featured ?? false;
+                    const isBFeatured = b.isFeatured ?? b.featured ?? false;
+                    return (isBFeatured ? 1 : 0) - (isAFeatured ? 1 : 0);
+                });
         }
     }, [filteredPackages, sortOption]);
+
+    if (isLoading) {
+        return (
+            <div className="flex flex-col items-center justify-center py-20 space-y-4">
+                <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin" />
+                <p className="text-warm-gray font-accent">Discovery in progress...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="text-center py-20">
+                <p className="text-red-500 mb-4">{error}</p>
+                <Button onClick={() => window.location.reload()}>Retry</Button>
+            </div>
+        );
+    }
 
     return (
         <div className="flex flex-col lg:flex-row gap-8 relative items-start">
@@ -249,7 +319,7 @@ export default function PackagesClient() {
                     {sortedPackages.length > 0 ? (
                         sortedPackages.map((pkg) => (
                             <motion.div key={pkg.id} variants={staggerItem}>
-                                <PackageCard pkg={pkg} />
+                                <PackageCard pkg={pkg as any} />
                             </motion.div>
                         ))
                     ) : (

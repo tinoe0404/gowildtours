@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { packages } from "@/lib/packages-data";
+import prisma from "@/lib/db";
 
 export const runtime = "edge";
 
@@ -11,9 +11,12 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const pkg = packages.find((p) => p.slug === slug);
+
+    const pkg = await prisma.package.findUnique({
+        where: { slug },
+    });
 
     if (!pkg) {
         return new ImageResponse(
@@ -37,6 +40,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
         );
     }
 
+    // Extract values safely
+    const durationDays = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)/)?.[1] || "0"))
+        : (pkg.duration as any)?.days;
+
+    const destinations = (pkg as any).destinations || ["Zimbabwe"];
+    const mainImage = pkg.images[0] || "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80";
+
     return new ImageResponse(
         (
             <div
@@ -49,10 +60,8 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     backgroundColor: "#1a1a1a",
                 }}
             >
-                {/* Background Image - Simulated with a div and absolute positioning since we can't easily fetch external images in edge without configuring fetching */}
-                {/* Ideally provided image url would be used here, but for now we use a solid design with the title */}
                 <img
-                    src={pkg.images[0]}
+                    src={mainImage}
                     alt={pkg.title}
                     style={{
                         position: "absolute",
@@ -78,14 +87,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
                 >
                     <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
                         <div style={{ backgroundColor: "#D2B48C", padding: "5px 15px", borderRadius: "20px", color: "#1a1a1a", fontSize: "20px", fontWeight: "bold" }}>
-                            {pkg.duration.days} Days
+                            {durationDays} Days
                         </div>
-                        <div style={{ color: "#D2B48C", fontSize: "20px", fontWeight: "bold" }}>
-                            {pkg.destinations.join(" · ")}
+                        <div style={{ color: "#D2B48C", fontSize: "20px", fontWeight: "bold", display: "flex" }}>
+                            {destinations.join(" · ")}
                         </div>
                     </div>
 
-                    <div style={{ fontSize: 72, fontWeight: "bold", color: "white", lineHeight: 1.1, marginBottom: "20px" }}>
+                    <div style={{ fontSize: 72, fontWeight: "bold", color: "white", lineHeight: 1.1, marginBottom: "20px", display: "flex" }}>
                         {pkg.title}
                     </div>
 
@@ -94,7 +103,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
                             Starting from
                         </div>
                         <div style={{ fontSize: 48, fontWeight: "bold", color: "#D2B48C" }}>
-                            ${pkg.price.toLocaleString()}
+                            ${Number(pkg.price).toLocaleString()}
                         </div>
                     </div>
                 </div>

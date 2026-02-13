@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-    galleryImages,
     galleryCategories,
     type GalleryCategory,
 } from "@/lib/gallery-data";
@@ -13,7 +12,8 @@ import { fadeInUp } from "@/lib/animations";
 import Container from "@/components/ui/Container";
 import GalleryGrid from "@/components/ui/GalleryGrid";
 import { cn } from "@/lib/cn";
-import { ChevronRight, SlidersHorizontal } from "lucide-react";
+import { ChevronRight, SlidersHorizontal, Loader2 } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 const INITIAL_COUNT = 16;
 const LOAD_MORE_COUNT = 12;
@@ -22,14 +22,37 @@ export default function GalleryPageClient() {
     const [activeCategory, setActiveCategory] = useState<
         "All" | GalleryCategory
     >("All");
+    const [images, setImages] = useState<any[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
+    useEffect(() => {
+        async function fetchGallery() {
+            try {
+                setIsLoading(true);
+                const res = await fetch("/api/gallery");
+                if (!res.ok) throw new Error("Failed to fetch gallery");
+                const data = await res.json();
+                setImages(data);
+            } catch (err) {
+                console.error(err);
+                setError("Unable to load the gallery right now.");
+            } finally {
+                setIsLoading(false);
+            }
+        }
+        fetchGallery();
+    }, []);
+
     const filteredImages = useMemo(() => {
-        if (activeCategory === "All") return galleryImages;
-        return galleryImages.filter((img) =>
-            img.categories.includes(activeCategory)
-        );
-    }, [activeCategory]);
+        if (activeCategory === "All") return images;
+        return images.filter((img) => {
+            // Support both string category and array categories (if schema evolved)
+            if (typeof img.category === "string") return img.category === activeCategory;
+            return img.categories?.includes(activeCategory);
+        });
+    }, [images, activeCategory]);
 
     const visibleImages = filteredImages.slice(0, visibleCount);
     const hasMore = visibleCount < filteredImages.length;
@@ -38,6 +61,24 @@ export default function GalleryPageClient() {
         setActiveCategory(cat);
         setVisibleCount(INITIAL_COUNT);
     };
+
+    if (isLoading) {
+        return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
+                <Loader2 className="w-10 h-10 text-accent animate-spin" />
+                <p className="text-warm-gray font-accent">Curating moments...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
+                <p className="text-red-500">{error}</p>
+                <Button onClick={() => window.location.reload()}>Retry</Button>
+            </div>
+        );
+    }
 
     return (
         <>
@@ -91,10 +132,11 @@ export default function GalleryPageClient() {
                             const isActive = activeCategory === cat;
                             const count =
                                 cat === "All"
-                                    ? galleryImages.length
-                                    : galleryImages.filter((img) =>
-                                        img.categories.includes(cat)
-                                    ).length;
+                                    ? images.length
+                                    : images.filter((img) => {
+                                        if (typeof img.category === "string") return img.category === cat;
+                                        return img.categories?.includes(cat);
+                                    }).length;
 
                             return (
                                 <button

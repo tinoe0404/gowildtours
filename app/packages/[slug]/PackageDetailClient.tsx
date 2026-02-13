@@ -21,13 +21,27 @@ interface PackageDetailClientProps {
 export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
     const [activeTab, setActiveTab] = useState<"overview" | "itinerary" | "accommodation">("overview");
 
+    // Extract values safely
+    const durationDays = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)/)?.[1] || "0"))
+        : pkg.duration.days;
+
+    const durationNights = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)\s+Nights/)?.[1] || "0"))
+        : pkg.duration.nights;
+
+    const categories = typeof pkg.category === "string" ? [pkg.category] : pkg.category;
+    const destinations = pkg.destinations || [];
+    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/placeholder.jpg");
+    const description = pkg.description || pkg.longDescription || "";
+
     // Mock itinerary generator since data file doesn't have it yet
-    const itinerary = Array.from({ length: pkg.duration.days }).map((_, i) => ({
+    const itinerary = (pkg as any).detailedItinerary || Array.from({ length: durationDays || 1 }).map((_, i) => ({
         day: i + 1,
-        title: i === 0 ? "Arrival & Welcome" : i === pkg.duration.days - 1 ? "Departure" : `Exploration of ${pkg.destinations[0]}`,
+        title: i === 0 ? "Arrival & Welcome" : i === (durationDays || 1) - 1 ? "Departure" : `Exploration of ${destinations[0] || "Zimbabwe"}`,
         description: i === 0
             ? "Arrive at the airport and transfer to your lodge. Enjoy a welcome dinner and settle in."
-            : i === pkg.duration.days - 1
+            : i === (durationDays || 1) - 1
                 ? "Morning breakfast and transfer to the airport for your onward journey."
                 : "Full day of activities including morning and afternoon game drives, bush walks, or relaxation at the lodge.",
     }));
@@ -37,7 +51,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
             {/* ── Hero Gallery ── */}
             <div className="relative h-[50vh] min-h-[400px] bg-gray-900 group">
                 <Image
-                    src={pkg.images[0]}
+                    src={mainImage}
                     alt={pkg.title}
                     fill
                     className="object-cover"
@@ -49,7 +63,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                 <Container className="relative h-full flex items-end pb-12 z-10">
                     <div className="w-full">
                         <div className="flex flex-wrap gap-2 mb-4">
-                            {pkg.category.map((cat) => (
+                            {categories.map((cat) => (
                                 <span key={cat} className="px-3 py-1 bg-accent/90 text-dark-deep text-xs font-accent font-bold uppercase rounded-full">
                                     {cat}
                                 </span>
@@ -61,15 +75,17 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                         <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm font-medium">
                             <div className="flex items-center gap-2">
                                 <Clock className="w-5 h-5 text-accent" />
-                                <span>{pkg.duration.days} Days / {pkg.duration.nights} Nights</span>
+                                <span>{durationDays} Days / {durationNights} Nights</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Users className="w-5 h-5 text-accent" />
-                                <span>Min {pkg.groupSize.min} - Max {pkg.groupSize.max} Guests</span>
-                            </div>
+                            {pkg.groupSize && (
+                                <div className="flex items-center gap-2">
+                                    <Users className="w-5 h-5 text-accent" />
+                                    <span>Min {pkg.groupSize.min} - Max {pkg.groupSize.max} Guests</span>
+                                </div>
+                            )}
                             <div className="flex items-center gap-2">
                                 <MapPin className="w-5 h-5 text-accent" />
-                                <span>{pkg.destinations.join(", ")}</span>
+                                <span>{destinations.join(", ")}</span>
                             </div>
                         </div>
                     </div>
@@ -88,7 +104,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-sm border border-beige/50">
                                 <h3 className="font-display text-2xl font-bold text-dark-deep mb-4">Highlights</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {pkg.highlights.map((highlight, idx) => (
+                                    {(pkg.highlights || []).map((highlight, idx) => (
                                         <div key={idx} className="flex items-start gap-3">
                                             <div className="mt-1 min-w-[20px]">
                                                 <Check className="w-5 h-5 text-green-500" />
@@ -103,7 +119,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             <div>
                                 <h3 className="font-display text-2xl font-bold text-dark-deep mb-4">About This Safari</h3>
                                 <div className="prose prose-lg text-warm-gray">
-                                    <p className="leading-relaxed whitespace-pre-line">{pkg.longDescription}</p>
+                                    <p className="leading-relaxed whitespace-pre-line">{description}</p>
                                 </div>
                             </div>
 
@@ -111,7 +127,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             <div>
                                 <h3 className="font-display text-2xl font-bold text-dark-deep mb-6">Detailed Itinerary</h3>
                                 <div className="space-y-4">
-                                    {itinerary.map((day) => (
+                                    {(itinerary as any[]).map((day) => (
                                         <ItineraryItem key={day.day} item={day} />
                                     ))}
                                 </div>
@@ -124,7 +140,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                         <Check className="w-5 h-5 text-green-500" /> What&apos;s Included
                                     </h4>
                                     <ul className="space-y-3">
-                                        {pkg.inclusions.map((item, i) => (
+                                        {(pkg.inclusions || []).map((item, i) => (
                                             <li key={i} className="text-sm text-warm-gray border-b border-dashed border-gray-100 pb-2">
                                                 {item}
                                             </li>
@@ -164,15 +180,17 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                     <div className="space-y-3 mb-6 text-sm text-white/80">
                                         <div className="flex justify-between border-b border-white/10 pb-2">
                                             <span>Duration</span>
-                                            <span className="font-semibold text-white">{pkg.duration.days} Days</span>
+                                            <span className="font-semibold text-white">{durationDays} Days</span>
                                         </div>
-                                        <div className="flex justify-between border-b border-white/10 pb-2">
-                                            <span>Group Size</span>
-                                            <span className="font-semibold text-white">{pkg.groupSize.type}</span>
-                                        </div>
+                                        {pkg.groupSize && (
+                                            <div className="flex justify-between border-b border-white/10 pb-2">
+                                                <span>Group Size</span>
+                                                <span className="font-semibold text-white">{pkg.groupSize.type}</span>
+                                            </div>
+                                        )}
                                         <div className="flex justify-between border-b border-white/10 pb-2">
                                             <span>Difficulty</span>
-                                            <span className="font-semibold text-white">{pkg.difficulty}</span>
+                                            <span className="font-semibold text-white">{pkg.difficulty || "Moderate"}</span>
                                         </div>
                                     </div>
 

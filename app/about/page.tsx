@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import FacebookReviews from '@/components/marketing/FacebookReviews';
 
-const teamMembers = [
+const staticTeamMembers = [
     {
         name: "Godfrey Mateta",
         role: "Founder & Lead Safari Specialist",
@@ -92,6 +92,18 @@ const milestones = [
 export default function AboutPage() {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 500], [0, 200]);
+    const [team, setTeam] = React.useState<any[]>(staticTeamMembers);
+
+    React.useEffect(() => {
+        fetch('/api/team')
+            .then(res => res.json())
+            .then(data => {
+                if (Array.isArray(data) && data.length > 0) {
+                    setTeam(data);
+                }
+            })
+            .catch(err => console.error("Team fetch failed", err));
+    }, []);
 
     return (
         <main className="min-h-screen bg-white">
@@ -230,7 +242,7 @@ export default function AboutPage() {
                         subtitle="Dedicated experts behind the scenes"
                     />
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-                        {teamMembers.map((member, idx) => (
+                        {team.map((member: any, idx: number) => (
                             <TeamCard key={idx} member={member} index={idx} />
                         ))}
                     </div>

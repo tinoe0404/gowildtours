@@ -18,25 +18,28 @@ export interface Package {
     id: string;
     slug: string;
     title: string;
-    category: PackageCategory[];
-    destinations: string[];
-    shortDescription: string;
-    longDescription: string;
+    category: PackageCategory[] | string;
+    destinations?: string[];
+    shortDescription?: string;
+    longDescription?: string;
+    description?: string;
     duration: {
         days: number;
         nights: number;
-    };
-    groupSize: {
+    } | string;
+    groupSize?: {
         min: number;
         max: number;
         type: "Private" | "Small Group" | "Large Group";
     };
-    difficulty: DifficultyLevel;
+    difficulty?: DifficultyLevel | string;
     price: number;
-    featured: boolean;
-    bestSeller: boolean;
-    newPackage: boolean;
-    image: string;
+    featured?: boolean;
+    isFeatured?: boolean;
+    bestSeller?: boolean;
+    newPackage?: boolean;
+    isPublished?: boolean;
+    image?: string;
     images: string[];
     inclusions: string[];
     highlights: string[];

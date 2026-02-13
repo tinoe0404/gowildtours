@@ -12,6 +12,19 @@ interface PackageCardProps {
 }
 
 export default function PackageCard({ pkg, className }: PackageCardProps) {
+    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80");
+
+    const durationDays = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)/)?.[1] || "0"))
+        : (pkg.duration as any)?.days;
+
+    const durationNights = typeof pkg.duration === "string"
+        ? (parseInt(pkg.duration.match(/(\d+)\s+Nights/)?.[1] || "0"))
+        : (pkg.duration as any)?.nights;
+
+    const categories = typeof pkg.category === "string" ? [pkg.category] : (pkg.category as any) || [];
+    const isFeatured = pkg.featured || (pkg as any).isFeatured;
+
     return (
         <div
             className={cn(
@@ -22,7 +35,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
             {/* ── Image Section ── */}
             <Link href={`/packages/${pkg.slug}`} className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                    src={pkg.image}
+                    src={mainImage}
                     alt={pkg.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -32,12 +45,12 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
 
                 {/* Badges */}
                 <div className="absolute top-3 left-3 flex flex-col gap-2">
-                    {pkg.featured && (
+                    {isFeatured && (
                         <span className="bg-accent text-dark-deep text-[10px] font-accent font-bold uppercase tracking-wider px-2 py-1 rounded-full shadow-sm">
                             Featured
                         </span>
                     )}
-                    {pkg.bestSeller && (
+                    {(pkg as any).bestSeller && (
                         <span className="bg-primary text-white text-[10px] font-accent font-bold uppercase tracking-wider px-2 py-1 rounded-full shadow-sm">
                             Best Seller
                         </span>
@@ -47,7 +60,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                 {/* Category on Image Bottom */}
                 <div className="absolute bottom-3 left-3">
                     <span className="text-white text-xs font-semibold bg-black/40 backdrop-blur-sm px-2 py-1 rounded-md border border-white/20">
-                        {pkg.category[0]}
+                        {categories[0]}
                     </span>
                 </div>
             </Link>
@@ -62,22 +75,22 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                 </Link>
 
                 <p className="text-warm-gray text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
-                    {pkg.shortDescription}
+                    {pkg.shortDescription || pkg.description?.substring(0, 100)}
                 </p>
 
                 {/* Info Icons */}
                 <div className="grid grid-cols-2 gap-y-2 gap-x-1 text-xs text-warm-gray mb-5 pt-4 border-t border-beige/50">
                     <div className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-accent" />
-                        <span>{pkg.duration.days} Days / {pkg.duration.nights} Nights</span>
+                        <span>{durationDays} Days / {durationNights} Nights</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                         <Users className="w-3.5 h-3.5 text-accent" />
-                        <span>{pkg.groupSize.type}</span>
+                        <span>{(pkg.groupSize as any)?.type || "Small Group"}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                         <Mountain className="w-3.5 h-3.5 text-accent" />
-                        <span>{pkg.difficulty}</span>
+                        <span>{pkg.difficulty || "Moderate"}</span>
                     </div>
                 </div>
 
@@ -86,7 +99,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                     <div className="flex flex-col">
                         <span className="text-xs text-warm-gray">From</span>
                         <span className="font-display text-2xl font-bold text-primary">
-                            ${pkg.price.toLocaleString()}
+                            ${Number(pkg.price).toLocaleString()}
                         </span>
                     </div>
                     <Link

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { packages } from "@/lib/packages-data";
+import prisma from "@/lib/db";
 import PackageDetailClient from "./PackageDetailClient";
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const pkg = packages.find((p) => p.slug === slug);
+    const pkg = await prisma.package.findUnique({
+        where: { slug },
+    });
 
     if (!pkg) {
         return {
@@ -19,40 +21,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         title: `${pkg.title} | Safari Packages`,
-        description: pkg.shortDescription,
+        description: pkg.description.substring(0, 160),
         alternates: {
             canonical: `/packages/${pkg.slug}`,
-        },
-        openGraph: {
-            title: `${pkg.title} | Go Wild Tours`,
-            description: pkg.shortDescription,
-            url: `/packages/${pkg.slug}`,
-            type: "website",
-            images: [
-                {
-                    url: `/packages/${pkg.slug}/opengraph-image`, // Explicitly pointing to the generated image if needed, though Next.js auto-discovery works too.
-                    width: 1200,
-                    height: 630,
-                    alt: pkg.title,
-                },
-            ],
         },
     };
 }
 
 export async function generateStaticParams() {
-    return packages.map((pkg) => ({
+    const pkgs = await prisma.package.findMany({
+        select: { slug: true },
+    });
+    return pkgs.map((pkg) => ({
         slug: pkg.slug,
     }));
 }
 
 export default async function PackageDetailPage({ params }: Props) {
     const { slug } = await params;
-    const pkg = packages.find((p) => p.slug === slug);
+    const pkg = await prisma.package.findUnique({
+        where: { slug },
+    });
 
     if (!pkg) {
         notFound();
     }
 
-    return <PackageDetailClient pkg={pkg} />;
+    // Convert Decimal to number for the client component
+    const formattedPkg = {
+        ...pkg,
+        price: Number(pkg.price),
+        ...(pkg.itinerary as any),
+    };
+
+    return <PackageDetailClient pkg={formattedPkg} />;
 }
