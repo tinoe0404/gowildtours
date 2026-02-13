@@ -29,23 +29,6 @@ const navGroups = [
         label: "Content",
         items: [
             { label: "Packages", href: "/admin/content/packages", icon: Package },
-            { label: "Hotels", href: "/admin/content/hotels", icon: Hotel },
-            { label: "Activities", href: "/admin/content/activities", icon: Activity },
-            { label: "Gallery", href: "/admin/content/gallery", icon: Image },
-            { label: "Team", href: "/admin/content/team", icon: Users },
-        ],
-    },
-    {
-        label: "Insights",
-        items: [
-            { label: "Analytics", href: "/admin/analytics", icon: BarChart3 },
-            { label: "Reports", href: "/admin/reports", icon: FileText },
-        ],
-    },
-    {
-        label: "Comms",
-        items: [
-            { label: "Campaigns", href: "/admin/communications", icon: Mail },
         ],
     },
     {
