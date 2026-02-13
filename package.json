@@ -9,21 +9,40 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.2",
+    "@react-email/components": "^0.0.33",
+    "@tanstack/react-table": "^8.21.3",
+    "@types/mapbox-gl": "^3.4.1",
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.34.0",
+    "jsonwebtoken": "^9.0.3",
+    "jspdf": "^4.1.0",
     "lucide-react": "^0.563.0",
+    "mapbox-gl": "^3.18.1",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "tailwind-merge": "^3.4.0"
+    "react-hook-form": "^7.71.1",
+    "react-map-gl": "^8.1.0",
+    "recharts": "^3.7.0",
+    "resend": "^4.1.2",
+    "sharp": "^0.34.5",
+    "tailwind-merge": "^3.4.0",
+    "xlsx": "^0.18.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "prisma": "^6.3.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

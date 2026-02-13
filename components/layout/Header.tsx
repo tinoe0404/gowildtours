@@ -63,7 +63,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
                         <Image
-                            src={isScrolled ? "/images/logo/go-wild-tours-full-white.svg" : "/images/logo/go-wild-tours-full.svg"}
+                            src={isScrolled ? siteConfig.logos.light : siteConfig.logos.dark}
                             alt={siteConfig.name}
                             fill
                             className="object-contain"

@@ -1,0 +1,41 @@
+
+> gowildtours@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./components/activities/CategoryNav.tsx:15:1
+Module not found: Can't resolve '@/lib/utils'
+  13 |     LayoutGrid as AllIcon
+  14 | } from "lucide-react";
+> 15 | import { cn } from "@/lib/utils";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  16 |
+  17 | interface CategoryNavProps {
+  18 |     activeCategory: ActivityCategory | "All";
+
+Import map: aliased to relative './lib/utils' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./components/activities/CategoryNav.tsx [Client Component Browser]
+    ./app/activities/ActivitiesClient.tsx [Client Component Browser]
+    ./app/activities/ActivitiesClient.tsx [Server Component]
+    ./app/activities/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/activities/CategoryNav.tsx [Client Component SSR]
+    ./app/activities/ActivitiesClient.tsx [Client Component SSR]
+    ./app/activities/ActivitiesClient.tsx [Server Component]
+    ./app/activities/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./components/activities/CategoryNav.tsx:15:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

@@ -1,0 +1,41 @@
+
+> gowildtours@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./components/ui/InteractiveMap.tsx:4:1
+Module not found: Can't resolve 'react-map-gl'
+  2 |
+  3 | import { useState } from "react";
+> 4 | import Map, { Marker, NavigationControl, Popup } from "react-map-gl";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import "mapbox-gl/dist/mapbox-gl.css";
+  6 | import { MapPin } from "lucide-react";
+  7 | import { cn } from "@/lib/cn";
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/ui/InteractiveMap.tsx [Client Component Browser]
+    ./components/features/DestinationExplorer.tsx [Client Component Browser]
+    ./components/features/DestinationExplorer.tsx [Server Component]
+    ./app/destinations/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/ui/InteractiveMap.tsx [Client Component SSR]
+    ./components/features/DestinationExplorer.tsx [Client Component SSR]
+    ./components/features/DestinationExplorer.tsx [Server Component]
+    ./app/destinations/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./components/ui/InteractiveMap.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

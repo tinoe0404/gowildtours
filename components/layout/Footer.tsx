@@ -23,7 +23,7 @@ export default function Footer() {
                         <div className="lg:col-span-1">
                             <Link href="/" className="relative block h-12 w-40 mb-4 group transition-transform hover:scale-105 duration-300">
                                 <Image
-                                    src="/images/logo/go-wild-tours-full-white.svg"
+                                    src={siteConfig.logos.light}
                                     alt={siteConfig.name}
                                     fill
                                     className="object-contain object-left opacity-90 group-hover:opacity-100 transition-opacity"

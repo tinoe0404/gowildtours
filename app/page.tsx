@@ -20,6 +20,8 @@ import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SafariGalleryPreview from "@/components/sections/SafariGalleryPreview";
+import VideoGallery from "@/components/marketing/VideoGallery";
+import InstagramFeed from "@/components/marketing/InstagramFeed";
 import Card from "@/components/ui/Card";
 import {
   Compass,
@@ -28,8 +30,8 @@ import {
   TreePine,
   Star,
   ChevronDown,
-  ArrowRight,
   Quote,
+  ArrowRight,
 } from "lucide-react";
 
 /* ── Icon Map ── */
@@ -267,6 +269,9 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* ═══════════════ VIDEO GALLERY ═══════════════ */}
+      <VideoGallery />
+
       {/* ═══════════════ GALLERY PREVIEW ═══════════════ */}
       <SafariGalleryPreview />
 
@@ -361,6 +366,9 @@ export default function HomePage() {
           </motion.div>
         </Container>
       </Section>
+
+      {/* ═══════════════ INSTAGRAM FEED ═══════════════ */}
+      <InstagramFeed />
 
       {/* ═══════════════ CTA BANNER ═══════════════ */}
       <section className="relative py-24 md:py-32 overflow-hidden">

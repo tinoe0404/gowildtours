@@ -1,0 +1,307 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum InquiryType {
+  contact
+  package_inquiry
+  activity_inquiry
+  hotel_inquiry
+  custom_quote
+}
+
+enum InquiryStatus {
+  new
+  in_progress
+  responded
+  converted
+  closed
+}
+
+enum Priority {
+  low
+  medium
+  high
+  urgent
+}
+
+enum ContactMethod {
+  email
+  phone
+  whatsapp
+}
+
+model Inquiry {
+  id                    String        @id @default(uuid())
+  type                  InquiryType
+  name                  String
+  email                 String
+  phone                 String?
+  subject               String?
+  message               String
+  preferredContactMethod ContactMethod?
+  numberOfTravelers     Int?
+  budgetRange           String?
+  source                String?
+  packageId             String?
+  activityId            String?
+  hotelId               String?
+  status                InquiryStatus @default(new)
+  priority              Priority      @default(medium)
+  assignedTo            String?
+  ipAddress             String?
+  userAgent             String?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+  respondedAt           DateTime?
+  metadata              Json?
+
+  @@index([email, createdAt, status])
+}
+
+enum BookingType {
+  package
+  activity
+  hotel
+  custom
+}
+
+enum PaymentStatus {
+  pending
+  deposit_paid
+  fully_paid
+  refunded
+}
+
+enum BookingStatus {
+  pending
+  confirmed
+  cancelled
+  completed
+}
+
+model Booking {
+  id                 String        @id @default(uuid())
+  bookingReference   String        @unique
+  type               BookingType
+  customerName       String
+  customerEmail      String
+  customerPhone      String?
+  customerCountry    String?
+  packageId          String?
+  activityId         String?
+  hotelId            String?
+  checkInDate        DateTime?
+  checkOutDate       DateTime?
+  numberOfAdults     Int?
+  numberOfChildren   Int?
+  childrenAges       Int[]
+  specialRequests     String?
+  totalPrice         Decimal?      @db.Decimal(10, 2)
+  currency           String        @default("USD")
+  paymentStatus      PaymentStatus @default(pending)
+  paymentMethod      String?
+  bookingStatus      BookingStatus @default(pending)
+  cancellationReason String?
+  cancelledAt        DateTime?
+  confirmationSentAt DateTime?
+  reminderSentAt     DateTime?
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+  metadata           Json?
+
+  @@index([bookingReference, customerEmail, checkInDate, bookingStatus])
+}
+
+enum SubscriberStatus {
+  active
+  unsubscribed
+  bounced
+}
+
+model NewsletterSubscriber {
+  id             String           @id @default(uuid())
+  email          String           @unique
+  name           String?
+  status         SubscriberStatus @default(active)
+  subscribedAt   DateTime         @default(now())
+  unsubscribedAt DateTime?
+  source         String?
+  preferences    Json?
+  metadata       Json?
+
+  @@index([email, status])
+}
+
+enum TravelerType {
+  solo
+  couple
+  family
+  friends
+  business
+}
+
+enum ReviewStatus {
+  pending
+  approved
+  rejected
+  spam
+}
+
+model Review {
+  id               String       @id @default(uuid())
+  reviewerName     String
+  reviewerEmail    String?
+  reviewerCountry  String?
+  rating           Int
+  title            String?
+  reviewText       String
+  travelDate       DateTime?
+  travelerType     TravelerType?
+  packageId        String?
+  activityId       String?
+  hotelId          String?
+  ratingBreakdown  Json?
+  images           String[]
+  status           ReviewStatus @default(pending)
+  verified         Boolean      @default(false)
+  helpfulCount     Int          @default(0)
+  bookingReference String?
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  approvedAt       DateTime?
+  moderatedBy      String?
+
+  @@index([status, packageId, activityId, hotelId, rating])
+}
+
+// ── Admin Dashboard Models ──
+
+enum AdminRole {
+  super_admin
+  admin
+  manager
+  staff
+}
+
+model AdminUser {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         AdminRole @default(staff)
+  avatar       String?
+  lastLoginAt  DateTime?
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([email])
+}
+
+model Package {
+  id          String   @id @default(uuid())
+  title       String
+  slug        String   @unique
+  description String   @db.Text
+  duration    String
+  price       Decimal  @db.Decimal(10, 2)
+  inclusions  String[]
+  exclusions  String[]
+  itinerary   Json?
+  images      String[]
+  highlights  String[]
+  category    String?
+  isPublished Boolean  @default(false)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug, isPublished])
+}
+
+model Hotel {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  location    String
+  description String   @db.Text
+  starRating  Int      @default(3)
+  amenities   String[]
+  images      String[]
+  priceFrom   Decimal  @db.Decimal(10, 2)
+  isPublished Boolean  @default(false)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug, isPublished])
+}
+
+model Activity {
+  id          String   @id @default(uuid())
+  name        String
+  slug        String   @unique
+  description String   @db.Text
+  duration    String
+  difficulty  String?
+  price       Decimal  @db.Decimal(10, 2)
+  images      String[]
+  location    String?
+  isPublished Boolean  @default(false)
+  isFeatured  Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug, isPublished])
+}
+
+model GalleryImage {
+  id        String   @id @default(uuid())
+  url       String
+  alt       String
+  caption   String?
+  category  String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model TeamMember {
+  id        String   @id @default(uuid())
+  name      String
+  role      String
+  bio       String?  @db.Text
+  photo     String?
+  socials   Json?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  userId    String
+  userName  String
+  action    String
+  target    String
+  targetId  String?
+  before    Json?
+  after     Json?
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+model SiteSetting {
+  id    String @id @default(uuid())
+  key   String @unique
+  value Json
+}

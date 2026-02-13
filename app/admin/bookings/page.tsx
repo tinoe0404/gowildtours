@@ -1,0 +1,88 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import DataTable, { Column } from "@/components/admin/DataTable";
+import StatusBadge from "@/components/admin/StatusBadge";
+import { format } from "date-fns";
+import { useRouter } from "next/navigation";
+import { Plus } from "lucide-react";
+
+type Booking = {
+    id: string;
+    bookingReference: string;
+    customerName: string;
+    customerEmail: string;
+    type: string;
+    checkInDate: string;
+    checkOutDate: string;
+    numberOfAdults: number;
+    totalPrice: number;
+    paymentStatus: string;
+    bookingStatus: string;
+    createdAt: string;
+};
+
+const statusFilters = ["all", "pending", "confirmed", "completed", "cancelled"];
+
+export default function BookingsPage() {
+    const [bookings, setBookings] = useState<Booking[]>([]);
+    const [activeFilter, setActiveFilter] = useState("all");
+    const router = useRouter();
+
+    useEffect(() => {
+        const params = new URLSearchParams();
+        if (activeFilter !== "all") params.set("status", activeFilter);
+        fetch(`/api/admin/bookings?${params}`)
+            .then((r) => r.json())
+            .then((d) => setBookings(d.bookings || []))
+            .catch(console.error);
+    }, [activeFilter]);
+
+    const columns: Column<Booking>[] = [
+        { key: "bookingReference", label: "Reference", sortable: true },
+        { key: "customerName", label: "Customer", sortable: true },
+        { key: "type", label: "Type", render: (r) => <StatusBadge status={r.type} /> },
+        { key: "checkInDate", label: "Check-in", sortable: true, render: (r) => r.checkInDate ? format(new Date(r.checkInDate), "MMM d, yyyy") : "—" },
+        { key: "numberOfAdults", label: "Guests" },
+        { key: "totalPrice", label: "Total", render: (r) => r.totalPrice ? `$${Number(r.totalPrice).toLocaleString()}` : "—" },
+        { key: "paymentStatus", label: "Payment", render: (r) => <StatusBadge status={r.paymentStatus} /> },
+        { key: "bookingStatus", label: "Status", render: (r) => <StatusBadge status={r.bookingStatus} /> },
+    ];
+
+    return (
+        <div className="space-y-6">
+            <div className="flex items-center justify-between">
+                <div>
+                    <h1 className="text-2xl font-bold text-gray-900">Bookings</h1>
+                    <p className="text-sm text-gray-500">Manage all customer bookings</p>
+                </div>
+                <button
+                    onClick={() => router.push("/admin/bookings/new")}
+                    className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+                >
+                    <Plus className="h-4 w-4" /> New Booking
+                </button>
+            </div>
+
+            <div className="flex gap-1 bg-gray-100 p-1 rounded-lg w-fit">
+                {statusFilters.map((f) => (
+                    <button
+                        key={f}
+                        onClick={() => setActiveFilter(f)}
+                        className={`px-4 py-1.5 text-sm font-medium rounded-md capitalize transition-colors ${activeFilter === f ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-800"
+                            }`}
+                    >
+                        {f}
+                    </button>
+                ))}
+            </div>
+
+            <DataTable
+                columns={columns}
+                data={bookings}
+                selectable
+                onRowClick={(row) => router.push(`/admin/bookings/${row.id}`)}
+            />
+        </div>
+    );
+}

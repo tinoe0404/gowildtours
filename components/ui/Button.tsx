@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "sm" | "md" | "lg" | "icon";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
@@ -14,19 +14,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
     primary:
-        "bg-accent text-dark-deep hover:bg-accent-light shadow-lg hover:shadow-xl",
+        "bg-accent text-dark-deep hover:bg-accent-light hover:brightness-110 shadow-lg hover:shadow-xl hover:-translate-y-0.5",
     secondary:
-        "bg-primary text-white hover:bg-primary-light shadow-lg hover:shadow-xl",
+        "bg-primary text-white hover:bg-primary-light hover:brightness-110 shadow-lg hover:shadow-xl hover:-translate-y-0.5",
     outline:
-        "border-2 border-accent text-accent hover:bg-accent hover:text-dark-deep",
+        "border-2 border-accent text-accent hover:bg-accent hover:text-dark-deep hover:shadow-md",
     ghost:
-        "text-cream hover:bg-white/10",
+        "text-cream hover:bg-white/10 hover:text-white",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
     sm: "px-4 py-2 text-sm",
     md: "px-6 py-3 text-base",
     lg: "px-8 py-4 text-lg",
+    icon: "h-10 w-10 p-0",
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(

@@ -12,6 +12,11 @@ export const siteConfig = {
         twitter: "https://twitter.com/gowildtours",
         youtube: "https://youtube.com/gowildtours",
     },
+    logos: {
+        dark: "/images/logo/go-wild-tours-full.svg",
+        light: "/images/logo/go-wild-tours-full-white.svg",
+        icon: "/images/logo/go-wild-tours-icon.png",
+    }
 };
 
 export const navLinks = [

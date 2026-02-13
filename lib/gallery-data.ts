@@ -33,7 +33,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Wildlife ──────────────────────────────────────────
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1534177616064-84d7bf31fea3?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
         alt: "Male lion resting in golden grassland",
         categories: ["Wildlife"],
         caption: "King of the savanna — a male lion surveys his territory at dawn.",
@@ -43,7 +43,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1535338454528-1b5c8e9b1a1d?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
         alt: "Elephant herd at a watering hole",
         categories: ["Wildlife"],
         caption: "An elephant family gathers at the river during the dry season.",
@@ -63,7 +63,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 4,
-        src: "https://images.unsplash.com/photo-1474511320723-9a56873571b7?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
         alt: "Giraffe silhouette at sunset",
         categories: ["Wildlife", "Landscapes"],
         caption: "Giraffes framed against a fiery African sunset.",
@@ -83,7 +83,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 6,
-        src: "https://images.unsplash.com/photo-1504600770771-fb03a7c11a76?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
         alt: "Zebras at waterhole",
         categories: ["Wildlife"],
         caption: "A dazzle of zebras reflected in still waters.",
@@ -269,7 +269,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 24,
-        src: "https://images.unsplash.com/photo-1570979935968-7efff0c4a0f3?w=800&q=80",
+        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
         alt: "White water rafting",
         categories: ["Adventure"],
         caption: "Grade 5 rapids — white water rafting below Victoria Falls.",
