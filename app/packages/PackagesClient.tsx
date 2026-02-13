@@ -16,11 +16,18 @@ export default function PackagesClient() {
 
     // Filter State
     const [filters, setFilters] = useState({
+        destinations: [] as string[],
         duration: [] as string[],
         priceRange: [] as string[],
         categories: [] as string[],
         difficulty: [] as string[],
     });
+
+    // ── Derived Data ──
+    const uniqueDestinations = useMemo(() => {
+        const allDestinations = packages.flatMap((pkg) => pkg.destinations);
+        return Array.from(new Set(allDestinations)).sort();
+    }, []);
 
     // ── Handlers ──
     const [searchQuery, setSearchQuery] = useState("");
@@ -38,6 +45,7 @@ export default function PackagesClient() {
 
     const clearFilters = () => {
         setFilters({
+            destinations: [],
             duration: [],
             priceRange: [],
             categories: [],
@@ -58,6 +66,13 @@ export default function PackagesClient() {
                     pkg.destinations.some(d => d.toLowerCase().includes(query));
 
                 if (!matchesSearch) return false;
+                if (!matchesSearch) return false;
+            }
+
+            // Destinations
+            if (filters.destinations.length > 0) {
+                const hasDestination = pkg.destinations.some((d) => filters.destinations.includes(d));
+                if (!hasDestination) return false;
             }
 
             // Duration
@@ -123,6 +138,7 @@ export default function PackagesClient() {
             <aside className="hidden lg:block w-72 sticky top-24 shrink-0">
                 <PackageFilters
                     filters={filters}
+                    destinationOptions={uniqueDestinations}
                     onFilterChange={handleFilterChange}
                     onClearFilters={clearFilters}
                 />
@@ -157,6 +173,7 @@ export default function PackagesClient() {
                             </div>
                             <PackageFilters
                                 filters={filters}
+                                destinationOptions={uniqueDestinations}
                                 onFilterChange={handleFilterChange}
                                 onClearFilters={clearFilters}
                                 className="shadow-none border-0 p-0"

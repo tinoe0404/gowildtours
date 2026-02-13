@@ -7,11 +7,13 @@ import type { DifficultyLevel, PackageCategory } from "@/lib/packages-data";
 
 interface PackageFiltersProps {
     filters: {
+        destinations: string[];
         duration: string[];
         priceRange: string[];
         categories: string[];
         difficulty: string[];
     };
+    destinationOptions: string[];
     onFilterChange: (type: string, value: string) => void;
     onClearFilters: () => void;
     className?: string;
@@ -32,12 +34,14 @@ const DIFFICULTY_OPTIONS: DifficultyLevel[] = ["Easy", "Moderate", "Challenging"
 
 export default function PackageFilters({
     filters,
+    destinationOptions,
     onFilterChange,
     onClearFilters,
     className,
 }: PackageFiltersProps) {
 
     const hasActiveFilters =
+        filters.destinations.length > 0 ||
         filters.duration.length > 0 ||
         filters.priceRange.length > 0 ||
         filters.categories.length > 0 ||
@@ -58,6 +62,14 @@ export default function PackageFilters({
             </div>
 
             <div className="space-y-8">
+                {/* Destinations */}
+                <FilterGroup
+                    title="Destinations"
+                    options={destinationOptions}
+                    selected={filters.destinations}
+                    onChange={(val) => onFilterChange("destinations", val)}
+                />
+
                 {/* Days */}
                 <FilterGroup
                     title="Duration"

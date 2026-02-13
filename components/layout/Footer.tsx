@@ -145,15 +145,7 @@ export default function Footer() {
                             reserved.
                         </p>
                         <div className="flex items-center gap-4">
-                            <Link href="/privacy" className="hover:text-accent transition-colors">
-                                Privacy Policy
-                            </Link>
-                            <Link href="/terms" className="hover:text-accent transition-colors">
-                                Terms of Service
-                            </Link>
-                            <Link href="/cookies" className="hover:text-accent transition-colors">
-                                Cookie Policy
-                            </Link>
+                            {/* Legal links removed as pages do not exist */}
                         </div>
                     </div>
                 </Container>

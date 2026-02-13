@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -108,13 +109,17 @@ export default function HomePage() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row items-center gap-4 mt-2"
             >
-              <Button variant="primary" size="lg">
-                Explore Safaris
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg">
-                Watch Our Story
-              </Button>
+              <Link href="/packages">
+                <Button variant="primary" size="lg">
+                  Explore Safaris
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/gallery">
+                <Button variant="outline" size="lg">
+                  Watch Our Story
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </Container>
@@ -170,10 +175,12 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="secondary">
-                  Learn More About Us
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
+                <Link href="/about">
+                  <Button variant="secondary">
+                    Learn More About Us
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
 
@@ -256,10 +263,10 @@ export default function HomePage() {
                       <span className="font-accent font-bold text-primary text-lg">
                         {safari.price}
                       </span>
-                      <button className="font-accent text-sm font-semibold text-accent hover:text-accent-light transition-colors flex items-center gap-1 cursor-pointer">
+                      <Link href={`/packages/${safari.id}`} className="font-accent text-sm font-semibold text-accent hover:text-accent-light transition-colors flex items-center gap-1 cursor-pointer">
                         View Details
                         <ArrowRight className="h-4 w-4" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </Card>
@@ -405,13 +412,17 @@ export default function HomePage() {
               handle every detail.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="primary" size="lg">
-                Book Your Adventure
-                <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="lg">
-                Contact Our Team
-              </Button>
+              <Link href="/packages">
+                <Button variant="primary" size="lg">
+                  Book Your Adventure
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="ghost" size="lg">
+                  Contact Our Team
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </Container>
