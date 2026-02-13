@@ -3,19 +3,32 @@ import Image from "next/image";
 import { siteConfig, navLinks } from "@/lib/constants";
 import Container from "@/components/ui/Container";
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import prisma from "@/lib/db";
 
-const packages = [
-    "Big Five Experience",
-    "Victoria Falls & Safari",
-    "Luxury Bush Camp",
-    "Walking Safaris",
-    "Photographic Tours",
-];
+export default async function Footer() {
+    // Fetch settings and packages for a truly dynamic footer
+    const settings = await prisma.siteSetting.findMany();
+    const settingsMap = settings.reduce((acc: any, s) => {
+        acc[s.key] = s.value;
+        return acc;
+    }, {});
 
-export default function Footer() {
+    const footerPackages = await prisma.package.findMany({
+        where: { isPublished: true },
+        take: 5,
+        select: { title: true, slug: true }
+    });
+
+    const contact = settingsMap.contact_info || {
+        email: siteConfig.email,
+        phone: siteConfig.phone,
+        address: siteConfig.location
+    };
+
+    const socials = settingsMap.social_links || siteConfig.socials;
+
     return (
         <footer className="bg-dark-deep text-cream/80">
-            {/* Main Footer */}
             <div className="pt-16 pb-10">
                 <Container>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
@@ -34,7 +47,6 @@ export default function Footer() {
                                 destinations. Discover the wild with expert guides and luxury
                                 accommodations.
                             </p>
-                            {/* Tourism badge placeholder */}
                             <div className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-cream/10 text-xs text-cream/40">
                                 <span>🏛️</span>
                                 <span>Registered Tourism Operator</span>
@@ -66,13 +78,13 @@ export default function Footer() {
                                 Our Packages
                             </h3>
                             <ul className="space-y-3">
-                                {packages.map((pkg) => (
-                                    <li key={pkg}>
+                                {footerPackages.map((pkg) => (
+                                    <li key={pkg.slug}>
                                         <Link
-                                            href="/packages"
+                                            href={`/packages/${pkg.slug}`}
                                             className="text-sm text-cream/60 hover:text-accent transition-colors duration-300"
                                         >
-                                            {pkg}
+                                            {pkg.title}
                                         </Link>
                                     </li>
                                 ))}
@@ -88,25 +100,25 @@ export default function Footer() {
                                 <li className="flex items-start gap-3">
                                     <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
                                     <span className="text-sm text-cream/60">
-                                        {siteConfig.location}
+                                        {contact.address}
                                     </span>
                                 </li>
                                 <li>
                                     <a
-                                        href={`tel:${siteConfig.phone}`}
+                                        href={`tel:${contact.phone}`}
                                         className="flex items-start gap-3 text-sm text-cream/60 hover:text-accent transition-colors"
                                     >
                                         <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                                        {siteConfig.phone}
+                                        {contact.phone}
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        href={`mailto:${siteConfig.email}`}
+                                        href={`mailto:${contact.email}`}
                                         className="flex items-start gap-3 text-sm text-cream/60 hover:text-accent transition-colors"
                                     >
                                         <Mail className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                                        {siteConfig.email}
+                                        {contact.email}
                                     </a>
                                 </li>
                             </ul>
@@ -114,11 +126,11 @@ export default function Footer() {
                             {/* Social Icons */}
                             <div className="flex items-center gap-3 mt-6">
                                 {[
-                                    { icon: Instagram, href: siteConfig.socials.instagram, label: "Instagram" },
-                                    { icon: Facebook, href: siteConfig.socials.facebook, label: "Facebook" },
-                                    { icon: Twitter, href: siteConfig.socials.twitter, label: "Twitter" },
-                                    { icon: Youtube, href: siteConfig.socials.youtube, label: "YouTube" },
-                                ].map((social) => (
+                                    { icon: Instagram, href: socials.instagram, label: "Instagram" },
+                                    { icon: Facebook, href: socials.facebook, label: "Facebook" },
+                                    { icon: Twitter, href: socials.twitter, label: "Twitter" },
+                                    { icon: Youtube, href: socials.youtube, label: "YouTube" },
+                                ].map((social) => social.href && (
                                     <a
                                         key={social.label}
                                         href={social.href}
@@ -144,9 +156,6 @@ export default function Footer() {
                             © {new Date().getFullYear()} {siteConfig.name}. All rights
                             reserved.
                         </p>
-                        <div className="flex items-center gap-4">
-                            {/* Legal links removed as pages do not exist */}
-                        </div>
                     </div>
                 </Container>
             </div>

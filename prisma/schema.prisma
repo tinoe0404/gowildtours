@@ -264,14 +264,22 @@ model Activity {
   @@index([slug, isPublished])
 }
 
+enum AspectRatio {
+  landscape
+  portrait
+  square
+}
+
 model GalleryImage {
-  id        String   @id @default(uuid())
-  url       String
-  alt       String
-  caption   String?
-  category  String?
-  sortOrder Int      @default(0)
-  createdAt DateTime @default(now())
+  id          String      @id @default(uuid())
+  url         String
+  alt         String
+  caption     String?
+  category    String?
+  location    String?
+  aspectRatio AspectRatio @default(landscape)
+  sortOrder   Int         @default(0)
+  createdAt   DateTime    @default(now())
 }
 
 model TeamMember {

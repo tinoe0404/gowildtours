@@ -12,6 +12,7 @@ async function main() {
     await prisma.galleryImage.deleteMany({});
     await prisma.teamMember.deleteMany({});
     await prisma.review.deleteMany({});
+    await prisma.siteSetting.deleteMany({});
 
     // 2. Create Admin User
     const passwordHash = await hash("admin123", 10);
@@ -110,12 +111,32 @@ async function main() {
             alt: "Male lion resting in golden grassland",
             category: "Wildlife",
             caption: "King of the savanna — a male lion surveys his territory at dawn.",
+            location: "Hwange National Park",
+            aspectRatio: "landscape" as const,
+        },
+        {
+            url: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+            alt: "Elephant herd at a watering hole",
+            category: "Wildlife",
+            caption: "An elephant family gathers at the river during the dry season.",
+            location: "Mana Pools",
+            aspectRatio: "portrait" as const,
         },
         {
             url: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80",
             alt: "Victoria Falls panoramic view",
             category: "Landscapes",
             caption: "The Smoke that Thunders — Victoria Falls in full flood.",
+            location: "Victoria Falls",
+            aspectRatio: "portrait" as const,
+        },
+        {
+            url: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+            alt: "Giraffe silhouette at sunset",
+            category: "Landscapes",
+            caption: "Giraffes framed against a fiery African sunset.",
+            location: "Zambezi Valley",
+            aspectRatio: "landscape" as const,
         }
     ];
 
@@ -157,6 +178,46 @@ async function main() {
     for (const member of teamData) {
         await prisma.teamMember.create({
             data: { ...member }
+        });
+    }
+
+    // 6. Seed Site Settings
+    const settingsData = [
+        {
+            key: "contact_info",
+            value: {
+                email: "info@gowildtours.com",
+                phone: "+263 77 123 4567",
+                whatsapp: "+263 77 123 4567",
+                address: "Stand 412, Victoria Falls, Zimbabwe"
+            }
+        },
+        {
+            key: "social_links",
+            value: {
+                facebook: "https://facebook.com/gowildtours",
+                instagram: "https://instagram.com/gowildtours",
+                youtube: "https://youtube.com/gowildtours",
+                tiktok: "https://tiktok.com/@gowildtours"
+            }
+        },
+        {
+            key: "site_config",
+            value: {
+                siteName: "Go Wild Tours",
+                description: "Premium African Safari Experiences",
+                currency: "USD",
+                announcement: "Book now for up to 20% off dry season safaris!"
+            }
+        }
+    ];
+
+    for (const setting of settingsData) {
+        await prisma.siteSetting.create({
+            data: {
+                key: setting.key,
+                value: setting.value,
+            }
         });
     }
 

@@ -22,66 +22,11 @@ export const siteConfig = {
 export const navLinks = [
     { label: "Home", href: "/" },
     { label: "Packages", href: "/packages" },
+    { label: "Hotels", href: "/hotels" },
+    { label: "Activities", href: "/activities" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
-];
-
-export const featuredSafaris = [
-    {
-        id: 1,
-        title: "The Big Five Experience",
-        location: "Hwange National Park",
-        duration: "5 Days / 4 Nights",
-        price: "From $2,450",
-        description:
-            "Witness the majestic Big Five in their natural habitat across Hwange's vast wilderness.",
-        image: "/images/safari-1.jpg",
-    },
-    {
-        id: 2,
-        title: "Victoria Falls & Safari",
-        location: "Victoria Falls & Zambezi",
-        duration: "7 Days / 6 Nights",
-        price: "From $3,200",
-        description:
-            "Combine the thundering Victoria Falls with world-class game drives and river safaris.",
-        image: "/images/safari-2.jpg",
-    },
-    {
-        id: 3,
-        title: "Luxury Bush Camp Retreat",
-        location: "Mana Pools",
-        duration: "4 Days / 3 Nights",
-        price: "From $1,850",
-        description:
-            "An intimate walking safari experience in pristine wilderness with luxury tented accommodation.",
-        image: "/images/safari-3.jpg",
-    },
-];
-
-export const testimonials = [
-    {
-        id: 1,
-        name: "Sarah & James Mitchell",
-        location: "London, UK",
-        text: "An extraordinary experience from start to finish. Our guide's knowledge of the wildlife was phenomenal, and the luxury camp exceeded every expectation. Truly a trip of a lifetime.",
-        rating: 5,
-    },
-    {
-        id: 2,
-        name: "Michael Chen",
-        location: "San Francisco, USA",
-        text: "Go Wild Tours made our honeymoon absolutely unforgettable. The attention to detail, the breathtaking sunsets, and the incredible animal sightings — we'll cherish these memories forever.",
-        rating: 5,
-    },
-    {
-        id: 3,
-        name: "Anna & Erik Johansson",
-        location: "Stockholm, Sweden",
-        text: "We've been on safaris before, but nothing compares to this. The conservation-focused approach and genuine passion of the team set Go Wild Tours apart from the rest.",
-        rating: 5,
-    },
 ];
 
 export const whyChooseUs = [
