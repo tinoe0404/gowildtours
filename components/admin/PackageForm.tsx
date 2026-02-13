@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { Save, X, Loader2, Plus, Trash2 } from "lucide-react";
+import { Save, X, Loader2, Plus, Trash2, Camera } from "lucide-react";
 import Button from "@/components/ui/Button";
+import ImageUpload from "./ImageUpload";
 
 interface PackageFormProps {
     initialData?: any;
@@ -27,7 +28,7 @@ export default function PackageForm({ initialData, id }: PackageFormProps) {
             isFeatured: false,
             inclusions: [""],
             highlights: [""],
-            images: [""],
+            images: [],
         }
     });
 
@@ -91,6 +92,24 @@ export default function PackageForm({ initialData, id }: PackageFormProps) {
                 <div className="space-y-2">
                     <label className="text-sm font-semibold text-gray-700">Description</label>
                     <textarea {...register("description", { required: true })} rows={6} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none resize-none" />
+                </div>
+
+                <div className="space-y-4">
+                    <div className="flex items-center gap-2">
+                        <Camera className="w-5 h-5 text-amber-500" />
+                        <label className="text-sm font-semibold text-gray-700">Package Images</label>
+                    </div>
+                    <Controller
+                        name="images"
+                        control={control}
+                        render={({ field }) => (
+                            <ImageUpload
+                                value={field.value}
+                                onChange={(urls) => field.onChange(urls)}
+                                onRemove={(url) => field.onChange(field.value.filter((val: string) => val !== url))}
+                            />
+                        )}
+                    />
                 </div>
 
                 <div className="flex gap-6">

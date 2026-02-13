@@ -10,31 +10,35 @@ type ContentItem = {
     id: string;
     title?: string;
     name?: string;
-    slug: string;
-    isPublished: boolean;
-    isFeatured: boolean;
+    alt?: string;
+    slug?: string;
+    isPublished?: boolean;
+    isFeatured?: boolean;
     category?: string;
     price?: number;
     createdAt: string;
+    url?: string;
 };
 
 interface ContentListProps {
-    type: "packages" | "hotels" | "activities";
+    type: "packages" | "hotels" | "activities" | "gallery" | "team";
     apiPath: string;
+    title?: string;
+    description?: string;
 }
 
-export default function ContentListPage({ type, apiPath }: ContentListProps) {
+export default function ContentListPage({ type, apiPath, title, description }: ContentListProps) {
     const [items, setItems] = useState<ContentItem[]>([]);
     const router = useRouter();
 
     useEffect(() => {
         fetch(apiPath)
             .then((r) => r.json())
-            .then((d) => setItems(d.items || []))
+            .then((d) => setItems(Array.isArray(d) ? d : (d.items || [])))
             .catch(console.error);
     }, [apiPath]);
 
-    const label = type.charAt(0).toUpperCase() + type.slice(1);
+    const label = title || type.charAt(0).toUpperCase() + type.slice(1);
 
     const handleDelete = async (id: string) => {
         if (!confirm("Are you sure you want to delete this item?")) return;
@@ -43,11 +47,37 @@ export default function ContentListPage({ type, apiPath }: ContentListProps) {
     };
 
     const columns: Column<ContentItem>[] = [
-        { key: "title", label: "Name", sortable: true, render: (r) => <span className="font-medium">{r.title || r.name}</span> },
+        {
+            key: "title",
+            label: "Name / Preview",
+            sortable: true,
+            render: (r) => (
+                <div className="flex items-center gap-3">
+                    {r.url && (
+                        <div className="w-10 h-10 rounded-lg overflow-hidden border border-gray-100 shrink-0 bg-gray-50">
+                            <img src={r.url} className="w-full h-full object-cover" alt="" />
+                        </div>
+                    )}
+                    <span className="font-medium">{r.title || r.name || r.alt || "Unnamed Item"}</span>
+                </div>
+            )
+        },
         { key: "category", label: "Category" },
-        { key: "price", label: "Price", render: (r) => r.price ? `$${Number(r.price).toLocaleString()}` : "—" },
-        { key: "isPublished", label: "Status", render: (r) => <StatusBadge status={r.isPublished ? "active" : "inactive"} /> },
-        { key: "isFeatured", label: "Featured", render: (r) => r.isFeatured ? <span className="text-amber-600 text-xs font-bold">★ Yes</span> : <span className="text-gray-400 text-xs">No</span> },
+        {
+            key: "price",
+            label: "Price",
+            render: (r) => r.price ? `$${Number(r.price).toLocaleString()}` : "—"
+        },
+        {
+            key: "status",
+            label: "Status",
+            render: (r) => typeof r.isPublished !== 'undefined' ? <StatusBadge status={r.isPublished ? "active" : "inactive"} /> : "—"
+        },
+        {
+            key: "isFeatured",
+            label: "Featured",
+            render: (r) => r.isFeatured ? <span className="text-amber-600 text-xs font-bold">★ Yes</span> : <span className="text-gray-400 text-xs">No</span>
+        },
         {
             key: "actions",
             label: "",
@@ -65,7 +95,7 @@ export default function ContentListPage({ type, apiPath }: ContentListProps) {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">{label}</h1>
-                    <p className="text-sm text-gray-500">Manage your {type}</p>
+                    <p className="text-sm text-gray-500">{description || `Manage your ${type}`}</p>
                 </div>
                 <button
                     onClick={() => router.push(`/admin/content/${type}/new`)}

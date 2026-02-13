@@ -29,6 +29,10 @@ const navGroups = [
         label: "Content",
         items: [
             { label: "Packages", href: "/admin/content/packages", icon: Package },
+            { label: "Gallery", href: "/admin/content/gallery", icon: Image },
+            { label: "Hotels", href: "/admin/content/hotels", icon: Hotel },
+            { label: "Activities", href: "/admin/content/activities", icon: Activity },
+            { label: "Team", href: "/admin/content/team", icon: Users },
         ],
     },
     {
