@@ -46,17 +46,34 @@ const images = {
 
 export default async function HomePage() {
   // Fetch Featured Packages
-  const featuredPackages = await prisma.package.findMany({
+  const rawPackages = await prisma.package.findMany({
     where: { isFeatured: true, isPublished: true },
     take: 3,
   });
 
+  // Serialize Decimal fields to plain numbers for Client Components
+  const featuredPackages = rawPackages.map((pkg) => ({
+    ...pkg,
+    price: Number(pkg.price),
+    createdAt: pkg.createdAt.toISOString(),
+    updatedAt: pkg.updatedAt.toISOString(),
+  }));
+
   // Fetch Approved Reviews as Testimonials
-  const reviews = await prisma.review.findMany({
+  const rawReviews = await prisma.review.findMany({
     where: { status: "approved" },
     take: 3,
     orderBy: { createdAt: "desc" },
   });
+
+  // Serialize Date fields for Client Components
+  const reviews = rawReviews.map((r) => ({
+    ...r,
+    createdAt: r.createdAt.toISOString(),
+    updatedAt: r.updatedAt.toISOString(),
+    travelDate: r.travelDate?.toISOString() ?? null,
+    approvedAt: r.approvedAt?.toISOString() ?? null,
+  }));
 
   // Default "Why Choose Us" (could eventualy come from SiteSettings)
   const whyChooseUsData = [
@@ -88,6 +105,8 @@ export default async function HomePage() {
       featuredPackages={featuredPackages}
       testimonials={reviews}
       whyChooseUs={whyChooseUsData}
-    />
+    >
+      <SafariGalleryPreview />
+    </HomeClient>
   );
 }

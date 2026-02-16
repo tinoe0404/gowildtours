@@ -7,8 +7,10 @@ import type { GalleryImage } from "@/lib/gallery-data";
 import { staggerContainer } from "@/lib/animations";
 import Lightbox from "@/components/ui/Lightbox";
 
+type AnyGalleryImage = GalleryImage & { url?: string; category?: string };
+
 interface GalleryGridProps {
-    images: GalleryImage[];
+    images: AnyGalleryImage[];
     /** Number of columns on desktop — 3 or 4 */
     columns?: 3 | 4;
 }
@@ -66,9 +68,9 @@ export default function GalleryGrid({ images, columns = 3 }: GalleryGridProps) {
                             className="group relative w-full overflow-hidden rounded-xl cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                             aria-label={`View: ${img.alt}`}
                         >
-                            <div className={`relative w-full ${aspectClass[img.aspectRatio]}`}>
+                            <div className={`relative w-full ${aspectClass[img.aspectRatio] || "aspect-[4/3]"}`}>
                                 <Image
-                                    src={img.src}
+                                    src={img.src || img.url || "/images/placeholder.jpg"}
                                     alt={img.alt}
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -81,7 +83,7 @@ export default function GalleryGrid({ images, columns = 3 }: GalleryGridProps) {
                             <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/70 via-dark-deep/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                                 {/* Category badge */}
                                 <span className="self-start px-2.5 py-1 rounded-full bg-accent/90 text-dark-deep text-[10px] font-accent font-semibold tracking-wider uppercase mb-2">
-                                    {img.categories[0]}
+                                    {img.categories?.[0] || (img as any).category || "General"}
                                 </span>
                                 <p className="text-white text-sm font-medium leading-snug line-clamp-2">
                                     {img.caption}
@@ -96,7 +98,7 @@ export default function GalleryGrid({ images, columns = 3 }: GalleryGridProps) {
             </motion.div>
 
             <Lightbox
-                images={images}
+                images={images.map(img => ({ ...img, src: img.src || img.url || "" }))}
                 currentIndex={lightboxIndex}
                 isOpen={lightboxOpen}
                 onClose={() => setLightboxOpen(false)}

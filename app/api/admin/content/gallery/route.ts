@@ -27,20 +27,29 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
+    let body: any = {};
     try {
-        const data = await req.json();
+        body = await req.json();
         const item = await prisma.galleryImage.create({
             data: {
-                url: data.url,
-                alt: data.alt || "",
-                caption: data.caption || "",
-                category: data.category || "General",
-                sortOrder: data.sortOrder || 0,
+                url: body.url,
+                alt: body.alt || "",
+                caption: body.caption || "",
+                category: body.category || "General",
+                sortOrder: Number(body.sortOrder) || 0,
             },
         });
 
         return NextResponse.json(item);
-    } catch (error) {
-        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    } catch (error: any) {
+        console.error("Gallery Create Error:", {
+            message: error.message,
+            stack: error.stack,
+            data: body,
+        });
+        return NextResponse.json({
+            error: "Internal Server Error",
+            details: error.message
+        }, { status: 500 });
     }
 }

@@ -15,8 +15,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
-import SafariGalleryPreview from "@/components/sections/SafariGalleryPreview";
-import VideoGallery from "@/components/marketing/VideoGallery";
+
 import InstagramFeed from "@/components/marketing/InstagramFeed";
 import Card from "@/components/ui/Card";
 import {
@@ -42,9 +41,10 @@ interface HomeClientProps {
     featuredPackages: any[];
     testimonials: any[];
     whyChooseUs: any[];
+    children?: React.ReactNode;
 }
 
-export default function HomeClient({ images, featuredPackages, testimonials, whyChooseUs }: HomeClientProps) {
+export default function HomeClient({ images, featuredPackages, testimonials, whyChooseUs, children }: HomeClientProps) {
     return (
         <>
             {/* ═══════════════ HERO ═══════════════ */}
@@ -245,8 +245,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                 </Container>
             </Section>
 
-            <VideoGallery />
-            <SafariGalleryPreview />
+            {children}
 
             {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
             <Section spacing="lg" className="bg-dark-deep">

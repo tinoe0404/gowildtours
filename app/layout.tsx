@@ -36,6 +36,7 @@ export const metadata = constructMetadata({
 import { ComparisonProvider } from "@/context/ComparisonContext";
 import ComparisonBar from "@/components/features/ComparisonBar";
 import { WishlistProvider } from "@/context/WishlistContext";
+import ConditionalLayout from "@/components/layout/ConditionalLayout";
 
 export default function RootLayout({
   children,
@@ -54,10 +55,7 @@ export default function RootLayout({
                 <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
               )}
             </Suspense>
-            <Header />
-            <main className="min-h-screen">{children}</main>
-            <ComparisonBar />
-            <Footer />
+            <ConditionalLayout>{children}</ConditionalLayout>
           </ComparisonProvider>
         </WishlistProvider>
       </body>

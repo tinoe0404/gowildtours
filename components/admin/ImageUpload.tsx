@@ -30,15 +30,27 @@ export default function ImageUpload({ value, onChange, onRemove, maxFiles = 5 }:
                     body: file,
                 });
 
-                if (!res.ok) throw new Error("Upload failed");
+                if (!res.ok) {
+                    const errorData = await res.json().catch(() => ({}));
+                    console.error("Upload API error response:", {
+                        status: res.status,
+                        statusText: res.statusText,
+                        data: errorData
+                    });
+                    throw new Error(errorData.error || "Upload failed");
+                }
 
                 const blob = await res.json();
+                console.log("Upload successful:", blob);
                 newUrls.push(blob.url);
             }
 
             onChange([...value, ...newUrls]);
-        } catch (error) {
-            console.error("Upload error:", error);
+        } catch (error: any) {
+            console.error("Upload API Error:", {
+                message: error.message,
+                status: error.status
+            });
             alert("Failed to upload image. Check your connection and permissions.");
         } finally {
             setIsUploading(false);

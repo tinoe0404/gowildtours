@@ -16,13 +16,28 @@ export async function POST(req: NextRequest) {
             return NextResponse.json({ error: "Missing filename" }, { status: 400 });
         }
 
-        const blob = await put(filename, req.body!, {
+        const arrayBuffer = await req.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
+        if (!buffer || buffer.length === 0) {
+            return NextResponse.json({ error: "Empty body" }, { status: 400 });
+        }
+
+        const blob = await put(filename, buffer, {
             access: "public",
+            addRandomSuffix: true,
         });
 
         return NextResponse.json(blob);
-    } catch (error) {
-        console.error("Upload error:", error);
-        return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+    } catch (error: any) {
+        console.error("Upload API Error:", {
+            message: error.message,
+            stack: error.stack,
+            tokenPresent: !!process.env.BLOB_READ_WRITE_TOKEN
+        });
+        return NextResponse.json({
+            error: "Upload failed",
+            details: error.message
+        }, { status: 500 });
     }
 }
