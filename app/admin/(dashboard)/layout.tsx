@@ -1,5 +1,7 @@
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminTopbar from "@/components/admin/AdminTopbar";
+
+export const dynamic = "force-dynamic";
 import { getSession } from "@/lib/admin/auth";
 import { redirect } from "next/navigation";
 
