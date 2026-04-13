@@ -48,10 +48,15 @@ const images = {
 
 export default async function HomePage() {
   // Fetch Featured Packages
-  const rawPackages = await prisma.package.findMany({
-    where: { isFeatured: true, isPublished: true },
-    take: 3,
-  });
+  let rawPackages: any[] = [];
+  try {
+    rawPackages = await prisma.package.findMany({
+      where: { isFeatured: true, isPublished: true },
+      take: 3,
+    });
+  } catch (error) {
+    console.error("Failed to fetch featured packages:", error);
+  }
 
   // Serialize Decimal fields to plain numbers for Client Components
   const featuredPackages = rawPackages.map((pkg) => ({
@@ -62,11 +67,16 @@ export default async function HomePage() {
   }));
 
   // Fetch Approved Reviews as Testimonials
-  const rawReviews = await prisma.review.findMany({
-    where: { status: "approved" },
-    take: 3,
-    orderBy: { createdAt: "desc" },
-  });
+  let rawReviews: any[] = [];
+  try {
+    rawReviews = await prisma.review.findMany({
+      where: { status: "approved" },
+      take: 3,
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (error) {
+    console.error("Failed to fetch reviews:", error);
+  }
 
   // Serialize Date fields for Client Components
   const reviews = rawReviews.map((r) => ({
