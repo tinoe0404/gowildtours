@@ -29,12 +29,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-    const pkgs = await prisma.package.findMany({
-        select: { slug: true },
-    });
-    return pkgs.map((pkg) => ({
-        slug: pkg.slug,
-    }));
+    try {
+        const pkgs = await prisma.package.findMany({
+            select: { slug: true },
+        });
+        return pkgs.map((pkg) => ({
+            slug: pkg.slug,
+        }));
+    } catch (error) {
+        console.error("Failed to generate static params for safaris:", (error as Error).message);
+        return [];
+    }
 }
 
 export default async function PackageDetailPage({ params }: Props) {
