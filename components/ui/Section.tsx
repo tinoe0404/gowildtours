@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { cn } from "@/lib/cn";
 import type { HTMLAttributes } from "react";
 
@@ -12,15 +13,19 @@ const spacingMap = {
     lg: "py-[var(--spacing-section-lg)]",
 };
 
-export default function Section({
+const Section = forwardRef<HTMLElement, SectionProps>(({
     className,
     spacing = "md",
     children,
     ...props
-}: SectionProps) {
+}, ref) => {
     return (
-        <section className={cn(spacingMap[spacing], className)} {...props}>
+        <section ref={ref} className={cn(spacingMap[spacing], className)} {...props}>
             {children}
         </section>
     );
-}
+});
+
+Section.displayName = "Section";
+
+export default Section;
