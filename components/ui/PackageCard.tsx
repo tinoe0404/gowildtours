@@ -10,7 +10,7 @@ interface PackageCardProps {
 }
 
 export default function PackageCard({ pkg, className }: PackageCardProps) {
-    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80");
+    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/safari/elephants-waterhole.jpg");
 
     const durationText = typeof pkg.duration === "string" 
         ? pkg.duration 
@@ -35,7 +35,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                 <span className="package-card__duration">{durationText}</span>
             </div>
             <div className="package-card__body">
-                <Link href={`/packages/${pkg.slug}`} style={{ textDecoration: 'none' }}>
+                <Link href={`/safaris/${pkg.slug}`} style={{ textDecoration: 'none' }}>
                     <h3 className="package-card__title">{pkg.title}</h3>
                 </Link>
                 <p className="package-card__excerpt">
@@ -47,7 +47,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                         <span className="package-card__price-amount">${price}</span>
                         <span className="package-card__price-unit">/ person</span>
                     </div>
-                    <Link href={`/packages/${pkg.slug}`} className="package-card__cta">
+                    <Link href={`/safaris/${pkg.slug}`} className="package-card__cta">
                         View Details →
                     </Link>
                 </div>

@@ -28,6 +28,7 @@ import {
     Quote,
     ArrowRight
 } from "lucide-react";
+import { destinations } from "@/data/destinations";
 
 const iconMap: Record<string, React.ElementType> = {
     Compass,
@@ -95,7 +96,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             variants={fadeInUp}
                             className="flex flex-col sm:flex-row items-center gap-4 mt-2"
                         >
-                            <Link href="/packages">
+                            <Link href="/safaris">
                                 <Button variant="primary" size="lg">
                                     Explore Safaris
                                     <ArrowRight className="h-5 w-5" />
@@ -187,11 +188,46 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                 </Container>
             </Section>
 
+            {/* ═══════════════ DESTINATIONS TEASER ═══════════════ */}
+            <Section spacing="lg" className="bg-light">
+                <Container>
+                    <SectionHeading
+                        title="Five Iconic Destinations"
+                        subtitle="From the thundering Victoria Falls to the remote walking trails of Mana Pools — each destination reveals a different face of Zimbabwe."
+                    />
+
+                    <div className="home-dest-strip">
+                        {destinations.map((dest) => (
+                            <Link key={dest.slug} href={`/destinations/${dest.slug}`} className="home-dest-card">
+                                <div className="home-dest-card__image-wrap">
+                                    <Image
+                                        src={dest.image}
+                                        alt={dest.name}
+                                        fill
+                                        className="home-dest-card__image"
+                                        sizes="(max-width: 768px) 220px, (max-width: 1024px) 33vw, 20vw"
+                                    />
+                                    <div className="home-dest-card__overlay" />
+                                </div>
+                                <div className="home-dest-card__body">
+                                    <h3 className="home-dest-card__name">{dest.name}</h3>
+                                    <span className="home-dest-card__link">Explore →</span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div style={{ textAlign: 'center', marginTop: 'var(--space-8)' }}>
+                        <Link href="/destinations" className="btn btn--outline">View All Destinations</Link>
+                    </div>
+                </Container>
+            </Section>
+
             {/* ═══════════════ FEATURED SAFARIS ═══════════════ */}
             <Section spacing="lg" className="bg-light">
                 <Container>
                     <SectionHeading
-                        title="Featured Safari Packages"
+                        title="Featured Safaris"
                         subtitle="Handpicked adventures designed to immerse you in Africa's most spectacular wildlife."
                     />
 
@@ -232,7 +268,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                             <span className="font-accent font-bold text-primary text-lg">
                                                 From ${Number(safari.price).toLocaleString()}
                                             </span>
-                                            <Link href={`/packages/${safari.slug}`} className="font-accent text-sm font-semibold text-accent hover:text-accent-light transition-colors flex items-center gap-1">
+                                            <Link href={`/safaris/${safari.slug}`} className="font-accent text-sm font-semibold text-accent hover:text-accent-light transition-colors flex items-center gap-1">
                                                 View Details
                                                 <ArrowRight className="h-4 w-4" />
                                             </Link>
@@ -353,7 +389,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             Let our expert team craft a bespoke safari itinerary just for you.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href="/packages">
+                            <Link href="/safaris">
                                 <Button variant="primary" size="lg">
                                     Book Your Adventure
                                     <ArrowRight className="h-5 w-5" />

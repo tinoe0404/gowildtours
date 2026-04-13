@@ -23,11 +23,11 @@ export const hotels: Hotel[] = [
             'All-inclusive fine dining',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/dunes-moody.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=1200',
-                'https://images.unsplash.com/photo-1493246507139-91e8bef99c02?auto=format&fit=crop&q=80&w=1200',
-                'https://images.unsplash.com/photo-1544473489-13833b76a086?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/lioness-rain.jpg',
+                '/images/safari/elephant-tusker.jpg',
+                '/images/safari/elephant-front.jpg',
             ],
         },
         pricing: {
@@ -43,7 +43,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King or 2 Twins',
                 amenities: ['Air conditioning', 'Minibar', 'Safe', 'Outdoor shower'],
-                images: ['https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/dunes-moody.jpg'],
                 price: 850,
                 available: true,
             }
@@ -104,10 +104,10 @@ export const hotels: Hotel[] = [
             'Complimentary shuttle to town',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/wild-dogs.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=1200',
-                'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/elephants-swimming.jpg',
+                '/images/safari/leopard-tree.jpg',
             ],
         },
         pricing: {
@@ -123,7 +123,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '2 Twins',
                 amenities: ['Air conditioning', 'Safe', 'Coffee maker'],
-                images: ['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/oryx-dunes.jpg'],
                 price: 280,
                 available: true,
             }
@@ -183,9 +183,9 @@ export const hotels: Hotel[] = [
             'Frequent live music and events',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/elephants-swimming.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/leopard-tree.jpg',
             ],
         },
         pricing: {
@@ -201,7 +201,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 Double or 2 Twins',
                 amenities: ['Fan', 'Mosquito net'],
-                images: ['https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/dunes-moody.jpg'],
                 price: 45,
                 available: true,
             }
@@ -260,9 +260,9 @@ export const hotels: Hotel[] = [
             'Contemporary luxury design',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/elephants-swimming.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/elephants-fighting.jpg',
             ],
         },
         pricing: {
@@ -278,7 +278,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King or 2 Twins',
                 amenities: ['Air conditioning', 'En-suite shower', 'Safe'],
-                images: ['https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/leopard-tree.jpg'],
                 price: 720,
                 available: true,
             }
@@ -338,9 +338,9 @@ export const hotels: Hotel[] = [
             'Excellent elephant and lion viewing',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1547471080-7cc20320147d?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/wildebeest.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1547471080-7cc20320147d?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/lioness-rain.jpg',
             ],
         },
         pricing: {
@@ -356,7 +356,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King',
                 amenities: ['Fan', 'Safe', 'Outdoor bath'],
-                images: ['https://images.unsplash.com/photo-1547471080-7cc20320147d?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/wild-dogs.jpg'],
                 price: 680,
                 available: true,
             }
@@ -415,9 +415,9 @@ export const hotels: Hotel[] = [
             'Incredible sunsets over the lake',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/river-aerial.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/elephants-swimming.jpg',
             ],
         },
         pricing: {
@@ -433,7 +433,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King',
                 amenities: ['Fan', 'Safe', 'Outdoor bath'],
-                images: ['https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/elephant-tusker.jpg'],
                 price: 520,
                 available: true,
             }
@@ -492,9 +492,9 @@ export const hotels: Hotel[] = [
             'Full conference facilities',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/lioness-rain.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/wild-dogs.jpg',
             ],
         },
         pricing: {
@@ -510,7 +510,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '2 Twins',
                 amenities: ['Air conditioning', 'TV', 'Coffee maker'],
-                images: ['https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/elephant-front.jpg'],
                 price: 220,
                 available: true,
             }
@@ -569,9 +569,9 @@ export const hotels: Hotel[] = [
             'Ancient San Bushmen rock art',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/lioness-rain.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/oryx-dunes.jpg',
             ],
         },
         pricing: {
@@ -587,7 +587,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King',
                 amenities: ['Fan', 'Safe', 'Outdoor shower'],
-                images: ['https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/hippos-mud.jpg'],
                 price: 420,
                 available: true,
             }
@@ -647,9 +647,9 @@ export const hotels: Hotel[] = [
             'World-class angling (tiger fish)',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/hippos-mud.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/elephant-tusker.jpg',
             ],
         },
         pricing: {
@@ -665,7 +665,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King',
                 amenities: ['Air conditioning', 'Minibar', 'Safe'],
-                images: ['https://images.unsplash.com/photo-1534008745585-618451842886?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/river-aerial.jpg'],
                 price: 560,
                 available: true,
             }
@@ -724,9 +724,9 @@ export const hotels: Hotel[] = [
             'Part of a massive private concession',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/elephants-waterhole.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/leopard-tree.jpg',
             ],
         },
         pricing: {
@@ -742,7 +742,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '2 Twins',
                 amenities: ['Fan', 'Safe', 'Outdoor shower'],
-                images: ['https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/elephants-fighting.jpg'],
                 price: 580,
                 available: true,
             }
@@ -801,9 +801,9 @@ export const hotels: Hotel[] = [
             'Frequent wildlife sightings on the lawns',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/dunes-moody.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/leopard-tree.jpg',
             ],
         },
         pricing: {
@@ -819,7 +819,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King or 2 Twins',
                 amenities: ['Air conditioning', 'Satellite TV', 'Minibar'],
-                images: ['https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/dunes-moody.jpg'],
                 price: 195,
                 available: true,
             }
@@ -878,9 +878,9 @@ export const hotels: Hotel[] = [
             'Large swimming pool and restaurant',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/elephant-front.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/wildebeest.jpg',
             ],
         },
         pricing: {
@@ -896,7 +896,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 3,
                 bedConfiguration: '3 Singles',
                 amenities: ['Fan', 'Kitchenette'],
-                images: ['https://images.unsplash.com/photo-1555854817-27606848a53c?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/dunes-panorama.jpg'],
                 price: 85,
                 available: true,
             }
@@ -955,9 +955,9 @@ export const hotels: Hotel[] = [
             'Spectacular views of the Victoria Falls Bridge',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/river-aerial.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/wild-dogs.jpg',
             ],
         },
         pricing: {
@@ -973,7 +973,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King or 2 Twins',
                 amenities: ['Air conditioning', 'Satellite TV', 'Minibar', 'Safe'],
-                images: ['https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/dunes-moody.jpg'],
                 price: 450,
                 available: true,
             }
@@ -1033,9 +1033,9 @@ export const hotels: Hotel[] = [
             'Remote and wild location',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/leopard-tree.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/oryx-dunes.jpg',
             ],
         },
         pricing: {
@@ -1051,7 +1051,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King or 2 Twins',
                 amenities: ['Fan', 'En-suite shower', 'Safe'],
-                images: ['https://images.unsplash.com/photo-1516422213481-07311d529bc2?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/oryx-dunes.jpg'],
                 price: 380,
                 available: true,
             }
@@ -1110,9 +1110,9 @@ export const hotels: Hotel[] = [
             'Personal butler service',
         ],
         images: {
-            thumbnail: 'https://images.unsplash.com/photo-1544473489-13833b76a086?auto=format&fit=crop&q=80&w=800',
+            thumbnail: '/images/safari/dunes-moody.jpg',
             gallery: [
-                'https://images.unsplash.com/photo-1544473489-13833b76a086?auto=format&fit=crop&q=80&w=1200',
+                '/images/safari/wild-dogs.jpg',
             ],
         },
         pricing: {
@@ -1128,7 +1128,7 @@ export const hotels: Hotel[] = [
                 maxOccupancy: 2,
                 bedConfiguration: '1 King',
                 amenities: ['Air conditioning', 'Plunge pool', 'Butler', 'Luxury bath'],
-                images: ['https://images.unsplash.com/photo-1544473489-13833b76a086?auto=format&fit=crop&q=80&w=800'],
+                images: ['/images/safari/elephants-waterhole.jpg'],
                 price: 1100,
                 available: true,
             }

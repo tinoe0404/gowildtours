@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
             "Tailored journeys to hidden corners with our best guides. Experience the freedom of your own private vehicle and schedule.",
         icon: Compass,
         videoSrc: "/videos/experience-private.mp4",
-        posterSrc: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80",
+        posterSrc: "/images/safari/hippos-mud.jpg",
         href: "/experiences/private-expeditions",
     },
     {
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
             "Stay in beautifully designed tented camps blending comfort with authentic wilderness immersion under the stars.",
         icon: Tent,
         videoSrc: "/videos/experience-camps.mp4",
-        posterSrc: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80",
+        posterSrc: "/images/safari/dunes-moody.jpg",
         href: "/experiences/luxury-bush-camps",
     },
     {
@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
             "Capture Africa's drama with expert guidance, specialized vehicles, and golden-hour access to the best sightings.",
         icon: Camera,
         videoSrc: "/videos/experience-photo.mp4",
-        posterSrc: "https://images.unsplash.com/photo-1549480017-d76466a4b7e8?w=800&q=80",
+        posterSrc: "/images/safari/wild-dogs.jpg",
         href: "/experiences/photography-safaris",
     },
 ];

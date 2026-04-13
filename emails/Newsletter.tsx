@@ -51,7 +51,7 @@ export const NewsletterEmail = () => (
                     <div style={tripCard}>
                         <Text style={tripTitle}>Victoria Falls Explorer</Text>
                         <Text style={tripDate}>April 15th - 20th</Text>
-                        <Button style={button} href="https://gowildtours.com/packages/vic-falls-explorer">
+                        <Button style={button} href="https://gowildtours.com/safaris/vic-falls-explorer">
                             View Itinerary
                         </Button>
                     </div>

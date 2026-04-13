@@ -21,9 +21,8 @@ export const siteConfig = {
 
 export const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Packages", href: "/packages" },
-    { label: "Hotels", href: "/hotels" },
-    { label: "Activities", href: "/activities" },
+    { label: "Safaris", href: "/safaris" },
+    { label: "Destinations", href: "/destinations" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
@@ -37,7 +36,7 @@ export const whyChooseUs = [
         icon: "Compass",
     },
     {
-        title: "Luxury Camps",
+        title: "Curated Lodges",
         description:
             "Handpicked luxury accommodations that blend comfort with authentic wilderness immersion.",
         icon: "Tent",

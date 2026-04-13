@@ -42,9 +42,9 @@ async function main() {
             price: 450,
             featured: false,
             images: [
-                "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=1920&q=80",
-                "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1920&q=80",
-                "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80",
+                "/images/safari/elephant-tusker.jpg",
+                "/images/safari/river-aerial.jpg",
+                "/images/safari/lioness-rain.jpg",
             ],
             inclusions: ["2 Nights Accommodation", "Daily Breakfast", "Airport Transfers", "Guided Tour of Falls", "Sunset Cruise"],
             highlights: ["Witness the grandeur of Victoria Falls", "Sunset cruise on the Zambezi", "Local market visit"],
@@ -65,9 +65,9 @@ async function main() {
             price: 1850,
             featured: true,
             images: [
-                "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
-                "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
-                "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
+                "/images/safari/dunes-panorama.jpg",
+                "/images/safari/elephant-tusker.jpg",
+                "/images/safari/dunes-moody.jpg",
             ],
             inclusions: ["4 Nights Luxury Tented Camp", "All Meals and Drinks", "2 Game Drives Daily", "Park Fees", "Return Transfers from Victoria Falls"],
             highlights: ["Huge elephant herds", "Walking safaris", "Sundowners at waterholes"],
@@ -88,9 +88,9 @@ async function main() {
             price: 3200,
             featured: true,
             images: [
-                "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&q=80",
-                "https://images.unsplash.com/photo-1551524164-687a55dd1126?w=1920&q=80",
-                "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
+                "/images/safari/elephant-tusker.jpg",
+                "/images/safari/dunes-panorama.jpg",
+                "/images/safari/elephants-swimming.jpg",
             ],
             inclusions: ["6 Nights Fly Camp / Lodge", "All Meals", "Professional Walking Guide", "Canoe Safari Included", "Charter Flights from Harare"],
             highlights: ["Walking with wild dogs", "Canoeing the Zambezi", "Sleeping under the stars"],
@@ -111,7 +111,7 @@ async function main() {
     // 4. Seed Gallery
     const galleryData = [
         {
-            url: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+            url: "/images/safari/elephants-swimming.jpg",
             alt: "Male lion resting in golden grassland",
             category: "Wildlife",
             caption: "King of the savanna — a male lion surveys his territory at dawn.",
@@ -119,7 +119,7 @@ async function main() {
             aspectRatio: "landscape" as const,
         },
         {
-            url: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+            url: "/images/safari/wildebeest.jpg",
             alt: "Elephant herd at a watering hole",
             category: "Wildlife",
             caption: "An elephant family gathers at the river during the dry season.",
@@ -127,7 +127,7 @@ async function main() {
             aspectRatio: "portrait" as const,
         },
         {
-            url: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80",
+            url: "/images/safari/wild-dogs.jpg",
             alt: "Victoria Falls panoramic view",
             category: "Landscapes",
             caption: "The Smoke that Thunders — Victoria Falls in full flood.",
@@ -135,7 +135,7 @@ async function main() {
             aspectRatio: "portrait" as const,
         },
         {
-            url: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+            url: "/images/safari/dunes-panorama.jpg",
             alt: "Giraffe silhouette at sunset",
             category: "Landscapes",
             caption: "Giraffes framed against a fiery African sunset.",
@@ -150,7 +150,7 @@ async function main() {
             name: "Godfrey Mateta",
             role: "Founder & Lead Safari Specialist",
             bio: "With over 15 years of experience in the Zimbabwean wilderness...",
-            photo: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+            photo: "/images/safari/elephants-waterhole.jpg",
         }
     ];
 

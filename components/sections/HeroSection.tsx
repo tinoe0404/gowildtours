@@ -64,7 +64,7 @@ export default function HeroSection() {
                         <Link href="/contact" className="btn btn--primary btn--lg">
                             Start Your Journey
                         </Link>
-                        <Link href="/packages" className="btn btn--ghost btn--lg">
+                        <Link href="/safaris" className="btn btn--ghost btn--lg">
                             View Tours
                         </Link>
                     </div>

@@ -39,9 +39,9 @@ const iconMap: Record<string, React.ElementType> = {
 
 /* ── Image URLs (Unsplash) ── */
 const images = {
-  hero: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80",
-  about: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80",
-  ctaBg: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80",
+  hero: "/images/safari/wildebeest.jpg",
+  about: "/images/safari/elephants-waterhole.jpg",
+  ctaBg: "/images/safari/victoria-falls-wide.jpg",
 };
 
 export default async function HomePage() {

@@ -18,7 +18,7 @@ const staticTeamMembers = [
         name: "Godfrey Mateta",
         role: "Founder & Lead Safari Specialist",
         bio: "With over 15 years of experience in the Zimbabwean wilderness, Godfrey founded Go Wild Tours to share his deep passion for conservation and wildlife. His knowledge of animal behavior and the Victoria Falls region is unmatched.",
-        image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+        image: "/images/safari/welwitschia.jpg",
         specialization: ["Big Five Tracking", "Conservation", "Photography"],
         languages: ["English", "Shona", "Ndebele"],
         socials: { linkedin: "#", instagram: "#", email: "godfrey@gowildtours.com" }
@@ -27,7 +27,7 @@ const staticTeamMembers = [
         name: "Sarah Jenkins",
         role: "Operations Manager",
         bio: "Sarah ensures that every detail of your journey is perfectly orchestrated. From complex logistics to luxury accommodation bookings, her dedication to excellence guarantees a seamless and stress-free safari adventure.",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+        image: "/images/safari/kudu.jpg",
         specialization: ["Logistics", "Guest Relations", "Luxury Travel"],
         socials: { linkedin: "#", email: "sarah@gowildtours.com" }
     },
@@ -35,7 +35,7 @@ const staticTeamMembers = [
         name: "Brighton Ncube",
         role: "Senior Wildlife Guide",
         bio: "Brighton's keen eyes and expert tracking skills have earned him a reputation as one of the best guides in Hwange National Park. He is particularly passionate about birdlife and predator-prey dynamics.",
-        image: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&q=80&w=400",
+        image: "/images/safari/wild-dogs.jpg",
         specialization: ["Birding", "Walking Safaris", "African Botany"],
         socials: { instagram: "#" }
     },
@@ -43,7 +43,7 @@ const staticTeamMembers = [
         name: "Elena Rossi",
         role: "Sustainability Director",
         bio: "Elena leads our conservation initiatives and local community projects. She ensures that Go Wild Tours maintains its commitment to eco-friendly practices and social responsibility at every level.",
-        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
+        image: "/images/safari/martial-eagle.jpg",
         specialization: ["Eco-Tourism", "Community Development"],
         socials: { linkedin: "#", twitter: "#" }
     }
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <PageHero 
                 title="Our Story"
                 subtitle="Connecting people with Africa's wild heart through authentic, sustainable, and unforgettable safari experiences."
-                image="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1200"
+                image="/images/safari/dunes-moody.jpg"
             />
 
             {/* Story Section */}
@@ -151,7 +151,7 @@ export default function AboutPage() {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     className="aspect-square rounded-2xl overflow-hidden shadow-2xl mt-12"
                                 >
-                                    <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&q=80&w=600" alt="Safari history" className="w-full h-full object-cover" />
+                                    <img src="/images/safari/victoria-falls-wide.jpg" alt="Safari history" className="w-full h-full object-cover" />
                                 </motion.div>
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
@@ -159,7 +159,7 @@ export default function AboutPage() {
                                     transition={{ delay: 0.2 }}
                                     className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
                                 >
-                                    <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&q=80&w=600" alt="Founders" className="w-full h-full object-cover" />
+                                    <img src="/images/safari/elephants-waterhole.jpg" alt="Founders" className="w-full h-full object-cover" />
                                 </motion.div>
                             </div>
                             <div className="absolute -bottom-8 -left-8 bg-accent text-dark-deep p-8 rounded-2xl shadow-xl hidden md:block">
@@ -260,8 +260,8 @@ export default function AboutPage() {
                             </motion.div>
                         </div>
                         <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-                            <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&q=80&w=600" alt="Conservation 1" className="rounded-2xl h-80 w-full object-cover" />
-                            <img src="https://images.unsplash.com/photo-1544473489-13833b76a086?auto=format&fit=crop&q=80&w=600" alt="Conservation 2" className="rounded-2xl h-80 w-full object-cover mt-12" />
+                            <img src="/images/safari/rhino.jpg" alt="Conservation 1" className="rounded-2xl h-80 w-full object-cover" />
+                            <img src="/images/safari/wild-dogs.jpg" alt="Conservation 2" className="rounded-2xl h-80 w-full object-cover mt-12" />
                         </div>
                     </div>
                 </div>
@@ -275,13 +275,13 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="relative rounded-[40px] bg-primary-600 p-12 md:p-24 overflow-hidden">
                         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
-                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=600" className="w-full h-full object-cover" />
+                            <img src="/images/safari/leopard-tree.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div className="relative z-10 text-center max-w-2xl mx-auto">
                             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight">Ready for your adventure?</h2>
                             <p className="text-white/80 text-lg mb-12 font-medium">Join us for the journey of a lifetime. Let our experts craft your perfect safari experience.</p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a href="/packages" className="w-full sm:w-auto bg-white text-primary-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all hover:-translate-y-1">Explore Packages</a>
+                                <a href="/safaris" className="w-full sm:w-auto bg-white text-primary-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all hover:-translate-y-1">Explore Safaris</a>
                                 <a href="/contact" className="w-full sm:w-auto bg-primary-500 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-700 transition-all border border-white/20">Contact Us</a>
                             </div>
                         </div>

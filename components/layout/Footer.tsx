@@ -3,6 +3,7 @@ import Image from "next/image";
 import { siteConfig, navLinks } from "@/lib/constants";
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import prisma from "@/lib/db";
+import { destinations } from "@/data/destinations";
 
 export default async function Footer() {
     // Fetch settings and packages for a truly dynamic footer
@@ -41,7 +42,7 @@ export default async function Footer() {
                             />
                         </Link>
                         <p style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 'var(--space-6)'}}>
-                            Premium safari experiences across Africa's most breathtaking
+                            Premium safari experiences across Africa&apos;s most breathtaking
                             destinations. Discover the wild with expert guides and luxury
                             accommodations.
                         </p>
@@ -63,13 +64,25 @@ export default async function Footer() {
                         </div>
                     </div>
 
-                    {/* Our Packages */}
+                    {/* Our Safaris */}
                     <div>
-                        <h3 className="footer__title">Our Packages</h3>
+                        <h3 className="footer__title">Our Safaris</h3>
                         <div className="footer__links">
                             {footerPackages.map((pkg) => (
-                                <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
+                                <Link key={pkg.slug} href={`/safaris/${pkg.slug}`}>
                                     {pkg.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Destinations */}
+                    <div>
+                        <h3 className="footer__title">Destinations</h3>
+                        <div className="footer__links">
+                            {destinations.map((dest) => (
+                                <Link key={dest.slug} href={`/destinations/${dest.slug}`}>
+                                    {dest.name}
                                 </Link>
                             ))}
                         </div>
@@ -124,4 +137,3 @@ export default async function Footer() {
         </footer>
     );
 }
-

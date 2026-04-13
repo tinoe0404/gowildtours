@@ -85,7 +85,7 @@ export default function GalleryPageClient() {
             {/* ── Hero Banner ── */}
             <section className="relative h-56 md:h-72 flex items-end overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80"
+                    src="/images/safari/lioness-rain.jpg"
                     alt="African savanna panorama"
                     fill
                     className="object-cover"

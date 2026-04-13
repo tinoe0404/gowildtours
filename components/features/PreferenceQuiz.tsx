@@ -86,7 +86,7 @@ export default function PreferenceQuiz() {
             <div className="text-center p-8 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl w-full max-w-lg mx-auto border border-beige/50">
                 <h3 className="text-2xl font-display font-bold text-dark-deep mb-4">Thanks! We're planning your trip.</h3>
                 <p className="text-warm-gray mb-6">Based on your preferences, we've curated some amazing packages for you.</p>
-                <Button onClick={() => window.location.href = '/packages'}>
+                <Button onClick={() => window.location.href = '/safaris'}>
                     View Recommendations
                 </Button>
             </div>

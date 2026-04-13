@@ -33,7 +33,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Wildlife ──────────────────────────────────────────
     {
         id: 1,
-        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+        src: "/images/safari/lioness-rain.jpg",
         alt: "Male lion resting in golden grassland",
         categories: ["Wildlife"],
         caption: "King of the savanna — a male lion surveys his territory at dawn.",
@@ -43,7 +43,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 2,
-        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+        src: "/images/safari/elephants-waterhole.jpg",
         alt: "Elephant herd at a watering hole",
         categories: ["Wildlife"],
         caption: "An elephant family gathers at the river during the dry season.",
@@ -53,7 +53,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 3,
-        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+        src: "/images/safari/leopard-tree.jpg",
         alt: "Leopard on a tree branch",
         categories: ["Wildlife"],
         caption: "A leopard watches from its vantage point high in a marula tree.",
@@ -63,7 +63,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 4,
-        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+        src: "/images/safari/oryx-dunes.jpg",
         alt: "Giraffe silhouette at sunset",
         categories: ["Wildlife", "Landscapes"],
         caption: "Giraffes framed against a fiery African sunset.",
@@ -73,7 +73,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 5,
-        src: "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=800&q=80",
+        src: "/images/safari/wild-dogs.jpg",
         alt: "African wild dogs hunting",
         categories: ["Wildlife"],
         caption: "Painted wolves — Africa's most efficient predators on the move.",
@@ -83,7 +83,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 6,
-        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80",
+        src: "/images/safari/buffalo-grazing.jpg",
         alt: "Zebras at waterhole",
         categories: ["Wildlife"],
         caption: "A dazzle of zebras reflected in still waters.",
@@ -93,7 +93,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 7,
-        src: "https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&q=80",
+        src: "/images/safari/rhino.jpg",
         alt: "Rhino mother and calf",
         categories: ["Wildlife"],
         caption: "A rare sighting — a white rhino mother and calf in the early morning mist.",
@@ -103,7 +103,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 8,
-        src: "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80",
+        src: "/images/safari/hippos-grass.jpg",
         alt: "Hippos in the Zambezi River",
         categories: ["Wildlife"],
         caption: "Hippos cool off in the powerful currents of the Zambezi.",
@@ -115,7 +115,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Landscapes ────────────────────────────────────────
     {
         id: 9,
-        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+        src: "/images/safari/dead-tree-desert.jpg",
         alt: "African savanna at golden hour",
         categories: ["Landscapes"],
         caption: "Endless golden plains stretch beneath a dramatic African sky.",
@@ -125,7 +125,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 10,
-        src: "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=80",
+        src: "/images/safari/victoria-falls-wide.jpg",
         alt: "Victoria Falls panoramic view",
         categories: ["Landscapes", "Adventure"],
         caption: "The Smoke that Thunders — Victoria Falls in full flood.",
@@ -135,7 +135,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 11,
-        src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80",
+        src: "/images/safari/dunes-moody.jpg",
         alt: "Sunrise over misty valley",
         categories: ["Landscapes"],
         caption: "Dawn breaks over the misty valleys of the Eastern Highlands.",
@@ -145,7 +145,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 12,
-        src: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=800&q=80",
+        src: "/images/safari/welwitschia.jpg",
         alt: "Acacia tree silhouette",
         categories: ["Landscapes"],
         caption: "The iconic silhouette of an acacia tree against a painted sky.",
@@ -155,7 +155,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 13,
-        src: "https://images.unsplash.com/photo-1500534623283-312aade485b7?w=800&q=80",
+        src: "/images/safari/dunes-panorama.jpg",
         alt: "Starry night over savanna",
         categories: ["Landscapes"],
         caption: "The Milky Way arches over the African bush — zero light pollution.",
@@ -165,7 +165,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 14,
-        src: "https://images.unsplash.com/photo-1612528443702-f6741f70a049?w=800&q=80",
+        src: "/images/safari/elephant-charging.jpg",
         alt: "Baobab tree at sunset",
         categories: ["Landscapes"],
         caption: "Ancient baobabs stand sentinel over the changing seasons.",
@@ -177,7 +177,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Cultural ──────────────────────────────────────────
     {
         id: 15,
-        src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=80",
+        src: "/images/safari/kudu.jpg",
         alt: "Traditional village scene",
         categories: ["Cultural"],
         caption: "Sharing stories and traditions with the local community.",
@@ -187,7 +187,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 16,
-        src: "https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=800&q=80",
+        src: "/images/safari/leopard-walking.jpg",
         alt: "Traditional dancers performing",
         categories: ["Cultural"],
         caption: "Vibrant traditional dances celebrate centuries-old heritage.",
@@ -197,7 +197,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 17,
-        src: "https://images.unsplash.com/photo-1590845947698-dc1d35fda8e2?w=800&q=80",
+        src: "/images/safari/raptor-ground.jpg",
         alt: "Local artisan crafting",
         categories: ["Cultural"],
         caption: "Skilled artisans create beautiful sculptures from local stone.",
@@ -207,7 +207,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 18,
-        src: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
+        src: "/images/safari/martial-eagle.jpg",
         alt: "Traditional basket weaving",
         categories: ["Cultural"],
         caption: "The intricate art of basket weaving passed down through generations.",
@@ -219,7 +219,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Adventure ─────────────────────────────────────────
     {
         id: 19,
-        src: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80",
+        src: "/images/safari/elephant-river.jpg",
         alt: "Safari vehicle at sunrise",
         categories: ["Adventure"],
         caption: "The adventure begins — setting out on an early morning game drive.",
@@ -229,7 +229,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 20,
-        src: "https://images.unsplash.com/photo-1551524164-687a55dd1126?w=800&q=80",
+        src: "/images/safari/river-aerial.jpg",
         alt: "Canoe safari on the Zambezi",
         categories: ["Adventure"],
         caption: "Paddling silently past hippos and crocs on a canoe safari.",
@@ -239,7 +239,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 21,
-        src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+        src: "/images/safari/elephant-tusker.jpg",
         alt: "Walking safari guide with guests",
         categories: ["Adventure"],
         caption: "Up close and personal — a guided walking safari through the bush.",
@@ -249,7 +249,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 22,
-        src: "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&q=80",
+        src: "/images/safari/victoria-falls-aerial.jpg",
         alt: "Bungee jumping at Victoria Falls Bridge",
         categories: ["Adventure"],
         caption: "The ultimate thrill — 111m bungee jump over the Zambezi gorge.",
@@ -259,7 +259,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 23,
-        src: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=800&q=80",
+        src: "/images/safari/victoria-falls-close.jpg",
         alt: "Hot air balloon over savanna",
         categories: ["Adventure", "Landscapes"],
         caption: "A breathtaking bird's-eye view from a hot air balloon at sunrise.",
@@ -269,7 +269,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 24,
-        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+        src: "/images/safari/elephants-swimming.jpg",
         alt: "White water rafting",
         categories: ["Adventure"],
         caption: "Grade 5 rapids — white water rafting below Victoria Falls.",
@@ -281,7 +281,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Accommodations ────────────────────────────────────
     {
         id: 25,
-        src: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80",
+        src: "/images/safari/sable-antelope.jpg",
         alt: "Luxury safari tent interior",
         categories: ["Accommodations"],
         caption: "Where luxury meets the wild — our premium tented suites.",
@@ -291,7 +291,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 26,
-        src: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+        src: "/images/safari/elephants-fighting.jpg",
         alt: "Safari lodge bedroom with view",
         categories: ["Accommodations"],
         caption: "Wake up to panoramic views of the African bush.",
@@ -301,7 +301,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 27,
-        src: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
+        src: "/images/safari/elephants-herd-waterhole.jpg",
         alt: "Outdoor dining under the stars",
         categories: ["Accommodations"],
         caption: "Fine dining under a canopy of stars in the African bush.",
@@ -311,7 +311,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 28,
-        src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+        src: "/images/safari/wildebeest.jpg",
         alt: "Infinity pool overlooking savanna",
         categories: ["Accommodations"],
         caption: "Relax by the infinity pool with sweeping views of the plains.",
@@ -321,7 +321,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 29,
-        src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+        src: "/images/safari/elephant-front.jpg",
         alt: "Treehouse lodge at night",
         categories: ["Accommodations"],
         caption: "Our signature treehouse lodges — sleeping among the treetops.",
@@ -333,7 +333,7 @@ export const galleryImages: GalleryImage[] = [
     // ── Extra featured / mixed ────────────────────────────
     {
         id: 30,
-        src: "https://images.unsplash.com/photo-1517512006864-7edc3b933137?w=800&q=80",
+        src: "/images/safari/hippos-mud.jpg",
         alt: "Flamingos on a lake",
         categories: ["Wildlife", "Landscapes"],
         caption: "A sea of pink — thousands of flamingos on a soda lake.",
@@ -343,7 +343,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 31,
-        src: "https://images.unsplash.com/photo-1549480017-d76466a4b7e8?w=800&q=80",
+        src: "/images/safari/lioness-rain.jpg",
         alt: "Cheetah scanning the horizon",
         categories: ["Wildlife"],
         caption: "The fastest land animal pauses to scan for prey.",
@@ -353,7 +353,7 @@ export const galleryImages: GalleryImage[] = [
     },
     {
         id: 32,
-        src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80",
+        src: "/images/safari/elephants-waterhole.jpg",
         alt: "Golden hour game drive",
         categories: ["Adventure", "Landscapes"],
         caption: "Golden hour paints the bush in warm tones as the game drive continues.",

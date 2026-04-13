@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/lib/constants";
+import { destinations } from "@/data/destinations";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
@@ -49,13 +50,32 @@ export default function Header() {
             {/* Desktop Navigation */}
             <ul className="navbar__links">
                 {navLinks.map((link) => (
-                    <li key={link.href}>
+                    <li
+                        key={link.href}
+                        className={link.href === "/destinations" ? "nav-item--has-dropdown" : ""}
+                    >
                         <Link
                             href={link.href}
                             aria-current={pathname === link.href ? "page" : undefined}
                         >
                             {link.label}
                         </Link>
+
+                        {/* Destinations dropdown */}
+                        {link.href === "/destinations" && (
+                            <div className="nav-dropdown">
+                                {destinations.map((dest) => (
+                                    <Link
+                                        key={dest.slug}
+                                        href={`/destinations/${dest.slug}`}
+                                        className="nav-dropdown__item"
+                                    >
+                                        <span className="nav-dropdown__name">{dest.name}</span>
+                                        <span className="nav-dropdown__tagline">{dest.tagline}</span>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </li>
                 ))}
             </ul>

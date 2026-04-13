@@ -20,10 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 
     return {
-        title: `${pkg.title} | Safari Packages`,
+        title: `${pkg.title} | Our Safaris`,
         description: pkg.description.substring(0, 160),
         alternates: {
-            canonical: `/packages/${pkg.slug}`,
+            canonical: `/safaris/${pkg.slug}`,
         },
     };
 }

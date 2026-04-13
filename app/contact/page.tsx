@@ -43,7 +43,7 @@ export default function ContactPage() {
             <PageHero 
                 title="Get in Touch"
                 subtitle="Have questions about our safari packages or need a custom itinerary? Our team of experts is here to help you plan the adventure of a lifetime."
-                image="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80"
+                image="/images/safari/victoria-falls-close.jpg"
             />
 
             <section className="section scroll-reveal" ref={contactRef as React.RefObject<HTMLElement>}>

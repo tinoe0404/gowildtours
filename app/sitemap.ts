@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { destinations } from '@/data/destinations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://gowildtours.com';
@@ -8,10 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/about',
         '/contact',
-        '/packages',
-        '/activities',
-        '/hotels',
-        '/experiences',
+        '/safaris',
+        '/destinations',
+        '/gallery',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -19,8 +19,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: route === '' ? 1 : 0.8,
     }));
 
-    // In a real app, you would fetch package/activity/hotel slugs from Prisma here
-    // and append them to the routes array.
+    // Destination pages
+    const destinationRoutes = destinations.map((dest) => ({
+        url: `${baseUrl}/destinations/${dest.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
 
-    return routes;
+    return [...routes, ...destinationRoutes];
 }

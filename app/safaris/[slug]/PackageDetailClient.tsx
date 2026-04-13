@@ -216,7 +216,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                 {/* Social Share */}
                                 <div className="bg-white p-6 rounded-[var(--radius-card)] border border-beige text-center">
                                     <SocialShare
-                                        url={`https://gowildtours.com/packages/${pkg.slug}`}
+                                        url={`https://gowildtours.com/safaris/${pkg.slug}`}
                                         title={`Check out this amazing safari: ${pkg.title}`}
                                         className="justify-center"
                                     />
@@ -224,7 +224,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
 
                                 {/* Download Brochure */}
                                 <a
-                                    href={`/packages/${pkg.slug}/print`}
+                                    href={`/safaris/${pkg.slug}/print`}
                                     target="_blank"
                                     className="block w-full text-center py-3 border border-dark-deep text-dark-deep font-bold rounded-full hover:bg-dark-deep hover:text-white transition-colors uppercase tracking-wider text-sm mt-4"
                                 >

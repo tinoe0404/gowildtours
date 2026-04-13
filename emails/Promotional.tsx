@@ -37,7 +37,7 @@ export const PromoEmail = () => (
                         Use code: <strong>WILD15</strong> at checkout.
                     </Text>
 
-                    <Button style={button} href="https://gowildtours.com/packages">
+                    <Button style={button} href="https://gowildtours.com/safaris">
                         Claim Your Discount
                     </Button>
                 </Section>
