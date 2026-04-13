@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, navLinks } from "@/lib/constants";
-import Container from "@/components/ui/Container";
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import prisma from "@/lib/db";
 
@@ -28,137 +27,101 @@ export default async function Footer() {
     const socials = settingsMap.social_links || siteConfig.socials;
 
     return (
-        <footer className="bg-dark-deep text-cream/80">
-            <div className="pt-16 pb-10">
-                <Container>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-                        {/* Brand Column */}
-                        <div className="lg:col-span-1">
-                            <Link href="/" className="relative block h-12 w-40 mb-4 group transition-transform hover:scale-105 duration-300">
-                                <Image
-                                    src={siteConfig.logos.light}
-                                    alt={siteConfig.name}
-                                    fill
-                                    className="object-contain object-left opacity-90 group-hover:opacity-100 transition-opacity"
-                                />
-                            </Link>
-                            <p className="text-sm leading-relaxed text-cream/60 mb-6">
-                                Premium safari experiences across Africa&apos;s most breathtaking
-                                destinations. Discover the wild with expert guides and luxury
-                                accommodations.
-                            </p>
-                            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-cream/10 text-xs text-cream/40">
-                                <span>🏛️</span>
-                                <span>Registered Tourism Operator</span>
-                            </div>
-                        </div>
-
-                        {/* Quick Links */}
-                        <div>
-                            <h3 className="font-accent text-sm font-semibold uppercase tracking-wider text-accent mb-5">
-                                Quick Links
-                            </h3>
-                            <ul className="space-y-3">
-                                {navLinks.map((link) => (
-                                    <li key={link.href}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-sm text-cream/60 hover:text-accent transition-colors duration-300"
-                                        >
-                                            {link.label}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Our Packages */}
-                        <div>
-                            <h3 className="font-accent text-sm font-semibold uppercase tracking-wider text-accent mb-5">
-                                Our Packages
-                            </h3>
-                            <ul className="space-y-3">
-                                {footerPackages.map((pkg) => (
-                                    <li key={pkg.slug}>
-                                        <Link
-                                            href={`/packages/${pkg.slug}`}
-                                            className="text-sm text-cream/60 hover:text-accent transition-colors duration-300"
-                                        >
-                                            {pkg.title}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Contact Info */}
-                        <div>
-                            <h3 className="font-accent text-sm font-semibold uppercase tracking-wider text-accent mb-5">
-                                Contact Us
-                            </h3>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-3">
-                                    <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                                    <span className="text-sm text-cream/60">
-                                        {contact.address}
-                                    </span>
-                                </li>
-                                <li>
-                                    <a
-                                        href={`tel:${contact.phone}`}
-                                        className="flex items-start gap-3 text-sm text-cream/60 hover:text-accent transition-colors"
-                                    >
-                                        <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                                        {contact.phone}
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href={`mailto:${contact.email}`}
-                                        className="flex items-start gap-3 text-sm text-cream/60 hover:text-accent transition-colors"
-                                    >
-                                        <Mail className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                                        {contact.email}
-                                    </a>
-                                </li>
-                            </ul>
-
-                            {/* Social Icons */}
-                            <div className="flex items-center gap-3 mt-6">
-                                {[
-                                    { icon: Instagram, href: socials.instagram, label: "Instagram" },
-                                    { icon: Facebook, href: socials.facebook, label: "Facebook" },
-                                    { icon: Twitter, href: socials.twitter, label: "Twitter" },
-                                    { icon: Youtube, href: socials.youtube, label: "YouTube" },
-                                ].map((social) => social.href && (
-                                    <a
-                                        key={social.label}
-                                        href={social.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={social.label}
-                                        className="p-2 rounded-full border border-cream/10 text-cream/50 hover:text-accent hover:border-accent/30 transition-all duration-300"
-                                    >
-                                        <social.icon className="h-4 w-4" />
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </div>
-
-            {/* Bottom Bar */}
-            <div className="border-t border-cream/10">
-                <Container>
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-5 text-xs text-cream/40">
-                        <p>
-                            © {new Date().getFullYear()} {siteConfig.name}. All rights
-                            reserved.
+        <footer className="footer">
+            <div className="container">
+                <div className="footer__grid">
+                    {/* Brand Column */}
+                    <div>
+                        <Link href="/" className="relative block h-12 w-40 mb-4" style={{display: 'inline-block', marginBottom: 'var(--space-4)'}}>
+                            <Image
+                                src={siteConfig.logos.light}
+                                alt={siteConfig.name}
+                                fill
+                                style={{objectFit: 'contain', objectPosition: 'left'}}
+                            />
+                        </Link>
+                        <p style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 'var(--space-6)'}}>
+                            Premium safari experiences across Africa's most breathtaking
+                            destinations. Discover the wild with expert guides and luxury
+                            accommodations.
                         </p>
+                        <div style={{display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 12px', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', fontSize: '12px', color: 'rgba(255,255,255,0.5)'}}>
+                            <span>🏛️</span>
+                            <span>Registered Tourism Operator</span>
+                        </div>
                     </div>
-                </Container>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="footer__title">Quick Links</h3>
+                        <div className="footer__links">
+                            {navLinks.map((link) => (
+                                <Link key={link.href} href={link.href}>
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Our Packages */}
+                    <div>
+                        <h3 className="footer__title">Our Packages</h3>
+                        <div className="footer__links">
+                            {footerPackages.map((pkg) => (
+                                <Link key={pkg.slug} href={`/packages/${pkg.slug}`}>
+                                    {pkg.title}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h3 className="footer__title">Contact Us</h3>
+                        <div className="footer__links" style={{display: 'flex', flexDirection: 'column', gap: 'var(--space-2)'}}>
+                            <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
+                                <MapPin size={16} color="var(--color-savanna)" style={{marginTop: '4px'}} />
+                                <span style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.65)'}}>{contact.address}</span>
+                            </div>
+                            <a href={`tel:${contact.phone}`} style={{display: 'flex', gap: '8px', alignItems: 'center'}}>
+                                <Phone size={16} color="var(--color-savanna)" />
+                                {contact.phone}
+                            </a>
+                            <a href={`mailto:${contact.email}`} style={{display: 'flex', gap: '8px', alignItems: 'center'}}>
+                                <Mail size={16} color="var(--color-savanna)" />
+                                {contact.email}
+                            </a>
+                        </div>
+
+                        {/* Social Icons */}
+                        <div style={{display: 'flex', gap: '12px', marginTop: 'var(--space-6)'}}>
+                            {[
+                                { icon: Instagram, href: socials.instagram, label: "Instagram" },
+                                { icon: Facebook, href: socials.facebook, label: "Facebook" },
+                                { icon: Twitter, href: socials.twitter, label: "Twitter" },
+                                { icon: Youtube, href: socials.youtube, label: "YouTube" },
+                            ].map((social) => social.href && (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={social.label}
+                                    className="footer__social-link"
+                                >
+                                    <social.icon size={16} />
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="footer__bottom">
+                    <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+                </div>
             </div>
         </footer>
     );
 }
+

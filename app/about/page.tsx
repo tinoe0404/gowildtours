@@ -1,10 +1,11 @@
 'use client';
 
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { TeamCard } from '@/components/about/TeamCard';
 import { ValueCard } from '@/components/about/ValueCard';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHero from '@/components/ui/PageHero';
 import {
     Heart, ShieldCheck, Leaf, Users, Award,
     Compass, Telescope, Star, CheckCircle2,
@@ -90,8 +91,6 @@ const milestones = [
 ];
 
 export default function AboutPage() {
-    const { scrollY } = useScroll();
-    const y = useTransform(scrollY, [0, 500], [0, 200]);
     const [team, setTeam] = React.useState<any[]>(staticTeamMembers);
 
     React.useEffect(() => {
@@ -107,29 +106,11 @@ export default function AboutPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            {/* Hero Section */}
-            <section className="relative h-[500px] overflow-hidden flex items-center">
-                <motion.div style={{ y }} className="absolute inset-0 z-0">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1200")' }}
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                </motion.div>
-                <div className="container relative z-10 mx-auto px-4 md:px-6 text-center text-white">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-accent font-bold uppercase tracking-widest mb-4 block">About Go Wild Tours</span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6 uppercase tracking-tight">Our Story</h1>
-                        <p className="text-xl md:text-2xl font-medium max-w-3xl mx-auto opacity-90 leading-relaxed">
-                            Connecting people with Africa's wild heart through authentic, sustainable, and unforgettable safari experiences.
-                        </p>
-                    </motion.div>
-                </div>
-            </section>
+            <PageHero 
+                title="Our Story"
+                subtitle="Connecting people with Africa's wild heart through authentic, sustainable, and unforgettable safari experiences."
+                image="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=1200"
+            />
 
             {/* Story Section */}
             <section className="py-24 bg-white">

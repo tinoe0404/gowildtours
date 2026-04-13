@@ -1,13 +1,10 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import SafariInput from '../ui/SafariInput';
-import SafariTextarea from '../ui/SafariTextarea';
+import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 
 export const ContactForm = () => {
-    const [status, setStatus] = React.useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -39,49 +36,45 @@ export const ContactForm = () => {
 
     if (status === 'success') {
         return (
-            <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="bg-primary-50 p-12 rounded-3xl border border-primary-100 text-center flex flex-col items-center"
-            >
-                <div className="w-20 h-20 bg-primary-600 text-white rounded-full flex items-center justify-center mb-6 shadow-lg shadow-primary-200">
-                    <CheckCircle2 className="w-10 h-10" />
+            <div className="bg-[var(--color-mist)] p-12 rounded-[var(--radius-lg)] border border-[var(--color-sand)] text-center flex flex-col items-center">
+                <div className="w-20 h-20 bg-[var(--color-savanna)] text-white rounded-full flex items-center justify-center mb-6 shadow-md">
+                    <CheckCircle2 size={40} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2 uppercase tracking-tight">Message Sent Successfully!</h3>
-                <p className="text-gray-600 mb-8 max-w-sm">
+                <h3 className="text-[var(--color-earth)] font-display text-2xl font-bold mb-2">Message Sent Successfully!</h3>
+                <p className="text-[var(--color-dusk)] mb-8 max-w-sm">
                     Thank you for reaching out to Go Wild Tours. Our travel experts will get back to you within 24 hours.
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
-                    className="text-primary-600 font-bold hover:underline"
+                    className="text-[var(--color-savanna)] font-bold hover:underline"
                 >
                     Send another message
                 </button>
-            </motion.div>
+            </div>
         );
     }
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Full Name *</label>
-                    <SafariInput name="name" required placeholder="John Doe" />
+                <div className="form-group">
+                    <label htmlFor="name" className="form-label">Full Name *</label>
+                    <input id="name" name="name" type="text" required placeholder="John Doe" className="form-input" />
                 </div>
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Email Address *</label>
-                    <SafariInput name="email" required type="email" placeholder="john@example.com" />
+                <div className="form-group">
+                    <label htmlFor="email" className="form-label">Email Address *</label>
+                    <input id="email" name="email" type="email" required placeholder="john@example.com" className="form-input" />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Phone Number</label>
-                    <SafariInput name="phone" type="tel" placeholder="+263 71 635 5176" />
+                <div className="form-group">
+                    <label htmlFor="phone" className="form-label">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+263 71 635 5176" className="form-input" />
                 </div>
-                <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Inquiry Type *</label>
-                    <select name="type" className="flex h-10 w-full rounded-lg border border-beige/50 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all appearance-none cursor-pointer text-dark-deep">
+                <div className="form-group">
+                    <label htmlFor="type" className="form-label">Inquiry Type *</label>
+                    <select id="type" name="type" className="form-input appearance-none text-[var(--color-earth)]" required>
                         <option>General Inquiry</option>
                         <option>Safari Package Info</option>
                         <option>Booking Assistance</option>
@@ -91,9 +84,9 @@ export const ContactForm = () => {
                 </div>
             </div>
 
-            <div className="space-y-2">
-                <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Message *</label>
-                <SafariTextarea name="message" required placeholder="Tell us about your safari plans..." className="min-h-[150px]" />
+            <div className="form-group">
+                <label htmlFor="message" className="form-label">Message *</label>
+                <textarea id="message" name="message" required placeholder="Tell us about your safari plans..." className="form-input section-min-h-[150px] resize-y" rows={6}></textarea>
             </div>
 
             {status === 'error' && (
@@ -103,7 +96,7 @@ export const ContactForm = () => {
             <button
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full bg-primary-600 hover:bg-primary-700 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-primary-200 flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed group"
+                className="btn btn--primary w-full flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed group"
             >
                 {status === 'submitting' ? (
                     <>
@@ -117,7 +110,7 @@ export const ContactForm = () => {
                     </>
                 )}
             </button>
-            <p className="text-center text-xs text-gray-500">
+            <p className="text-center text-xs text-[var(--color-dusk)]">
                 By submitting this form, you agree to our Privacy Policy.
             </p>
         </form>

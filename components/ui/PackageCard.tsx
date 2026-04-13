@@ -2,9 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Users, Mountain, Heart } from "lucide-react";
 import type { Package } from "@/lib/packages-data";
-import { cn } from "@/lib/cn";
 
 interface PackageCardProps {
     pkg: Package;
@@ -14,102 +12,47 @@ interface PackageCardProps {
 export default function PackageCard({ pkg, className }: PackageCardProps) {
     const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80");
 
-    const durationDays = typeof pkg.duration === "string"
-        ? (parseInt(pkg.duration.match(/(\d+)/)?.[1] || "0"))
-        : (pkg.duration as any)?.days;
+    const durationText = typeof pkg.duration === "string" 
+        ? pkg.duration 
+        : `${(pkg.duration as any)?.days || 0} Days`;
 
-    const durationNights = typeof pkg.duration === "string"
-        ? (parseInt(pkg.duration.match(/(\d+)\s+Nights/)?.[1] || "0"))
-        : (pkg.duration as any)?.nights;
+    const categories = typeof pkg.category === "string" ? [pkg.category] : (pkg.category as any) || ["Safari"];
+    const category = categories[0];
 
-    const categories = typeof pkg.category === "string" ? [pkg.category] : (pkg.category as any) || [];
-    const isFeatured = pkg.featured || (pkg as any).isFeatured;
+    const price = Number(pkg.price).toLocaleString();
 
     return (
-        <div
-            className={cn(
-                "group flex flex-col bg-white rounded-[var(--radius-card)] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full",
-                className
-            )}
-        >
-            {/* ── Image Section ── */}
-            <Link href={`/packages/${pkg.slug}`} className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                    src={mainImage}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        <article className={`package-card ${className || ""}`}>
+            <div className="package-card__image-wrap">
+                <Image 
+                    src={mainImage} 
+                    alt={pkg.title} 
+                    fill 
+                    className="package-card__image" 
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/50 to-transparent opacity-60" />
-
-                {/* Badges */}
-                <div className="absolute top-3 left-3 flex flex-col gap-2">
-                    {isFeatured && (
-                        <span className="bg-accent text-dark-deep text-[10px] font-accent font-bold uppercase tracking-wider px-2 py-1 rounded-full shadow-sm">
-                            Featured
-                        </span>
-                    )}
-                    {(pkg as any).bestSeller && (
-                        <span className="bg-primary text-white text-[10px] font-accent font-bold uppercase tracking-wider px-2 py-1 rounded-full shadow-sm">
-                            Best Seller
-                        </span>
-                    )}
-                </div>
-
-                {/* Category on Image Bottom */}
-                <div className="absolute bottom-3 left-3">
-                    <span className="text-white text-xs font-semibold bg-black/40 backdrop-blur-sm px-2 py-1 rounded-md border border-white/20">
-                        {categories[0]}
-                    </span>
-                </div>
-            </Link>
-
-            {/* ── Content Section ── */}
-            <div className="p-5 flex flex-col flex-1">
-
-                <Link href={`/packages/${pkg.slug}`}>
-                    <h3 className="font-display text-xl font-bold text-dark-deep mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                        {pkg.title}
-                    </h3>
+                <span className="package-card__badge">{category}</span>
+                <span className="package-card__duration">{durationText}</span>
+            </div>
+            <div className="package-card__body">
+                <Link href={`/packages/${pkg.slug}`} style={{ textDecoration: 'none' }}>
+                    <h3 className="package-card__title">{pkg.title}</h3>
                 </Link>
-
-                <p className="text-warm-gray text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
+                <p className="package-card__excerpt">
                     {pkg.shortDescription || pkg.description?.substring(0, 100)}
                 </p>
-
-                {/* Info Icons */}
-                <div className="grid grid-cols-2 gap-y-2 gap-x-1 text-xs text-warm-gray mb-5 pt-4 border-t border-beige/50">
-                    <div className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-accent" />
-                        <span>{durationDays} Days / {durationNights} Nights</span>
+                <div className="package-card__footer">
+                    <div className="package-card__price">
+                        <span className="package-card__price-from">from</span>
+                        <span className="package-card__price-amount">${price}</span>
+                        <span className="package-card__price-unit">/ person</span>
                     </div>
-                    <div className="flex items-center gap-1.5">
-                        <Users className="w-3.5 h-3.5 text-accent" />
-                        <span>{(pkg.groupSize as any)?.type || "Small Group"}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                        <Mountain className="w-3.5 h-3.5 text-accent" />
-                        <span>{pkg.difficulty || "Moderate"}</span>
-                    </div>
-                </div>
-
-                {/* Pricing & CTA */}
-                <div className="flex items-center justify-between mt-auto">
-                    <div className="flex flex-col">
-                        <span className="text-xs text-warm-gray">From</span>
-                        <span className="font-display text-2xl font-bold text-primary">
-                            ${Number(pkg.price).toLocaleString()}
-                        </span>
-                    </div>
-                    <Link
-                        href={`/packages/${pkg.slug}`}
-                        className="px-4 py-2 bg-dark-deep text-white text-sm font-accent font-semibold rounded-full hover:bg-accent hover:text-dark-deep transition-colors shadow-sm"
-                    >
-                        View Details
+                    <Link href={`/packages/${pkg.slug}`} className="package-card__cta">
+                        View Details →
                     </Link>
                 </div>
             </div>
-        </div>
+        </article>
     );
 }
+

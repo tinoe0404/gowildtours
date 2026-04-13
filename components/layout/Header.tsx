@@ -1,154 +1,96 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/lib/constants";
-import { cn } from "@/lib/cn";
-import Button from "@/components/ui/Button";
-import Navigation from "@/components/layout/Navigation";
-import { Menu, X } from "lucide-react";
 
 export default function Header() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    const handleScroll = useCallback(() => {
-        const currentScrollY = window.scrollY;
-
-        // Transparent → solid after 50px
-        setIsScrolled(currentScrollY > 50);
-
-        // Show on scroll up, hide on scroll down (only after 100px)
-        if (currentScrollY > 100) {
-            setIsVisible(currentScrollY < lastScrollY || currentScrollY < 50);
-        } else {
-            setIsVisible(true);
-        }
-
-        setLastScrollY(currentScrollY);
-    }, [lastScrollY]);
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [handleScroll]);
+        const handler = () => setScrolled(window.scrollY > 60);
+        window.addEventListener("scroll", handler, { passive: true });
+        return () => window.removeEventListener("scroll", handler);
+    }, []);
+
+    // Close menu on route change
+    useEffect(() => {
+        setMenuOpen(false);
+    }, [pathname]);
 
     // Lock body scroll when mobile menu is open
     useEffect(() => {
-        document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+        document.body.style.overflow = menuOpen ? "hidden" : "";
         return () => {
             document.body.style.overflow = "";
         };
-    }, [isMobileMenuOpen]);
+    }, [menuOpen]);
+
+    const isSolid = scrolled || menuOpen;
 
     return (
-        <>
-            <header
-                className={cn(
-                    "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
-                    isScrolled
-                        ? "bg-dark-deep/95 backdrop-blur-md shadow-lg py-3"
-                        : "bg-transparent py-5",
-                    isVisible ? "translate-y-0" : "-translate-y-full"
-                )}
-            >
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                    {/* Logo */}
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 group relative h-12 md:h-16 w-32 md:w-48 transition-transform hover:scale-105 duration-300"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                        <Image
-                            src={isScrolled ? siteConfig.logos.light : siteConfig.logos.dark}
-                            alt={siteConfig.name}
-                            fill
-                            className="object-contain"
-                            priority
-                        />
-                    </Link>
-
-                    {/* Desktop Navigation */}
-                    <nav className="hidden lg:block">
-                        <Navigation />
-                    </nav>
-
-                    {/* Desktop CTAs */}
-                    <div className="hidden lg:flex items-center gap-3">
-                        <Button variant="outline" size="sm">
-                            Enquire Now
-                        </Button>
-                        <Button variant="primary" size="sm">
-                            Book Adventure
-                        </Button>
-                    </div>
-
-                    {/* Mobile Menu Toggle */}
-                    <button
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="lg:hidden relative z-50 p-2 text-cream hover:text-accent transition-colors cursor-pointer"
-                        aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-                    >
-                        {isMobileMenuOpen ? (
-                            <X className="h-6 w-6" />
-                        ) : (
-                            <Menu className="h-6 w-6" />
-                        )}
-                    </button>
-                </div>
-            </header>
-
-            {/* Mobile Menu Overlay */}
-            <div
-                className={cn(
-                    "fixed inset-0 z-40 lg:hidden transition-all duration-500",
-                    isMobileMenuOpen
-                        ? "opacity-100 pointer-events-auto"
-                        : "opacity-0 pointer-events-none"
-                )}
-            >
-                {/* Backdrop */}
-                <div
-                    className="absolute inset-0 bg-dark-deep/98 backdrop-blur-xl"
-                    onClick={() => setIsMobileMenuOpen(false)}
+        <nav className={`navbar ${isSolid ? "navbar--scrolled" : "navbar--transparent"}`}>
+            {/* Logo */}
+            <Link href="/" className="navbar__logo" aria-label="Go Wild Tours">
+                <Image
+                    src={isSolid ? siteConfig.logos.dark : siteConfig.logos.light}
+                    alt="Go Wild Tours Logo"
+                    width={160}
+                    height={48}
+                    style={{ objectFit: "contain" }}
+                    priority
                 />
+            </Link>
 
-                {/* Menu Content */}
-                <div
-                    className={cn(
-                        "relative flex flex-col items-center justify-center h-full gap-6 transition-transform duration-500",
-                        isMobileMenuOpen ? "translate-y-0" : "-translate-y-8"
-                    )}
-                >
-                    {navLinks.map((link, index) => (
+            {/* Desktop Navigation */}
+            <ul className="navbar__links">
+                {navLinks.map((link) => (
+                    <li key={link.href}>
                         <Link
-                            key={link.href}
                             href={link.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="font-display text-2xl text-cream hover:text-accent transition-all duration-300"
-                            style={{
-                                transitionDelay: isMobileMenuOpen
-                                    ? `${index * 60}ms`
-                                    : "0ms",
-                            }}
+                            aria-current={pathname === link.href ? "page" : undefined}
                         >
                             {link.label}
                         </Link>
-                    ))}
+                    </li>
+                ))}
+            </ul>
 
-                    <div className="flex flex-col gap-3 mt-6 w-60">
-                        <Button variant="outline" size="md" className="w-full">
-                            Enquire Now
-                        </Button>
-                        <Button variant="primary" size="md" className="w-full">
-                            Book Adventure
-                        </Button>
-                    </div>
-                </div>
+            {/* Desktop CTAs & Mobile Hamburger */}
+            <div className="navbar__actions">
+                <Link href="/contact" className="btn btn--primary">
+                    Book a Safari
+                </Link>
+                <button
+                    className="hamburger-btn"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label={menuOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={menuOpen}
+                >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        {menuOpen ? (
+                            <path d="M18 6L6 18M6 6l12 12" />
+                        ) : (
+                            <path d="M4 6h16M4 12h16M4 18h16" />
+                        )}
+                    </svg>
+                </button>
             </div>
-        </>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`mobile-menu-overlay ${menuOpen ? "mobile-menu-overlay--open" : ""}`}>
+                <ul className="mobile-menu__links">
+                    {navLinks.map((link, index) => (
+                        <li key={link.href} style={{ transitionDelay: menuOpen ? `${index * 60 + 100}ms` : "0ms" }}>
+                            <Link href={link.href}>{link.label}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </nav>
     );
 }

@@ -185,9 +185,10 @@ export default function PackagesClient() {
 
     if (isLoading) {
         return (
-            <div className="flex flex-col items-center justify-center py-20 space-y-4">
-                <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin" />
-                <p className="text-warm-gray font-accent">Discovery in progress...</p>
+            <div className="packages-grid w-full">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div key={i} className="package-card-skeleton" aria-hidden="true" />
+                ))}
             </div>
         );
     }
@@ -313,8 +314,8 @@ export default function PackagesClient() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    key={JSON.stringify(filters) + sortOption} // Force re-anim on filter change
-                    className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+                    key={JSON.stringify(filters) + sortOption}
+                    className="packages-grid"
                 >
                     {sortedPackages.length > 0 ? (
                         sortedPackages.map((pkg) => (
