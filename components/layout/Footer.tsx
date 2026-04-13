@@ -6,18 +6,24 @@ import prisma from "@/lib/db";
 import { destinations } from "@/data/destinations";
 
 export default async function Footer() {
-    // Fetch settings and packages for a truly dynamic footer
-    const settings = await prisma.siteSetting.findMany();
+    let settings: any[] = [];
+    let footerPackages: any[] = [];
+
+    try {
+        settings = await prisma.siteSetting.findMany();
+        footerPackages = await prisma.package.findMany({
+            where: { isPublished: true },
+            take: 5,
+            select: { title: true, slug: true }
+        });
+    } catch (error) {
+        console.warn("Footer DB connection failed during build, using fallbacks:", error);
+    }
+
     const settingsMap = settings.reduce((acc: any, s) => {
         acc[s.key] = s.value;
         return acc;
     }, {});
-
-    const footerPackages = await prisma.package.findMany({
-        where: { isPublished: true },
-        take: 5,
-        select: { title: true, slug: true }
-    });
 
     const contact = settingsMap.contact_info || {
         email: siteConfig.email,
