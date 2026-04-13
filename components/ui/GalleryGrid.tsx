@@ -9,9 +9,10 @@ type AnyGalleryImage = GalleryImage & { url?: string; category?: string };
 
 interface GalleryGridProps {
     images: AnyGalleryImage[];
+    columns?: number;
 }
 
-export default function GalleryGrid({ images }: GalleryGridProps) {
+export default function GalleryGrid({ images, columns }: GalleryGridProps) {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxIndex, setLightboxIndex] = useState(0);
 
@@ -22,7 +23,10 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
 
     return (
         <>
-            <div className="instagram-grid">
+            <div 
+                className="instagram-grid" 
+                style={columns ? { gridTemplateColumns: `repeat(${columns}, 1fr)` } : undefined}
+            >
                 {images.map((img, idx) => (
                     <button
                         key={img.id}
