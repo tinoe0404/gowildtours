@@ -41,7 +41,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 /* ── Image URLs (Local) ── */
 const images = {
-  hero: "/images/safari/wildebeest.jpg",
+  hero: "/images/safari/hero-sunset-elephants.png",
   about: "/images/safari/elephants-waterhole.jpg",
   ctaBg: "/images/safari/victoria-falls-wide.jpg",
 };
