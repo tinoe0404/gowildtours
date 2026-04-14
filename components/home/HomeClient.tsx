@@ -50,78 +50,99 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
         <>
             {/* ═══════════════ HERO ═══════════════ */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                {/* Background Image */}
                 <Image
                     src={images.hero}
                     alt="African savanna at sunset"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     priority
                     sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-dark-deep/50 via-dark-deep/40 to-dark-deep/70" />
 
-                <Container className="relative z-10 text-center">
+                {/* Dark Gradient Overlay */}
+                <div
+                    className="absolute inset-0 z-[1]"
+                    style={{
+                        background:
+                            "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.75) 100%)",
+                    }}
+                />
+
+                {/* Hero Content */}
+                <div className="relative z-10 w-full max-w-3xl mx-auto px-4 text-center flex flex-col items-center justify-center">
                     <motion.div
                         variants={staggerContainer}
                         initial="hidden"
                         animate="visible"
                         className="flex flex-col items-center gap-6"
                     >
+                        {/* Eyebrow Badge */}
                         <motion.span
                             variants={fadeIn}
-                            className="font-accent text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-accent-light"
+                            className="inline-block bg-black/30 px-4 py-1 rounded-full tracking-widest text-xs text-white/90 font-accent font-semibold uppercase"
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
                         >
                             Premium African Safari Experiences
                         </motion.span>
 
+                        {/* Main Heading */}
                         <motion.h1
                             variants={fadeInUp}
-                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-cream leading-tight max-w-4xl"
+                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
                         >
                             Discover the{" "}
                             <span className="text-gradient-gold">Wild Heart</span>{" "}
                             of Africa
                         </motion.h1>
 
+                        {/* Subtitle */}
                         <motion.p
                             variants={fadeInUp}
-                            className="max-w-2xl text-base md:text-lg text-cream/80 leading-relaxed"
+                            className="max-w-2xl text-base md:text-lg text-white leading-relaxed"
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
                         >
                             Embark on unforgettable safari adventures through Africa&apos;s
                             most breathtaking landscapes. Expert guides, luxury camps, and
                             encounters with the world&apos;s most magnificent wildlife.
                         </motion.p>
 
+                        {/* CTA Buttons */}
                         <motion.div
                             variants={fadeInUp}
-                            className="flex flex-col sm:flex-row items-center gap-4 mt-2"
+                            className="flex flex-col sm:flex-row items-center gap-4 mt-4"
                         >
-                            <Link href="/safaris">
-                                <Button variant="primary" size="lg">
-                                    Explore Safaris
-                                    <ArrowRight className="h-5 w-5" />
-                                </Button>
+                            <Link
+                                href="/safaris"
+                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:brightness-110 hover:scale-105"
+                                style={{ backgroundColor: "#C8832A" }}
+                            >
+                                Explore Safaris
+                                <ArrowRight className="h-5 w-5" />
                             </Link>
-                            <Link href="/gallery">
-                                <Button variant="outline" size="lg">
-                                    Watch Our Story
-                                </Button>
+                            <Link
+                                href="/gallery"
+                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white border-2 border-white bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
+                            >
+                                Watch Our Story
                             </Link>
                         </motion.div>
                     </motion.div>
-                </Container>
+                </div>
 
+                {/* Scroll Indicator */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
                 >
-                    <span className="text-cream/50 text-xs font-accent tracking-wider uppercase">
+                    <span className="text-white/50 text-xs font-accent tracking-wider uppercase">
                         Scroll
                     </span>
                     <ChevronDown
-                        className="h-5 w-5 text-cream/50 animate-bounce"
+                        className="h-5 w-5 text-white/50 animate-bounce"
                     />
                 </motion.div>
             </section>
