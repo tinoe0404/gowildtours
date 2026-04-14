@@ -44,7 +44,7 @@ export default async function BrochurePage({ params }: Props) {
     const categories = typeof pkg.category === "string" ? [pkg.category] : (pkg.category as any) || [];
     const highlights = (pkg as any).highlights || [];
     const inclusions = (pkg as any).inclusions || [];
-    const mainImage = (pkg as any).image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/placeholder.jpg");
+    const mainImage = (pkg as any).image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/safari/lioness-rain.jpg");
     const longDescription = pkg.description || (pkg as any).longDescription || "";
 
     return (

@@ -26,8 +26,8 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 /**
- * 32 curated Unsplash images organised by safari category.
- * All URLs use ?w=800&q=80 for the grid; the lightbox can swap to larger sizes at runtime.
+ * 32 curated safari images organised by category.
+ * All paths reference files in /public/images/safari/.
  */
 export const galleryImages: GalleryImage[] = [
     // ── Wildlife ──────────────────────────────────────────

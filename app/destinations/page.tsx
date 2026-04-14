@@ -36,7 +36,7 @@ export default function DestinationsPage() {
   return (
     <main>
       <PageHero
-        image="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80"
+        image="/images/safari/victoria-falls-panorama.jpg"
         label="Zimbabwe"
         title="Explore Our Destinations"
         subtitle="Five extraordinary wilderness areas, each with its own character, wildlife, and magic."
@@ -81,7 +81,7 @@ export default function DestinationsPage() {
 
             <div className="destinations-intro__image">
               <Image
-                src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80"
+                src="/images/safari/elephants-impala-waterhole.jpg"
                 alt="Elephants at a Zimbabwe waterhole"
                 fill
                 className="destinations-intro__img"

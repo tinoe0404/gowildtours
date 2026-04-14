@@ -4,7 +4,7 @@ export const siteConfig = {
     name: 'Go Wild Tours',
     description: 'Expertly curated safari adventures in Zimbabwe. Experience Victoria Falls, Hwange National Park, and more with our professional wildlife guides.',
     url: 'https://gowildtours.com',
-    ogImage: 'https://gowildtours.com/images/logo/go-wild-tours-full.svg',
+    ogImage: '/images/logo/go-wild-tours-full.svg',
     links: {
         twitter: 'https://twitter.com/gowildtours',
         facebook: 'https://facebook.com/gowildtours',

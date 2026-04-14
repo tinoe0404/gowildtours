@@ -46,7 +46,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
         : (pkg.duration as any)?.days;
 
     const destinations = (pkg as any).destinations || ["Zimbabwe"];
-    const mainImage = pkg.images[0] || "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&q=80";
+    const mainImage = pkg.images[0] || "/images/safari/elephant-charging-green.jpg";
 
     return new ImageResponse(
         (

@@ -15,7 +15,7 @@ export default function SafarisPage() {
             <PageHero 
                 title="Our Safaris"
                 subtitle="Handcrafted wilderness experiences across Zimbabwe's most iconic landscapes — from Hwange's elephant herds to the thundering Victoria Falls."
-                image="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1920&q=80"
+                image="/images/safari/leopard-walking-path.jpg"
             />
 
             {/* ── Content ── */}

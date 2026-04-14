@@ -35,7 +35,7 @@ export default function GalleryGrid({ images, columns }: GalleryGridProps) {
                         aria-label={`View: ${img.alt}`}
                     >
                         <Image
-                            src={img.src || img.url || "/images/placeholder.jpg"}
+                            src={img.src || img.url || "/images/safari/lioness-rain.jpg"}
                             alt={img.alt}
                             width={500}
                             height={500}

@@ -32,7 +32,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
 
     const categories = typeof pkg.category === "string" ? [pkg.category] : pkg.category;
     const destinations = pkg.destinations || [];
-    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/placeholder.jpg");
+    const mainImage = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/safari/lioness-rain.jpg");
     const description = pkg.description || pkg.longDescription || "";
 
     // Mock itinerary generator since data file doesn't have it yet

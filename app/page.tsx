@@ -39,7 +39,7 @@ const iconMap: Record<string, React.ElementType> = {
   TreePine,
 };
 
-/* ── Image URLs (Unsplash) ── */
+/* ── Image URLs (Local) ── */
 const images = {
   hero: "/images/safari/wildebeest.jpg",
   about: "/images/safari/elephants-waterhole.jpg",

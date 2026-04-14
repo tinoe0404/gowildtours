@@ -5,23 +5,23 @@ const VIDEOS = [
     {
         id: "1",
         title: "Experience the Magic of Victoria Falls",
-        thumbnail: "/images/video-thumb-1.jpg",
+        thumbnail: "/images/safari/victoria-falls-panorama.jpg",
         duration: "2:34",
-        url: "https://youtube.com/watch?v=placeholder1"
+        url: "https://youtube.com/gowildtours"
     },
     {
         id: "2",
         title: "Hwange National Park Safari Guide",
-        thumbnail: "/images/video-thumb-2.jpg",
+        thumbnail: "/images/safari/elephants-impala-waterhole.jpg",
         duration: "5:12",
-        url: "https://youtube.com/watch?v=placeholder2"
+        url: "https://youtube.com/gowildtours"
     },
     {
         id: "3",
         title: "Client Testimonials: The Go Wild Difference",
-        thumbnail: "/images/video-thumb-3.jpg",
+        thumbnail: "/images/safari/leopard-walking-path.jpg",
         duration: "3:45",
-        url: "https://youtube.com/watch?v=placeholder3"
+        url: "https://youtube.com/gowildtours"
     }
 ];
 

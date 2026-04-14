@@ -243,7 +243,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                 <Card className="group h-full flex flex-col">
                                     <div className="relative aspect-[4/3] overflow-hidden">
                                         <Image
-                                            src={safari.images?.[0] || "/images/placeholder-safari.jpg"}
+                                            src={safari.images?.[0] || "/images/safari/lioness-rain.jpg"}
                                             alt={safari.title}
                                             fill
                                             className="object-cover transition-transform duration-700 group-hover:scale-110"
