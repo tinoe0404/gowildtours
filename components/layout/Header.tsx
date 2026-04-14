@@ -40,8 +40,8 @@ export default function Header() {
                 <Image
                     src={isSolid ? siteConfig.logos.dark : siteConfig.logos.light}
                     alt="Go Wild Tours Logo"
-                    width={160}
-                    height={48}
+                    width={88}
+                    height={60}
                     style={{ objectFit: "contain" }}
                     priority
                 />

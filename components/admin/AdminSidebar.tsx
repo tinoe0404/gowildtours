@@ -7,7 +7,7 @@ import { cn } from "@/lib/cn";
 import {
     LayoutDashboard, MessageSquare, CalendarCheck, Package, Star,
     BarChart3, Mail, Settings, FileText, ChevronLeft, ChevronRight,
-    Hotel, Activity, Image, Users, Menu,
+    Image, Menu,
 } from "lucide-react";
 
 const navGroups = [
@@ -30,9 +30,6 @@ const navGroups = [
         items: [
             { label: "Packages", href: "/admin/content/packages", icon: Package },
             { label: "Gallery", href: "/admin/content/gallery", icon: Image },
-            { label: "Hotels", href: "/admin/content/hotels", icon: Hotel },
-            { label: "Activities", href: "/admin/content/activities", icon: Activity },
-            { label: "Team", href: "/admin/content/team", icon: Users },
         ],
     },
     {

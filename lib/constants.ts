@@ -13,9 +13,9 @@ export const siteConfig = {
         youtube: "https://youtube.com/gowildtours",
     },
     logos: {
-        dark: "/images/logo/go-wild-tours-full.svg",
-        light: "/images/logo/go-wild-tours-full-white.svg",
-        icon: "/images/logo/go-wild-tours-icon.png",
+        dark: "/logo.png",
+        light: "/logo.png",
+        icon: "/logo.png",
     }
 };
 
