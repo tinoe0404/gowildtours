@@ -3,12 +3,12 @@ import Image from "next/image";
 import { Instagram } from "lucide-react";
 
 const INSTAGRAM_POSTS = [
-    { id: 1, src: "/images/safari-1.jpg", alt: "Lion sighting in Hwange", likes: 124 },
-    { id: 2, src: "/images/safari-2.jpg", alt: "Sunset boat cruise", likes: 89 },
-    { id: 3, src: "/images/safari-3.jpg", alt: "Walking safari experience", likes: 256 },
-    { id: 4, src: "/images/safari-4.jpg", alt: "Luxury tent interior", likes: 167 },
-    { id: 5, src: "/images/safari-5.jpg", alt: "Victoria Falls aerial view", likes: 302 },
-    { id: 6, src: "/images/safari-6.jpg", alt: "Elephant herd at waterhole", likes: 198 },
+    { id: 1, src: "/images/safari/lioness-rain.jpg", alt: "Lion sighting in Hwange", likes: 124 },
+    { id: 2, src: "/images/safari/elephant-river-blue.jpg", alt: "Sunset boat cruise", likes: 89 },
+    { id: 3, src: "/images/safari/leopard-walking-path.jpg", alt: "Walking safari experience", likes: 256 },
+    { id: 4, src: "/images/safari/dunes-moody-foggy.jpg", alt: "Dramatic desert dunes", likes: 167 },
+    { id: 5, src: "/images/safari/victoria-falls-panorama.jpg", alt: "Victoria Falls aerial view", likes: 302 },
+    { id: 6, src: "/images/safari/elephants-impala-waterhole.jpg", alt: "Elephant herd at waterhole", likes: 198 },
 ];
 
 export default function InstagramFeed() {
