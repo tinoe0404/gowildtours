@@ -16,56 +16,92 @@ import * as React from 'react';
 interface BookingConfirmationEmailProps {
     customerName: string;
     bookingReference: string;
-    type: string;
+    type?: string;
     totalPrice?: number;
+    subtotal?: number;
+    items?: Array<{
+        name: string;
+        travelers: number;
+        date: string;
+        pricePerPerson: number;
+    }>;
 }
 
 export const BookingConfirmationEmail = ({
     customerName,
     bookingReference,
-    type,
+    type = "safari",
     totalPrice,
-}: BookingConfirmationEmailProps) => (
-    <Html>
-        <Head />
-        <Preview>Your Safari Booking Confirmation - {bookingReference}</Preview>
-        <Body style={main}>
-            <Container style={container}>
-                <Section style={header}>
-                    <Text style={logoText}>GO WILD TOURS</Text>
-                </Section>
-                <Heading style={h1}>Booking Received</Heading>
-                <Text style={text}>
-                    Hi {customerName}, thank you for choosing Go Wild Tours! We've received your booking request for a <strong>{type}</strong> experience.
-                </Text>
+    subtotal,
+    items,
+}: BookingConfirmationEmailProps) => {
+    const finalTotal = subtotal || totalPrice;
+    const depositAmount = finalTotal ? finalTotal * 0.3 : 0;
 
-                <Section style={detailsSection}>
-                    <Text style={detailItem}><strong>Booking Reference:</strong> {bookingReference}</Text>
-                    <Text style={detailItem}><strong>Status:</strong> Pending Confirmation</Text>
-                    {totalPrice && (
-                        <Text style={detailItem}><strong>Estimated Total:</strong> ${totalPrice.toLocaleString()} USD</Text>
+    return (
+        <Html>
+            <Head />
+            <Preview>Your Safari Booking Confirmation - {bookingReference}</Preview>
+            <Body style={main}>
+                <Container style={container}>
+                    <Section style={header}>
+                        <Text style={logoText}>GO WILD TOURS</Text>
+                    </Section>
+                    <Heading style={h1}>Booking Received</Heading>
+                    <Text style={text}>
+                        Hi {customerName}, thank you for choosing Go Wild Tours! We've received your booking request.
+                    </Text>
+
+                    <Section style={detailsSection}>
+                        <Text style={detailItem}><strong>Booking Reference:</strong> {bookingReference}</Text>
+                        <Text style={detailItem}><strong>Status:</strong> Pending Confirmation</Text>
+                    </Section>
+
+                    {items && items.length > 0 && (
+                        <Section style={itemsSection}>
+                            <Heading style={h2}>Your Safari Package</Heading>
+                            {items.map((item, idx) => (
+                                <div key={idx} style={itemRow}>
+                                    <Text style={itemName}>{item.name}</Text>
+                                    <Text style={itemDetails}>{item.travelers} Travelers | {item.date}</Text>
+                                    <Text style={itemPrice}>${(item.pricePerPerson * item.travelers).toLocaleString()} USD</Text>
+                                </div>
+                            ))}
+                        </Section>
                     )}
-                </Section>
 
-                <Text style={text}>
-                    Our travel experts are now reviewing your request and checking availability. You will receive a final confirmation email with your detailed itinerary and payment instructions within 24 hours.
-                </Text>
+                    {finalTotal && (
+                        <Section style={pricingSection}>
+                            <Text style={subtotalText}><strong>Subtotal:</strong> ${finalTotal.toLocaleString()} USD</Text>
+                            <Text style={depositText}>A 30% deposit (~${depositAmount.toLocaleString()} USD) will be required to secure your reservation upon confirmation.</Text>
+                        </Section>
+                    )}
 
-                <Section style={btnContainer}>
-                    <Button style={button} href="https://gowildtours.com/contact">
-                        Contact Support
-                    </Button>
-                </Section>
+                    <Hr style={hr} />
 
-                <Hr style={hr} />
-                <Text style={footer}>
-                    If you have any questions, please reply to this email or call us at +263 71 635 5176.<br />
-                    &copy; 2026 Go Wild Tours & Travels. Victoria Falls, Zimbabwe.
-                </Text>
-            </Container>
-        </Body>
-    </Html>
-);
+                    <Section>
+                        <Heading style={h2}>What happens next?</Heading>
+                        <Text style={text}><strong>1. We confirm availability</strong><br/>Our experts are checking lodge and guide availability for your dates.</Text>
+                        <Text style={text}><strong>2. You receive an invoice</strong><br/>Once confirmed, we'll send a secure payment link for your 30% deposit.</Text>
+                        <Text style={text}><strong>3. You're confirmed!</strong><br/>After deposit, your safari is locked in. Time to start packing!</Text>
+                    </Section>
+
+                    <Section style={btnContainer}>
+                        <Button style={button} href="https://gowildtours.com/contact">
+                            Contact Support
+                        </Button>
+                    </Section>
+
+                    <Hr style={hr} />
+                    <Text style={footer}>
+                        If you have any questions, please reply to this email or call us at +263 77 123 4567.<br />
+                        &copy; {new Date().getFullYear()} Go Wild Tours & Travels. Victoria Falls, Zimbabwe.
+                    </Text>
+                </Container>
+            </Body>
+        </Html>
+    );
+};
 
 export default BookingConfirmationEmail;
 
@@ -141,6 +177,60 @@ const button = {
     textAlign: 'center' as const,
     display: 'inline-block',
     padding: '16px 32px',
+};
+
+const h2 = {
+    color: '#333333',
+    fontSize: '20px',
+    margin: '0 0 16px',
+};
+
+const itemsSection = {
+    margin: '24px 0',
+};
+
+const itemRow = {
+    padding: '12px 0',
+    borderBottom: '1px solid #edf2f7',
+};
+
+const itemName = {
+    color: '#2d3748',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    margin: '0 0 4px',
+};
+
+const itemDetails = {
+    color: '#718096',
+    fontSize: '14px',
+    margin: '0',
+};
+
+const itemPrice = {
+    color: '#2d3748',
+    fontSize: '15px',
+    fontWeight: 'bold',
+    margin: '4px 0 0',
+};
+
+const pricingSection = {
+    backgroundColor: '#f8fafc',
+    padding: '16px 24px',
+    borderRadius: '12px',
+    marginBottom: '24px',
+};
+
+const subtotalText = {
+    color: '#2a4444',
+    fontSize: '18px',
+    margin: '0 0 8px',
+};
+
+const depositText = {
+    color: '#c8873a',
+    fontSize: '14px',
+    margin: '0',
 };
 
 const hr = {

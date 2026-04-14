@@ -5,8 +5,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
     MapPin, Clock, Users, Mountain, Check, X,
-    Calendar, Info, ChevronDown, ChevronUp, Share2
+    Calendar, Info, ChevronDown, ChevronUp, Share2, Plus, Minus
 } from "lucide-react";
+import { toast } from "sonner";
+import { useCartStore } from "@/lib/store/cart";
 import type { Package } from "@/lib/packages-data";
 import Container from "@/components/ui/Container";
 import BookingForm from "@/components/packages/BookingForm";
@@ -164,7 +166,10 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
 
                         {/* Right Column (Sidebar) */}
                         <div className="lg:col-span-1">
-                            <div className="sticky top-24 space-y-6">
+                            <div className="sticky top-24 space-y-6 pb-24 md:pb-0">
+
+                                {/* Add to Cart Widget */}
+                                <SafariBookingWidget pkg={pkg as any} />
 
                                 {/* Price Card */}
                                 <div className="bg-dark-deep text-white p-6 rounded-[var(--radius-card)] shadow-xl relative overflow-hidden">
@@ -200,7 +205,10 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                 </div>
 
                                 {/* Booking Form */}
-                                <BookingForm packageTitle={pkg.title} />
+                                <div className="mt-6">
+                                    <h4 className="font-bold text-dark-deep mb-4 px-2">Prefer to inquire?</h4>
+                                    <BookingForm packageTitle={pkg.title} />
+                                </div>
 
                                 {/* Assistance */}
                                 <div className="bg-white p-6 rounded-[var(--radius-card)] border border-beige text-center">
@@ -269,3 +277,139 @@ function ItineraryItem({ item }: { item: { day: number; title: string; descripti
         </div>
     );
 }
+
+function SafariBookingWidget({ pkg }: { pkg: Package }) {
+    const [travelers, setTravelers] = useState(2);
+    const [date, setDate] = useState("");
+    const addItem = useCartStore((state) => state.addItem);
+
+    // Min date is 7 days from today
+    const minDate = new Date();
+    minDate.setDate(minDate.getDate() + 7);
+    const minDateStr = minDate.toISOString().split("T")[0];
+
+    // Helper functions for safe values
+    const safePrice = pkg.price ? Number(pkg.price) : 0;
+    
+    // Determine duration string
+    let durationString = "Unknown Duration";
+    if (typeof pkg.duration === "string") {
+        durationString = pkg.duration;
+    } else if (pkg.duration && typeof pkg.duration === "object") {
+         durationString = `${pkg.duration.days} Days / ${pkg.duration.nights} Nights`;
+    }
+
+    // Determine image
+    const imageString = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/safari/lioness-rain.jpg");
+
+    const handleAddToCart = () => {
+        if (!date) {
+            toast.error("Please select a preferred departure date");
+            return;
+        }
+
+        const selectedDate = new Date(date);
+        if (selectedDate < minDate) {
+            toast.error("Departure date must be at least 7 days in advance");
+            return;
+        }
+
+        addItem({
+            id: pkg.slug,
+            name: pkg.title,
+            image: imageString,
+            duration: durationString,
+            pricePerPerson: safePrice,
+            travelers: travelers,
+            date: date
+        });
+
+        toast.success(`"${pkg.title}" added to your cart`, {
+            action: {
+                label: "View Cart",
+                onClick: () => {
+                    // We can trigger cart open by selecting the cart button if we implemented an event, 
+                    // but for this, we can just let them click it or navigate
+                     const btn = document.querySelector('button[aria-label="Open cart"]') as HTMLButtonElement | null;
+                     if (btn) btn.click();
+                }
+            }
+        });
+    };
+
+    return (
+        <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border">
+            <h3 className="font-display text-2xl font-bold text-dark-deep mb-4">Book Your Safari</h3>
+            
+            <div className="space-y-4 mb-6">
+                {/* Travelers */}
+                <div>
+                    <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">
+                        Travelers
+                    </label>
+                    <div className="flex items-center border border-border rounded-lg bg-gray-50 h-11">
+                        <button
+                            type="button"
+                            onClick={() => setTravelers(Math.max(1, travelers - 1))}
+                            className="w-12 h-full flex items-center justify-center text-warm-gray hover:bg-gray-100 transition-colors rounded-l-lg cursor-pointer"
+                        >
+                            <Minus className="w-4 h-4" />
+                        </button>
+                        <div className="flex-1 text-center font-semibold text-sm">
+                            {travelers}
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setTravelers(Math.min(8, travelers + 1))}
+                            className="w-12 h-full flex items-center justify-center text-warm-gray hover:bg-gray-100 transition-colors rounded-r-lg cursor-pointer"
+                        >
+                            <Plus className="w-4 h-4" />
+                        </button>
+                    </div>
+                </div>
+
+                {/* Date Picker */}
+                <div>
+                    <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">
+                        Preferred Departure
+                    </label>
+                    <div className="relative">
+                        <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-warm-gray pointer-events-none" />
+                        <input
+                            type="date"
+                            value={date}
+                            min={minDateStr}
+                            onChange={(e) => setDate(e.target.value)}
+                            className="w-full pl-10 pr-4 h-11 bg-gray-50 border border-border rounded-lg focus:ring-2 focus:ring-accent outline-none text-sm cursor-pointer transition-shadow"
+                        />
+                    </div>
+                    <p className="text-[10px] text-warm-gray mt-1">*Safaris require at least 7 days advance notice</p>
+                </div>
+                
+                {/* Line Total preview */}
+                {travelers > 0 && safePrice > 0 && (
+                    <div className="flex justify-between items-center py-2 border-t border-border mt-4">
+                        <span className="text-sm font-medium text-warm-gray">Total Estimated:</span>
+                        <span className="font-display font-bold text-lg text-dark-deep">${(safePrice * travelers).toLocaleString()}</span>
+                    </div>
+                )}
+            </div>
+
+            <Button onClick={handleAddToCart} className="w-full uppercase tracking-wider text-sm font-bold h-12">
+                Add to Safari Cart
+            </Button>
+            
+            {/* Mobile Fixed Bar - Shows only on small screens */}
+            <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-border p-4 px-6 z-50 flex items-center justify-between shadow-[0_-10px_20px_rgba(0,0,0,0.05)]">
+                <div>
+                     <p className="text-[10px] uppercase font-bold text-warm-gray tracking-wider">Per Person</p>
+                     <p className="font-display font-bold text-xl text-dark-deep">${safePrice.toLocaleString()}</p>
+                </div>
+                <Button onClick={handleAddToCart} className="px-8 whitespace-nowrap shadow-none">
+                    Add to Cart
+                </Button>
+            </div>
+        </div>
+    );
+}
+

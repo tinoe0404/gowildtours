@@ -6,10 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, siteConfig } from "@/lib/constants";
 import { destinations } from "@/data/destinations";
+import CartIcon from "@/components/cart/CartIcon";
+import CartSidebar from "@/components/cart/CartSidebar";
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [cartOpen, setCartOpen] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
@@ -82,6 +85,7 @@ export default function Header() {
 
             {/* Desktop CTAs & Mobile Hamburger */}
             <div className="navbar__actions">
+                <CartIcon onClick={() => setCartOpen(true)} />
                 <Link href="/contact" className="btn btn--primary">
                     Book a Safari
                 </Link>
@@ -101,7 +105,7 @@ export default function Header() {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay */}
+             {/* Mobile Menu Overlay */}
             <div className={`mobile-menu-overlay ${menuOpen ? "mobile-menu-overlay--open" : ""}`}>
                 <ul className="mobile-menu__links">
                     {navLinks.map((link, index) => (
@@ -109,8 +113,22 @@ export default function Header() {
                             <Link href={link.href}>{link.label}</Link>
                         </li>
                     ))}
+                    <li style={{ transitionDelay: menuOpen ? `${navLinks.length * 60 + 100}ms` : "0ms" }}>
+                        <button 
+                            className="text-white hover:text-accent transition-colors font-display text-2xl flex items-center justify-center gap-2 mx-auto cursor-pointer"
+                            onClick={() => {
+                                setMenuOpen(false);
+                                setCartOpen(true);
+                            }}
+                        >
+                            Open Cart
+                        </button>
+                    </li>
                 </ul>
             </div>
+
+            {/* Cart Sidebar */}
+            <CartSidebar isOpen={cartOpen} onClose={() => setCartOpen(false)} />
         </nav>
     );
 }

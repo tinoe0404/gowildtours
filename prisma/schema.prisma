@@ -96,6 +96,8 @@ model Booking {
   customerEmail      String
   customerPhone      String?
   customerCountry    String?
+  nationality        String?
+  hearAboutUs        String?
   packageId          String?
   activityId         String?
   hotelId            String?
@@ -105,6 +107,8 @@ model Booking {
   numberOfChildren   Int?
   childrenAges       Int[]
   specialRequests     String?
+  items              Json?
+  subtotal           Decimal?      @db.Decimal(10, 2)
   totalPrice         Decimal?      @db.Decimal(10, 2)
   currency           String        @default("USD")
   paymentStatus      PaymentStatus @default(pending)

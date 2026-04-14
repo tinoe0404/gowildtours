@@ -15,6 +15,7 @@ export const metadata = constructMetadata({
 import { ComparisonProvider } from "@/context/ComparisonContext";
 import { WishlistProvider } from "@/context/WishlistContext";
 import ConditionalLayout from "@/components/layout/ConditionalLayout";
+import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ export default function RootLayout({
             <ConditionalLayout header={<Header />} footer={<Footer />}>
               {children}
             </ConditionalLayout>
+            <Toaster position="bottom-right" richColors />
           </ComparisonProvider>
         </WishlistProvider>
       </body>
