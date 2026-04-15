@@ -89,10 +89,13 @@ export default function Header() {
 
             {/* Desktop CTAs & Mobile Hamburger */}
             <div className="navbar__actions">
-                <CartIcon onClick={() => setCartOpen(true)} />
-                <Link href="/contact" className="btn btn--primary">
-                    Book a Safari
-                </Link>
+                {/* Desktop only */}
+                <div className="hidden md:flex items-center gap-4">
+                    <CartIcon onClick={() => setCartOpen(true)} />
+                    <Link href="/contact" className="btn btn--primary">
+                        Book a Safari
+                    </Link>
+                </div>
                 <button
                     className="hamburger-btn"
                     onClick={() => setMenuOpen(!menuOpen)}
@@ -125,8 +128,17 @@ export default function Header() {
                                 setCartOpen(true);
                             }}
                         >
-                            Open Cart
+                            🛒 Open Cart
                         </button>
+                    </li>
+                    <li style={{ transitionDelay: menuOpen ? `${(navLinks.length + 1) * 60 + 100}ms` : "0ms" }}>
+                        <Link 
+                            href="/contact" 
+                            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
+                            style={{ backgroundColor: "#C8832A" }}
+                        >
+                            Book a Safari
+                        </Link>
                     </li>
                 </ul>
             </div>
