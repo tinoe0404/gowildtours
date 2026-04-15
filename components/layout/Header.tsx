@@ -114,6 +114,17 @@ export default function Header() {
 
              {/* Mobile Menu Overlay */}
             <div className={`mobile-menu-overlay ${menuOpen ? "mobile-menu-overlay--open" : ""}`}>
+                {/* Close Button */}
+                <button
+                    className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+                    onClick={() => setMenuOpen(false)}
+                    aria-label="Close menu"
+                >
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+
                 <ul className="mobile-menu__links">
                     {navLinks.map((link, index) => (
                         <li key={link.href} style={{ transitionDelay: menuOpen ? `${index * 60 + 100}ms` : "0ms" }}>
