@@ -65,7 +65,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                     className="absolute inset-0 z-[1]"
                     style={{
                         background:
-                            "linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.75) 100%)",
+                            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%)",
                     }}
                 />
 
@@ -89,11 +89,10 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* Main Heading */}
                         <motion.h1
                             variants={fadeInUp}
-                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
-                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient-gold"
                         >
-                            Discover the{" "}
-                            <span className="text-gradient-gold">Wild Heart</span>{" "}
+                            Discover the Wild Heart
+                            <br />
                             of Africa
                         </motion.h1>
 

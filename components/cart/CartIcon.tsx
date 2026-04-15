@@ -26,7 +26,7 @@ export default function CartIcon({ onClick }: CartIconProps) {
             <ShoppingBag className="w-6 h-6" />
             
             {mounted && totalItems > 0 && (
-                <span className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 flex items-center justify-center w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full border-2 border-inherit">
+                <span className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 flex items-center justify-center w-5 h-5 bg-accent text-white text-[10px] font-bold rounded-full shadow-md animate-in zoom-in">
                     {totalItems}
                 </span>
             )}
