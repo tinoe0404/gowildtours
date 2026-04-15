@@ -34,7 +34,8 @@ export default function Header() {
         };
     }, [menuOpen]);
 
-    const isSolid = scrolled || menuOpen;
+    const isHomepage = pathname === "/";
+    const isSolid = scrolled || menuOpen || !isHomepage;
 
     return (
         <nav className={`navbar ${isSolid ? "navbar--scrolled" : "navbar--transparent"}`}>

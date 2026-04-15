@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { destinations } from "@/data/destinations";
 import { DestinationCard } from "@/components/DestinationCard";
-import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
   title: "Explore Our Destinations | Go Wild Tours",
@@ -35,12 +34,13 @@ const seasons = [
 export default function DestinationsPage() {
   return (
     <main>
-      <PageHero
-        image="/images/safari/victoria-falls-panorama.jpg"
-        label="Zimbabwe"
-        title="Explore Our Destinations"
-        subtitle="Five extraordinary wilderness areas, each with its own character, wildlife, and magic."
-      />
+      <section className="pt-32 pb-12 bg-[var(--color-mist)]">
+        <div className="container">
+          <span className="text-label block mb-3">Zimbabwe</span>
+          <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Explore Our Destinations</h1>
+          <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Five extraordinary wilderness areas, each with its own character, wildlife, and magic.</p>
+        </div>
+      </section>
 
       {/* ── Intro Section ── */}
       <section className="section destinations-intro">

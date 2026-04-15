@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { TeamCard } from '@/components/about/TeamCard';
 import { ValueCard } from '@/components/about/ValueCard';
 import SectionHeading from '@/components/ui/SectionHeading';
-import PageHero from '@/components/ui/PageHero';
 import {
     Heart, ShieldCheck, Leaf, Users, Award,
     Compass, Telescope, Star, CheckCircle2,
@@ -106,11 +105,13 @@ export default function AboutPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            <PageHero 
-                title="Our Story"
-                subtitle="Connecting people with Africa's wild heart through authentic, sustainable, and unforgettable safari experiences."
-                image="/images/safari/dunes-moody.jpg"
-            />
+            <section className="pt-32 pb-12 bg-white">
+                <div className="container mx-auto px-4 md:px-6">
+                    <span className="text-label block mb-3">About</span>
+                    <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Our Story</h1>
+                    <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Connecting people with Africa&apos;s wild heart through authentic, sustainable, and unforgettable safari experiences.</p>
+                </div>
+            </section>
 
             {/* Story Section */}
             <section className="py-24 bg-white">

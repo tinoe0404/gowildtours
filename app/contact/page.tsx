@@ -4,7 +4,6 @@ import React from 'react';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { FAQAccordion } from '@/components/contact/FAQAccordion';
 import SectionHeading from '@/components/ui/SectionHeading';
-import PageHero from '@/components/ui/PageHero';
 import {
     Phone, Mail, MapPin, Clock, MessageSquare,
     Facebook, Instagram, Twitter, Youtube, Linkedin
@@ -40,11 +39,13 @@ export default function ContactPage() {
 
     return (
         <main className="bg-white">
-            <PageHero 
-                title="Get in Touch"
-                subtitle="Have questions about our safari packages or need a custom itinerary? Our team of experts is here to help you plan the adventure of a lifetime."
-                image="/images/safari/victoria-falls-close.jpg"
-            />
+            <section className="pt-32 pb-12 bg-white">
+                <div className="container">
+                    <span className="text-label block mb-3">Contact</span>
+                    <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Get in Touch</h1>
+                    <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Have questions about our safari packages or need a custom itinerary? Our team of experts is here to help you plan the adventure of a lifetime.</p>
+                </div>
+            </section>
 
             <section className="section scroll-reveal" ref={contactRef as React.RefObject<HTMLElement>}>
                 <div className="container">
