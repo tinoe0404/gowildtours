@@ -83,7 +83,7 @@ export default function GalleryPageClient() {
     return (
         <>
             {/* ── Page Header ── */}
-            <section className="pt-28 pb-10 bg-cream">
+            <section className="pt-36 pb-8 bg-cream">
                 <Container>
                     <nav
                         className="flex items-center gap-1.5 text-xs font-accent text-[var(--color-text-muted)] mb-3"

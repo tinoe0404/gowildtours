@@ -51,7 +51,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
     return (
         <>
             {/* ── Page Header ── */}
-            <div className="pt-28 pb-10 bg-[var(--color-mist)]">
+            <div className="pt-36 pb-8 bg-[var(--color-mist)]">
                 <Container>
                     <div className="flex flex-wrap gap-2 mb-4">
                         {categories.map((cat) => (

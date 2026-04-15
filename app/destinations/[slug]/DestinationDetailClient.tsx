@@ -42,7 +42,7 @@ export default function DestinationDetailClient({
   return (
     <>
       {/* ── Page Header ── */}
-      <div className="pt-28 pb-10 bg-[var(--color-mist)]">
+      <div className="pt-36 pb-8 bg-[var(--color-mist)]">
         <div className="container">
           <span className="text-label" style={{ color: "var(--color-savanna)" }}>
             {destination.region}

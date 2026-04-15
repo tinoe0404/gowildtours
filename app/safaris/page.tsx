@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function SafarisPage() {
     return (
         <main>
-            <section className="pt-32 pb-12 bg-[var(--color-mist)]">
+            <section className="pt-36 pb-8 bg-[var(--color-mist)]">
                 <Container>
                     <span className="text-label block mb-3">Explore</span>
                     <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Our Safaris</h1>

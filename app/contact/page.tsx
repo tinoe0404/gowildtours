@@ -39,7 +39,7 @@ export default function ContactPage() {
 
     return (
         <main className="bg-white">
-            <section className="pt-32 pb-12 bg-white">
+            <section className="pt-36 pb-8 bg-white">
                 <div className="container">
                     <span className="text-label block mb-3">Contact</span>
                     <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Get in Touch</h1>

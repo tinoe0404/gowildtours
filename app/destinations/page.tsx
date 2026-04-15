@@ -34,7 +34,7 @@ const seasons = [
 export default function DestinationsPage() {
   return (
     <main>
-      <section className="pt-32 pb-12 bg-[var(--color-mist)]">
+      <section className="pt-36 pb-8 bg-[var(--color-mist)]">
         <div className="container">
           <span className="text-label block mb-3">Zimbabwe</span>
           <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Explore Our Destinations</h1>

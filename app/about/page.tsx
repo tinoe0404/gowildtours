@@ -105,7 +105,7 @@ export default function AboutPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            <section className="pt-32 pb-12 bg-white">
+            <section className="pt-36 pb-8 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <span className="text-label block mb-3">About</span>
                     <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Our Story</h1>
