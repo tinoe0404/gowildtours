@@ -1227,7 +1227,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Mobile Queries ── */
 @media (max-width: 768px) {
   .container { padding: 0 var(--space-4); }
-  section { padding: var(--space-16) 0; }
+  .section { padding: var(--space-16) 0; }
   .hero__title { font-size: clamp(2.2rem, 9vw, 3.5rem); }
   .about-layout { flex-direction: column; }
   .stats-row { flex-wrap: wrap; }
