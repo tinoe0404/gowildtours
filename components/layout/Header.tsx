@@ -41,11 +41,15 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="navbar__logo" aria-label="Go Wild Tours">
                 <Image
-                    src={isSolid ? siteConfig.logos.dark : siteConfig.logos.light}
+                    src="/logo.png"
                     alt="Go Wild Tours Logo"
-                    width={88}
-                    height={60}
-                    style={{ objectFit: "contain" }}
+                    width={120}
+                    height={80}
+                    style={{
+                        objectFit: "contain",
+                        filter: isSolid ? "none" : "brightness(0) invert(1)",
+                        transition: "filter 0.25s ease",
+                    }}
                     priority
                 />
             </Link>

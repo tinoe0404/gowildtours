@@ -176,7 +176,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             </div>
                             <div className="mt-8">
                                 <Link href="/about">
-                                    <Button variant="secondary">
+                                    <Button variant="primary">
                                         Learn More About Us
                                         <ArrowRight className="h-4 w-4" />
                                     </Button>
@@ -198,10 +198,6 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                     fill
                                     className="object-cover"
                                 />
-                            </div>
-                            <div className="absolute -bottom-6 -left-6 glass-dark rounded-[var(--radius-card)] p-5 text-cream hidden md:block">
-                                <div className="font-display text-3xl font-bold text-accent-light">10+</div>
-                                <div className="text-xs font-accent tracking-wider text-cream/60 uppercase mt-1">Years of Excellence</div>
                             </div>
                         </motion.div>
                     </div>
@@ -380,14 +376,12 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
             <InstagramFeed />
 
             {/* ═══════════════ CTA BANNER ═══════════════ */}
-            <section className="relative py-24 md:py-32 overflow-hidden">
-                <Image
-                    src={images.ctaBg}
-                    alt="African wildlife"
-                    fill
-                    className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-dark-deep/85 via-dark-deep/75 to-dark-deep/85" />
+            <section
+                className="relative py-16 md:py-20 overflow-hidden"
+                style={{
+                    background: "linear-gradient(135deg, #1A1410 0%, #2C1A0E 40%, #1A1410 100%)",
+                }}
+            >
 
                 <Container className="relative z-10">
                     <motion.div
@@ -400,10 +394,10 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         <span className="font-accent text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-accent-light block mb-4">
                             Start Your Journey
                         </span>
-                        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream leading-tight mb-6">
+                        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-gradient-gold">
                             Ready to Plan Your
                             <br />
-                            <span className="text-gradient-gold">African Adventure?</span>
+                            African Adventure?
                         </h2>
                         <p className="text-cream/70 text-base md:text-lg leading-relaxed mb-8">
                             Let our expert team craft a bespoke safari itinerary just for you.

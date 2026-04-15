@@ -7,10 +7,11 @@ export default function PageLoader() {
       <div className="page-loader__logo">
         {/* We use siteConfig.logos.light if available or fallback */}
         <Image 
-          src={siteConfig?.logos?.light || "/images/logo/go-wild-tours-full-white.svg"} 
+          src="/logo.png" 
           alt="Go Wild Tours" 
-          width={160} 
-          height={48} 
+          width={180} 
+          height={56} 
+          style={{ filter: "brightness(0) invert(1)" }}
           priority 
         />
       </div>

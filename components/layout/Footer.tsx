@@ -39,12 +39,12 @@ export default async function Footer() {
                 <div className="footer__grid">
                     {/* Brand Column */}
                     <div>
-                        <Link href="/" className="relative block h-12 w-40 mb-4" style={{display: 'inline-block', marginBottom: 'var(--space-4)'}}>
+                        <Link href="/" className="relative block h-14 w-44 mb-4" style={{display: 'inline-block', marginBottom: 'var(--space-4)'}}>
                             <Image
-                                src={siteConfig.logos.light}
+                                src="/logo.png"
                                 alt={siteConfig.name}
                                 fill
-                                style={{objectFit: 'contain', objectPosition: 'left'}}
+                                style={{objectFit: 'contain', objectPosition: 'left', filter: 'brightness(0) invert(1)'}}
                             />
                         </Link>
                         <p style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, marginBottom: 'var(--space-6)'}}>
