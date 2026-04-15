@@ -41,39 +41,28 @@ export default function DestinationDetailClient({
 
   return (
     <>
-      {/* ── Hero ── */}
-      <div className="relative h-[55vh] min-h-[420px] bg-gray-900">
-        <Image
-          src={destination.heroImage}
-          alt={destination.name}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[rgba(26,16,7,0.80)] via-[rgba(26,16,7,0.30)] to-transparent" />
-        <div className="container relative h-full flex items-end pb-12 z-10">
-          <div className="w-full">
-            <span className="text-label" style={{ color: "var(--color-savanna)" }}>
-              {destination.region}
-            </span>
-            <h1
-              className="text-h1"
-              style={{
-                color: "white",
-                marginTop: "var(--space-2)",
-                marginBottom: "var(--space-2)",
-              }}
-            >
-              {destination.name}
-            </h1>
-            <p
-              className="text-body-lg"
-              style={{ color: "rgba(255,255,255,0.8)", maxWidth: "600px" }}
-            >
-              {destination.tagline}
-            </p>
-          </div>
+      {/* ── Page Header ── */}
+      <div className="pt-28 pb-10 bg-[var(--color-mist)]">
+        <div className="container">
+          <span className="text-label" style={{ color: "var(--color-savanna)" }}>
+            {destination.region}
+          </span>
+          <h1
+            className="text-h1"
+            style={{
+              color: "var(--color-earth)",
+              marginTop: "var(--space-2)",
+              marginBottom: "var(--space-2)",
+            }}
+          >
+            {destination.name}
+          </h1>
+          <p
+            className="text-body-lg"
+            style={{ color: "var(--color-text-muted)", maxWidth: "600px" }}
+          >
+            {destination.tagline}
+          </p>
         </div>
       </div>
 

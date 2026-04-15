@@ -82,22 +82,11 @@ export default function GalleryPageClient() {
 
     return (
         <>
-            {/* ── Hero Banner ── */}
-            <section className="relative h-56 md:h-72 flex items-end overflow-hidden">
-                <Image
-                    src="/images/safari/lioness-rain.jpg"
-                    alt="African savanna panorama"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/80 via-dark-deep/40 to-dark-deep/20" />
-
-                <Container className="relative z-10 pb-8 md:pb-10">
-                    {/* Breadcrumb */}
+            {/* ── Page Header ── */}
+            <section className="pt-28 pb-10 bg-cream">
+                <Container>
                     <nav
-                        className="flex items-center gap-1.5 text-xs font-accent text-cream/60 mb-3"
+                        className="flex items-center gap-1.5 text-xs font-accent text-[var(--color-text-muted)] mb-3"
                         aria-label="Breadcrumb"
                     >
                         <Link
@@ -107,9 +96,9 @@ export default function GalleryPageClient() {
                             Home
                         </Link>
                         <ChevronRight className="h-3 w-3" />
-                        <span className="text-cream/90">Gallery</span>
+                        <span className="text-[var(--color-earth)]">Gallery</span>
                     </nav>
-                    <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-cream">
+                    <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-earth)]">
                         Safari Gallery
                     </h1>
                 </Container>

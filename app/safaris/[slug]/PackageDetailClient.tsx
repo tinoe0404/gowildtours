@@ -50,45 +50,33 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
 
     return (
         <>
-            {/* ── Hero Gallery ── */}
-            <div className="relative h-[50vh] min-h-[400px] bg-gray-900 group">
-                <Image
-                    src={mainImage}
-                    alt={pkg.title}
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/80 via-transparent to-transparent" />
-
-                <Container className="relative h-full flex items-end pb-12 z-10">
-                    <div className="w-full">
-                        <div className="flex flex-wrap gap-2 mb-4">
-                            {categories.map((cat) => (
-                                <span key={cat} className="px-3 py-1 bg-accent/90 text-dark-deep text-xs font-accent font-bold uppercase rounded-full">
-                                    {cat}
-                                </span>
-                            ))}
+            {/* ── Page Header ── */}
+            <div className="pt-28 pb-10 bg-[var(--color-mist)]">
+                <Container>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                        {categories.map((cat) => (
+                            <span key={cat} className="px-3 py-1 bg-accent/90 text-dark-deep text-xs font-accent font-bold uppercase rounded-full">
+                                {cat}
+                            </span>
+                        ))}
+                    </div>
+                    <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-earth)] mb-4">
+                        {pkg.title}
+                    </h1>
+                    <div className="flex flex-wrap items-center gap-6 text-[var(--color-text-muted)] text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                            <Clock className="w-5 h-5 text-accent" />
+                            <span>{durationDays} Days / {durationNights} Nights</span>
                         </div>
-                        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 shadow-sm">
-                            {pkg.title}
-                        </h1>
-                        <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm font-medium">
+                        {pkg.groupSize && (
                             <div className="flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-accent" />
-                                <span>{durationDays} Days / {durationNights} Nights</span>
+                                <Users className="w-5 h-5 text-accent" />
+                                <span>Min {pkg.groupSize.min} - Max {pkg.groupSize.max} Guests</span>
                             </div>
-                            {pkg.groupSize && (
-                                <div className="flex items-center gap-2">
-                                    <Users className="w-5 h-5 text-accent" />
-                                    <span>Min {pkg.groupSize.min} - Max {pkg.groupSize.max} Guests</span>
-                                </div>
-                            )}
-                            <div className="flex items-center gap-2">
-                                <MapPin className="w-5 h-5 text-accent" />
-                                <span>{destinations.join(", ")}</span>
-                            </div>
+                        )}
+                        <div className="flex items-center gap-2">
+                            <MapPin className="w-5 h-5 text-accent" />
+                            <span>{destinations.join(", ")}</span>
                         </div>
                     </div>
                 </Container>
