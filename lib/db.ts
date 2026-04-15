@@ -1,7 +1,18 @@
 import { PrismaClient } from '@prisma/client'
+import { Pool, neonConfig } from '@neondatabase/serverless'
+import { PrismaNeon } from '@prisma/adapter-neon'
+import ws from 'ws'
+
+neonConfig.webSocketConstructor = ws
+
+const connectionString = process.env.DATABASE_URL!
 
 const prismaClientSingleton = () => {
-    return new PrismaClient()
+    // We create a serverless pooled connection that uses WebSocket over port 443
+    // completely bypassing the port 5432 restrictions on standard Wi-Fi networks.
+    const pool = new Pool({ connectionString })
+    const adapter = new PrismaNeon(pool as any)
+    return new PrismaClient({ adapter })
 }
 
 declare global {
