@@ -90,18 +90,7 @@ const milestones = [
 ];
 
 export default function AboutPage() {
-    const [team, setTeam] = React.useState<any[]>(staticTeamMembers);
-
-    React.useEffect(() => {
-        fetch('/api/team')
-            .then(res => res.json())
-            .then(data => {
-                if (Array.isArray(data) && data.length > 0) {
-                    setTeam(data);
-                }
-            })
-            .catch(err => console.error("Team fetch failed", err));
-    }, []);
+    const team = staticTeamMembers;
 
     return (
         <main className="min-h-screen bg-white">
