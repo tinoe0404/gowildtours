@@ -4,17 +4,21 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Destination } from "@/data/destinations";
+import { Package } from "@/lib/packages-data";
+import PackageCard from "@/components/ui/PackageCard";
 
 interface DestinationDetailClientProps {
   destination: Destination;
 }
 
-const tabs = ["Overview", "Activities", "Accommodation", "When to Visit"];
+const tabs = ["Overview", "Tours", "Activities", "Accommodation", "When to Visit"];
 
 export default function DestinationDetailClient({
   destination,
 }: DestinationDetailClientProps) {
   const [activeTab, setActiveTab] = useState("Overview");
+  const [destinationPackages, setDestinationPackages] = useState<Package[]>([]);
+  const [isLoadingPackages, setIsLoadingPackages] = useState(true);
 
   // Track active section on scroll
   useEffect(() => {
@@ -38,6 +42,28 @@ export default function DestinationDetailClient({
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Fetch packages
+  useEffect(() => {
+    async function fetchPackages() {
+      try {
+        setIsLoadingPackages(true);
+        const res = await fetch("/api/packages");
+        if (!res.ok) throw new Error("Failed to fetch packages");
+        const data: Package[] = await res.json();
+        
+        const filtered = data.filter((pkg) => 
+          pkg.destinations?.includes(destination.name)
+        );
+        setDestinationPackages(filtered);
+      } catch (err) {
+        console.error("Failed to fetch packages:", err);
+      } finally {
+        setIsLoadingPackages(false);
+      }
+    }
+    fetchPackages();
+  }, [destination.name]);
 
   return (
     <>
@@ -240,6 +266,34 @@ export default function DestinationDetailClient({
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Tours ── */}
+      <section id="tours" className="section bg-[var(--color-mist)]">
+        <div className="container">
+          <div className="section-header" style={{ textAlign: "left" }}>
+            <span className="text-label">Safaris</span>
+            <h2 className="text-h2">Tours in {destination.name}</h2>
+          </div>
+          
+          {isLoadingPackages ? (
+            <div className="packages-grid w-full">
+                {[1, 2, 3].map((i) => (
+                    <div key={i} className="package-card-skeleton" aria-hidden="true" style={{ height: "400px", background: "var(--color-white)", borderRadius: "var(--radius-lg)" }} />
+                ))}
+            </div>
+          ) : destinationPackages.length > 0 ? (
+            <div className="packages-grid">
+              {destinationPackages.map((pkg) => (
+                <PackageCard key={pkg.id} pkg={pkg as any} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-body text-[var(--color-text-muted)]">
+              No tours are currently listed for {destination.name}. Please contact us for a custom itinerary.
+            </p>
+          )}
         </div>
       </section>
 

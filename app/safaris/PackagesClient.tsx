@@ -325,10 +325,10 @@ export default function PackagesClient() {
                         ))
                     ) : (
                         <div className="col-span-full py-20 text-center">
-                            <h3 className="text-xl font-display font-bold text-dark-deep mb-2">No packages found</h3>
+                            <h3 className="text-xl font-display font-bold text-dark-deep mb-2">No safaris match your filters</h3>
                             <p className="text-warm-gray mb-6">Try adjusting your filters to find your perfect adventure.</p>
                             <Button onClick={clearFilters} variant="outline">
-                                Clear Filters
+                                Clear filters
                             </Button>
                         </div>
                     )}

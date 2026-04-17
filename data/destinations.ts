@@ -187,4 +187,116 @@ Go Wild Tours pairs Lake Kariba houseboat experiences with game drives in Matusa
     wildlife: ["Elephant", "Buffalo", "Black Rhino", "Lion", "Hippo", "Crocodile", "Tigerfish"],
     coordinates: { lat: -16.98, lng: 28.77 },
   },
+  {
+    slug: "botswana",
+    name: "Botswana",
+    tagline: "The Jewel of the Kalahari",
+    region: "Southern Africa",
+    image: "/images/safari/hippos-mud.jpg",
+    heroImage: "/images/safari/elephant-river.jpg",
+    highlights: ["Okavango Delta", "Chobe National Park", "Kalahari Desert"],
+    bestFor: ["Wildlife enthusiasts", "Luxury safaris", "Photographers"],
+    bestTime: "May – October (dry season)",
+    duration: "6–10 nights recommended",
+    description: "Experience the unparalleled wildlife density of the Okavango Delta and the massive elephant herds of Chobe.",
+    longDescription: `Botswana is widely considered one of Africa's premier safari destinations, known for its low-impact, high-value tourism model that ensures pristine and uncrowded wilderness experiences.
+
+From the lush waterways of the Okavango Delta to the arid expanses of the Kalahari Desert, the country offers incredible contrasts. The Chobe River is famous for hosting the largest concentration of elephants in Africa.
+
+Go Wild Tours offers seamless cross-border itineraries, combining the best of Zimbabwe with Botswana's iconic landscapes.`,
+    activities: [
+      { name: "Mokoro Trails", icon: "🛶", description: "Glide silently through the Delta in a traditional dugout canoe" },
+      { name: "Game Drives", icon: "🚙", description: "Exceptional wildlife viewing in Moremi and Chobe" },
+      { name: "River Cruises", icon: "🛥️", description: "Sunset cruises on the Chobe River" }
+    ],
+    accommodation: [
+      { name: "Okavango Delta Camps", type: "Luxury Tented Camp", description: "Exclusive camps accessible only by light aircraft", image: "" }
+    ],
+    wildlife: ["Elephant", "Lion", "Leopard", "Wild Dog", "Hippo", "Crocodile"],
+    coordinates: { lat: -22.3285, lng: 24.6849 },
+  },
+  {
+    slug: "namibia",
+    name: "Namibia",
+    tagline: "Land of Striking Contrasts",
+    region: "Southern Africa",
+    image: "/images/safari/dunes-moody.jpg",
+    heroImage: "/images/safari/dead-tree-desert.jpg",
+    highlights: ["Sossusvlei Dunes", "Etosha National Park", "Skeleton Coast"],
+    bestFor: ["Adventure seekers", "Photographers", "Self-drive safaris"],
+    bestTime: "June – October",
+    duration: "10–14 nights recommended",
+    description: "A country of vast open spaces, towering red sand dunes, and unique desert-adapted wildlife.",
+    longDescription: `Namibia is defined by its dramatic landscapes. The towering red dunes of Sossusvlei are among the highest in the world, while the desolate Skeleton Coast is hauntingly beautiful.
+
+Etosha National Park offers extraordinary wildlife viewing around its massive salt pan, where animals congregate at waterholes in the dry season. Look out for desert-adapted elephants and rhinos in Damaraland.
+
+Our overland expeditions perfectly capture the essence of this rugged, breathtaking country.`,
+    activities: [
+      { name: "Dune Climbing", icon: "⛰️", description: "Climb the iconic Dune 45 or Big Daddy at Sossusvlei" },
+      { name: "Etosha Game Drives", icon: "🚙", description: "Watch wildlife congregate around the salt pan waterholes" },
+      { name: "Scenic Flights", icon: "✈️", description: "View the dramatic Skeleton Coast from the air" }
+    ],
+    accommodation: [
+      { name: "Desert Lodges", type: "Boutique Lodge", description: "Architecturally stunning lodges blending into the landscape", image: "" }
+    ],
+    wildlife: ["Desert Elephant", "Black Rhino", "Lion", "Oryx", "Springbok"],
+    coordinates: { lat: -22.9576, lng: 18.4904 },
+  },
+  {
+    slug: "zambia",
+    name: "Zambia",
+    tagline: "The Real Africa",
+    region: "Southern Africa",
+    image: "/images/safari/leopard-walking.jpg",
+    heroImage: "/images/safari/victoria-falls-wide.jpg",
+    highlights: ["South Luangwa", "Lower Zambezi", "Victoria Falls"],
+    bestFor: ["Walking safaris", "Experienced safari goers", "Authentic wilderness"],
+    bestTime: "June – October",
+    duration: "7–10 nights recommended",
+    description: "The birthplace of the walking safari, offering raw, untamed wilderness and the magnificent Victoria Falls.",
+    longDescription: `Zambia is a vast, wild country that remains largely untouched by mass tourism. It is famously the birthplace of the walking safari, particularly in the South Luangwa National Park, known for its high leopard density.
+
+The Lower Zambezi National Park offers a brilliant mix of land and water-based activities, sharing the great river with Zimbabwe's Mana Pools.
+
+From the Zambian side of Victoria Falls to the remote wilderness of Kafue, Zambia delivers an authentic, old-school safari experience.`,
+    activities: [
+      { name: "Walking Safaris", icon: "🦶", description: "Pioneering walking safaris in South Luangwa" },
+      { name: "Canoeing", icon: "🛶", description: "Paddle the Lower Zambezi among hippos and elephants" },
+      { name: "Night Drives", icon: "🔦", description: "Excellent chances of spotting leopards on the hunt" }
+    ],
+    accommodation: [
+      { name: "Bush Camps", type: "Intimate Camp", description: "Small, authentic camps focused on the wilderness experience", image: "" }
+    ],
+    wildlife: ["Leopard", "Lion", "Elephant", "Hippo", "Puku"],
+    coordinates: { lat: -13.1339, lng: 27.8493 },
+  },
+  {
+    slug: "malawi",
+    name: "Malawi",
+    tagline: "The Warm Heart of Africa",
+    region: "Southeastern Africa",
+    image: "/images/safari/river-aerial.jpg",
+    heroImage: "/images/safari/sunset-cruise.jpg",
+    highlights: ["Lake Malawi", "Liwonde National Park", "Majete Wildlife Reserve"],
+    bestFor: ["Beach and bush combos", "Cultural interactions", "Snorkeling"],
+    bestTime: "May – October",
+    duration: "5–7 nights recommended",
+    description: "Famous for the crystal-clear waters of Lake Malawi and incredibly welcoming people.",
+    longDescription: `Malawi is affectionately known as the "Warm Heart of Africa" due to the legendary friendliness of its people. The country is dominated by Lake Malawi, a massive inland sea with golden beaches and extraordinary cichlid fish diversity.
+
+In recent years, Malawi has also emerged as a fantastic wildlife destination, with successful conservation efforts transforming parks like Majete and Liwonde into thriving Big Five reserves.
+
+It's the perfect destination for those seeking a relaxing beach-style end to an adventurous safari.`,
+    activities: [
+      { name: "Snorkeling & Diving", icon: "🤿", description: "Swim among hundreds of endemic cichlid species in Lake Malawi" },
+      { name: "Cultural Visits", icon: "🏘️", description: "Authentic interactions with local communities" },
+      { name: "Game Drives", icon: "🚙", description: "Explore the revitalized wildlife reserves" }
+    ],
+    accommodation: [
+      { name: "Lakeshore Lodges", type: "Beach Lodge", description: "Relaxing lodges right on the sandy shores of the lake", image: "" }
+    ],
+    wildlife: ["Cichlids", "Elephant", "Rhino", "Lion", "Hippo"],
+    coordinates: { lat: -13.2543, lng: 34.3015 },
+  }
 ];
