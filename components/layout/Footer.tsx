@@ -10,12 +10,16 @@ export default async function Footer() {
     let footerPackages: any[] = [];
 
     try {
-        settings = await prisma.siteSetting.findMany();
-        footerPackages = await prisma.package.findMany({
-            where: { isPublished: true },
-            take: 5,
-            select: { title: true, slug: true }
-        });
+        if (process.env.DATABASE_URL) {
+            settings = await prisma.siteSetting.findMany();
+            footerPackages = await prisma.package.findMany({
+                where: { isPublished: true },
+                take: 5,
+                select: { title: true, slug: true }
+            });
+        } else {
+            console.warn("Skipping Footer DB calls because DATABASE_URL is missing");
+        }
     } catch (error) {
         console.warn("Footer DB connection failed during build, using fallbacks:", error);
     }
