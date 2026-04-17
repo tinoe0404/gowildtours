@@ -2,40 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { siteConfig, navLinks } from "@/lib/constants";
 import { Instagram, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
-import prisma from "@/lib/db";
 import { destinations } from "@/data/destinations";
+import { packages as staticPackages } from "@/lib/packages-data";
 
 export default async function Footer() {
-    let settings: any[] = [];
-    let footerPackages: any[] = [];
+    const footerPackages = staticPackages
+        .filter((pkg) => pkg.featured)
+        .slice(0, 5)
+        .map((pkg) => ({ title: pkg.title, slug: pkg.slug }));
 
-    try {
-        if (process.env.DATABASE_URL) {
-            settings = await prisma.siteSetting.findMany();
-            footerPackages = await prisma.package.findMany({
-                where: { isPublished: true },
-                take: 5,
-                select: { title: true, slug: true }
-            });
-        } else {
-            console.warn("Skipping Footer DB calls because DATABASE_URL is missing");
-        }
-    } catch (error) {
-        console.warn("Footer DB connection failed during build, using fallbacks:", error);
-    }
-
-    const settingsMap = settings.reduce((acc: any, s) => {
-        acc[s.key] = s.value;
-        return acc;
-    }, {});
-
-    const contact = settingsMap.contact_info || {
+    const contact = {
         email: siteConfig.email,
         phone: siteConfig.phone,
         address: siteConfig.location
     };
 
-    const socials = settingsMap.social_links || siteConfig.socials;
+    const socials = siteConfig.socials;
 
     return (
         <footer className="footer">
