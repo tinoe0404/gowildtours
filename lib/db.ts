@@ -1,23 +1,20 @@
-import { PrismaClient } from '@prisma/client'
-import { Pool, neonConfig } from '@neondatabase/serverless'
+import { neonConfig } from '@neondatabase/serverless'
 import { PrismaNeon } from '@prisma/adapter-neon'
+import { PrismaClient } from '@prisma/client'
 import ws from 'ws'
 
 neonConfig.webSocketConstructor = ws
 
-const connectionString = process.env.DATABASE_URL
-
 const prismaClientSingleton = () => {
+    const connectionString = process.env.DATABASE_URL
+    console.log("Initializing Prisma with DATABASE_URL length:", connectionString?.length);
+    
     if (!connectionString) {
-        // Return a PrismaClient that will fail fast on any query
-        // rather than hanging for 60+ seconds trying to connect to localhost
-        console.warn('DATABASE_URL is not set — Prisma queries will fail.')
-        return new PrismaClient()
+        throw new Error('DATABASE_URL is not set')
     }
-    // We create a serverless pooled connection that uses WebSocket over port 443
-    // completely bypassing the port 5432 restrictions on standard Wi-Fi networks.
-    const pool = new Pool({ connectionString, connectionTimeoutMillis: 5000 })
-    const adapter = new PrismaNeon(pool as any)
+    
+    // In Prisma 6+, PrismaNeon takes a PoolConfig object instead of a Pool instance
+    const adapter = new PrismaNeon({ connectionString })
     return new PrismaClient({ adapter })
 }
 

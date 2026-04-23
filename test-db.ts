@@ -1,18 +1,7 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
-
+import prisma from "./lib/db";
 async function main() {
-    try {
-        await prisma.$connect();
-        console.log("Database connection successful!");
-        const count = await prisma.adminUser.count();
-        console.log("AdminUser count:", count);
-    } catch (error) {
-        console.error("Database connection failed:", error);
-    } finally {
-        await prisma.$disconnect();
-    }
+  console.log("Testing db connection...");
+  const users = await prisma.siteSetting.findMany({ take: 1 });
+  console.log("Success:", users);
 }
-
-main();
+main().catch(console.error);
