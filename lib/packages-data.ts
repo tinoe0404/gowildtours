@@ -27,6 +27,8 @@ export interface Package {
         days: number;
         nights: number;
     } | string;
+    minGuests?: number;
+    maxGuests?: number;
     groupSize?: {
         min: number;
         max: number;
@@ -42,7 +44,9 @@ export interface Package {
     image?: string;
     images: string[];
     inclusions: string[];
+    exclusions?: string[];
     highlights: string[];
+    itinerary?: any;
 }
 
 export const packages: Package[] = [

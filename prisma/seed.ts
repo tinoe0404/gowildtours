@@ -3,9 +3,15 @@ dotenv.config({ path: ".env.local" });
 dotenv.config();
 
 import { PrismaClient } from "@prisma/client";
+import { PrismaNeon } from "@prisma/adapter-neon";
 import { hash } from "bcryptjs";
+import ws from "ws";
+import { neonConfig } from "@neondatabase/serverless";
 
-const prisma = new PrismaClient();
+neonConfig.webSocketConstructor = ws;
+
+const adapter = new PrismaNeon({ connectionString: process.env.DATABASE_URL! });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
     console.log("Starting full seed...");
@@ -47,14 +53,17 @@ async function main() {
                 "/images/safari/lioness-rain.jpg",
             ],
             inclusions: ["2 Nights Accommodation", "Daily Breakfast", "Airport Transfers", "Guided Tour of Falls", "Sunset Cruise"],
+            exclusions: ["International Flights", "Visas", "Travel Insurance", "Personal Expenses & Tips"],
             highlights: ["Witness the grandeur of Victoria Falls", "Sunset cruise on the Zambezi", "Local market visit"],
-            itinerary: {
-                destinations: ["Victoria Falls"],
-                shortDescription: "A quick but immersive 3-day getaway to the majestic Victoria Falls.",
-                groupSize: { min: 2, max: 12, type: "Small Group" },
-                difficulty: "Easy",
-                bestSeller: true,
-            }
+            minGuests: 2,
+            maxGuests: 12,
+            difficulty: "Easy",
+            destinations: ["Victoria Falls"],
+            itinerary: [
+                { day: 1, title: "Arrival at Victoria Falls", description: "Meet and greet at Victoria Falls Airport, transfer to your hotel. Afternoon sunset cruise on the Zambezi River." },
+                { day: 2, title: "Tour of the Falls", description: "Morning guided tour of the magnificent Victoria Falls. Afternoon at leisure for optional activities like helicopter flights or village tours." },
+                { day: 3, title: "Departure", description: "Breakfast at the hotel followed by transfer to the airport for your onward flight." }
+            ]
         },
         {
             slug: "hwange-safari-adventure",
@@ -70,14 +79,19 @@ async function main() {
                 "/images/safari/dunes-moody.jpg",
             ],
             inclusions: ["4 Nights Luxury Tented Camp", "All Meals and Drinks", "2 Game Drives Daily", "Park Fees", "Return Transfers from Victoria Falls"],
+            exclusions: ["International Flights", "Visas", "Travel Insurance", "Personal Expenses & Tips"],
             highlights: ["Huge elephant herds", "Walking safaris", "Sundowners at waterholes"],
-            itinerary: {
-                destinations: ["Hwange National Park"],
-                shortDescription: "Dive deep into Zimbabwe's largest game reserve. 5 days of thrilling game drives.",
-                groupSize: { min: 2, max: 8, type: "Small Group" },
-                difficulty: "Moderate",
-                bestSeller: true,
-            }
+            minGuests: 2,
+            maxGuests: 8,
+            difficulty: "Moderate",
+            destinations: ["Hwange National Park"],
+            itinerary: [
+                { day: 1, title: "Arrival in Hwange", description: "Transfer from Victoria Falls to Hwange National Park. Afternoon game drive and sundowner." },
+                { day: 2, title: "Full Day Game Viewing", description: "Early morning game drive. Return to camp for brunch and relaxation. Afternoon game drive until sunset." },
+                { day: 3, title: "Walking Safari", description: "Morning walking safari with an armed guide to experience the bush on foot. Afternoon game drive." },
+                { day: 4, title: "Exploring the Pan", description: "Full day exploring the different pans and waterholes of Hwange, known for large herds of elephants." },
+                { day: 5, title: "Departure", description: "Final morning game drive followed by transfer back to Victoria Falls." }
+            ]
         },
         {
             slug: "mana-pools-walking-safari",
@@ -93,14 +107,21 @@ async function main() {
                 "/images/safari/elephants-swimming.jpg",
             ],
             inclusions: ["6 Nights Fly Camp / Lodge", "All Meals", "Professional Walking Guide", "Canoe Safari Included", "Charter Flights from Harare"],
+            exclusions: ["International Flights", "Visas", "Travel Insurance", "Personal Expenses & Tips"],
             highlights: ["Walking with wild dogs", "Canoeing the Zambezi", "Sleeping under the stars"],
-            itinerary: {
-                destinations: ["Mana Pools"],
-                shortDescription: "A premium 7-day walking safari in the UNESCO World Heritage site of Mana Pools.",
-                groupSize: { min: 2, max: 6, type: "Small Group" },
-                difficulty: "Challenging",
-                bestSeller: false,
-            }
+            minGuests: 2,
+            maxGuests: 6,
+            difficulty: "Challenging",
+            destinations: ["Mana Pools"],
+            itinerary: [
+                { day: 1, title: "Arrival in Mana Pools", description: "Light aircraft transfer to Mana Pools. Settle into the fly camp and enjoy an introductory walk." },
+                { day: 2, title: "First Full Day Walk", description: "Early start to track wildlife on foot. Encounter elephants and possibly wild dogs. Return to camp for lunch." },
+                { day: 3, title: "Deep into the Valley", description: "Moving camp deeper into the park. A long walk today, encountering diverse flora and fauna." },
+                { day: 4, title: "Canoeing the Zambezi", description: "Swap boots for paddles. A full day canoeing safari on the Zambezi River, viewing hippos and crocodiles." },
+                { day: 5, title: "Riverine Forest Exploration", description: "Walking through the iconic albida forests. Great opportunities for photography and bird watching." },
+                { day: 6, title: "Final Night under the Stars", description: "Last day of walking. Enjoy a special farewell dinner and sleep under the African stars." },
+                { day: 7, title: "Departure", description: "Morning flight out of Mana Pools, connecting to your onward journey." }
+            ]
         }
         // ... (truncated for brevity, but I'll add all 15 in the real file)
     ];
@@ -163,11 +184,16 @@ async function main() {
                 duration: pkg.duration,
                 price: pkg.price,
                 inclusions: pkg.inclusions,
+                exclusions: pkg.exclusions,
                 images: pkg.images,
                 highlights: pkg.highlights,
                 category: pkg.category,
                 isPublished: true,
                 isFeatured: pkg.featured,
+                minGuests: pkg.minGuests,
+                maxGuests: pkg.maxGuests,
+                difficulty: pkg.difficulty,
+                destinations: pkg.destinations,
                 itinerary: pkg.itinerary as any,
             },
         });

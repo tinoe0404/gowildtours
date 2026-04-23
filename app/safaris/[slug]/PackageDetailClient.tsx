@@ -38,15 +38,17 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
     const description = pkg.description || pkg.longDescription || "";
 
     // Mock itinerary generator since data file doesn't have it yet
-    const itinerary = (pkg as any).detailedItinerary || Array.from({ length: durationDays || 1 }).map((_, i) => ({
-        day: i + 1,
-        title: i === 0 ? "Arrival & Welcome" : i === (durationDays || 1) - 1 ? "Departure" : `Exploration of ${destinations[0] || "Zimbabwe"}`,
-        description: i === 0
-            ? "Arrive at the airport and transfer to your lodge. Enjoy a welcome dinner and settle in."
-            : i === (durationDays || 1) - 1
-                ? "Morning breakfast and transfer to the airport for your onward journey."
-                : "Full day of activities including morning and afternoon game drives, bush walks, or relaxation at the lodge.",
-    }));
+    const itinerary = Array.isArray(pkg.itinerary) && pkg.itinerary.length > 0 
+        ? pkg.itinerary 
+        : Array.from({ length: durationDays || 1 }).map((_, i) => ({
+            day: i + 1,
+            title: i === 0 ? "Arrival & Welcome" : i === (durationDays || 1) - 1 ? "Departure" : `Exploration of ${destinations[0] || "Zimbabwe"}`,
+            description: i === 0
+                ? "Arrive at the airport and transfer to your lodge. Enjoy a welcome dinner and settle in."
+                : i === (durationDays || 1) - 1
+                    ? "Morning breakfast and transfer to the airport for your onward journey."
+                    : "Full day of activities including morning and afternoon game drives, bush walks, or relaxation at the lodge.",
+        }));
 
     return (
         <>
@@ -68,10 +70,10 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             <Clock className="w-5 h-5 text-accent" />
                             <span>{durationDays} Days / {durationNights} Nights</span>
                         </div>
-                        {pkg.groupSize && (
+                        {(pkg.minGuests || pkg.maxGuests) && (
                             <div className="flex items-center gap-2">
                                 <Users className="w-5 h-5 text-accent" />
-                                <span>Min {pkg.groupSize.min} - Max {pkg.groupSize.max} Guests</span>
+                                <span>Min {pkg.minGuests || 2} - Max {pkg.maxGuests || 6} Guests</span>
                             </div>
                         )}
                         <div className="flex items-center gap-2">
@@ -142,10 +144,11 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                         <X className="w-5 h-5 text-red-400" /> What&apos;s Not Included
                                     </h4>
                                     <ul className="space-y-3 text-sm text-warm-gray">
-                                        <li className="border-b border-dashed border-gray-100 pb-2">International Flights</li>
-                                        <li className="border-b border-dashed border-gray-100 pb-2">Visas</li>
-                                        <li className="border-b border-dashed border-gray-100 pb-2">Travel Insurance</li>
-                                        <li className="border-b border-dashed border-gray-100 pb-2">Personal Expenses & Tips</li>
+                                        {(pkg.exclusions || []).map((item, i) => (
+                                            <li key={i} className="border-b border-dashed border-gray-100 pb-2">
+                                                {item}
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -175,10 +178,12 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                             <span>Duration</span>
                                             <span className="font-semibold text-white">{durationDays} Days</span>
                                         </div>
-                                        {pkg.groupSize && (
+                                        {(pkg.minGuests || pkg.maxGuests) && (
                                             <div className="flex justify-between border-b border-white/10 pb-2">
                                                 <span>Group Size</span>
-                                                <span className="font-semibold text-white">{pkg.groupSize.type}</span>
+                                                <span className="font-semibold text-white">
+                                                    {pkg.minGuests === pkg.maxGuests ? 'Private' : 'Small Group'}
+                                                </span>
                                             </div>
                                         )}
                                         <div className="flex justify-between border-b border-white/10 pb-2">

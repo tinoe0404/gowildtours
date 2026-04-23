@@ -26,9 +26,14 @@ export default function PackageForm({ initialData, id }: PackageFormProps) {
             category: "Classic Safari",
             isPublished: false,
             isFeatured: false,
-            inclusions: [""],
-            highlights: [""],
-            images: [],
+            minGuests: initialData?.minGuests || 2,
+            maxGuests: initialData?.maxGuests || 6,
+            difficulty: initialData?.difficulty || "Moderate",
+            destinations: initialData?.destinations?.join(", ") || "",
+            inclusions: initialData?.inclusions || [""],
+            exclusions: initialData?.exclusions || [""],
+            highlights: initialData?.highlights || [""],
+            images: initialData?.images || [],
         }
     });
 
@@ -45,6 +50,9 @@ export default function PackageForm({ initialData, id }: PackageFormProps) {
                 body: JSON.stringify({
                     ...data,
                     price: parseFloat(data.price),
+                    minGuests: parseInt(data.minGuests, 10),
+                    maxGuests: parseInt(data.maxGuests, 10),
+                    destinations: typeof data.destinations === 'string' ? data.destinations.split(',').map((d: string) => d.trim()).filter(Boolean) : [],
                 }),
             });
 
@@ -87,6 +95,30 @@ export default function PackageForm({ initialData, id }: PackageFormProps) {
                         <label className="text-sm font-semibold text-gray-700">Duration String</label>
                         <input {...register("duration", { required: true })} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" placeholder="e.g. 3 Days / 2 Nights" />
                     </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Min Guests</label>
+                        <input type="number" {...register("minGuests")} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Max Guests</label>
+                        <input type="number" {...register("maxGuests")} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" />
+                    </div>
+                    <div className="space-y-2">
+                        <label className="text-sm font-semibold text-gray-700">Difficulty</label>
+                        <select {...register("difficulty")} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none bg-white">
+                            <option>Easy</option>
+                            <option>Moderate</option>
+                            <option>Challenging</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="space-y-2">
+                    <label className="text-sm font-semibold text-gray-700">Destinations (Comma separated)</label>
+                    <input {...register("destinations")} className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none" placeholder="e.g. Victoria Falls, Hwange" />
                 </div>
 
                 <div className="space-y-2">

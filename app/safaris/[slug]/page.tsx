@@ -52,11 +52,15 @@ export default async function PackageDetailPage({ params }: Props) {
         notFound();
     }
 
-    // Convert Decimal to number for the client component
+    // Convert Decimal to number and coerce nulls for the client component
     const formattedPkg = {
         ...pkg,
         price: Number(pkg.price),
-        ...(pkg.itinerary as any),
+        category: pkg.category || "Safari",
+        itinerary: pkg.itinerary,
+        difficulty: pkg.difficulty || "Moderate",
+        minGuests: pkg.minGuests ?? undefined,
+        maxGuests: pkg.maxGuests ?? undefined,
     };
 
     return <PackageDetailClient pkg={formattedPkg} />;

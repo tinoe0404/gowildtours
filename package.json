@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@neondatabase/serverless": "^1.1.0",
+    "@paypal/react-paypal-js": "^9.1.1",
     "@prisma/adapter-neon": "^6.19.2",
     "@prisma/client": "^6.19.2",
     "@react-email/components": "^0.0.33",

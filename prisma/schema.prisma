@@ -227,6 +227,10 @@ model Package {
   category    String?
   isPublished Boolean  @default(false)
   isFeatured  Boolean  @default(false)
+  minGuests   Int?     @default(2)
+  maxGuests   Int?     @default(6)
+  difficulty  String?  @default("Moderate")
+  destinations String[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

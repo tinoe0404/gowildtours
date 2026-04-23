@@ -17,9 +17,17 @@ type Booking = {
     checkOutDate: string;
     numberOfAdults: number;
     totalPrice: number;
+    subtotal: number;
     paymentStatus: string;
+    paymentMethod: string;
     bookingStatus: string;
     createdAt: string;
+    metadata: {
+        depositPaid?: number;
+        remainingBalance?: number;
+        paypalOrderId?: string;
+        paypalCaptureId?: string;
+    } | null;
 };
 
 const statusFilters = ["all", "pending", "confirmed", "completed", "cancelled"];
@@ -38,14 +46,51 @@ export default function BookingsPage() {
             .catch(console.error);
     }, [activeFilter]);
 
+    /** Extract deposit paid from metadata or subtotal field */
+    const getDepositPaid = (r: Booking) => {
+        const deposit = r.metadata?.depositPaid || (r.paymentStatus === "deposit_paid" ? Number(r.subtotal) : 0);
+        return deposit > 0 ? `$${Number(deposit).toLocaleString()}` : "—";
+    };
+
+    /** Extract remaining balance from metadata or calculate it */
+    const getRemainingBalance = (r: Booking) => {
+        if (r.metadata?.remainingBalance != null) return `$${Number(r.metadata.remainingBalance).toLocaleString()}`;
+        if (r.paymentStatus === "deposit_paid" && r.totalPrice && r.subtotal) {
+            return `$${(Number(r.totalPrice) - Number(r.subtotal)).toLocaleString()}`;
+        }
+        return "—";
+    };
+
     const columns: Column<Booking>[] = [
         { key: "bookingReference", label: "Reference", sortable: true },
         { key: "customerName", label: "Customer", sortable: true },
         { key: "type", label: "Type", render: (r) => <StatusBadge status={r.type} /> },
         { key: "checkInDate", label: "Check-in", sortable: true, render: (r) => r.checkInDate ? format(new Date(r.checkInDate), "MMM d, yyyy") : "—" },
-        { key: "numberOfAdults", label: "Guests" },
         { key: "totalPrice", label: "Total", render: (r) => r.totalPrice ? `$${Number(r.totalPrice).toLocaleString()}` : "—" },
-        { key: "paymentStatus", label: "Payment", render: (r) => <StatusBadge status={r.paymentStatus} /> },
+        {
+            key: "subtotal", label: "Deposit Paid", render: (r) => (
+                <span className={r.paymentStatus === "deposit_paid" ? "text-green-700 font-semibold" : ""}>
+                    {getDepositPaid(r)}
+                </span>
+            )
+        },
+        {
+            key: "paymentMethod" as any, label: "Balance Due", render: (r) => (
+                <span className={r.metadata?.remainingBalance ? "text-amber-600 font-semibold" : ""}>
+                    {getRemainingBalance(r)}
+                </span>
+            )
+        },
+        {
+            key: "paymentStatus", label: "Payment", render: (r) => (
+                <div className="flex items-center gap-1.5">
+                    <StatusBadge status={r.paymentStatus} />
+                    {r.paymentMethod === "paypal" && (
+                        <span className="text-[10px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-medium">PayPal</span>
+                    )}
+                </div>
+            )
+        },
         { key: "bookingStatus", label: "Status", render: (r) => <StatusBadge status={r.bookingStatus} /> },
     ];
 
@@ -54,7 +99,7 @@ export default function BookingsPage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Bookings</h1>
-                    <p className="text-sm text-gray-500">Manage all customer bookings</p>
+                    <p className="text-sm text-gray-500">Manage all customer bookings and PayPal deposits</p>
                 </div>
                 <button
                     onClick={() => router.push("/admin/bookings/new")}
