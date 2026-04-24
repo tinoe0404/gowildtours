@@ -1,6 +1,8 @@
 import { Metadata } from "next";
+
+export const dynamic = "force-static";
 import { notFound } from "next/navigation";
-import prisma from "@/lib/db";
+import { packages } from "@/lib/packages-data";
 import PackageDetailClient from "./PackageDetailClient";
 
 interface Props {
@@ -9,9 +11,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const pkg = await prisma.package.findUnique({
-        where: { slug },
-    });
+    const pkg = packages.find(p => p.slug === slug);
 
     if (!pkg) {
         return {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     return {
         title: `${pkg.title} | Our Safaris`,
-        description: pkg.description.substring(0, 160),
+        description: (pkg.description || pkg.shortDescription || pkg.longDescription || "").substring(0, 160),
         alternates: {
             canonical: `/safaris/${pkg.slug}`,
         },
@@ -29,24 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-    try {
-        const pkgs = await prisma.package.findMany({
-            select: { slug: true },
-        });
-        return pkgs.map((pkg) => ({
-            slug: pkg.slug,
-        }));
-    } catch (error) {
-        console.error("Failed to generate static params for safaris:", (error as Error).message);
-        return [];
-    }
+    return packages.map((pkg) => ({
+        slug: pkg.slug,
+    }));
 }
 
 export default async function PackageDetailPage({ params }: Props) {
     const { slug } = await params;
-    const pkg = await prisma.package.findUnique({
-        where: { slug },
-    });
+    const pkg = packages.find(p => p.slug === slug);
 
     if (!pkg) {
         notFound();

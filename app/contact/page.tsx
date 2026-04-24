@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = "force-static";
+
 import React from 'react';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { FAQAccordion } from '@/components/contact/FAQAccordion';

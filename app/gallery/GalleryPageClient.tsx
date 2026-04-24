@@ -18,32 +18,15 @@ import Button from "@/components/ui/Button";
 const INITIAL_COUNT = 16;
 const LOAD_MORE_COUNT = 12;
 
-export default function GalleryPageClient() {
+export default function GalleryPageClient({ initialImages }: { initialImages: any[] }) {
     const [activeCategory, setActiveCategory] = useState<
         "All" | GalleryCategory
     >("All");
-    const [images, setImages] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [images, setImages] = useState<any[]>(initialImages);
     const [error, setError] = useState<string | null>(null);
     const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
-    useEffect(() => {
-        async function fetchGallery() {
-            try {
-                setIsLoading(true);
-                const res = await fetch("/api/gallery");
-                if (!res.ok) throw new Error("Failed to fetch gallery");
-                const data = await res.json();
-                setImages(data);
-            } catch (err) {
-                console.error(err);
-                setError("Unable to load the gallery right now.");
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        fetchGallery();
-    }, []);
+
 
     const filteredImages = useMemo(() => {
         if (activeCategory === "All") return images;
@@ -62,14 +45,7 @@ export default function GalleryPageClient() {
         setVisibleCount(INITIAL_COUNT);
     };
 
-    if (isLoading) {
-        return (
-            <div className="min-h-[60vh] flex flex-col items-center justify-center space-y-4">
-                <Loader2 className="w-10 h-10 text-accent animate-spin" />
-                <p className="text-warm-gray font-accent">Curating moments...</p>
-            </div>
-        );
-    }
+
 
     if (error) {
         return (

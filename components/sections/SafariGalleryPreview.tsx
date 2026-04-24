@@ -5,25 +5,40 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import GalleryGrid from "@/components/ui/GalleryGrid";
 import Button from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-import prisma from "@/lib/db";
 
 export default async function SafariGalleryPreview() {
-    const dbImages = await prisma.galleryImage.findMany({
-        take: 8,
-        orderBy: { sortOrder: "asc" }
-    });
-
-    // Map Prisma models to the type expected by GalleryGrid
-    const featuredImages = dbImages.map((img, idx) => ({
-        id: idx + 1, // GalleryGrid expects number IDs
-        src: img.url,
-        alt: img.alt,
-        categories: [img.category || "General"] as any,
-        caption: img.caption || "",
-        location: img.location || undefined,
-        featured: true,
-        aspectRatio: (img.aspectRatio as any) || "landscape",
-    }));
+    const featuredImages = [
+        {
+            id: 1,
+            src: "/images/safari/lioness-rain.jpg",
+            alt: "Lioness in the rain",
+            categories: ["Wildlife"] as any,
+            caption: "A majestic lioness braving the afternoon showers in Hwange.",
+            location: "Hwange National Park",
+            featured: true,
+            aspectRatio: "landscape" as any,
+        },
+        {
+            id: 2,
+            src: "/images/safari/elephants-waterhole.jpg",
+            alt: "Elephants at a waterhole",
+            categories: ["Wildlife"] as any,
+            caption: "A family of elephants taking a refreshing drink.",
+            location: "Mana Pools",
+            featured: true,
+            aspectRatio: "portrait" as any,
+        },
+        {
+            id: 3,
+            src: "/images/safari/victoria-falls-wide.jpg",
+            alt: "Victoria Falls",
+            categories: ["Landscape"] as any,
+            caption: "The majestic Smoke that Thunders.",
+            location: "Victoria Falls",
+            featured: true,
+            aspectRatio: "landscape" as any,
+        }
+    ];
 
     return (
         <Section id="gallery" spacing="lg" className="bg-cream">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 import {
   fadeInUp,
   fadeIn,
@@ -28,8 +28,8 @@ import {
   Quote,
   ArrowRight
 } from "lucide-react";
-import prisma from "@/lib/db";
 import HomeClient from "@/components/home/HomeClient";
+import { packages } from "@/lib/packages-data";
 
 /* ── Icon Map ── */
 const iconMap: Record<string, React.ElementType> = {
@@ -48,44 +48,46 @@ const images = {
 
 export default async function HomePage() {
   // Fetch Featured Packages
-  let rawPackages: any[] = [];
-  try {
-    rawPackages = await prisma.package.findMany({
-      where: { isFeatured: true, isPublished: true },
-      take: 3,
-    });
-  } catch (error) {
-    console.error("Failed to fetch featured packages:", error);
-  }
+  const rawPackages = packages.filter(pkg => pkg.featured).slice(0, 3);
 
-  // Serialize Decimal fields to plain numbers for Client Components
+  // Serialize fields for Client Components
   const featuredPackages = rawPackages.map((pkg) => ({
     ...pkg,
     price: Number(pkg.price),
-    createdAt: pkg.createdAt.toISOString(),
-    updatedAt: pkg.updatedAt.toISOString(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   }));
 
-  // Fetch Approved Reviews as Testimonials
-  let rawReviews: any[] = [];
-  try {
-    rawReviews = await prisma.review.findMany({
-      where: { status: "approved" },
-      take: 3,
-      orderBy: { createdAt: "desc" },
-    });
-  } catch (error) {
-    console.error("Failed to fetch reviews:", error);
-  }
-
-  // Serialize Date fields for Client Components
-  const reviews = rawReviews.map((r) => ({
-    ...r,
-    createdAt: r.createdAt.toISOString(),
-    updatedAt: r.updatedAt.toISOString(),
-    travelDate: r.travelDate?.toISOString() ?? null,
-    approvedAt: r.approvedAt?.toISOString() ?? null,
-  }));
+  // Hardcoded Approved Reviews as Testimonials
+  const reviews = [
+    {
+      id: "1",
+      reviewerName: "Sarah Jenkins",
+      reviewerCountry: "United Kingdom",
+      rating: 5,
+      reviewText: "An absolutely incredible experience. The guides were so knowledgeable and the accommodations were top-notch. Seeing the elephants at the waterhole right from our tent was magical.",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: "2",
+      reviewerName: "Mark & Lisa Thompson",
+      reviewerCountry: "United States",
+      rating: 5,
+      reviewText: "GoWild Tours organized our honeymoon flawlessly. Victoria Falls was breathtaking, and the private dinners under the stars in Hwange were perfectly romantic. Highly recommend!",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    },
+    {
+      id: "3",
+      reviewerName: "David Chen",
+      reviewerCountry: "Australia",
+      rating: 4,
+      reviewText: "Great photography safari. The modified vehicles made a huge difference and the guide knew exactly where to position us for the best light. Will definitely book again.",
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    }
+  ];
 
   // Default "Why Choose Us" (could eventualy come from SiteSettings)
   const whyChooseUsData = [

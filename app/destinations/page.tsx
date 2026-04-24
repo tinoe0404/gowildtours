@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+
+export const dynamic = "force-static";
 import Image from "next/image";
 import Link from "next/link";
 import { destinations } from "@/data/destinations";
@@ -108,22 +110,34 @@ export default function DestinationsPage() {
             </p>
           </div>
 
-          <div className="destinations-grid">
-            {/* Large featured card — Victoria Falls */}
-            <div className="destinations-grid__featured">
-              <DestinationCard destination={destinations[0]} />
+          {destinations.length > 0 ? (
+            <div className="destinations-grid">
+              {/* Large featured card */}
+              {destinations[0] && (
+                <div className="destinations-grid__featured">
+                  <DestinationCard destination={destinations[0]} />
+                </div>
+              )}
+              {/* Second card */}
+              {destinations[1] && (
+                <div className="destinations-grid__main">
+                  <DestinationCard destination={destinations[1]} />
+                </div>
+              )}
+              {/* Remaining cards */}
+              {destinations.slice(2).map((dest) => (
+                <div key={dest.slug} className="destinations-grid__secondary">
+                  <DestinationCard destination={dest} />
+                </div>
+              ))}
             </div>
-            {/* Hwange */}
-            <div className="destinations-grid__main">
-              <DestinationCard destination={destinations[1]} />
+          ) : (
+            <div className="text-center py-20">
+              <p className="text-body-lg text-[var(--color-text-muted)]">
+                Our destinations are being updated. Check back soon!
+              </p>
             </div>
-            {/* Mana Pools, Matobo, Kariba — 3 equal */}
-            {destinations.slice(2).map((dest) => (
-              <div key={dest.slug} className="destinations-grid__secondary">
-                <DestinationCard destination={dest} />
-              </div>
-            ))}
-          </div>
+          )}
         </div>
       </section>
 

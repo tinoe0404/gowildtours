@@ -266,7 +266,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-dark-deep/60 to-transparent" />
                                         <span className="absolute top-4 left-4 font-accent text-xs font-semibold tracking-wider uppercase bg-accent/90 text-dark-deep px-3 py-1 rounded-full">
-                                            {safari.duration}
+                                            {typeof safari.duration === 'string' ? safari.duration : `${safari.duration?.days || 0} Days`}
                                         </span>
                                     </div>
 

@@ -1,6 +1,9 @@
 import { Metadata } from "next";
+
+export const dynamic = "force-static";
 import Container from "@/components/ui/Container";
 import PackagesClient from "./PackagesClient";
+import { packages } from "@/lib/packages-data";
 
 export const metadata: Metadata = {
     title: "Our Safaris | Go Wild Tours",
@@ -22,7 +25,7 @@ export default function SafarisPage() {
             {/* ── Content ── */}
             <section className="section bg-[var(--color-mist)] min-h-screen">
                 <Container>
-                    <PackagesClient />
+                    <PackagesClient initialPackages={packages} />
                 </Container>
             </section>
         </main>

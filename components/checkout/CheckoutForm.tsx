@@ -128,7 +128,7 @@ export default function CheckoutForm() {
                     toast.success("Payment successful!", {
                         description: `Deposit of $${result.depositPaid.toLocaleString()} has been received.`,
                     });
-                    router.push(`/booking/${result.bookingReference}`);
+                    router.push(`/booking/success`);
                 } else {
                     toast.error("Payment processing failed", {
                         description: result.error || "Please try again or contact support.",

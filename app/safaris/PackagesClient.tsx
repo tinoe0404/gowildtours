@@ -10,9 +10,8 @@ import Button from "@/components/ui/Button";
 import { fadeInUp, staggerContainer, staggerItem } from "@/lib/animations";
 import { cn } from "@/lib/cn";
 
-export default function PackagesClient() {
-    const [allPackages, setAllPackages] = useState<Package[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+export default function PackagesClient({ initialPackages }: { initialPackages: Package[] }) {
+    const [allPackages, setAllPackages] = useState<Package[]>(initialPackages);
     const [error, setError] = useState<string | null>(null);
     const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
     const [sortOption, setSortOption] = useState("featured");
@@ -25,25 +24,6 @@ export default function PackagesClient() {
         categories: [] as string[],
         difficulty: [] as string[],
     });
-
-    // ── Fetch Data ──
-    useEffect(() => {
-        async function fetchPackages() {
-            try {
-                setIsLoading(true);
-                const res = await fetch("/api/packages");
-                if (!res.ok) throw new Error("Failed to fetch packages");
-                const data = await res.json();
-                setAllPackages(data);
-            } catch (err) {
-                console.error(err);
-                setError("Something went wrong while loading adventures. Please try again later.");
-            } finally {
-                setIsLoading(false);
-            }
-        }
-        fetchPackages();
-    }, []);
 
     // ── Derived Data ──
     const uniqueDestinations = useMemo(() => {
@@ -182,16 +162,6 @@ export default function PackagesClient() {
                 });
         }
     }, [filteredPackages, sortOption]);
-
-    if (isLoading) {
-        return (
-            <div className="packages-grid w-full">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
-                    <div key={i} className="package-card-skeleton" aria-hidden="true" />
-                ))}
-            </div>
-        );
-    }
 
     if (error) {
         return (

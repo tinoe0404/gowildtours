@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+export const dynamic = "force-static";
 import Container from "@/components/ui/Container";
 import CheckoutForm from "@/components/checkout/CheckoutForm";
 

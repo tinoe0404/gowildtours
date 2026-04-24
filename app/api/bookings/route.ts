@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import prisma from '@/lib/db';
 import { generateBookingReference } from '@/lib/utils';
 import { emailService } from '@/lib/email';
 
@@ -28,31 +27,7 @@ export async function POST(req: Request) {
         const bookingReference = generateBookingReference();
 
         // Map itemId to the correct DB field
-        const bookingData: any = {
-            bookingReference,
-            type: validatedData.type,
-            customerName: validatedData.customerName,
-            customerEmail: validatedData.customerEmail,
-            customerPhone: validatedData.customerPhone,
-            customerCountry: validatedData.customerCountry,
-            numberOfAdults: validatedData.numberOfAdults,
-            numberOfChildren: validatedData.numberOfChildren,
-            childrenAges: validatedData.childrenAges || [],
-            specialRequests: validatedData.specialRequests,
-            totalPrice: validatedData.totalPrice,
-            checkInDate: validatedData.checkInDate ? new Date(validatedData.checkInDate) : null,
-            checkOutDate: validatedData.checkOutDate ? new Date(validatedData.checkOutDate) : null,
-            bookingStatus: 'pending',
-            paymentStatus: 'pending',
-        };
-
-        if (validatedData.type === 'package') bookingData.packageId = validatedData.itemId;
-        if (validatedData.type === 'activity') bookingData.activityId = validatedData.itemId;
-        if (validatedData.type === 'hotel') bookingData.hotelId = validatedData.itemId;
-
-        const booking = await prisma.booking.create({
-            data: bookingData,
-        });
+        // Removed database saving logic
 
         // Send Email Notifications
         await emailService.sendBookingConfirmation({
@@ -66,8 +41,8 @@ export async function POST(req: Request) {
         return NextResponse.json({
             success: true,
             message: 'Booking request submitted successfully',
-            bookingReference: booking.bookingReference,
-            bookingId: booking.id,
+            bookingReference: bookingReference,
+            bookingId: Date.now().toString(),
         });
 
     } catch (error) {

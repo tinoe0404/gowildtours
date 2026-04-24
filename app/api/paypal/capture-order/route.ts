@@ -7,7 +7,6 @@
 
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import prisma from "@/lib/db";
 import { capturePayPalOrder, DEPOSIT_PERCENTAGE } from "@/lib/paypal";
 import { emailService } from "@/lib/email";
 
@@ -73,35 +72,16 @@ export async function POST(req: Request) {
             .substring(2, 8)
             .toUpperCase()}`;
 
-        // 5. Create booking in database
-        const booking = await prisma.booking.create({
-            data: {
-                bookingReference: reference,
-                type: "package",
-                customerName: data.customerName,
-                customerEmail: data.customerEmail,
-                customerPhone: data.customerPhone,
-                nationality: data.nationality,
-                specialRequests: data.specialRequests,
-                hearAboutUs: data.hearAboutUs,
-                items: data.items, // JSON column
-                totalPrice: subtotal,
-                subtotal: capturedAmount, // The deposit amount actually paid
-                paymentStatus: "deposit_paid",
-                paymentMethod: "paypal",
-                bookingStatus: "confirmed",
-                // Store PayPal transaction details and balance tracking in metadata
-                metadata: {
-                    depositPaid: capturedAmount,
-                    depositPercentage: DEPOSIT_PERCENTAGE * 100,
-                    remainingBalance: subtotal - capturedAmount,
-                    paypalOrderId: captureResult.id,
-                    paypalCaptureId: captureResult.captureId,
-                    paypalPayerEmail: captureResult.payerEmail,
-                    paidAt: new Date().toISOString(),
-                },
-            },
-        });
+        // 5. Removed database saving
+        // Prepare data for email
+        const booking = {
+            customerName: data.customerName,
+            customerEmail: data.customerEmail,
+            customerPhone: data.customerPhone,
+            nationality: data.nationality,
+            specialRequests: data.specialRequests,
+            bookingReference: reference,
+        };
 
         // 6. Send confirmation emails (non-blocking — don't fail the booking if emails fail)
         const emailData = {

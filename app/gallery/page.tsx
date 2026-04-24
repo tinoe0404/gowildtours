@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+export const dynamic = "force-static";
 import GalleryPageClient from "./GalleryPageClient";
 
 export const metadata: Metadata = {
@@ -7,6 +9,8 @@ export const metadata: Metadata = {
         "Browse our curated collection of stunning safari photography — wildlife, landscapes, cultural encounters, and adventure activities across Africa's most breathtaking destinations.",
 };
 
+import { galleryImages } from "@/lib/gallery-data";
+
 export default function GalleryPage() {
-    return <GalleryPageClient />;
+    return <GalleryPageClient initialImages={galleryImages} />;
 }

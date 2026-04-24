@@ -1,5 +1,11 @@
 import { notFound } from "next/navigation";
-import prisma from "@/lib/db";
+import { packages } from "@/lib/packages-data";
+
+export const dynamic = "force-static";
+
+export async function generateStaticParams() {
+    return packages.map((pkg) => ({ slug: pkg.slug }));
+}
 import { Metadata } from "next";
 import Image from "next/image";
 import { MapPin, Clock, Users, Check, X } from "lucide-react";
@@ -11,9 +17,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const pkg = await prisma.package.findUnique({
-        where: { slug },
-    });
+    const pkg = packages.find(p => p.slug === slug);
 
     if (!pkg) {
         return {
@@ -28,9 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BrochurePage({ params }: Props) {
     const { slug } = await params;
-    const pkg = await prisma.package.findUnique({
-        where: { slug },
-    });
+    const pkg = packages.find(p => p.slug === slug);
 
     if (!pkg) {
         notFound();

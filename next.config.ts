@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["@prisma/client"],
+
   images: {
     minimumCacheTTL: 60,
     formats: ["image/avif", "image/webp"],

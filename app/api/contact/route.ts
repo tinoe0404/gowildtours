@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import prisma from '@/lib/db';
 import { emailService } from '@/lib/email';
 
 const contactSchema = z.object({
@@ -19,28 +18,7 @@ export async function POST(req: Request) {
         // 1. Validate input
         const validatedData = contactSchema.parse(body);
 
-        // 2. Map inquiry_type to DB enum
-        const typeMapping: Record<string, any> = {
-            'General Inquiry': 'contact',
-            'Safari Package Info': 'package_inquiry',
-            'Booking Assistance': 'contact',
-            'Custom Request': 'custom_quote',
-            'Feedback': 'contact',
-        };
-
-        // 3. Save to database
-        const inquiry = await prisma.inquiry.create({
-            data: {
-                name: validatedData.name,
-                email: validatedData.email,
-                phone: validatedData.phone,
-                subject: validatedData.subject,
-                message: validatedData.message,
-                type: typeMapping[validatedData.inquiry_type] || 'contact',
-                status: 'new',
-                priority: 'medium',
-            },
-        });
+        // 2. Send Branded Emails
 
         // 4. Send Branded Emails
         await emailService.sendContactConfirmation({
@@ -53,7 +31,7 @@ export async function POST(req: Request) {
         return NextResponse.json({
             success: true,
             message: 'Inquiry submitted successfully',
-            inquiryId: inquiry.id,
+            inquiryId: Date.now().toString(),
         });
 
     } catch (error) {

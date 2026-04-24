@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import prisma from "@/lib/db";
+import { packages } from "@/lib/packages-data";
 
 export const runtime = "nodejs";
 
@@ -14,9 +14,7 @@ export const contentType = "image/png";
 export default async function Image({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const pkg = await prisma.package.findUnique({
-        where: { slug },
-    });
+    const pkg = packages.find(p => p.slug === slug);
 
     if (!pkg) {
         return new ImageResponse(
