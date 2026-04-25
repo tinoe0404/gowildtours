@@ -241,8 +241,13 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
     );
 }
 
-function ItineraryItem({ item }: { item: { day: number; title: string; description: string } }) {
+function ItineraryItem({ item }: { item: { day: number; title: string; description: string; accommodation?: string; meals?: string; highlights?: string; facilities?: string; } }) {
     const [isOpen, setIsOpen] = useState(false);
+
+    // Format accommodation to only show the first option and remove "or similar"
+    const formattedAccommodation = item.accommodation
+        ? item.accommodation.split('/')[0].replace(/or similar/i, '').trim()
+        : "Standard Lodge / Camp";
 
     return (
         <div className="border border-beige rounded-lg bg-white overflow-hidden">
@@ -263,8 +268,27 @@ function ItineraryItem({ item }: { item: { day: number; title: string; descripti
                 animate={{ height: isOpen ? "auto" : 0 }}
                 className="overflow-hidden"
             >
-                <div className="p-4 pt-0 text-warm-gray text-sm ml-12 border-l-2 border-dashed border-beige/50 pl-6">
-                    {item.description}
+                <div className="p-4 pt-0 text-warm-gray text-sm ml-12 border-l-2 border-dashed border-beige/50 pl-6 space-y-4">
+                    <p className="leading-relaxed">{item.description}</p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg mt-4 text-sm">
+                        <div>
+                            <span className="font-bold text-dark-deep block mb-1">Accommodation:</span>
+                            <span>{formattedAccommodation}</span>
+                        </div>
+                        <div>
+                            <span className="font-bold text-dark-deep block mb-1">Meals:</span>
+                            <span>{item.meals || "Breakfast, Lunch, Dinner"}</span>
+                        </div>
+                        <div>
+                            <span className="font-bold text-dark-deep block mb-1">Facilities:</span>
+                            <span>{item.facilities || "En-suite, Wi-Fi (where available), Restaurant"}</span>
+                        </div>
+                        <div>
+                            <span className="font-bold text-dark-deep block mb-1">Highlights included:</span>
+                            <span>{item.highlights || "Scenic views, Game viewing"}</span>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
         </div>
