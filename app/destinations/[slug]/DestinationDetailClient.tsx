@@ -7,63 +7,35 @@ import { Destination } from "@/data/destinations";
 import { Package } from "@/lib/packages-data";
 import PackageCard from "@/components/ui/PackageCard";
 
+import { packages } from "@/lib/packages-data";
+
 interface DestinationDetailClientProps {
   destination: Destination;
 }
 
-const tabs = ["Overview", "Tours", "Activities", "Accommodation", "When to Visit"];
-
 export default function DestinationDetailClient({
   destination,
 }: DestinationDetailClientProps) {
-  const [activeTab, setActiveTab] = useState("Overview");
   const [destinationPackages, setDestinationPackages] = useState<Package[]>([]);
   const [isLoadingPackages, setIsLoadingPackages] = useState(true);
 
-  // Track active section on scroll
+  // Filter packages from local static data
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = tabs.map((tab) =>
-        document.getElementById(tab.toLowerCase().replace(/ /g, "-"))
+    setIsLoadingPackages(true);
+    const filtered = packages.filter((pkg) => {
+      if (!pkg.destinations) return false;
+      // Check if any package destination is in the country's knownPlaces list,
+      // or matches the country name directly.
+      return pkg.destinations.some(
+        (d) =>
+          destination.knownPlaces?.includes(d) ||
+          d === destination.name ||
+          d.includes(destination.name)
       );
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section) {
-          const rect = section.getBoundingClientRect();
-          if (rect.top <= 140) {
-            setActiveTab(tabs[i]);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Fetch packages
-  useEffect(() => {
-    async function fetchPackages() {
-      try {
-        setIsLoadingPackages(true);
-        const res = await fetch("/api/packages");
-        if (!res.ok) throw new Error("Failed to fetch packages");
-        const data: Package[] = await res.json();
-        
-        const filtered = data.filter((pkg) => 
-          pkg.destinations?.includes(destination.name)
-        );
-        setDestinationPackages(filtered);
-      } catch (err) {
-        console.error("Failed to fetch packages:", err);
-      } finally {
-        setIsLoadingPackages(false);
-      }
-    }
-    fetchPackages();
-  }, [destination.name]);
+    });
+    setDestinationPackages(filtered);
+    setIsLoadingPackages(false);
+  }, [destination.name, destination.knownPlaces]);
 
   return (
     <>
@@ -92,27 +64,7 @@ export default function DestinationDetailClient({
         </div>
       </div>
 
-      {/* ── Sticky Tab Bar ── */}
-      <nav className="dest-tabs" aria-label="Destination sections">
-        <div className="container">
-          <div className="dest-tabs__inner">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className={`dest-tab ${activeTab === tab ? "dest-tab--active" : ""}`}
-                onClick={() => {
-                  setActiveTab(tab);
-                  document
-                    .getElementById(tab.toLowerCase().replace(/ /g, "-"))
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-      </nav>
+
 
       {/* ── Overview ── */}
       <section id="overview" className="section">
@@ -297,83 +249,7 @@ export default function DestinationDetailClient({
         </div>
       </section>
 
-      {/* ── Activities ── */}
-      <section id="activities" className="section dest-activities">
-        <div className="container">
-          <div className="section-header" style={{ textAlign: "left" }}>
-            <span className="text-label">Experiences</span>
-            <h2 className="text-h2">Activities &amp; Experiences</h2>
-          </div>
-          <div className="activities-grid">
-            {destination.activities.map((activity, i) => (
-              <div key={i} className="activity-card">
-                <span className="activity-card__icon">{activity.icon}</span>
-                <h3 className="activity-card__name">{activity.name}</h3>
-                <p className="activity-card__desc">{activity.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* ── Accommodation ── */}
-      <section id="accommodation" className="section">
-        <div className="container">
-          <div className="section-header" style={{ textAlign: "left" }}>
-            <span className="text-label">Where to Stay</span>
-            <h2 className="text-h2">Accommodation</h2>
-            <p
-              className="section-header__subtitle"
-              style={{ margin: 0, textAlign: "left" }}
-            >
-              All Go Wild Tours safaris include handpicked accommodation that
-              balances genuine wilderness immersion with quality and comfort.
-            </p>
-          </div>
-          <div className="accom-list">
-            {destination.accommodation.map((lodge, i) => (
-              <div key={i} className="accom-card">
-                <div className="accom-card__meta">
-                  <span className="accom-card__type">{lodge.type}</span>
-                  <h3 className="accom-card__name">{lodge.name}</h3>
-                  <p className="accom-card__desc">{lodge.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── When to Visit ── */}
-      <section id="when-to-visit" className="section">
-        <div className="container">
-          <div className="section-header" style={{ textAlign: "left" }}>
-            <span className="text-label">Planning</span>
-            <h2 className="text-h2">When to Visit {destination.name}</h2>
-          </div>
-          <div
-            style={{
-              background: "var(--color-white)",
-              border: "1px solid var(--color-border)",
-              borderRadius: "var(--radius-lg)",
-              padding: "var(--space-8)",
-            }}
-          >
-            <p className="text-body-lg" style={{ marginBottom: "var(--space-4)" }}>
-              <strong>Best Time:</strong> {destination.bestTime}
-            </p>
-            <p className="text-body-lg" style={{ marginBottom: "var(--space-4)" }}>
-              <strong>Recommended Stay:</strong> {destination.duration}
-            </p>
-            <p
-              className="text-body"
-              style={{ color: "var(--color-text-muted)" }}
-            >
-              <strong>Best For:</strong> {destination.bestFor.join(", ")}
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* ── CTA ── */}
       <section className="section" style={{ textAlign: "center" }}>

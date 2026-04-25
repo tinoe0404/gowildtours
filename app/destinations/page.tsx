@@ -9,7 +9,7 @@ import { DestinationCard } from "@/components/DestinationCard";
 export const metadata: Metadata = {
   title: "Explore Our Destinations | Go Wild Tours",
   description:
-    "Five extraordinary wilderness areas across Zimbabwe — Victoria Falls, Hwange, Mana Pools, Matobo Hills, and Lake Kariba. Each with its own character, wildlife, and magic.",
+    "Extraordinary wilderness areas across Southern Africa — Zimbabwe, Botswana, Namibia, and Zambia. Each with its own character, wildlife, and magic.",
 };
 
 const seasons = [
@@ -20,7 +20,7 @@ const seasons = [
     color: "var(--color-savanna)",
     description:
       "Best game viewing as wildlife concentrates at waterholes. Clear skies, cool mornings. Perfect for all destinations.",
-    destinations: ["Hwange", "Mana Pools", "Matobo", "Victoria Falls"],
+    destinations: ["Zimbabwe", "Botswana", "Zambia", "Namibia"],
   },
   {
     months: "November – April",
@@ -29,7 +29,7 @@ const seasons = [
     color: "#4CAF50",
     description:
       "Dramatic skies, lush vegetation, and newborn wildlife. Migratory birds arrive. Lower rates, fewer crowds.",
-    destinations: ["Victoria Falls (full flood March–May)", "Lake Kariba"],
+    destinations: ["Victoria Falls (full flood March–May)", "Kalahari / Makgadikgadi (zebra migration)"],
   },
 ];
 
@@ -38,9 +38,9 @@ export default function DestinationsPage() {
     <main>
       <section className="pt-36 pb-8 bg-[var(--color-mist)]">
         <div className="container">
-          <span className="text-label block mb-3">Zimbabwe</span>
+          <span className="text-label block mb-3">Southern Africa</span>
           <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Explore Our Destinations</h1>
-          <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Five extraordinary wilderness areas, each with its own character, wildlife, and magic.</p>
+          <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Extraordinary countries, each with its own character, landscapes, and wildlife magic.</p>
         </div>
       </section>
 
@@ -49,34 +49,33 @@ export default function DestinationsPage() {
         <div className="container">
           <div className="destinations-intro__layout">
             <div className="destinations-intro__text">
-              <span className="text-label">The Destination</span>
-              <h2 className="text-h2">Africa&apos;s Best-Kept Safari Secret</h2>
+              <span className="text-label">The Experience</span>
+              <h2 className="text-h2">Africa&apos;s Best-Kept Safari Secrets</h2>
               <p className="text-body-lg">
-                Zimbabwe is one of Africa&apos;s most extraordinary safari destinations —
-                renowned for the finest professional guides on the continent, vast
-                and uncrowded wilderness areas, and wildlife encounters that feel
+                Southern Africa is home to some of the continent&apos;s most extraordinary safari destinations —
+                renowned for vast and uncrowded wilderness areas, the finest professional guides, and wildlife encounters that feel
                 genuinely wild.
               </p>
               <p
                 className="text-body"
                 style={{ color: "var(--color-text-muted)", marginTop: "1rem" }}
               >
-                From the towering spray of Victoria Falls to the remote walking trails
-                of Mana Pools — a UNESCO World Heritage Site — every corner of Zimbabwe
+                From the towering spray of Victoria Falls and the lush waterways of the Okavango Delta,
+                to the towering red dunes of Sossusvlei and the raw wilderness of South Luangwa, every destination
                 offers a different dimension of the African experience.
               </p>
               <div className="destinations-intro__stats">
                 <div className="stat-item">
-                  <span className="stat-item__number">5</span>
-                  <span className="stat-item__label">UNESCO Heritage Sites</span>
+                  <span className="stat-item__number">4</span>
+                  <span className="stat-item__label">Iconic Countries</span>
                 </div>
                 <div className="stat-item">
-                  <span className="stat-item__number">50,000+</span>
+                  <span className="stat-item__number">100k+</span>
                   <span className="stat-item__label">Elephants</span>
                 </div>
                 <div className="stat-item">
-                  <span className="stat-item__number">500+</span>
-                  <span className="stat-item__label">Bird Species</span>
+                  <span className="stat-item__number">Unlimited</span>
+                  <span className="stat-item__label">Memories</span>
                 </div>
               </div>
             </div>
@@ -84,13 +83,13 @@ export default function DestinationsPage() {
             <div className="destinations-intro__image">
               <Image
                 src="/images/safari/elephants-impala-waterhole.jpg"
-                alt="Elephants at a Zimbabwe waterhole"
+                alt="Elephants at a waterhole"
                 fill
                 className="destinations-intro__img"
                 sizes="(max-width: 900px) 100vw, 50vw"
               />
               <div className="destinations-intro__image-badge">
-                <span>🏆 World&apos;s Best Safari Guides</span>
+                <span>🏆 Unforgettable Journeys</span>
               </div>
             </div>
           </div>
@@ -101,12 +100,11 @@ export default function DestinationsPage() {
       <section className="section">
         <div className="container">
           <div className="section-header">
-            <span className="text-label">Zimbabwe</span>
-            <h2 className="text-h2">Five Iconic Destinations</h2>
+            <span className="text-label">Southern Africa</span>
+            <h2 className="text-h2">Our Iconic Destinations</h2>
             <p className="section-header__subtitle">
               Each destination offers a completely different dimension of the
-              Zimbabwean safari experience. Many of our itineraries combine two
-              or three.
+              African safari experience. Many of our itineraries seamlessly cross borders.
             </p>
           </div>
 

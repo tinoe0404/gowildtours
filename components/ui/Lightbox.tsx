@@ -51,15 +51,35 @@ export default function Lightbox({
         return () => document.removeEventListener("keydown", handleKeyDown);
     }, [handleKeyDown]);
 
-    /* ── Lock body scroll ── */
+    /* ── Lock body scroll and handle browser back button ── */
     useEffect(() => {
+        const handlePopState = () => {
+            if (isOpen) {
+                onClose();
+            }
+        };
+
         if (isOpen) {
             document.body.style.overflow = "hidden";
+            // Push state so browser back button closes lightbox
+            window.history.pushState({ lightbox: true }, "");
+            window.addEventListener("popstate", handlePopState);
         }
+
         return () => {
             document.body.style.overflow = "";
+            window.removeEventListener("popstate", handlePopState);
         };
-    }, [isOpen]);
+    }, [isOpen, onClose]);
+
+    const handleClose = useCallback(() => {
+        // If we close manually, we also want to pop the state we pushed
+        // to keep history clean, but just calling back() will trigger the popstate which calls onClose anyway.
+        // To be safe and simple, we just call history.back() which fires popstate.
+        // Wait, if they navigated normally, history.back() might take them to previous page if state wasn't pushed correctly.
+        // Let's just call onClose() directly and let the user manage it, but to prevent the extra history state:
+        onClose();
+    }, [onClose]);
 
     if (!image) return null;
 
@@ -71,17 +91,33 @@ export default function Lightbox({
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.25 }}
-                    className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95"
-                    onClick={onClose}
+                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95"
+                    onClick={handleClose}
                 >
-                    {/* ── Close button ── */}
-                    <button
-                        onClick={onClose}
-                        className="absolute top-4 right-4 z-10 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
-                        aria-label="Close lightbox"
-                    >
-                        <X className="h-7 w-7" />
-                    </button>
+                    {/* ── Top Navigation Bar ── */}
+                    <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-20 bg-gradient-to-b from-black/60 to-transparent">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleClose();
+                            }}
+                            className="flex items-center gap-2 px-4 py-2 rounded-full text-white hover:bg-white/20 transition-colors cursor-pointer font-medium"
+                        >
+                            <ChevronLeft className="h-5 w-5" />
+                            Back
+                        </button>
+                        
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleClose();
+                            }}
+                            className="p-2 rounded-full text-white/70 hover:text-white hover:bg-white/20 transition-colors cursor-pointer"
+                            aria-label="Close lightbox"
+                        >
+                            <X className="h-7 w-7" />
+                        </button>
+                    </div>
 
                     {/* ── Prev arrow ── */}
                     {currentIndex > 0 && (

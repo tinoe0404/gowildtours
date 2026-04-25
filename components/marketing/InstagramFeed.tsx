@@ -20,7 +20,7 @@ export default function InstagramFeed() {
                         <Instagram className="w-4 h-4" /> Follow Us
                     </div>
                     <h2 className="text-4xl font-display font-bold text-dark-deep mb-4">
-                        @gowildtours
+                        @gowildtourszimbabwe
                     </h2>
                     <p className="text-warm-gray max-w-xl">
                         Join our community of wildlife enthusiasts and see daily updates from the bush. Tag us in your photos to be featured!
@@ -29,10 +29,8 @@ export default function InstagramFeed() {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
                     {INSTAGRAM_POSTS.map((post) => (
-                        <Link
+                        <div
                             key={post.id}
-                            href="https://instagram.com/gowildtours"
-                            target="_blank"
                             className="relative aspect-square group overflow-hidden bg-gray-100"
                         >
                             {/* Placeholder functionality if images don't exist, we use a gray box or the image if valid */}
@@ -43,16 +41,13 @@ export default function InstagramFeed() {
                                 fill
                                 className="object-cover transition-transform duration-500 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                                <Instagram className="w-8 h-8" />
-                            </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
 
                 <div className="mt-12 text-center">
                     <Link
-                        href="https://instagram.com/gowildtours"
+                        href="https://www.instagram.com/gowildtourszimbabwe?igsh=bTR1MWJlaXQ1YWJr&utm_source=ig_contact_invite"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-8 py-3 bg-dark-deep text-white font-bold rounded-full hover:bg-accent hover:text-dark-deep transition-colors"
                     >
