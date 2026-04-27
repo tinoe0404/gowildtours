@@ -119,8 +119,8 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             <div>
                                 <h3 className="font-display text-2xl font-bold text-dark-deep mb-6">Detailed Itinerary</h3>
                                 <div className="space-y-4">
-                                    {(itinerary as any[]).map((day) => (
-                                        <ItineraryItem key={day.day} item={day} />
+                                    {(itinerary as any[]).map((day, index, array) => (
+                                        <ItineraryItem key={day.day} item={day} isLastDay={index === array.length - 1} />
                                     ))}
                                 </div>
                             </div>
@@ -241,13 +241,16 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
     );
 }
 
-function ItineraryItem({ item }: { item: { day: number; title: string; description: string; accommodation?: string; meals?: string; highlights?: string; facilities?: string; } }) {
+function ItineraryItem({ item, isLastDay }: { item: { day: number; title: string; description: string; accommodation?: string; meals?: string; highlights?: string; facilities?: string; }, isLastDay?: boolean }) {
     const [isOpen, setIsOpen] = useState(false);
 
     // Format accommodation to only show the first option and remove "or similar"
-    const formattedAccommodation = item.accommodation
-        ? item.accommodation.split('/')[0].replace(/or similar/i, '').trim()
-        : "Standard Lodge / Camp";
+    let formattedAccommodation = "Standard Lodge / Camp";
+    if (isLastDay) {
+        formattedAccommodation = "Own arrangements";
+    } else if (item.accommodation) {
+        formattedAccommodation = item.accommodation.split('/')[0].replace(/or similar/i, '').trim();
+    }
 
     return (
         <div className="border border-beige rounded-lg bg-white overflow-hidden">
