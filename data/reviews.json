@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Jane Smith",
+    "rating": 5,
+    "message": "Absolutely breathtaking safari! The guides were incredibly knowledgeable and we saw the Big Five on our very first day.",
+    "country": "Australia",
+    "approved": true,
+    "date": "2026-04-15T10:30:00Z"
+  },
+  {
+    "name": "Michael Chen",
+    "rating": 4,
+    "message": "Great experience overall. The accommodations were top-notch, though the morning drives started a bit earlier than I'm used to!",
+    "country": "Canada",
+    "approved": true,
+    "date": "2026-03-22T14:15:00Z"
+  }
+]

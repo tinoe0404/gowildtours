@@ -13,6 +13,7 @@ import {
     Calendar, MapPin, Camera
 } from 'lucide-react';
 import FacebookReviews from '@/components/marketing/FacebookReviews';
+import ReviewsSection from '@/components/reviews/ReviewsSection';
 
 const staticTeamMembers = [
     {
@@ -261,6 +262,9 @@ export default function AboutPage() {
 
             {/* Testimonials */}
             <FacebookReviews />
+
+            {/* Custom Reviews System */}
+            <ReviewsSection />
 
             {/* CTA Section */}
             <section className="py-24 bg-white">
