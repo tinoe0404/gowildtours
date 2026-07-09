@@ -34,6 +34,17 @@ export default function Header() {
         };
     }, [menuOpen]);
 
+    // Close menu on resize to avoid stuck overflow:hidden
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 768 && menuOpen) {
+                setMenuOpen(false);
+            }
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [menuOpen]);
+
     const isHomepage = pathname === "/";
     const isSolid = scrolled || menuOpen || !isHomepage;
 
@@ -129,7 +140,7 @@ export default function Header() {
                 <ul className="mobile-menu__links">
                     {navLinks.map((link, index) => (
                         <li key={link.href} style={{ transitionDelay: menuOpen ? `${index * 60 + 100}ms` : "0ms" }}>
-                            <Link href={link.href}>{link.label}</Link>
+                            <Link href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</Link>
                         </li>
                     ))}
                     <li style={{ transitionDelay: menuOpen ? `${navLinks.length * 60 + 100}ms` : "0ms" }}>
@@ -148,6 +159,7 @@ export default function Header() {
                             href="/contact" 
                             className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
                             style={{ backgroundColor: "#C8832A" }}
+                            onClick={() => setMenuOpen(false)}
                         >
                             Book a Safari
                         </Link>

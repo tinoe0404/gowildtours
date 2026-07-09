@@ -3,6 +3,7 @@
 export const dynamic = "force-static";
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { TeamCard } from '@/components/about/TeamCard';
 import { ValueCard } from '@/components/about/ValueCard';
@@ -276,9 +277,9 @@ export default function AboutPage() {
                         <div className="relative z-10 text-center max-w-2xl mx-auto">
                             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight">Ready for your adventure?</h2>
                             <p className="text-white/80 text-lg mb-12 font-medium">Join us for the journey of a lifetime. Let our experts craft your perfect safari experience.</p>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a href="/safaris" className="w-full sm:w-auto bg-white text-primary-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all hover:-translate-y-1">Explore Safaris</a>
-                                <a href="/contact" className="w-full sm:w-auto bg-primary-500 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-700 transition-all border border-white/20">Contact Us</a>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                                <Link href="/safaris" className="w-full sm:w-auto bg-white text-primary-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all hover:-translate-y-1">Explore Safaris</Link>
+                                <Link href="/contact" className="w-full sm:w-auto bg-primary-500 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-700 transition-all border border-white/20">Contact Us</Link>
                             </div>
                         </div>
                     </div>
