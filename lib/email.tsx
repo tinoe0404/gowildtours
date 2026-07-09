@@ -3,24 +3,51 @@ import ContactConfirmationEmail from '@/emails/ContactConfirmation';
 import BookingConfirmationEmail from '@/emails/BookingConfirmation';
 import OperatorAlertEmail from '@/emails/OperatorAlert';
 import { render } from '@react-email/components';
+import { env } from '@/lib/env';
 
 const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '465'),
-    secure: process.env.SMTP_SECURE === 'true' || true,
+    host: env.SMTP_HOST,
+    port: parseInt(env.SMTP_PORT),
+    secure: env.SMTP_SECURE === 'true' || true,
     auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: env.SMTP_USER,
+        pass: env.SMTP_PASS,
     },
 });
 
-const fromEmail = process.env.EMAIL_FROM || 'bookings@gowildtours.com';
+const fromEmail = env.EMAIL_FROM;
 const businessEmail = 'info@gowildtours.com';
+
+export interface BookingItem {
+    name: string;
+    travelers: number;
+    date: string;
+    pricePerPerson: number;
+}
+
+export interface CartBookingData {
+    customerName: string;
+    customerEmail: string;
+    bookingReference: string;
+    subtotal: number;
+    items: BookingItem[];
+}
+
+export interface OperatorAlertData {
+    customerName: string;
+    customerEmail: string;
+    customerPhone: string;
+    nationality: string;
+    bookingReference: string;
+    subtotal: number;
+    specialRequests: string;
+    items: BookingItem[];
+}
 
 export const emailService = {
     async sendContactConfirmation(data: { name: string; email: string; subject: string; message: string }) {
         // Skip silently if SMTP isn't fully configured
-        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) return;
+        if (!env.SMTP_USER || !env.SMTP_PASS) return;
 
         try {
             const emailHtml = await render(<ContactConfirmationEmail {...data} />);
@@ -45,7 +72,7 @@ export const emailService = {
     },
 
     async sendBookingConfirmation(data: { customerName: string; customerEmail: string; bookingReference: string; type: string; totalPrice?: number }) {
-        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) return;
+        if (!env.SMTP_USER || !env.SMTP_PASS) return;
 
         try {
             const emailHtml = await render(<BookingConfirmationEmail {...data} />);
@@ -69,8 +96,8 @@ export const emailService = {
         }
     },
 
-    async sendCartBookingConfirmation(data: any) {
-        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) return;
+    async sendCartBookingConfirmation(data: CartBookingData) {
+        if (!env.SMTP_USER || !env.SMTP_PASS) return;
         
         try {
             // Reusing BookingConfirmation but passing items
@@ -88,8 +115,8 @@ export const emailService = {
         }
     },
 
-    async sendOperatorBookingAlert(data: any) {
-        if (!process.env.SMTP_USER || !process.env.SMTP_PASS) return;
+    async sendOperatorBookingAlert(data: OperatorAlertData) {
+        if (!env.SMTP_USER || !env.SMTP_PASS) return;
 
         try {
             const emailHtml = await render(<OperatorAlertEmail {...data} />);

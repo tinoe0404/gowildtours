@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import {
     galleryCategories,
     type GalleryCategory,
+    type GalleryImage,
 } from "@/lib/gallery-data";
 import { fadeInUp } from "@/lib/animations";
 import Container from "@/components/ui/Container";
@@ -18,11 +19,11 @@ import Button from "@/components/ui/Button";
 const INITIAL_COUNT = 16;
 const LOAD_MORE_COUNT = 12;
 
-export default function GalleryPageClient({ initialImages }: { initialImages: any[] }) {
+export default function GalleryPageClient({ initialImages }: { initialImages: GalleryImage[] }) {
     const [activeCategory, setActiveCategory] = useState<
         "All" | GalleryCategory
     >("All");
-    const [images, setImages] = useState<any[]>(initialImages);
+    const [images, setImages] = useState<GalleryImage[]>(initialImages);
     const [error, setError] = useState<string | null>(null);
     const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
@@ -32,7 +33,7 @@ export default function GalleryPageClient({ initialImages }: { initialImages: an
         if (activeCategory === "All") return images;
         return images.filter((img) => {
             // Support both string category and array categories (if schema evolved)
-            if (typeof img.category === "string") return img.category === activeCategory;
+            if (typeof (img as any).category === "string") return (img as any).category === activeCategory;
             return img.categories?.includes(activeCategory);
         });
     }, [images, activeCategory]);
@@ -99,7 +100,7 @@ export default function GalleryPageClient({ initialImages }: { initialImages: an
                                 cat === "All"
                                     ? images.length
                                     : images.filter((img) => {
-                                        if (typeof img.category === "string") return img.category === cat;
+                                        if (typeof (img as any).category === "string") return (img as any).category === cat;
                                         return img.categories?.includes(cat);
                                     }).length;
 

@@ -5,9 +5,11 @@
  * NEVER import this file from client components — it uses PAYPAL_CLIENT_SECRET.
  */
 
-const PAYPAL_API_BASE = process.env.PAYPAL_API_BASE || "https://api-m.sandbox.paypal.com";
-const PAYPAL_CLIENT_ID = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!;
-const PAYPAL_CLIENT_SECRET = process.env.PAYPAL_CLIENT_SECRET!;
+import { env } from "@/lib/env";
+
+const PAYPAL_API_BASE = env.PAYPAL_API_BASE;
+const PAYPAL_CLIENT_ID = env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
+const PAYPAL_CLIENT_SECRET = env.PAYPAL_CLIENT_SECRET;
 
 /** Deposit percentage (30%) */
 export const DEPOSIT_PERCENTAGE = 0.30;

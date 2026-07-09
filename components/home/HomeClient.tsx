@@ -37,11 +37,29 @@ const iconMap: Record<string, React.ElementType> = {
     TreePine,
 };
 
+import { type Package } from "@/lib/packages-data";
+
+export interface Testimonial {
+    id: string;
+    reviewerName: string;
+    reviewerCountry: string;
+    rating: number;
+    reviewText: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface WhyChooseUsItem {
+    title: string;
+    description: string;
+    icon: string;
+}
+
 interface HomeClientProps {
-    images: any;
-    featuredPackages: any[];
-    testimonials: any[];
-    whyChooseUs: any[];
+    images: { hero: string; about: string; ctaBg: string };
+    featuredPackages: Package[];
+    testimonials: Testimonial[];
+    whyChooseUs: WhyChooseUsItem[];
     children?: React.ReactNode;
 }
 

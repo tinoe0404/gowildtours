@@ -14,6 +14,18 @@ export type PackageCategory =
 
 export type DifficultyLevel = "Easy" | "Moderate" | "Challenging";
 
+export interface ItineraryDay {
+    day: number;
+    title: string;
+    description: string;
+    route?: string;
+    accommodation?: string;
+    meals?: string;
+    highlights?: string;
+    optionalActivities?: string;
+    facilities?: string;
+}
+
 export interface Package {
     id: string;
     slug: string;
@@ -46,7 +58,7 @@ export interface Package {
     inclusions: string[];
     exclusions?: string[];
     highlights: string[];
-    itinerary?: any;
+    itinerary?: ItineraryDay[];
 }
 
 export const packages: Package[] = [
