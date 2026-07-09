@@ -11,7 +11,6 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@neondatabase/serverless": "^1.1.0",
-    "@paypal/react-paypal-js": "^9.1.1",
     "@react-email/components": "^0.0.33",
     "@tanstack/react-table": "^8.21.3",
     "@types/nodemailer": "^8.0.0",
