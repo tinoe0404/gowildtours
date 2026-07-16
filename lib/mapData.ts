@@ -17,7 +17,7 @@ export const safariDestinations = [
     },
     {
         id: "mana-pools",
-        title: "Mana Pools",
+        title: "Hwange National Park",
         latitude: -15.7333,
         longitude: 29.3667,
         category: "Activity",

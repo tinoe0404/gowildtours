@@ -87,7 +87,7 @@ const values = [
 
 const milestones = [
     { year: "2010", title: "Go Wild Tours Founded", description: "Established in Victoria Falls with a single 4x4 vehicle." },
-    { year: "2015", title: "National Expansion", description: "Expanded operations to Hwange and Mana Pools National Parks." },
+    { year: "2015", title: "National Expansion", description: "Expanded operations to Hwange National Park and beyond." },
     { year: "2018", title: "Eco-Certification", description: "Achieved Silver status from the Sustainable Tourism Association." },
     { year: "2023", title: "Award Winning", description: "Voted Zimbabwe's Best Boutique Safari Operator." },
     { year: "2026", title: "5,000+ Happy Guests", description: "Celebrating a decade and a half of unforgettable memories." }

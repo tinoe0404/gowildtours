@@ -1,7 +1,7 @@
 export const siteConfig = {
     name: "Go Wild Tours",
     description:
-        "Discover the wild heart of Africa with Go Wild Tours. Premium safari experiences, luxury bush camps, and unforgettable wildlife encounters across Africa's most breathtaking destinations.",
+        "Unexplored Paradise of Africa with Go Wild Tours. Premium safari experiences, luxury bush camps, and unforgettable wildlife encounters across Africa's most breathtaking destinations.",
     url: "https://gowildtours.com",
     email: "info@gowildtours.com",
     phone: "+263 77 123 4567",

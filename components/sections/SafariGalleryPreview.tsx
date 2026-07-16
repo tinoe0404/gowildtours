@@ -24,7 +24,7 @@ export default async function SafariGalleryPreview() {
             alt: "Elephants at a waterhole",
             categories: ["Wildlife"] as any,
             caption: "A family of elephants taking a refreshing drink.",
-            location: "Mana Pools",
+            location: "Hwange National Park",
             featured: true,
             aspectRatio: "portrait" as any,
         },

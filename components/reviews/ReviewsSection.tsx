@@ -3,20 +3,29 @@ import ReviewForm from "./ReviewForm";
 
 export default function ReviewsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Guest Reviews</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Read what our recent travelers have to say about their unforgettable experiences with GoWild Tours.
+    <section
+      style={{
+        padding: 'var(--space-24) 0',
+        background: 'var(--color-mist)',
+      }}
+    >
+      <div className="container mx-auto px-4" style={{ maxWidth: '1200px' }}>
+        {/* Section Header */}
+        <div className="section-header" style={{ marginBottom: 'var(--space-12)' }}>
+          <span className="section-header__label">Testimonials</span>
+          <h2 className="section-header__title">What Our Guests Say</h2>
+          <p className="section-header__subtitle">
+            Hear from travellers who have experienced the magic of Africa with Go Wild Tours.
           </p>
         </div>
 
-        <div className="mb-16">
+        {/* Reviews Grid */}
+        <div style={{ marginBottom: 'var(--space-16)' }}>
           <ReviewList />
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        {/* Review Form */}
+        <div style={{ maxWidth: '640px', margin: '0 auto' }}>
           <ReviewForm />
         </div>
       </div>

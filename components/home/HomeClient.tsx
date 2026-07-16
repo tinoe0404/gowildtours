@@ -109,7 +109,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             variants={fadeInUp}
                             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient-gold"
                         >
-                            Discover the Wild Heart
+                            Unexplored Paradise
                             <br />
                             of Africa
                         </motion.h1>
@@ -227,7 +227,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                 <Container>
                     <SectionHeading
                         title="Five Iconic Destinations"
-                        subtitle="From the thundering Victoria Falls to the remote walking trails of Mana Pools — each destination reveals a different face of Zimbabwe."
+                        subtitle="From the thundering Victoria Falls to the vast plains of Hwange — each destination reveals a different face of Africa."
                     />
 
                     <div className="home-dest-strip">
@@ -339,9 +339,17 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                 <motion.div
                                     key={item.title}
                                     variants={staggerItem}
-                                    className="group relative p-6 rounded-[var(--radius-feature)] border border-cream/10 hover:border-accent/30 bg-cream/[0.03] hover:bg-cream/[0.06] transition-all duration-300 text-center"
+                                    className="group relative p-6 rounded-[var(--radius-feature)] border border-cream/10 hover:border-accent/40 bg-cream/[0.03] hover:bg-cream/[0.07] transition-all duration-500 text-center overflow-hidden"
                                 >
-                                    <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 text-accent group-hover:bg-accent/20 transition-colors">
+                                    {/* Gold accent bar */}
+                                    <div
+                                        className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                        style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }}
+                                    />
+                                    <div
+                                        className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-accent transition-all duration-500 group-hover:scale-110"
+                                        style={{ background: 'linear-gradient(135deg, rgba(200,135,58,0.12), rgba(229,169,90,0.08))' }}
+                                    >
                                         <Icon className="h-6 w-6" />
                                     </div>
                                     <h3 className="font-display text-lg font-bold text-cream mb-2">{item.title}</h3>
@@ -370,19 +378,24 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                     >
                         {testimonials.map((testimonial) => (
                             <motion.div key={testimonial.id} variants={staggerItem}>
-                                <div className="relative p-8 bg-white rounded-[var(--radius-feature)] shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                                    <Quote className="h-8 w-8 text-accent/20 mb-4" />
+                                <div
+                                    className="relative p-8 bg-white rounded-[var(--radius-feature)] h-full flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1"
+                                    style={{ border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}
+                                >
+                                    {/* Gold accent bar */}
+                                    <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+                                    <Quote style={{ width: '32px', height: '32px', color: 'var(--color-savanna)', opacity: 0.2 }} className="mb-4" />
                                     <div className="flex gap-1 mb-4">
                                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                            <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                                            <Star key={i} style={{ width: '16px', height: '16px', fill: 'var(--color-savanna)', color: 'var(--color-savanna)' }} />
                                         ))}
                                     </div>
-                                    <p className="text-warm-gray text-sm leading-relaxed flex-1 italic truncate-3-lines">
+                                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--color-text-muted)', lineHeight: 1.7, fontStyle: 'italic' }} className="flex-1 truncate-3-lines">
                                         &ldquo;{testimonial.reviewText}&rdquo;
                                     </p>
-                                    <div className="mt-6 pt-4 border-t border-beige">
-                                        <p className="font-accent font-semibold text-dark-deep text-sm">{testimonial.reviewerName}</p>
-                                        <p className="font-accent text-xs text-warm-gray mt-0.5">{testimonial.reviewerCountry}</p>
+                                    <div style={{ marginTop: 'var(--space-6)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--color-border)' }}>
+                                        <p style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-earth)' }}>{testimonial.reviewerName}</p>
+                                        <p style={{ fontSize: '0.75rem', color: 'var(--color-savanna)', marginTop: '2px' }}>{testimonial.reviewerCountry}</p>
                                     </div>
                                 </div>
                             </motion.div>
