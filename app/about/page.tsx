@@ -98,11 +98,12 @@ export default function AboutPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            <section className="pt-36 pb-8 bg-white">
-                <div className="container mx-auto px-4 md:px-6">
-                    <span className="text-label block mb-3">About</span>
-                    <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Our Story</h1>
-                    <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Connecting people with Africa&apos;s wild heart through authentic, sustainable, and unforgettable safari experiences.</p>
+            <section className="pt-40 pb-16 bg-mist relative overflow-hidden" style={{ background: 'linear-gradient(180deg, rgba(200,135,58,0.05) 0%, rgba(255,255,255,1) 100%)' }}>
+                <div className="absolute top-0 left-0 w-full h-[4px]" style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+                <div className="container mx-auto px-4 md:px-6 text-center">
+                    <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">About Us</span>
+                    <h1 className="text-5xl md:text-6xl font-display font-bold text-dark-deep mb-6">Our Story</h1>
+                    <p className="text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed">Connecting people with Africa's wild heart through authentic, sustainable, and unforgettable safari experiences.</p>
                 </div>
             </section>
 
@@ -270,16 +271,16 @@ export default function AboutPage() {
             {/* CTA Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
-                    <div className="relative rounded-[40px] bg-primary-600 p-12 md:p-24 overflow-hidden">
-                        <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+                    <div className="relative rounded-[40px] p-12 md:p-24 overflow-hidden shadow-2xl" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-emerald))' }}>
+                        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none mix-blend-overlay">
                             <img src="/images/safari/leopard-tree.jpg" className="w-full h-full object-cover" />
                         </div>
                         <div className="relative z-10 text-center max-w-2xl mx-auto">
-                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight">Ready for your adventure?</h2>
-                            <p className="text-white/80 text-lg mb-12 font-medium">Join us for the journey of a lifetime. Let our experts craft your perfect safari experience.</p>
+                            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>Ready for your adventure?</h2>
+                            <p className="text-white/90 text-lg mb-12 font-medium">Join us for the journey of a lifetime. Let our experts craft your perfect safari experience.</p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                                <Link href="/safaris" className="w-full sm:w-auto bg-white text-primary-600 px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl transition-all hover:-translate-y-1">Explore Safaris</Link>
-                                <Link href="/contact" className="w-full sm:w-auto bg-primary-500 text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-primary-700 transition-all border border-white/20">Contact Us</Link>
+                                <Link href="/safaris" className="w-full sm:w-auto bg-white text-dark-deep px-10 py-5 rounded-2xl font-black text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all hover:-translate-y-1">Explore Safaris</Link>
+                                <Link href="/contact" className="w-full sm:w-auto bg-transparent text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/10 transition-all border-2 border-white">Contact Us</Link>
                             </div>
                         </div>
                     </div>

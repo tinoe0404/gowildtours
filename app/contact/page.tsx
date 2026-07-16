@@ -41,11 +41,12 @@ export default function ContactPage() {
 
     return (
         <main className="bg-white">
-            <section className="pt-36 pb-8 bg-white">
-                <div className="container">
-                    <span className="text-label block mb-3">Contact</span>
-                    <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Get in Touch</h1>
-                    <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Have questions about our safari packages or need a custom itinerary? Our team of experts is here to help you plan the adventure of a lifetime.</p>
+            <section className="pt-40 pb-16 bg-mist relative overflow-hidden" style={{ background: 'linear-gradient(180deg, rgba(200,135,58,0.05) 0%, rgba(255,255,255,1) 100%)' }}>
+                <div className="absolute top-0 left-0 w-full h-[4px]" style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+                <div className="container relative z-10 text-center">
+                    <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">Contact Us</span>
+                    <h1 className="text-5xl md:text-6xl font-display font-bold text-dark-deep mb-6">Get in Touch</h1>
+                    <p className="text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed">Have questions about our safari packages or need a custom itinerary? Our team of experts is here to help you plan the adventure of a lifetime.</p>
                 </div>
             </section>
 
@@ -67,11 +68,12 @@ export default function ContactPage() {
                         <div className="lg:col-span-5 space-y-8">
                             {/* Contact Cards */}
                             <div className="grid grid-cols-1 gap-6">
-                                <div className="p-8 bg-[var(--color-sand)] rounded-[var(--radius-lg)] group hover:shadow-lg transition-all">
-                                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[var(--color-savanna)] mb-6 group-hover:bg-[var(--color-savanna)] group-hover:text-white transition-colors">
+                                <div className="p-8 bg-white rounded-[var(--radius-lg)] group hover:shadow-xl transition-all relative overflow-hidden" style={{ border: '1px solid rgba(200,135,58,0.2)', boxShadow: 'var(--shadow-card)' }}>
+                                    <div className="absolute top-0 left-0 w-1 h-full" style={{ background: 'var(--color-savanna)' }} />
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-6 shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>
                                         <MapPin className="w-6 h-6" />
                                     </div>
-                                    <h3 className="text-lg font-bold font-display text-[var(--color-earth)] mb-2 uppercase tracking-tight">Visit Our Office</h3>
+                                    <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Visit Our Office</h3>
                                     <p className="text-[var(--color-dusk)] leading-relaxed font-medium">
                                         Go Wild Tours Head Office<br />
                                         123 Safari Drive, Victoria Falls<br />
@@ -79,11 +81,12 @@ export default function ContactPage() {
                                     </p>
                                 </div>
 
-                                <div className="p-8 bg-[var(--color-sand)] rounded-[var(--radius-lg)] group hover:shadow-lg transition-all">
-                                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[var(--color-savanna)] mb-6 group-hover:bg-[var(--color-savanna)] group-hover:text-white transition-colors">
+                                <div className="p-8 bg-white rounded-[var(--radius-lg)] group hover:shadow-xl transition-all relative overflow-hidden" style={{ border: '1px solid rgba(200,135,58,0.2)', boxShadow: 'var(--shadow-card)' }}>
+                                    <div className="absolute top-0 left-0 w-1 h-full" style={{ background: 'var(--color-savanna)' }} />
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-6 shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>
                                         <MessageSquare className="w-6 h-6" />
                                     </div>
-                                    <h3 className="text-lg font-bold font-display text-[var(--color-earth)] mb-2 uppercase tracking-tight">Direct Contact</h3>
+                                    <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Direct Contact</h3>
                                     <div className="space-y-3">
                                         <a href="tel:+263716355176" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
                                             <Phone className="w-4 h-4" /> +263 71 635 5176
@@ -94,11 +97,12 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                <div className="p-8 bg-[var(--color-sand)] rounded-[var(--radius-lg)] group hover:shadow-lg transition-all">
-                                    <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-[var(--color-savanna)] mb-6 group-hover:bg-[var(--color-savanna)] group-hover:text-white transition-colors">
+                                <div className="p-8 bg-white rounded-[var(--radius-lg)] group hover:shadow-xl transition-all relative overflow-hidden" style={{ border: '1px solid rgba(200,135,58,0.2)', boxShadow: 'var(--shadow-card)' }}>
+                                    <div className="absolute top-0 left-0 w-1 h-full" style={{ background: 'var(--color-savanna)' }} />
+                                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-6 shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>
                                         <Clock className="w-6 h-6" />
                                     </div>
-                                    <h3 className="text-lg font-bold font-display text-[var(--color-earth)] mb-2 uppercase tracking-tight">Working Hours</h3>
+                                    <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Working Hours</h3>
                                     <div className="space-y-1 text-sm text-[var(--color-dusk)] font-medium">
                                         <p className="flex justify-between"><span>Mon - Fri:</span> <span>8:00 AM - 6:00 PM</span></p>
                                         <p className="flex justify-between"><span>Sat:</span> <span>9:00 AM - 2:00 PM</span></p>

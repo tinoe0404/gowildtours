@@ -163,7 +163,11 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                 <SafariBookingWidget pkg={pkg as any} />
 
                                 {/* Price Card */}
-                                <div className="bg-dark-deep text-white p-6 rounded-[var(--radius-card)] shadow-xl relative overflow-hidden">
+                                <div 
+                                    className="text-white p-6 rounded-[var(--radius-card)] relative overflow-hidden"
+                                    style={{ background: 'linear-gradient(135deg, #2C1A0E, #1A1007)', boxShadow: 'var(--shadow-elevated)' }}
+                                >
+                                    <div className="absolute top-0 left-0 w-full h-[4px]" style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
                                     <div className="absolute top-0 right-0 p-4 opacity-10">
                                         <Share2 className="w-24 h-24" />
                                     </div>
@@ -198,13 +202,16 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                 </div>
 
                                 {/* Booking Form */}
-                                <div className="mt-6">
-                                    <h4 className="font-bold text-dark-deep mb-4 px-2">Prefer to inquire?</h4>
+                                <div className="mt-6 bg-white p-6 rounded-[var(--radius-card)] shadow-lg" style={{ border: '1px solid var(--color-border)' }}>
+                                    <h4 className="font-display text-xl font-bold text-dark-deep mb-4 flex items-center gap-2">
+                                        <div className="w-2 h-2 rounded-full" style={{ background: 'var(--color-savanna)' }} />
+                                        Prefer to inquire?
+                                    </h4>
                                     <BookingForm packageTitle={pkg.title} />
                                 </div>
 
                                 {/* Assistance */}
-                                <div className="bg-white p-6 rounded-[var(--radius-card)] border border-beige text-center">
+                                <div className="bg-white p-6 rounded-[var(--radius-card)] text-center transition-shadow hover:shadow-md" style={{ border: '1px solid var(--color-border)' }}>
                                     <h4 className="font-bold text-dark-deep mb-2">Need Help?</h4>
                                     <p className="text-sm text-warm-gray mb-4">
                                         Speak to our safari experts to customize this itinerary.
@@ -215,7 +222,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                 </div>
 
                                 {/* Social Share */}
-                                <div className="bg-white p-6 rounded-[var(--radius-card)] border border-beige text-center">
+                                <div className="bg-white p-6 rounded-[var(--radius-card)] text-center transition-shadow hover:shadow-md" style={{ border: '1px solid var(--color-border)' }}>
                                     <SocialShare
                                         url={`https://gowildtours.com/safaris/${pkg.slug}`}
                                         title={`Check out this amazing safari: ${pkg.title}`}
@@ -253,16 +260,16 @@ function ItineraryItem({ item, isLastDay }: { item: { day: number; title: string
     }
 
     return (
-        <div className="border border-beige rounded-lg bg-white overflow-hidden">
+        <div className="rounded-lg bg-white overflow-hidden transition-all duration-300" style={{ border: isOpen ? '1px solid rgba(200,135,58,0.4)' : '1px solid rgba(44,26,14,0.1)', boxShadow: isOpen ? 'var(--shadow-card)' : 'none' }}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors"
             >
                 <div className="flex items-center gap-4">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold text-sm" style={{ background: isOpen ? 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' : 'rgba(44,26,14,0.08)', color: isOpen ? 'white' : 'var(--color-earth)' }}>
                         {item.day}
                     </span>
-                    <span className="font-bold text-dark-deep">{item.title}</span>
+                    <span className="font-bold text-dark-deep text-lg">{item.title}</span>
                 </div>
                 {isOpen ? <ChevronUp className="w-5 h-5 text-gray-400" /> : <ChevronDown className="w-5 h-5 text-gray-400" />}
             </button>
@@ -271,10 +278,10 @@ function ItineraryItem({ item, isLastDay }: { item: { day: number; title: string
                 animate={{ height: isOpen ? "auto" : 0 }}
                 className="overflow-hidden"
             >
-                <div className="p-4 pt-0 text-warm-gray text-sm ml-12 border-l-2 border-dashed border-beige/50 pl-6 space-y-4">
+                <div className="p-4 pt-0 text-warm-gray text-sm ml-12 border-l-2 border-dashed pl-6 space-y-4" style={{ borderColor: 'rgba(200,135,58,0.3)' }}>
                     <p className="leading-relaxed">{item.description}</p>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg mt-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg mt-4 text-sm" style={{ background: 'rgba(200,135,58,0.04)', border: '1px solid rgba(200,135,58,0.1)' }}>
                         <div>
                             <span className="font-bold text-dark-deep block mb-1">Accommodation:</span>
                             <span>{formattedAccommodation}</span>

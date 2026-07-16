@@ -16,9 +16,17 @@ export default function OrderSummary() {
     if (items.length === 0) return null;
 
     return (
-        <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border sticky top-24">
-            <h3 className="font-display text-xl font-bold text-dark-deep mb-4 flex items-center gap-2">
-                <Tent className="w-5 h-5 text-accent" />
+        <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border sticky top-24 overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
+            {/* Premium Gold Accent Bar */}
+            <div
+                className="absolute top-0 left-0 right-0 h-[4px]"
+                style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }}
+            />
+            
+            <h3 className="font-display text-2xl font-bold text-dark-deep mb-6 mt-2 flex items-center gap-3">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full" style={{ background: 'linear-gradient(135deg, rgba(200,135,58,0.12), rgba(229,169,90,0.08))' }}>
+                    <Tent className="w-5 h-5 text-accent" />
+                </div>
                 Booking Summary
             </h3>
 
@@ -53,13 +61,14 @@ export default function OrderSummary() {
                 </div>
                 
                 {/* Deposit Highlight */}
-                <div className="bg-accent/10 border border-accent/30 rounded-lg p-3 mb-3">
-                    <div className="flex justify-between items-center">
+                <div className="border rounded-xl p-4 mb-4 relative overflow-hidden" style={{ borderColor: 'rgba(200,135,58,0.3)', background: 'linear-gradient(135deg, rgba(200,135,58,0.08), rgba(200,135,58,0.02))' }}>
+                    <div className="absolute top-0 left-0 w-1 h-full" style={{ background: 'var(--color-savanna)' }} />
+                    <div className="flex justify-between items-center pl-2">
                         <div>
                             <span className="font-bold text-dark-deep text-sm">Due Today (30%)</span>
-                            <p className="text-[10px] text-warm-gray mt-0.5">Deposit via PayPal</p>
+                            <p className="text-[11px] text-warm-gray mt-1">Deposit to secure booking</p>
                         </div>
-                        <span className="font-display font-bold text-lg text-accent">${deposit.toLocaleString()}</span>
+                        <span className="font-display font-bold text-2xl text-accent" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>${deposit.toLocaleString()}</span>
                     </div>
                 </div>
 

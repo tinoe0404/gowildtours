@@ -125,15 +125,18 @@ export default function CheckoutForm() {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
                     
                         {/* Section 1: Your Details */}
-                        <section>
-                            <h2 className="font-display text-2xl font-bold text-dark-deep mb-6 pb-2 border-b border-border">1. Your Details</h2>
+                        <section className="relative">
+                            <div className="flex items-center gap-3 mb-6 pb-4 border-b" style={{ borderColor: 'rgba(44, 26, 14, 0.15)' }}>
+                                <div className="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold font-accent text-sm shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>1</div>
+                                <h2 className="font-display text-2xl font-bold text-dark-deep">Your Details</h2>
+                            </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">Full Name *</label>
                                     <input 
                                         {...register("name")} 
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm disabled:opacity-60"
                                         placeholder="Jane Doe"
                                     />
                                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
@@ -144,7 +147,7 @@ export default function CheckoutForm() {
                                         type="email"
                                         {...register("email")} 
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm disabled:opacity-60"
                                         placeholder="jane@example.com"
                                     />
                                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -155,7 +158,7 @@ export default function CheckoutForm() {
                                         type="tel"
                                         {...register("phone")} 
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm disabled:opacity-60"
                                         placeholder="+1 234 567 8900"
                                     />
                                     <p className="text-[10px] text-warm-gray mt-1">Include country code if international</p>
@@ -166,7 +169,7 @@ export default function CheckoutForm() {
                                     <input 
                                         {...register("nationality")} 
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm disabled:opacity-60"
                                         placeholder="United States"
                                     />
                                     {errors.nationality && <p className="text-red-500 text-xs mt-1">{errors.nationality.message}</p>}
@@ -175,8 +178,11 @@ export default function CheckoutForm() {
                         </section>
 
                         {/* Section 2: Trip Notes */}
-                        <section>
-                            <h2 className="font-display text-2xl font-bold text-dark-deep mb-6 pb-2 border-b border-border">2. Trip Notes</h2>
+                        <section className="relative">
+                            <div className="flex items-center gap-3 mb-6 pb-4 border-b" style={{ borderColor: 'rgba(44, 26, 14, 0.15)' }}>
+                                <div className="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold font-accent text-sm shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>2</div>
+                                <h2 className="font-display text-2xl font-bold text-dark-deep">Trip Notes</h2>
+                            </div>
                             <div className="space-y-6">
                                 <div>
                                     <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">Special Requests / Dietary Requirements</label>
@@ -184,7 +190,7 @@ export default function CheckoutForm() {
                                         {...register("specialRequests")} 
                                         rows={4}
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors resize-none disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm resize-none disabled:opacity-60"
                                         placeholder="Any allergies, mobility issues, or special celebrations?"
                                     />
                                 </div>
@@ -193,7 +199,7 @@ export default function CheckoutForm() {
                                     <select 
                                         {...register("hearAboutUs")}
                                         disabled={isProcessing}
-                                        className="w-full px-4 py-3 bg-gray-50 border border-border rounded-lg outline-none focus:border-accent transition-colors appearance-none cursor-pointer disabled:opacity-60"
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm appearance-none cursor-pointer disabled:opacity-60"
                                     >
                                         <option value="">Select an option</option>
                                         <option value="Google">Google / Search Engine</option>
@@ -207,8 +213,11 @@ export default function CheckoutForm() {
                         </section>
 
                         {/* Section 3: Booking Terms */}
-                        <section>
-                            <h2 className="font-display text-2xl font-bold text-dark-deep mb-6 pb-2 border-b border-border">3. Booking Terms</h2>
+                        <section className="relative">
+                            <div className="flex items-center gap-3 mb-6 pb-4 border-b" style={{ borderColor: 'rgba(44, 26, 14, 0.15)' }}>
+                                <div className="flex items-center justify-center w-8 h-8 rounded-full text-white font-bold font-accent text-sm shadow-md" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-sunset))' }}>3</div>
+                                <h2 className="font-display text-2xl font-bold text-dark-deep">Booking Terms</h2>
+                            </div>
                             <div className="space-y-4">
                                 <label className="flex items-start gap-3 cursor-pointer group">
                                     <div className="mt-1">

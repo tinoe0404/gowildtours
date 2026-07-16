@@ -36,11 +36,12 @@ const seasons = [
 export default function DestinationsPage() {
   return (
     <main>
-      <section className="pt-36 pb-8 bg-[var(--color-mist)]">
-        <div className="container">
-          <span className="text-label block mb-3">Southern Africa</span>
-          <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Explore Our Destinations</h1>
-          <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Extraordinary countries, each with its own character, landscapes, and wildlife magic.</p>
+      <section className="pt-40 pb-16 bg-mist relative overflow-hidden" style={{ background: 'linear-gradient(180deg, rgba(200,135,58,0.05) 0%, rgba(255,255,255,1) 100%)' }}>
+        <div className="absolute top-0 left-0 w-full h-[4px]" style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+        <div className="container relative z-10 text-center">
+          <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">Southern Africa</span>
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-dark-deep mb-6">Explore Our Destinations</h1>
+          <p className="text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed">Extraordinary countries, each with its own character, landscapes, and wildlife magic.</p>
         </div>
       </section>
 
@@ -179,22 +180,22 @@ export default function DestinationsPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="section" style={{ textAlign: "center" }}>
-        <div className="container">
-          <span className="text-label">Ready?</span>
-          <h2 className="text-h2" style={{ marginBottom: "var(--space-4)" }}>
-            Start Planning Your Safari
-          </h2>
-          <p
-            className="section-header__subtitle"
-            style={{ marginBottom: "var(--space-8)" }}
-          >
-            Let our team craft a bespoke itinerary combining your favourite
-            destinations.
-          </p>
-          <Link href="/contact" className="btn btn--primary btn--lg">
-            Book a Safari
-          </Link>
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="relative rounded-[40px] p-12 md:p-24 overflow-hidden shadow-2xl text-center" style={{ background: 'linear-gradient(135deg, var(--color-savanna), var(--color-emerald))' }}>
+            <div className="relative z-10 max-w-2xl mx-auto">
+              <span className="inline-block py-1 px-3 rounded-full bg-white/20 text-white font-bold text-xs uppercase tracking-wider mb-6 border border-white/30 backdrop-blur-sm">Ready?</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 uppercase tracking-tight" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.2)' }}>
+                Start Planning Your Safari
+              </h2>
+              <p className="text-white/90 text-lg mb-12 font-medium leading-relaxed">
+                Let our team craft a bespoke itinerary combining your favourite destinations.
+              </p>
+              <Link href="/contact" className="inline-block bg-white text-dark-deep px-10 py-4 rounded-2xl font-black text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] transition-all hover:-translate-y-1">
+                Book a Safari
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

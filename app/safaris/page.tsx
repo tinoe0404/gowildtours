@@ -14,11 +14,12 @@ export const metadata: Metadata = {
 export default function SafarisPage() {
     return (
         <main>
-            <section className="pt-36 pb-8 bg-[var(--color-mist)]">
-                <Container>
-                    <span className="text-label block mb-3">Explore</span>
-                    <h1 className="text-h1 font-display font-bold text-[var(--color-earth)]">Our Safaris</h1>
-                    <p className="text-body-lg text-[var(--color-text-muted)] max-w-2xl mt-3">Handcrafted wilderness experiences across Zimbabwe&apos;s most iconic landscapes — from Hwange&apos;s elephant herds to the thundering Victoria Falls.</p>
+            <section className="pt-40 pb-16 bg-mist relative overflow-hidden" style={{ background: 'linear-gradient(180deg, rgba(200,135,58,0.05) 0%, rgba(255,255,255,1) 100%)' }}>
+                <div className="absolute top-0 left-0 w-full h-[4px]" style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+                <Container className="relative z-10 text-center">
+                    <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">Explore</span>
+                    <h1 className="text-5xl md:text-6xl font-display font-bold text-dark-deep mb-6">Our Safaris</h1>
+                    <p className="text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed">Handcrafted wilderness experiences across Zimbabwe&apos;s most iconic landscapes — from Hwange&apos;s elephant herds to the thundering Victoria Falls.</p>
                 </Container>
             </section>
 
