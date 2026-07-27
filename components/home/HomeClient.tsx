@@ -105,7 +105,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* Eyebrow Badge */}
                         <motion.span
                             variants={fadeIn}
-                            className="inline-block border border-[#C8832A]/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-[#C8832A] font-accent font-semibold uppercase bg-transparent"
+                            className="inline-block border border-[#C8832A]/50 px-3 md:px-4 py-1.5 md:py-1 rounded-full tracking-wider md:tracking-[0.2em] text-[10px] md:text-xs text-[#C8832A] font-accent font-semibold uppercase bg-transparent text-center max-w-[90vw] leading-tight"
                             style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                         >
                             Premium African Safari Experiences
