@@ -67,7 +67,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
     return (
         <>
             {/* ═══════════════ HERO ═══════════════ */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
                 {/* Background Image with Parallax Drift */}
                 <motion.div
                     initial={{ scale: 1.03 }}
