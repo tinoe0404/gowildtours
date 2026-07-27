@@ -61,7 +61,7 @@ export interface Package {
     itinerary?: ItineraryDay[];
 }
 
-export const packages: Package[] = [
+const packagesData: Package[] = [
     {
         id: "1",
         slug: "hwange-and-botswana-wildlife",
@@ -2381,7 +2381,9 @@ export const packages: Package[] = [
             }
         ]
     }
-].sort((a, b) => {
+];
+
+export const packages: Package[] = [...packagesData].sort((a, b) => {
     const daysA = typeof a.duration === 'string' ? parseInt(a.duration) || 999 : a.duration.days;
     const daysB = typeof b.duration === 'string' ? parseInt(b.duration) || 999 : b.duration.days;
     return daysA - daysB;
