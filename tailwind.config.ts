@@ -10,27 +10,28 @@ const config: Config = {
         extend: {
             colors: {
                 primary: {
-                    50: '#FFF3E6',
-                    100: '#FFE7CC',
-                    200: '#FFCF99',
-                    300: '#FFB766',
-                    400: '#FF9F33',
-                    500: '#FF8C42', // Main orange from logo
-                    600: '#CC6F35',
-                    700: '#995328',
-                    800: '#66371A',
-                    900: '#331C0D',
+                    50: '#FDF7F1',
+                    100: '#F9ECD9',
+                    200: '#EFCC9E',
+                    300: '#E6AD63',
+                    400: '#D99233',
+                    500: '#C8832A', // Main terracotta from hero
+                    600: '#B06B1F',
+                    700: '#875114',
+                    800: '#61390E',
+                    900: '#42250B',
                 },
                 accent: {
-                    DEFAULT: '#FF8C42',
-                    yellow: '#FFD700', // Yellow accent from logo
-                    brown: '#8B4513',  // Brown tones from logo
+                    DEFAULT: '#C8832A',
+                    yellow: '#E5A95A', // Softer gold 
+                    brown: '#8B4513',  
+                    skyBlue: '#87CEEB', // Hero heading highlight
                 },
                 wild: {
-                    orange: '#FF8C42',
-                    sunset: '#FFB84D',
-                    earth: '#8B4513',
-                    forest: '#2D5016',
+                    orange: '#C8832A',
+                    sunset: '#E8652B',
+                    earth: '#2C1A0E',
+                    forest: '#2D5F2D',
                 },
                 // Keeping design tokens from original CSS for backward compatibility if needed, 
                 // essentially mapping them to the new palette or keeping as utility classes

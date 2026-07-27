@@ -187,7 +187,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
                         >
-                            <span className="font-accent text-sm font-semibold tracking-[0.2em] uppercase text-accent block mb-3">
+                            <span className="inline-block border border-accent/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-accent font-accent font-semibold uppercase bg-transparent mb-6">
                                 About Us
                             </span>
                             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-dark-deep leading-tight mb-6">
@@ -351,10 +351,10 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                     variants={staggerItem}
                                     className="group relative p-6 rounded-[var(--radius-feature)] border border-cream/10 hover:border-accent/40 bg-cream/[0.03] hover:bg-cream/[0.07] transition-all duration-500 text-center overflow-hidden"
                                 >
-                                    {/* Gold accent bar */}
+                                    {/* Terracotta to Sky Blue accent bar */}
                                     <div
                                         className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        style={{ background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }}
+                                        style={{ background: 'linear-gradient(90deg, #C8832A, #87CEEB, #C8832A)' }}
                                     />
                                     <div
                                         className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-accent transition-all duration-500 group-hover:scale-110"
@@ -392,8 +392,8 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                     className="relative p-8 bg-white rounded-[var(--radius-feature)] h-full flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1"
                                     style={{ border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}
                                 >
-                                    {/* Gold accent bar */}
-                                    <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(90deg, #C8873A, #E5A95A, #C8873A)' }} />
+                                    {/* Terracotta accent bar */}
+                                    <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(90deg, #C8832A, #E5A95A, #C8832A)' }} />
                                     <Quote style={{ width: '32px', height: '32px', color: 'var(--color-savanna)', opacity: 0.2 }} className="mb-4" />
                                     <div className="flex gap-1 mb-4">
                                         {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -432,10 +432,10 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         viewport={{ once: true, amount: 0.3 }}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <span className="font-accent text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-accent-light block mb-4">
+                        <span className="inline-block border border-accent/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-accent font-accent font-semibold uppercase bg-transparent mb-6">
                             Start Your Journey
                         </span>
-                        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-gradient-gold">
+                        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#87CEEB" }}>
                             Ready to Plan Your
                             <br />
                             African Adventure?

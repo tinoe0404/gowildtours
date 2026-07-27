@@ -3,7 +3,7 @@
 :root {
   /* Brand Colors — Premium Safari Palette */
   --color-earth:        #2C1A0E;   /* deep dark brown — primary text */
-  --color-savanna:      #C8873A;   /* warm amber gold — primary accent */
+  --color-savanna:      #C8832A;   /* terracotta/amber gold — primary accent */
   --color-savanna-light:#E5A95A;   /* lighter gold for hover states */
   --color-savanna-deep: #A66B1F;   /* deeper gold for active / pressed states */
   --color-dusk:         #7B4F2E;   /* mid-brown — secondary text */
@@ -13,6 +13,7 @@
   --color-white:        #FFFDF9;
   --color-emerald:      #2D5F2D;   /* nature green for accents */
   --color-sunset:       #E8652B;   /* warm sunset orange */
+  --color-sky-blue:     #87CEEB;   /* sky blue highlight from hero */
 
   /* Semantic */
   --color-bg:           var(--color-mist);
@@ -477,15 +478,15 @@ h1, h2, h3, h4, h5, h6 {
   50%       { transform: scaleY(1.3); opacity: 1; }
 }
 
-/* ── Gold Gradient Text — Premium Animated Shimmer ── */
+/* ── Gold/Terracotta Gradient Text — Premium Animated Shimmer ── */
 .text-gradient-gold {
   background: linear-gradient(
     135deg,
-    #FFD700 0%,
-    #C8873A 25%,
-    #E5A95A 50%,
-    #FFD700 75%,
-    #C8873A 100%
+    #E5A95A 0%,
+    #C8832A 25%,
+    #A66B1F 50%,
+    #E5A95A 75%,
+    #C8832A 100%
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -493,7 +494,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-text-fill-color: transparent;
   display: inline;
   animation: goldShimmer 6s ease-in-out infinite;
-  filter: drop-shadow(0 2px 8px rgba(200, 135, 58, 0.3));
+  filter: drop-shadow(0 2px 8px rgba(200, 131, 42, 0.3));
 }
 
 @keyframes goldShimmer {
