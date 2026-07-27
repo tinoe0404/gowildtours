@@ -349,7 +349,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                 <motion.div
                                     key={item.title}
                                     variants={staggerItem}
-                                    className="group relative p-6 rounded-[var(--radius-feature)] border border-cream/10 hover:border-accent/40 bg-cream/[0.03] hover:bg-cream/[0.07] transition-all duration-500 text-center overflow-hidden"
+                                    className="group relative p-6 rounded-[var(--radius-feature)] border border-white/10 hover:border-[#C8832A]/40 bg-white/[0.03] hover:bg-white/[0.07] transition-all duration-500 text-center overflow-hidden"
                                 >
                                     {/* Terracotta to Sky Blue accent bar */}
                                     <div
@@ -357,13 +357,13 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                                         style={{ background: 'linear-gradient(90deg, #C8832A, #87CEEB, #C8832A)' }}
                                     />
                                     <div
-                                        className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-accent transition-all duration-500 group-hover:scale-110"
+                                        className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-[#C8832A] transition-all duration-500 group-hover:scale-110"
                                         style={{ background: 'linear-gradient(135deg, rgba(200,135,58,0.12), rgba(229,169,90,0.08))' }}
                                     >
                                         <Icon className="h-6 w-6" />
                                     </div>
-                                    <h3 className="font-display text-lg font-bold text-cream mb-2">{item.title}</h3>
-                                    <p className="text-sm text-cream/60 leading-relaxed">{item.description}</p>
+                                    <h3 className="font-display text-lg font-bold text-white mb-2">{item.title}</h3>
+                                    <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
                                 </motion.div>
                             );
                         })}
@@ -432,7 +432,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         viewport={{ once: true, amount: 0.3 }}
                         className="text-center max-w-3xl mx-auto"
                     >
-                        <span className="inline-block border border-accent/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-accent font-accent font-semibold uppercase bg-transparent mb-6">
+                        <span className="inline-block border border-[#C8832A]/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-[#C8832A] font-accent font-semibold uppercase bg-transparent mb-6">
                             Start Your Journey
                         </span>
                         <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#87CEEB" }}>
@@ -440,7 +440,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             <br />
                             African Adventure?
                         </h2>
-                        <p className="text-cream/70 text-base md:text-lg leading-relaxed mb-8">
+                        <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
                             Let our expert team craft a bespoke safari itinerary just for you.
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
