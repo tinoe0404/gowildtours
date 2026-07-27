@@ -328,7 +328,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
             {children}
 
             {/* ═══════════════ WHY CHOOSE US ═══════════════ */}
-            <Section spacing="lg" className="bg-dark-deep">
+            <Section spacing="lg" className="bg-[#1A1410]">
                 <Container>
                     <SectionHeading
                         title="Why Choose Go Wild Tours"
