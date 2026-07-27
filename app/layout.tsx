@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { constructMetadata } from "@/lib/seo";
@@ -6,6 +6,12 @@ import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import { Suspense } from "react";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  themeColor: '#1A1410',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata = constructMetadata({
   title: "Go Wild Tours | Premium African Safari Adventures",
