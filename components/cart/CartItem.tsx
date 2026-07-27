@@ -27,22 +27,22 @@ export default function CartItem({ item }: CartItemProps) {
 
             {/* Details */}
             <div className="flex-1 min-w-0 pr-8">
-                <h4 className="font-bold text-dark-deep text-sm truncate" title={item.name}>
+                <h4 className="font-bold text-gray-900 text-sm truncate" title={item.name}>
                     {item.name}
                 </h4>
-                <div className="text-xs text-warm-gray mb-2">
+                <div className="text-xs text-gray-500 mb-2">
                     {item.duration} &middot; ${(item.pricePerPerson * item.travelers).toLocaleString()}
                 </div>
 
                 <div className="flex flex-col gap-2 relative z-10">
                     {/* Travelers Stepper */}
                     <div className="flex items-center gap-2">
-                        <span className="text-xs text-warm-gray w-14">Travelers:</span>
+                        <span className="text-xs text-gray-500 w-14">Travelers:</span>
                         <div className="flex items-center border border-border rounded-full bg-white overflow-hidden">
                             <button
                                 type="button"
                                 onClick={() => updateTravelers(item.id, Math.max(1, item.travelers - 1))}
-                                className="w-6 h-6 flex items-center justify-center text-warm-gray hover:bg-gray-50 transition-colors"
+                                className="w-6 h-6 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
                             >
                                 <Minus className="w-3 h-3" />
                             </button>
@@ -50,7 +50,7 @@ export default function CartItem({ item }: CartItemProps) {
                             <button
                                 type="button"
                                 onClick={() => updateTravelers(item.id, Math.min(8, item.travelers + 1))}
-                                className="w-6 h-6 flex items-center justify-center text-warm-gray hover:bg-gray-50 transition-colors"
+                                className="w-6 h-6 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors"
                             >
                                 <Plus className="w-3 h-3" />
                             </button>
@@ -59,7 +59,7 @@ export default function CartItem({ item }: CartItemProps) {
 
                     {/* Date Input */}
                     <div className="flex items-center gap-2">
-                        <span className="text-xs text-warm-gray w-14 flex items-center gap-1">
+                        <span className="text-xs text-gray-500 w-14 flex items-center gap-1">
                             <Calendar className="w-3 h-3" /> Date:
                         </span>
                         <input

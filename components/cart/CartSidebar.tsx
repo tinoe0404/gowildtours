@@ -59,11 +59,11 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                         {/* Header */}
                         <div className="flex items-center justify-between p-6 border-b border-border bg-mist">
                             <div>
-                                <h3 className="font-display font-bold text-xl text-dark-deep flex items-center gap-2">
+                                <h3 className="font-display font-bold text-xl text-gray-900 flex items-center gap-2">
                                     <Tent className="w-5 h-5 text-accent" />
                                     Your Safari Cart
                                 </h3>
-                                <p className="text-xs text-warm-gray mt-1">
+                                <p className="text-xs text-gray-500 mt-1">
                                     {items.length} {items.length === 1 ? 'item' : 'items'}
                                 </p>
                             </div>
@@ -72,7 +72,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                                 className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer"
                                 aria-label="Close cart"
                             >
-                                <X className="w-5 h-5 text-dark-deep" />
+                                <X className="w-5 h-5 text-gray-900" />
                             </button>
                         </div>
 
@@ -83,8 +83,8 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                                     <div className="w-24 h-24 bg-mist rounded-full flex items-center justify-center text-accent/20 mb-2">
                                         <Tent className="w-12 h-12" />
                                     </div>
-                                    <h4 className="font-display font-bold text-2xl text-dark-deep">Your cart is empty</h4>
-                                    <p className="text-warm-gray text-sm max-w-[240px]">
+                                    <h4 className="font-display font-bold text-2xl text-gray-900">Your cart is empty</h4>
+                                    <p className="text-gray-500 text-sm max-w-[240px]">
                                         Ready to start your adventure? Explore our breathtaking safari packages.
                                     </p>
                                     <Button
@@ -108,10 +108,10 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                         {items.length > 0 && (
                             <div className="p-6 border-t border-border bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.02)]">
                                 <div className="flex justify-between items-end mb-4">
-                                    <span className="text-warm-gray font-medium">Subtotal</span>
-                                    <span className="font-display font-bold text-2xl text-dark-deep">${subtotal().toLocaleString()}</span>
+                                    <span className="text-gray-500 font-medium">Subtotal</span>
+                                    <span className="font-display font-bold text-2xl text-gray-900">${subtotal().toLocaleString()}</span>
                                 </div>
-                                <p className="text-xs text-warm-gray/70 mb-6 text-center">
+                                <p className="text-xs text-gray-500/70 mb-6 text-center">
                                     *Final price varies by season and group size. A 30% deposit is required upon confirmation.
                                 </p>
                                 
@@ -123,7 +123,7 @@ export default function CartSidebar({ isOpen, onClose }: CartSidebarProps) {
                                     </Link>
                                     <button 
                                         onClick={onClose}
-                                        className="w-full py-2 text-sm font-semibold text-warm-gray hover:text-dark-deep transition-colors cursor-pointer"
+                                        className="w-full py-2 text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors cursor-pointer"
                                     >
                                         Continue Browsing
                                     </button>
