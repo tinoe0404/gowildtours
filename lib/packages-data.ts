@@ -2381,4 +2381,8 @@ export const packages: Package[] = [
             }
         ]
     }
-];
+].sort((a, b) => {
+    const daysA = typeof a.duration === 'string' ? parseInt(a.duration) || 999 : a.duration.days;
+    const daysB = typeof b.duration === 'string' ? parseInt(b.duration) || 999 : b.duration.days;
+    return daysA - daysB;
+});

@@ -119,23 +119,23 @@ export default function AboutPage() {
                             />
                             <div className="prose prose-lg text-gray-600 leading-relaxed uppercase-h3 tracking-tight">
                                 <p>
-                                    Founded in 2010 by Godfrey Mateta, Go Wild Tours started with a simple belief: that the most powerful way to protect Africa's wilderness is to help people fall in love with it.
+                                    Go Wild Tours was started in 2018, but our expertise in the tourism industry dates back to 2001. 
                                 </p>
                                 <p>
-                                    Godfrey, a former national park ranger, saw the need for a boutique safari operator that prioritized deep ecological knowledge over mass tourism. He wanted to create tours that felt like personal explorations, guided by the best experts in the field.
+                                    Having travelled and guided in 15 countries across Southern and East Africa, we possess deep, on-the-ground knowledge of the continent's most spectacular landscapes and hidden gems.
                                 </p>
                                 <p>
-                                    Over the past 16 years, we have grown from a small family business in Victoria Falls into one of Zimbabwe's most respected safari operators, without ever losing that personal touch.
+                                    We offer a comprehensive range of safari experiences. Whether you are looking for a budget-friendly adventure, a comfortable middle-range holiday, or an exclusive high-end luxury tour, we craft the perfect itinerary for your African journey.
                                 </p>
                             </div>
                             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-gray-100">
                                 <div>
-                                    <span className="text-4xl font-black text-primary-600 block">16+</span>
+                                    <span className="text-4xl font-black text-primary-600 block">20+</span>
                                     <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Years Experience</span>
                                 </div>
                                 <div>
-                                    <span className="text-4xl font-black text-primary-600 block">5k+</span>
-                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Happy Travelers</span>
+                                    <span className="text-4xl font-black text-primary-600 block">15</span>
+                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Countries Explored</span>
                                 </div>
                             </div>
                         </div>

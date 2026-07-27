@@ -37,8 +37,8 @@ export const destinations: Destination[] = [
     name: "Zimbabwe",
     tagline: "The Authentic Safari Experience",
     region: "Southern Africa",
-    image: "/images/safari/victoria-falls-close.jpg",
-    heroImage: "/images/safari/victoria-falls-wide.jpg",
+    image: "/images/safari/victoria-falls-panorama.jpg",
+    heroImage: "/images/safari/victoria-falls-panorama.jpg",
     highlights: ["Victoria Falls", "Hwange National Park", "Matobo National Park", "Great Zimbabwe Ruins"],
     bestFor: ["Wildlife Safari", "Walking Safaris", "Culture & History", "Adventure"],
     bestTime: "May – October",
@@ -69,7 +69,9 @@ export const destinations: Destination[] = [
     wildlife: ["Elephant", "Hippo", "Lion", "Leopard", "Cheetah"],
     coordinates: { lat: -22.3285, lng: 24.6849 },
     knownPlaces: ["Botswana", "Chobe National Park", "Makgadikgadi Pans", "Okavango Delta", "Elephant Sands", "Maun", "Kasane", "Nata", "Moremi Game Reserve"]
-  },
+  }
+  /* temporarily removed per request
+  ,
   {
     slug: "namibia",
     name: "Namibia",
@@ -108,4 +110,5 @@ export const destinations: Destination[] = [
     coordinates: { lat: -13.1339, lng: 27.8493 },
     knownPlaces: ["Zambia", "Livingstone", "Devil's Pool", "South Luangwa", "Lower Zambezi", "Kafue National Park"]
   }
+  */
 ];

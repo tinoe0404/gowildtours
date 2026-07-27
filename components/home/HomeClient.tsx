@@ -107,7 +107,8 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* Main Heading */}
                         <motion.h1
                             variants={fadeInUp}
-                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient-gold"
+                            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                            style={{ color: "#87CEEB", textShadow: "0 4px 24px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)" }}
                         >
                             Unexplored Paradise
                             <br />
@@ -183,13 +184,10 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             </h2>
                             <div className="space-y-4 text-warm-gray leading-relaxed">
                                 <p>
-                                    For over a decade, Go Wild Tours has been curating premium
-                                    safari experiences that connect travellers with the raw
-                                    beauty and untamed spirit of Africa.
+                                    Started in 2018, our founders have been in the tourism industry since 2001. We have travelled and guided in 15 countries across Southern and East Africa.
                                 </p>
                                 <p>
-                                    Our carefully designed itineraries combine luxury
-                                    accommodations with authentic wilderness immersion.
+                                    We offer a comprehensive range of safari experiences in Africa, from budget and middle-range to luxury and high-end upmarket tours.
                                 </p>
                             </div>
                             <div className="mt-8">
@@ -226,7 +224,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
             <Section spacing="lg" className="bg-light">
                 <Container>
                     <SectionHeading
-                        title="Five Iconic Destinations"
+                        title="Top Iconic Destinations"
                         subtitle="From the thundering Victoria Falls to the vast plains of Hwange — each destination reveals a different face of Africa."
                     />
 

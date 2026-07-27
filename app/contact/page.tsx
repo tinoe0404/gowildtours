@@ -76,8 +76,7 @@ export default function ContactPage() {
                                     <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Visit Our Office</h3>
                                     <p className="text-[var(--color-dusk)] leading-relaxed font-medium">
                                         Go Wild Tours Head Office<br />
-                                        123 Safari Drive, Victoria Falls<br />
-                                        Zimbabwe
+                                        6886 Mkhosana Victoria Falls
                                     </p>
                                 </div>
 
@@ -104,9 +103,9 @@ export default function ContactPage() {
                                     </div>
                                     <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Working Hours</h3>
                                     <div className="space-y-1 text-sm text-[var(--color-dusk)] font-medium">
-                                        <p className="flex justify-between"><span>Mon - Fri:</span> <span>8:00 AM - 6:00 PM</span></p>
-                                        <p className="flex justify-between"><span>Sat:</span> <span>9:00 AM - 2:00 PM</span></p>
-                                        <p className="flex justify-between text-red-500"><span>Sun:</span> <span>Emergency Only</span></p>
+                                        <p className="flex justify-between"><span>Every day:</span> <span>7:00 AM - 6:00 PM</span></p>
+                                        <p className="flex justify-between"><span>After hours:</span> <span>Emergency Only</span></p>
+                                        <p className="flex justify-between text-red-500"><span>Emergency:</span> <span>+263 77 289 9096</span></p>
                                     </div>
                                 </div>
                             </div>
