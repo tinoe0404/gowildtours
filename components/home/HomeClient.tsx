@@ -68,22 +68,29 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
         <>
             {/* ═══════════════ HERO ═══════════════ */}
             <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-                {/* Background Image */}
-                <Image
-                    src={images.hero}
-                    alt="African savanna at sunset"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                    sizes="100vw"
-                />
+                {/* Background Image with Parallax Drift */}
+                <motion.div
+                    initial={{ scale: 1.03 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="absolute inset-0 z-0"
+                >
+                    <Image
+                        src={images.hero}
+                        alt="African savanna at sunset"
+                        fill
+                        className="object-cover object-center"
+                        priority
+                        sizes="100vw"
+                    />
+                </motion.div>
 
-                {/* Dark Gradient Overlay */}
+                {/* Dark Gradient Overlay with Radial Vignette for contrast */}
                 <div
                     className="absolute inset-0 z-[1]"
                     style={{
                         background:
-                            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%)",
+                            "radial-gradient(circle at center bottom, rgba(0,0,0,0.3) 0%, transparent 60%), linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.8) 100%)",
                     }}
                 />
 
@@ -98,8 +105,8 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* Eyebrow Badge */}
                         <motion.span
                             variants={fadeIn}
-                            className="inline-block bg-black/30 px-4 py-1 rounded-full tracking-widest text-xs text-white/90 font-accent font-semibold uppercase"
-                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.5)" }}
+                            className="inline-block border border-[#C8832A]/50 px-4 py-1 rounded-full tracking-[0.2em] text-xs text-[#C8832A] font-accent font-semibold uppercase bg-transparent"
+                            style={{ textShadow: "0 1px 4px rgba(0,0,0,0.8)" }}
                         >
                             Premium African Safari Experiences
                         </motion.span>
@@ -108,7 +115,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         <motion.h1
                             variants={fadeInUp}
                             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
-                            style={{ color: "#87CEEB", textShadow: "0 4px 24px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)" }}
+                            style={{ color: "#87CEEB", textShadow: "0 2px 24px rgba(0,0,0,0.6), 0 4px 48px rgba(0,0,0,0.4)" }}
                         >
                             Unexplored Paradise
                             <br />
@@ -141,7 +148,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             </Link>
                             <Link
                                 href="/gallery"
-                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white border-2 border-white bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
+                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/90 border border-white/50 bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
                             >
                                 Watch Our Story
                             </Link>
@@ -154,14 +161,19 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
+                    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
                 >
-                    <span className="text-white/50 text-xs font-accent tracking-wider uppercase">
+                    <span className="text-white/80 text-xs font-accent tracking-[0.2em] uppercase">
                         Scroll
                     </span>
-                    <ChevronDown
-                        className="h-5 w-5 text-white/50 animate-bounce"
-                    />
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                        className="flex flex-col items-center"
+                    >
+                        <div className="w-[1px] h-8 bg-gradient-to-b from-white/80 to-transparent mb-1" />
+                        <ChevronDown className="h-4 w-4 text-white/80" />
+                    </motion.div>
                 </motion.div>
             </section>
 

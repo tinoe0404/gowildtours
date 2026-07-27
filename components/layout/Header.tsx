@@ -102,9 +102,9 @@ export default function Header() {
             {/* Desktop CTAs & Mobile Hamburger */}
             <div className="navbar__actions">
                 {/* Desktop only */}
-                <div className="hidden md:flex items-center gap-4">
+                <div className="hidden md:flex items-center gap-2">
                     <CartIcon onClick={() => setCartOpen(true)} />
-                    <Link href="/contact" className="btn btn--primary">
+                    <Link href="/contact" className="btn btn--primary ml-1">
                         Book a Safari
                     </Link>
                 </div>
