@@ -18,37 +18,13 @@ import ReviewsSection from '@/components/reviews/ReviewsSection';
 
 const staticTeamMembers = [
     {
-        name: "Godfrey Mateta",
-        role: "Founder & Lead Safari Specialist",
-        bio: "With over 15 years of experience in the Zimbabwean wilderness, Godfrey founded Go Wild Tours to share his deep passion for conservation and wildlife. His knowledge of animal behavior and the Victoria Falls region is unmatched.",
-        image: "/images/safari/welwitschia.jpg",
-        specialization: ["Big Five Tracking", "Conservation", "Photography"],
+        name: "Muza Muskwe",
+        role: "CEO",
+        bio: "With tourism expertise dating back to 2001, Muza leads Go Wild Tours Zimbabwe with a deep passion for conservation and a commitment to creating unforgettable, tailor-made safari experiences across Southern Africa.",
+        image: "/images/safari/welwitschia.jpg", // placeholder
+        specialization: ["Safari Operations", "Conservation", "Luxury Travel"],
         languages: ["English", "Shona", "Ndebele"],
-        socials: { linkedin: "#", instagram: "#", email: "info@gowildtourszim.com" }
-    },
-    {
-        name: "Sarah Jenkins",
-        role: "Operations Manager",
-        bio: "Sarah ensures that every detail of your journey is perfectly orchestrated. From complex logistics to luxury accommodation bookings, her dedication to excellence guarantees a seamless and stress-free safari adventure.",
-        image: "/images/safari/kudu.jpg",
-        specialization: ["Logistics", "Guest Relations", "Luxury Travel"],
-        socials: { linkedin: "#", email: "bookings@gowildtourszim.com" }
-    },
-    {
-        name: "Brighton Ncube",
-        role: "Senior Wildlife Guide",
-        bio: "Brighton's keen eyes and expert tracking skills have earned him a reputation as one of the best guides in Hwange National Park. He is particularly passionate about birdlife and predator-prey dynamics.",
-        image: "/images/safari/wild-dogs.jpg",
-        specialization: ["Birding", "Walking Safaris", "African Botany"],
-        socials: { instagram: "#" }
-    },
-    {
-        name: "Elena Rossi",
-        role: "Sustainability Director",
-        bio: "Elena leads our conservation initiatives and local community projects. She ensures that Go Wild Tours maintains its commitment to eco-friendly practices and social responsibility at every level.",
-        image: "/images/safari/martial-eagle.jpg",
-        specialization: ["Eco-Tourism", "Community Development"],
-        socials: { linkedin: "#", twitter: "#" }
+        socials: { linkedin: "#", email: "info@gowildtourszim.com" }
     }
 ];
 
@@ -213,7 +189,7 @@ export default function AboutPage() {
                         title="Meet the Team"
                         subtitle="Dedicated experts behind the scenes"
                     />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+                    <div className={`grid grid-cols-1 gap-8 mt-16 ${team.length === 1 ? 'max-w-sm mx-auto' : 'sm:grid-cols-2 lg:grid-cols-4'}`}>
                         {team.map((member: any, idx: number) => (
                             <TeamCard key={idx} member={member} index={idx} />
                         ))}
