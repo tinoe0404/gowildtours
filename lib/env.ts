@@ -6,7 +6,7 @@ const envSchema = z.object({
   SMTP_SECURE: z.string().optional().default("true"),
   SMTP_USER: z.string().optional(),
   SMTP_PASS: z.string().optional(),
-  EMAIL_FROM: z.string().optional().default("bookings@gowildtours.com"),
+  EMAIL_FROM: z.string().optional().default("bookings@gowildtourszim.com"),
   GITHUB_TOKEN: z.string().optional(),
   GITHUB_REPO: z.string().optional(),
 });

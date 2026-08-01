@@ -19,7 +19,9 @@ export default function SafarisPage() {
                 <Container className="relative z-10 text-center">
                     <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">Explore</span>
                     <h1 className="text-5xl md:text-6xl font-display font-bold text-dark-deep mb-6">Our Safaris</h1>
-                    <p className="text-xl text-warm-gray max-w-2xl mx-auto leading-relaxed">Handcrafted wilderness experiences across the iconic landscapes of Zimbabwe, Botswana, Namibia, and Zambia.</p>
+                    <p className="text-lg text-warm-gray max-w-3xl mx-auto leading-relaxed">
+                        Go Wild Tours Zim offers budget, mid-range, luxury, and high-end safari experiences across Southern Africa, catering to every travel style and budget. We specialize in tailor-made itineraries designed around your interests, schedule, and preferences, as well as expertly guided bespoke tours that deliver unique wildlife, cultural, and adventure experiences with exceptional service, comfort, and unforgettable memories.
+                    </p>
                 </Container>
             </section>
 

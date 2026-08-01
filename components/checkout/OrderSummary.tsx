@@ -96,8 +96,8 @@ export default function OrderSummary() {
                 <div className="space-y-2 text-sm text-warm-gray">
                     <div className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-accent" />
-                        <a href="mailto:info@gowildtours.com" className="hover:text-accent transition-colors">
-                            info@gowildtours.com
+                        <a href="mailto:info@gowildtourszim.com" className="hover:text-accent transition-colors">
+                            info@gowildtourszim.com
                         </a>
                     </div>
                     <div className="flex items-center gap-2">

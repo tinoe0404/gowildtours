@@ -44,7 +44,7 @@ export const destinations: Destination[] = [
     bestTime: "May – October",
     duration: "5–14 days",
     description: "Experience the thunder of Victoria Falls, vast uncrowded parks, and some of the best professional guides in Africa.",
-    longDescription: "Zimbabwe is one of Africa's most extraordinary safari destinations. Renowned for the finest professional guides on the continent, vast and uncrowded wilderness areas, and wildlife encounters that feel genuinely wild. From the towering spray of Victoria Falls to the remote walking trails of Hwange, every corner of Zimbabwe offers a different dimension of the African experience. Please note: Zimbabwe is difficult to run with these roads.",
+    longDescription: "Zimbabwe is a spectacular safari and cultural destination offering diverse attractions. Discover the breathtaking Victoria Falls, abundant wildlife in Hwange National Park, ancient rock art and balancing rocks in Matopos National Park, canoe and walking safaris in Mana Pools National Park, lakeside wildlife in Matusadona National Park, and the historic stone ruins of Great Zimbabwe, showcasing the country's rich natural and cultural heritage.",
     activities: [],
     accommodation: [],
     wildlife: ["Elephant", "Lion", "Wild Dog", "Leopard", "Rhino"],
@@ -63,15 +63,13 @@ export const destinations: Destination[] = [
     bestTime: "May – September",
     duration: "7–12 days",
     description: "Explore the lush waterways of the Okavango Delta and witness massive elephant herds along the Chobe River.",
-    longDescription: "Botswana offers an unparalleled wilderness experience characterized by stunning contrasts. From the crystal-clear waterways of the Okavango Delta, a lush oasis teeming with life, to the arid expanses of the Kalahari Desert and the vast salt flats of the Makgadikgadi Pans. Renowned for its strong conservation ethos, Botswana provides exclusive, low-impact safaris with incredible predator sightings and the largest elephant population in Africa.",
+    longDescription: "Botswana is one of Africa's premier safari destinations, renowned for its pristine wilderness and exceptional wildlife. Explore Chobe National Park for huge elephant herds, the Okavango Delta for mokoro canoe safaris, Moremi Game Reserve for outstanding game viewing, the Makgadikgadi Salt Pans for dramatic landscapes and meerkats, and the Central Kalahari Desert for remote wilderness, unique desert wildlife, and unforgettable stargazing experiences.",
     activities: [],
     accommodation: [],
     wildlife: ["Elephant", "Hippo", "Lion", "Leopard", "Cheetah"],
     coordinates: { lat: -22.3285, lng: 24.6849 },
     knownPlaces: ["Botswana", "Chobe National Park", "Makgadikgadi Pans", "Okavango Delta", "Elephant Sands", "Maun", "Kasane", "Nata", "Moremi Game Reserve"]
-  }
-  /* temporarily removed per request
-  ,
+  },
   {
     slug: "namibia",
     name: "Namibia",
@@ -84,7 +82,7 @@ export const destinations: Destination[] = [
     bestTime: "June – October",
     duration: "7–14 days",
     description: "Climb the world's highest red dunes, discover desert-adapted wildlife, and explore the rugged Atlantic coast.",
-    longDescription: "Namibia is a land of otherworldly landscapes and stark beauty. Towering red sand dunes in Sossusvlei meet the vast, ancient Namib Desert. In the north, the salt pans of Etosha National Park draw incredible concentrations of wildlife, including the rare desert-adapted rhino and elephant. With a rich blend of African and German cultures, thrilling adventure in Swakopmund, and breathtaking scenery at every turn, Namibia is a photographer's dream.",
+    longDescription: "Namibia is a land of striking landscapes and unforgettable wildlife. Experience the towering red dunes of Sossusvlei in the Namib Desert, enjoy exceptional game viewing in Etosha National Park, discover ancient rock art and desert-adapted elephants in Damaraland, and explore the remote wilderness of Kaokoland, home to the Himba people, dramatic scenery, and unique desert wildlife.",
     activities: [],
     accommodation: [],
     wildlife: ["Oryx", "Desert Rhino", "Cheetah", "Elephant", "Lion"],
@@ -103,12 +101,30 @@ export const destinations: Destination[] = [
     bestTime: "May – October",
     duration: "5–10 days",
     description: "The birthplace of the walking safari, offering raw wilderness, the mighty Zambezi River, and Devil's Pool.",
-    longDescription: "Zambia is considered one of Africa's best-kept secrets and the undisputed home of the walking safari. It offers large, unspoiled national parks like South Luangwa and Lower Zambezi, where you can experience the thrill of tracking wildlife on foot. Sharing the mighty Victoria Falls with Zimbabwe, Zambia provides access to the legendary Devil's Pool. With exceptional leopard sightings and thrilling night drives, Zambia delivers an authentic, raw, and immersive safari adventure.",
+    longDescription: "Zambia is a remarkable safari and adventure destination. Explore South Luangwa National Park for exceptional walking safaris, Lower Zambezi National Park for canoeing and wildlife, Kafue National Park for vast wilderness and diverse game, Siavonga for relaxing on Lake Kariba, and Livingstone for the majestic Victoria Falls and thrilling outdoor adventures.",
     activities: [],
     accommodation: [],
     wildlife: ["Leopard", "Lion", "Elephant", "Hippo", "Wild Dog"],
     coordinates: { lat: -13.1339, lng: 27.8493 },
     knownPlaces: ["Zambia", "Livingstone", "Devil's Pool", "South Luangwa", "Lower Zambezi", "Kafue National Park"]
+  },
+  {
+    slug: "malawi",
+    name: "Malawi",
+    tagline: "The Warm Heart of Africa",
+    region: "Southern Africa",
+    image: "/images/safari/hippo.jpg",
+    heroImage: "/images/safari/hippo.jpg",
+    highlights: ["Lake Malawi", "Liwonde National Park", "Majete Wildlife Reserve", "Mount Mulanje"],
+    bestFor: ["Beaches & Lakes", "Cultural Encounters", "Snorkeling", "Scenic Drives"],
+    bestTime: "May – October",
+    duration: "5–10 days",
+    description: "Relax on the sandy beaches of Lake Malawi and experience the warm hospitality of friendly communities.",
+    longDescription: "Malawi, the \"Warm Heart of Africa,\" offers stunning natural beauty and rich culture. Relax on the sandy beaches of Lake Malawi, explore vibrant local markets for fresh fish, crafts, and clothing, visit scenic tea plantations in the highlands, enjoy wildlife in national parks, and experience the warm hospitality of friendly communities throughout this beautiful country.",
+    activities: [],
+    accommodation: [],
+    wildlife: ["Hippo", "Crocodile", "Cichlids", "Elephant", "Black Rhino"],
+    coordinates: { lat: -13.2543, lng: 34.3015 },
+    knownPlaces: ["Malawi", "Lake Malawi", "Lilongwe", "Blantyre", "Liwonde", "Majete"]
   }
-  */
 ];

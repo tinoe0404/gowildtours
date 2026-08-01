@@ -3,7 +3,7 @@ export const siteConfig = {
     description:
         "Unexplored Paradise of Africa with Go Wild Tours. Premium safari experiences, luxury bush camps, and unforgettable wildlife encounters across Africa's most breathtaking destinations.",
     url: "https://gowildtours.com",
-    email: "info@gowildtours.com",
+    email: "info@gowildtourszim.com",
     phone: "+263 77 123 4567",
     location: "Victoria Falls, Zimbabwe",
     socials: {

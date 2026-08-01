@@ -163,7 +163,7 @@ export default async function BrochurePage({ params }: Props) {
                         www.gowildtours.com
                     </div>
                     <p className="text-sm text-gray-400 mt-2">
-                        info@gowildtours.com | +263 71 635 5176
+                        info@gowildtourszim.com | +263 71 635 5176
                     </p>
                 </div>
             </div>

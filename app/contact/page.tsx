@@ -90,8 +90,8 @@ export default function ContactPage() {
                                         <a href="tel:+263716355176" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
                                             <Phone className="w-4 h-4" /> +263 71 635 5176
                                         </a>
-                                        <a href="mailto:info@gowildtours.com" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
-                                            <Mail className="w-4 h-4" /> info@gowildtours.com
+                                        <a href="mailto:info@gowildtourszim.com" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
+                                            <Mail className="w-4 h-4" /> info@gowildtourszim.com
                                         </a>
                                     </div>
                                 </div>

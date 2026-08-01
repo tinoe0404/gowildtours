@@ -216,8 +216,8 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                                     <p className="text-sm text-warm-gray mb-4">
                                         Speak to our safari experts to customize this itinerary.
                                     </p>
-                                    <a href="mailto:info@gowildtours.com" className="text-accent font-semibold hover:underline">
-                                        info@gowildtours.com
+                                    <a href="mailto:info@gowildtourszim.com" className="text-accent font-semibold hover:underline">
+                                        info@gowildtourszim.com
                                     </a>
                                 </div>
 

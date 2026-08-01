@@ -24,7 +24,7 @@ const staticTeamMembers = [
         image: "/images/safari/welwitschia.jpg",
         specialization: ["Big Five Tracking", "Conservation", "Photography"],
         languages: ["English", "Shona", "Ndebele"],
-        socials: { linkedin: "#", instagram: "#", email: "godfrey@gowildtours.com" }
+        socials: { linkedin: "#", instagram: "#", email: "info@gowildtourszim.com" }
     },
     {
         name: "Sarah Jenkins",
@@ -32,7 +32,7 @@ const staticTeamMembers = [
         bio: "Sarah ensures that every detail of your journey is perfectly orchestrated. From complex logistics to luxury accommodation bookings, her dedication to excellence guarantees a seamless and stress-free safari adventure.",
         image: "/images/safari/kudu.jpg",
         specialization: ["Logistics", "Guest Relations", "Luxury Travel"],
-        socials: { linkedin: "#", email: "sarah@gowildtours.com" }
+        socials: { linkedin: "#", email: "bookings@gowildtourszim.com" }
     },
     {
         name: "Brighton Ncube",
