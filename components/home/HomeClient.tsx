@@ -237,7 +237,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                 <Container>
                     <SectionHeading
                         title="Top Iconic Destinations"
-                        subtitle="From the thundering Victoria Falls to the vast plains of Hwange — each destination reveals a different face of Africa."
+                        subtitle="From the mighty Victoria Falls to the wildlife-rich plains of Hwange and pristine waterways of the Okavango Delta, discover Southern Africa's most iconic landscapes."
                     />
 
                     <div className="home-dest-strip">

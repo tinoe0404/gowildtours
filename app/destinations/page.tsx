@@ -51,19 +51,21 @@ export default function DestinationsPage() {
           <div className="destinations-intro__layout">
             <div className="destinations-intro__text">
               <span className="text-label">The Experience</span>
-              <h2 className="text-h2">Africa&apos;s Best-Kept Safari Secrets</h2>
+              <h2 className="text-h2">Discover Southern Africa&apos;s Icons</h2>
               <p className="text-body-lg">
-                Southern Africa is home to some of the continent&apos;s most extraordinary safari destinations —
-                renowned for vast and uncrowded wilderness areas, the finest professional guides, and wildlife encounters that feel
-                genuinely wild.
+                Go Wild Tours Zimbabwe invites you to discover Southern Africa&apos;s most iconic destinations through unforgettable wildlife, culture, and scenic adventures. Marvel at the mighty Victoria Falls, explore the wildlife-rich parks of Hwange, Chobe, Moremi, Etosha, South Luangwa, and Mana Pools, and glide through the pristine waterways of the Okavango Delta.
               </p>
               <p
                 className="text-body"
                 style={{ color: "var(--color-text-muted)", marginTop: "1rem" }}
               >
-                From the towering spray of Victoria Falls and the lush waterways of the Okavango Delta,
-                to the towering red dunes of Sossusvlei and the raw wilderness of South Luangwa, every destination
-                offers a different dimension of the African experience.
+                Witness the vast beauty of the Makgadikgadi Salt Pans, the towering dunes of Sossusvlei, and the rugged landscapes of the Kalahari Desert. Step back in time at Great Zimbabwe and the dramatic balancing rocks of Matopos, experience Livingstone&apos;s adventure capital, and unwind on the crystal-clear shores of Lake Malawi.
+              </p>
+              <p
+                className="text-body font-medium"
+                style={{ color: "var(--color-text-muted)", marginTop: "1rem" }}
+              >
+                Every destination offers unique landscapes, rich cultures, exceptional wildlife encounters, and lifelong memories crafted with expert local guides.
               </p>
               <div className="destinations-intro__stats">
                 <div className="stat-item">
