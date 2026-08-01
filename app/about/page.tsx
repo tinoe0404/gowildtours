@@ -119,13 +119,10 @@ export default function AboutPage() {
                             />
                             <div className="prose prose-lg text-gray-600 leading-relaxed uppercase-h3 tracking-tight">
                                 <p>
-                                    Go Wild Tours was started in 2018, but our expertise in the tourism industry dates back to 2001. 
+                                    Founded in 2018, Go Wild Tours Zimbabwe is dedicated to creating unforgettable safari and travel experiences across Southern Africa. Led by an Operations Manager with tourism expertise dating back to 2001, the company brings decades of industry knowledge and hands-on experience.
                                 </p>
                                 <p>
-                                    Having travelled and guided in 15 countries across Southern and East Africa, we possess deep, on-the-ground knowledge of the continent's most spectacular landscapes and hidden gems.
-                                </p>
-                                <p>
-                                    We offer a comprehensive range of safari experiences. Whether you are looking for a budget-friendly adventure, a comfortable middle-range holiday, or an exclusive high-end luxury tour, we craft the perfect itinerary for your African journey.
+                                    Having travelled extensively through 15 countries in Southern and East Africa, our team offers expert guidance, personalised itineraries, and authentic adventures that showcase the region's spectacular wildlife, landscapes, cultures, and natural wonders.
                                 </p>
                             </div>
                             <div className="grid grid-cols-2 gap-8 pt-8 border-t border-gray-100">
