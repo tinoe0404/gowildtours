@@ -86,11 +86,10 @@ const values = [
 ];
 
 const milestones = [
-    { year: "2010", title: "Go Wild Tours Founded", description: "Established in Victoria Falls with a single 4x4 vehicle." },
-    { year: "2015", title: "National Expansion", description: "Expanded operations to Hwange National Park and beyond." },
-    { year: "2018", title: "Eco-Certification", description: "Achieved Silver status from the Sustainable Tourism Association." },
-    { year: "2023", title: "Award Winning", description: "Voted Zimbabwe's Best Boutique Safari Operator." },
-    { year: "2026", title: "5,000+ Happy Guests", description: "Celebrating a decade and a half of unforgettable memories." }
+    { year: "2001", title: "Decades of Experience", description: "Our leadership enters the tourism industry, building foundational expertise across Africa." },
+    { year: "2018", title: "Go Wild Tours Founded", description: "Established to create unforgettable, tailor-made safari and travel experiences across Southern Africa." },
+    { year: "2021", title: "15 Countries Explored", description: "Expanded our deep, on-the-ground knowledge across Southern and East Africa to craft authentic adventures." },
+    { year: "2026", title: "Countless Memories", description: "Continuing to showcase spectacular wildlife, landscapes, and cultures with expert local guides." }
 ];
 
 export default function AboutPage() {
@@ -191,7 +190,7 @@ export default function AboutPage() {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     className={`relative flex flex-col md:flex-row gap-8 ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                                 >
-                                    <div className="md:w-1/2 flex items-center justify-end px-4 md:px-12">
+                                    <div className="md:w-1/2 flex items-center justify-start md:justify-end pl-16 pr-4 md:px-12">
                                         <div className={`text-left md:text-right ${idx % 2 === 0 ? 'md:text-left' : ''}`}>
                                             <span className="text-3xl font-black text-primary-600 block mb-2">{item.year}</span>
                                             <h4 className="text-xl font-bold text-gray-900 mb-2 uppercase tracking-tight">{item.title}</h4>
