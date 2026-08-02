@@ -198,18 +198,18 @@ export default function AboutPage() {
             </section>
 
             {/* Sustainability Section */}
-            <section className="py-24 bg-[#1a1410] text-white overflow-hidden">
+            <section className="py-24 bg-white overflow-hidden">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2 relative">
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                className="relative z-10 p-12 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10"
+                                className="relative z-10 p-12 bg-gray-50 rounded-3xl border border-gray-100 shadow-xl"
                             >
                                 <Leaf className="w-16 h-16 text-accent mb-8" />
-                                <h2 className="text-4xl font-bold mb-6 uppercase tracking-tight text-white">Our Commitment to Conservation</h2>
-                                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                                <h2 className="text-4xl font-bold mb-6 uppercase tracking-tight text-gray-900">Our Commitment to Conservation</h2>
+                                <p className="text-xl text-gray-600 leading-relaxed mb-8">
                                     We believe that tourism must be a force for good. That's why every safari booked with Go Wild Tours contributes directly to local anti-poaching units and community education programs.
                                 </p>
                                 <ul className="space-y-4">
@@ -219,7 +219,7 @@ export default function AboutPage() {
                                         "Carbon-offsetting for all vehicle transport",
                                         "100% locally employed staff and guides"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-gray-200 font-medium">
+                                        <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
                                             <CheckCircle2 className="w-5 h-5 text-accent" /> {item}
                                         </li>
                                     ))}
