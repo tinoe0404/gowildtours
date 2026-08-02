@@ -129,9 +129,8 @@ export default function AboutPage() {
                                     <img src="/images/safari/elephants-waterhole.jpg" alt="Founders" className="w-full h-full object-cover" />
                                 </motion.div>
                             </div>
-                            <div className="absolute -bottom-8 -left-8 bg-accent text-dark-deep p-8 rounded-2xl shadow-xl hidden md:block">
-                                <p className="text-xl font-bold italic">"Africa is more than a destination; it's a feeling."</p>
-                                <span className="text-sm font-bold block mt-2 text-dark-deep/70">— Godfrey Mateta</span>
+                            <div className="absolute -bottom-4 -left-4 md:-bottom-8 md:-left-8 bg-white/90 backdrop-blur-md border border-white/50 text-gray-900 p-6 md:p-8 rounded-2xl shadow-2xl max-w-[280px]">
+                                <p className="text-lg md:text-xl font-display font-bold italic leading-snug">"Africa is more than a destination; it's a feeling."</p>
                             </div>
                         </div>
                     </div>
