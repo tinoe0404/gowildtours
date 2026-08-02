@@ -21,7 +21,7 @@ const staticTeamMembers = [
         name: "Muza Muskwe",
         role: "CEO",
         bio: "With tourism expertise dating back to 2001, Muza leads Go Wild Tours Zimbabwe with a deep passion for conservation and a commitment to creating unforgettable, tailor-made safari experiences across Southern Africa.",
-        image: "/images/safari/welwitschia.jpg", // placeholder
+        image: "/images/safari/ceo.jpeg",
         specialization: ["Safari Operations", "Conservation", "Luxury Travel"],
         languages: ["English", "Shona", "Ndebele"],
         socials: { linkedin: "#", email: "info@gowildtourszim.com" }
@@ -198,7 +198,7 @@ export default function AboutPage() {
             </section>
 
             {/* Sustainability Section */}
-            <section className="py-24 bg-dark-deep text-white overflow-hidden">
+            <section className="py-24 bg-[#1a1410] text-white overflow-hidden">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2 relative">
@@ -208,7 +208,7 @@ export default function AboutPage() {
                                 className="relative z-10 p-12 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10"
                             >
                                 <Leaf className="w-16 h-16 text-accent mb-8" />
-                                <h2 className="text-4xl font-bold mb-6 uppercase tracking-tight">Our Commitment to Conservation</h2>
+                                <h2 className="text-4xl font-bold mb-6 uppercase tracking-tight text-white">Our Commitment to Conservation</h2>
                                 <p className="text-xl text-gray-300 leading-relaxed mb-8">
                                     We believe that tourism must be a force for good. That's why every safari booked with Go Wild Tours contributes directly to local anti-poaching units and community education programs.
                                 </p>
