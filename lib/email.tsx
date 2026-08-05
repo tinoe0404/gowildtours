@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const fromEmail = env.EMAIL_FROM;
-const businessEmail = 'info@gowildtourszim.com';
+const businessEmail = 'bookings@gowildtourszim.com';
 
 export interface BookingItem {
     name: string;

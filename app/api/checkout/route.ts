@@ -16,7 +16,7 @@ const checkoutSchema = z.object({
             name: z.string(),
             image: z.string().optional(),
             duration: z.string().optional(),
-            pricePerPerson: z.number().positive(),
+            pricePerPerson: z.number().nonnegative(),
             travelers: z.number().int().positive(),
             date: z.string(),
         })
