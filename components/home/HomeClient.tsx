@@ -136,11 +136,11 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* CTA Buttons */}
                         <motion.div
                             variants={fadeInUp}
-                            className="flex flex-col sm:flex-row items-center gap-4 mt-4"
+                            className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full px-4 sm:px-0"
                         >
                             <Link
                                 href="/safaris"
-                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-bold text-white transition-all duration-300 hover:brightness-110 hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full sm:w-auto text-base font-bold text-white transition-all duration-300 hover:brightness-110 hover:scale-105"
                                 style={{ backgroundColor: "#C8832A" }}
                             >
                                 Explore Safaris
@@ -148,7 +148,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                             </Link>
                             <Link
                                 href="/gallery"
-                                className="inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/90 border border-white/50 bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
+                                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full sm:w-auto text-base font-semibold text-white/90 border border-white/50 bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
                             >
                                 Watch Our Story
                             </Link>

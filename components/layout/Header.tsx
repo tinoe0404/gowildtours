@@ -109,7 +109,7 @@ export default function Header() {
                     </Link>
                 </div>
                 <button
-                    className="hamburger-btn"
+                    className="hamburger-btn p-3 min-w-[48px] min-h-[48px] flex items-center justify-center rounded-lg"
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label={menuOpen ? "Close menu" : "Open menu"}
                     aria-expanded={menuOpen}
@@ -128,7 +128,7 @@ export default function Header() {
             <div className={`mobile-menu-overlay ${menuOpen ? "mobile-menu-overlay--open" : ""}`}>
                 {/* Close Button */}
                 <button
-                    className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10"
+                    className="absolute top-6 right-6 p-4 min-w-[48px] min-h-[48px] flex items-center justify-center text-white/70 hover:text-white transition-colors z-10"
                     onClick={() => setMenuOpen(false)}
                     aria-label="Close menu"
                 >
@@ -137,15 +137,17 @@ export default function Header() {
                     </svg>
                 </button>
 
-                <ul className="mobile-menu__links">
+                <ul className="mobile-menu__links w-full px-6">
                     {navLinks.map((link, index) => (
                         <li key={link.href} style={{ transitionDelay: menuOpen ? `${index * 60 + 100}ms` : "0ms" }}>
-                            <Link href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</Link>
+                            <Link href={link.href} onClick={() => setMenuOpen(false)} className="block w-full py-4 text-center">
+                                {link.label}
+                            </Link>
                         </li>
                     ))}
                     <li style={{ transitionDelay: menuOpen ? `${navLinks.length * 60 + 100}ms` : "0ms" }}>
                         <button 
-                            className="text-white hover:text-accent transition-colors font-display text-2xl flex items-center justify-center gap-2 mx-auto cursor-pointer"
+                            className="text-white hover:text-accent transition-colors font-display text-2xl flex items-center justify-center gap-2 mx-auto w-full py-4 cursor-pointer"
                             onClick={() => {
                                 setMenuOpen(false);
                                 setCartOpen(true);
@@ -157,7 +159,7 @@ export default function Header() {
                     <li style={{ transitionDelay: menuOpen ? `${(navLinks.length + 1) * 60 + 100}ms` : "0ms" }}>
                         <Link 
                             href="/contact" 
-                            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
+                            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full max-w-xs text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
                             style={{ backgroundColor: "#C8832A" }}
                             onClick={() => setMenuOpen(false)}
                         >

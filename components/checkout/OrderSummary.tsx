@@ -16,7 +16,7 @@ export default function OrderSummary() {
     if (items.length === 0) return null;
 
     return (
-        <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border sticky top-24 overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
+        <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border relative md:sticky md:top-24 overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
             {/* Premium Gold Accent Bar */}
             <div
                 className="absolute top-0 left-0 right-0 h-[4px]"
