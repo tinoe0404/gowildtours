@@ -10,6 +10,7 @@ import {
 import { toast } from "sonner";
 import { useCartStore } from "@/lib/store/cart";
 import type { Package } from "@/lib/packages-data";
+import ReviewsSection from "./ReviewsSection";
 import Container from "@/components/ui/Container";
 import BookingForm from "@/components/packages/BookingForm";
 import Button from "@/components/ui/Button";
@@ -241,6 +242,11 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                             </div>
                         </div>
 
+                    </div>
+                    
+                    {/* Reviews Section */}
+                    <div className="mt-16">
+                        <ReviewsSection tourId={pkg.slug} />
                     </div>
                 </Container>
             </section>

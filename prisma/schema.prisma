@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Booking {
+  id               String   @id @default(cuid())
+  reference        String   @unique
+  customerName     String
+  customerEmail    String
+  customerPhone    String?
+  nationality      String?
+  specialRequests  String?
+  hearAboutUs      String?
+  totalPrice       Float
+  status           String   @default("PENDING") // PENDING, CONFIRMED, CANCELLED
+  items            Json     // Storing the cart items as JSON for simplicity
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Review {
+  id           String   @id @default(cuid())
+  tourId       String   // The slug of the tour
+  customerName String
+  rating       Int      // 1 to 5
+  content      String
+  isApproved   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+}

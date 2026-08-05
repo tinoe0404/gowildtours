@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { emailService } from "@/lib/email";
+import { prisma } from "@/lib/prisma";
 
 // Schema for the checkout request
 const checkoutSchema = z.object({
@@ -39,6 +40,27 @@ export async function POST(req: Request) {
             .toString(36)
             .substring(2, 8)
             .toUpperCase()}`;
+
+        // Save to database
+        try {
+            await prisma.booking.create({
+                data: {
+                    reference: reference,
+                    customerName: data.customerName,
+                    customerEmail: data.customerEmail,
+                    customerPhone: data.customerPhone,
+                    nationality: data.nationality,
+                    specialRequests: data.specialRequests,
+                    hearAboutUs: data.hearAboutUs,
+                    totalPrice: subtotal,
+                    items: data.items as any,
+                },
+            });
+            console.log('Booking saved to database');
+        } catch (dbError) {
+            console.error('Failed to save booking to database:', dbError);
+            // We continue even if DB fails so customer gets their email at least
+        }
 
         // 3. Prepare data for email
         const emailData = {
