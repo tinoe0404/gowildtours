@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    const { name, rating, message, country } = body;
+    const { name, rating, message, country, tourSlug, tourTitle } = body;
 
     // Validation
     if (!name || typeof name !== "string" || name.length > 50) {
@@ -58,6 +58,9 @@ export async function POST(req: Request) {
     if (typeof rating !== "number" || rating < 1 || rating > 5) {
       return NextResponse.json({ error: "Invalid rating (must be 1-5)" }, { status: 400 });
     }
+    if (tourSlug !== undefined && (typeof tourSlug !== "string" || tourSlug.length > 120)) {
+      return NextResponse.json({ error: "Invalid tour" }, { status: 400 });
+    }
 
     const sanitizedName = sanitizeInput(name);
     const sanitizedMessage = sanitizeInput(message);
@@ -68,6 +71,8 @@ export async function POST(req: Request) {
       rating,
       message: sanitizedMessage,
       country: sanitizedCountry,
+      tourSlug: typeof tourSlug === "string" ? sanitizeInput(tourSlug) : undefined,
+      tourTitle: typeof tourTitle === "string" ? sanitizeInput(tourTitle).slice(0, 160) : undefined,
       approved: false,
       date: new Date().toISOString()
     };
