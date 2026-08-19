@@ -1,7 +1,7 @@
 "use client";
 
 import { Star, Quote } from "lucide-react";
-import reviewsData from "../../data/reviews.json";
+import { getApprovedReviews } from "@/lib/reviews";
 
 interface Review {
   name: string;
@@ -12,12 +12,12 @@ interface Review {
   date: string;
 }
 
-export default function ReviewList() {
-  const allReviews: Review[] = reviewsData as Review[];
+interface ReviewListProps {
+  tourSlug?: string;
+}
 
-  const approvedReviews = allReviews
-    .filter((review) => review.approved)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export default function ReviewList({ tourSlug }: ReviewListProps) {
+  const approvedReviews: Review[] = getApprovedReviews(tourSlug);
 
   if (approvedReviews.length === 0) {
     return (

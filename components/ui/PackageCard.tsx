@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Star } from "lucide-react";
 import type { Package } from "@/lib/packages-data";
+import { getReviewSummary } from "@/lib/reviews";
 
 interface PackageCardProps {
     pkg: Package;
@@ -20,6 +22,7 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
     const category = categories[0];
 
     const price = Number(pkg.price).toLocaleString();
+    const reviewSummary = getReviewSummary(pkg.slug);
 
     return (
         <article className={`package-card ${className || ""}`}>
@@ -41,6 +44,11 @@ export default function PackageCard({ pkg, className }: PackageCardProps) {
                 <p className="package-card__excerpt">
                     {pkg.shortDescription || pkg.description?.substring(0, 100)}
                 </p>
+                <Link href={`/safaris/${pkg.slug}#reviews`} className="package-card__reviews" aria-label={`Read reviews for ${pkg.title}`}>
+                    <Star aria-hidden="true" />
+                    <strong>{reviewSummary.average ? reviewSummary.average.toFixed(1) : "New"}</strong>
+                    <span>{reviewSummary.count === 1 ? "1 review" : `${reviewSummary.count} reviews`}</span>
+                </Link>
                 <div className="package-card__footer">
                     <div className="package-card__price">
                         <span className="package-card__price-from">from</span>

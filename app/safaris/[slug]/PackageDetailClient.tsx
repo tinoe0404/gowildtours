@@ -15,6 +15,7 @@ import BookingForm from "@/components/packages/BookingForm";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import SocialShare from "@/components/marketing/SocialShare";
+import ReviewsSection from "@/components/reviews/ReviewsSection";
 
 interface PackageDetailClientProps {
     pkg: Package;
@@ -244,6 +245,9 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
                     </div>
                 </Container>
             </section>
+            <div id="reviews">
+                <ReviewsSection tourSlug={pkg.slug} tourTitle={pkg.title} />
+            </div>
         </>
     );
 }

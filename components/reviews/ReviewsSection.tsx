@@ -1,7 +1,12 @@
 import ReviewList from "./ReviewList";
 import ReviewForm from "./ReviewForm";
 
-export default function ReviewsSection() {
+interface ReviewsSectionProps {
+  tourSlug?: string;
+  tourTitle?: string;
+}
+
+export default function ReviewsSection({ tourSlug, tourTitle }: ReviewsSectionProps) {
   return (
     <section
       style={{
@@ -21,12 +26,12 @@ export default function ReviewsSection() {
 
         {/* Reviews Grid */}
         <div style={{ marginBottom: 'var(--space-16)' }}>
-          <ReviewList />
+          <ReviewList tourSlug={tourSlug} />
         </div>
 
         {/* Review Form */}
         <div style={{ maxWidth: '640px', margin: '0 auto' }}>
-          <ReviewForm />
+          <ReviewForm tourSlug={tourSlug} tourTitle={tourTitle} />
         </div>
       </div>
     </section>

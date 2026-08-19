@@ -4,7 +4,12 @@ import { useState } from "react";
 import { Star, Send } from "lucide-react";
 import { toast } from "sonner";
 
-export default function ReviewForm() {
+interface ReviewFormProps {
+  tourSlug?: string;
+  tourTitle?: string;
+}
+
+export default function ReviewForm({ tourSlug, tourTitle }: ReviewFormProps) {
   const [rating, setRating] = useState<number>(0);
   const [hoveredRating, setHoveredRating] = useState<number>(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,6 +28,8 @@ export default function ReviewForm() {
       country: formData.get("country"),
       rating,
       message: formData.get("message"),
+      tourSlug,
+      tourTitle,
     };
 
     try {
@@ -67,7 +74,7 @@ export default function ReviewForm() {
           marginBottom: 'var(--space-6)',
         }}
       >
-        Share Your Experience
+        {tourTitle ? `Review ${tourTitle}` : "Share Your Experience"}
       </h3>
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-6)' }}>
