@@ -3,12 +3,13 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET(
   req: Request,
-  { params }: { params: { tourId: string } }
+  { params }: { params: Promise<{ tourId: string }> }
 ) {
   try {
+    const { tourId } = await params;
     const reviews = await prisma.review.findMany({
       where: {
-        tourId: params.tourId,
+        tourId,
         isApproved: true,
       },
       orderBy: {

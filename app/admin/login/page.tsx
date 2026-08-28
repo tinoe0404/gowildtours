@@ -2,9 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
 
 export default function AdminLogin() {
@@ -27,7 +24,7 @@ export default function AdminLogin() {
       if (res.ok) {
         toast.success('Logged in successfully');
         router.push('/admin/dashboard');
-        router.refresh(); // Refresh to update middleware state
+        router.refresh();
       } else {
         const data = await res.json();
         toast.error(data.error || 'Login failed');
@@ -41,39 +38,43 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
-          <CardDescription>Enter your credentials to access the dashboard</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleLogin} className="space-y-4">
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Username</label>
-              <Input
-                type="text"
-                required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="admin"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-medium">Password</label>
-              <Input
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
-              />
-            </div>
-            <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? 'Signing in...' : 'Sign In'}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+      <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+        <div className="space-y-1 text-center mb-8">
+          <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
+          <p className="text-gray-500 text-sm">Enter your credentials to access the dashboard</p>
+        </div>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-gray-700">Username</label>
+            <input
+              type="text"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="admin"
+              className="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+            />
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-gray-700">Password</label>
+            <input
+              type="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              className="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+            />
+          </div>
+          <button 
+            type="submit" 
+            disabled={isLoading}
+            className="w-full bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded-md transition-colors mt-4 disabled:opacity-50"
+          >
+            {isLoading ? 'Signing in...' : 'Sign In'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

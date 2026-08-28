@@ -10,7 +10,7 @@ import {
 import { toast } from "sonner";
 import { useCartStore } from "@/lib/store/cart";
 import type { Package } from "@/lib/packages-data";
-import ReviewsSection from "./ReviewsSection";
+
 import Container from "@/components/ui/Container";
 import BookingForm from "@/components/packages/BookingForm";
 import Button from "@/components/ui/Button";
@@ -244,10 +244,7 @@ export default function PackageDetailClient({ pkg }: PackageDetailClientProps) {
 
                     </div>
                     
-                    {/* Reviews Section */}
-                    <div className="mt-16">
-                        <ReviewsSection tourId={pkg.slug} />
-                    </div>
+
                 </Container>
             </section>
         </>
@@ -312,7 +309,12 @@ function ItineraryItem({ item, isLastDay }: { item: { day: number; title: string
 }
 
 function SafariBookingWidget({ pkg }: { pkg: Package }) {
-    const [travelers, setTravelers] = useState(2);
+    const hasOptions = pkg.priceOptions && pkg.priceOptions.length > 0;
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState(0);
+    const currentPriceOption = hasOptions ? pkg.priceOptions![selectedOptionIndex] : null;
+
+    const initialTravelers = currentPriceOption?.label.toLowerCase().includes("single") || currentPriceOption?.label.toLowerCase().includes("1 pax") ? 1 : 2;
+    const [travelers, setTravelers] = useState(initialTravelers);
     const [date, setDate] = useState("");
     const addItem = useCartStore((state) => state.addItem);
 
@@ -322,7 +324,7 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
     const minDateStr = minDate.toISOString().split("T")[0];
 
     // Helper functions for safe values
-    const safePrice = pkg.price ? Number(pkg.price) : 0;
+    const safePrice = currentPriceOption ? currentPriceOption.price : (pkg.price ? Number(pkg.price) : 0);
     
     // Determine duration string
     let durationString = "Unknown Duration";
@@ -334,6 +336,16 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
 
     // Determine image
     const imageString = pkg.image || (pkg.images && pkg.images.length > 0 ? pkg.images[0] : "/images/safari/lioness-rain.jpg");
+
+    const handleOptionChange = (idx: number) => {
+        setSelectedOptionIndex(idx);
+        const option = pkg.priceOptions![idx];
+        if (option.label.toLowerCase().includes("single") || option.label.toLowerCase().includes("1 pax")) {
+            setTravelers(1);
+        } else if (option.label.toLowerCase().includes("sharing") || option.label.toLowerCase().includes("2+ pax")) {
+            setTravelers(Math.max(2, travelers));
+        }
+    };
 
     const handleAddToCart = () => {
         if (!date) {
@@ -347,9 +359,12 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
             return;
         }
 
+        const itemId = hasOptions ? `${pkg.slug}-${currentPriceOption!.label}` : pkg.slug;
+        const itemName = hasOptions ? `${pkg.title} (${currentPriceOption!.label})` : pkg.title;
+
         addItem({
-            id: pkg.slug,
-            name: pkg.title,
+            id: itemId,
+            name: itemName,
             image: imageString,
             duration: durationString,
             pricePerPerson: safePrice,
@@ -357,7 +372,7 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
             date: date
         });
 
-        toast.success(`"${pkg.title}" added to your cart`, {
+        toast.success(`"${itemName}" added to your cart`, {
             action: {
                 label: "View Cart",
                 onClick: () => {
@@ -370,11 +385,34 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
         });
     };
 
+    const minTravelers = currentPriceOption?.label.toLowerCase().includes("sharing") || currentPriceOption?.label.toLowerCase().includes("2+ pax") ? 2 : 1;
+    const maxTravelers = currentPriceOption?.label.toLowerCase().includes("single") || currentPriceOption?.label.toLowerCase().includes("1 pax") ? 1 : 8;
+
     return (
         <div className="bg-white p-6 rounded-[var(--radius-card)] shadow-lg border border-border">
             <h3 className="font-display text-2xl font-bold text-dark-deep mb-4">Book Your Safari</h3>
             
             <div className="space-y-4 mb-6">
+                {/* Accommodation / Tier Selector */}
+                {hasOptions && (
+                    <div>
+                        <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">
+                            Accommodation / Tier
+                        </label>
+                        <select
+                            value={selectedOptionIndex}
+                            onChange={(e) => handleOptionChange(Number(e.target.value))}
+                            className="w-full px-3 h-11 bg-gray-50 border border-border rounded-lg focus:ring-2 focus:ring-accent outline-none text-sm cursor-pointer transition-shadow"
+                        >
+                            {pkg.priceOptions!.map((opt, idx) => (
+                                <option key={idx} value={idx}>
+                                    {opt.label} - ${opt.price.toLocaleString()}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                )}
+
                 {/* Travelers */}
                 <div>
                     <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">
@@ -383,8 +421,9 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
                     <div className="flex items-center border border-border rounded-lg bg-gray-50 h-11">
                         <button
                             type="button"
-                            onClick={() => setTravelers(Math.max(1, travelers - 1))}
+                            onClick={() => setTravelers(Math.max(minTravelers, travelers - 1))}
                             className="w-12 h-full flex items-center justify-center text-warm-gray hover:bg-gray-100 transition-colors rounded-l-lg cursor-pointer"
+                            disabled={travelers <= minTravelers}
                         >
                             <Minus className="w-4 h-4" />
                         </button>
@@ -393,8 +432,9 @@ function SafariBookingWidget({ pkg }: { pkg: Package }) {
                         </div>
                         <button
                             type="button"
-                            onClick={() => setTravelers(Math.min(8, travelers + 1))}
+                            onClick={() => setTravelers(Math.min(maxTravelers, travelers + 1))}
                             className="w-12 h-full flex items-center justify-center text-warm-gray hover:bg-gray-100 transition-colors rounded-r-lg cursor-pointer"
+                            disabled={travelers >= maxTravelers}
                         >
                             <Plus className="w-4 h-4" />
                         </button>

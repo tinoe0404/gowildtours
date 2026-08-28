@@ -136,7 +136,7 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         {/* CTA Buttons */}
                         <motion.div
                             variants={fadeInUp}
-                            className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full px-4 sm:px-0"
+                            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 w-full px-4 sm:px-0"
                         >
                             <Link
                                 href="/safaris"
@@ -443,17 +443,20 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                         <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8">
                             Let our expert team craft a bespoke safari itinerary just for you.
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link href="/safaris">
-                                <Button variant="primary" size="lg">
-                                    Book Your Adventure
-                                    <ArrowRight className="h-5 w-5" />
-                                </Button>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4 sm:px-0">
+                            <Link
+                                href="/safaris"
+                                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full sm:w-auto text-base font-bold text-white transition-all duration-300 hover:brightness-110 hover:scale-105"
+                                style={{ backgroundColor: "#C8832A" }}
+                            >
+                                Book Your Adventure
+                                <ArrowRight className="h-5 w-5" />
                             </Link>
-                            <Link href="/contact">
-                                <Button variant="ghost" size="lg">
-                                    Contact Our Team
-                                </Button>
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full sm:w-auto text-base font-semibold text-white/90 border border-white/50 bg-transparent transition-all duration-300 hover:bg-white/10 hover:scale-105"
+                            >
+                                Contact Our Team
                             </Link>
                         </div>
                     </motion.div>

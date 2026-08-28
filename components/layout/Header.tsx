@@ -97,7 +97,8 @@ export default function Header() {
                         )}
                     </li>
                 ))}
-            </ul>
+            <li className="nav-item"><Link href="/reviews" className="nav-link">Reviews</Link></li>
+</ul>
 
             {/* Desktop CTAs & Mobile Hamburger */}
             <div className="navbar__actions">

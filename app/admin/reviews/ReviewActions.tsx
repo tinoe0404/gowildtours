@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
 import { Check, Trash2, X } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -35,17 +34,29 @@ export default function ReviewActions({ reviewId, isApproved }: { reviewId: stri
   return (
     <div className="flex items-center gap-2">
       {!isApproved ? (
-        <Button size="sm" variant="outline" className="text-green-600 border-green-200 hover:bg-green-50" onClick={() => handleAction('approve')} disabled={isLoading}>
+        <button 
+          className="flex items-center text-sm font-medium border border-green-200 text-green-700 bg-white hover:bg-green-50 px-3 py-1.5 rounded-md transition-colors disabled:opacity-50"
+          onClick={() => handleAction('approve')} 
+          disabled={isLoading}
+        >
           <Check className="h-4 w-4 mr-1" /> Approve
-        </Button>
+        </button>
       ) : (
-        <Button size="sm" variant="outline" className="text-orange-600 border-orange-200 hover:bg-orange-50" onClick={() => handleAction('reject')} disabled={isLoading}>
+        <button 
+          className="flex items-center text-sm font-medium border border-orange-200 text-orange-700 bg-white hover:bg-orange-50 px-3 py-1.5 rounded-md transition-colors disabled:opacity-50"
+          onClick={() => handleAction('reject')} 
+          disabled={isLoading}
+        >
           <X className="h-4 w-4 mr-1" /> Unapprove
-        </Button>
+        </button>
       )}
-      <Button size="sm" variant="destructive" onClick={() => handleAction('delete')} disabled={isLoading}>
+      <button 
+        className="flex items-center text-sm font-medium border border-red-200 text-red-700 bg-white hover:bg-red-50 px-3 py-1.5 rounded-md transition-colors disabled:opacity-50"
+        onClick={() => handleAction('delete')} 
+        disabled={isLoading}
+      >
         <Trash2 className="h-4 w-4 mr-1" /> Delete
-      </Button>
+      </button>
     </div>
   );
 }
