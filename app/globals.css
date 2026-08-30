@@ -213,9 +213,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-menu__links li {
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-3);
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(15px);
   transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
@@ -226,9 +226,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu__links a {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;
   color: var(--color-white);
   text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+
+.mobile-menu__links a:hover {
+  color: var(--color-savanna);
+  transform: scale(1.05);
 }
 
 /* ── Buttons ── */

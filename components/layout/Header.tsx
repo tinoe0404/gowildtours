@@ -97,8 +97,7 @@ export default function Header() {
                         )}
                     </li>
                 ))}
-            <li className="nav-item"><Link href="/reviews" className="nav-link">Reviews</Link></li>
-</ul>
+            </ul>
 
             {/* Desktop CTAs & Mobile Hamburger */}
             <div className="navbar__actions">
@@ -138,17 +137,17 @@ export default function Header() {
                     </svg>
                 </button>
 
-                <ul className="mobile-menu__links w-full px-6">
+                 <ul className="mobile-menu__links w-full px-6">
                     {navLinks.map((link, index) => (
                         <li key={link.href} style={{ transitionDelay: menuOpen ? `${index * 60 + 100}ms` : "0ms" }}>
-                            <Link href={link.href} onClick={() => setMenuOpen(false)} className="block w-full py-4 text-center">
+                            <Link href={link.href} onClick={() => setMenuOpen(false)} className="block w-full py-2 text-center">
                                 {link.label}
                             </Link>
                         </li>
                     ))}
                     <li style={{ transitionDelay: menuOpen ? `${navLinks.length * 60 + 100}ms` : "0ms" }}>
                         <button 
-                            className="text-white hover:text-accent transition-colors font-display text-2xl flex items-center justify-center gap-2 mx-auto w-full py-4 cursor-pointer"
+                            className="text-white hover:text-accent transition-colors font-display text-2xl flex items-center justify-center gap-2 mx-auto w-full py-2 cursor-pointer"
                             onClick={() => {
                                 setMenuOpen(false);
                                 setCartOpen(true);
@@ -157,10 +156,10 @@ export default function Header() {
                             🛒 Open Cart
                         </button>
                     </li>
-                    <li style={{ transitionDelay: menuOpen ? `${(navLinks.length + 1) * 60 + 100}ms` : "0ms" }}>
+                    <li style={{ transitionDelay: menuOpen ? `${(navLinks.length + 1) * 60 + 100}ms` : "0ms" }} className="mt-4">
                         <Link 
                             href="/contact" 
-                            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 w-full max-w-xs text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
+                            className="inline-flex items-center justify-center gap-2 rounded-full px-8 py-3 w-full max-w-xs text-lg font-bold text-white transition-all duration-300 hover:brightness-110 mx-auto"
                             style={{ backgroundColor: "#C8832A" }}
                             onClick={() => setMenuOpen(false)}
                         >
