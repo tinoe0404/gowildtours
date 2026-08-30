@@ -2726,6 +2726,161 @@ const packagesData: Package[] = [
                 optionalActivities: "Tour ends at lunch time in Victoria Falls"
             }
         ]
+    },
+    {
+        id: "20",
+        slug: "9-days-victoria-falls-to-okavango-delta",
+        title: "9-days Victoria Falls to Okavango Delta",
+        category: ["Wildlife Safari", "Adventure"],
+        destinations: ["Victoria Falls", "Livingstone", "Chobe National Park", "Makgadikgadi Salt Pans", "Okavango Delta", "Maun"],
+        shortDescription: "This unforgettable journey begins at the iconic Victoria Falls, continuing through Botswana's Chobe, the surreal Makgadikgadi Salt Pans, and ending with an intimate exploration of the pristine Okavango Delta.",
+        longDescription: "This unforgettable journey begins at the iconic Victoria Falls, where guided tours on both the Zimbabwean and Zambian sides reveal breathtaking views of 'The Smoke That Thunders.' A relaxing dinner cruise on the Zambezi River offers stunning sunsets and wildlife sightings. In Livingstone, enjoy a full day tour including the falls, rhino tracking in Mosi-oa-Tunya National Park, and a vibrant city and market visit. The safari continues to Chobe National Park, featuring morning and afternoon game drives and a scenic afternoon boat cruise along the Chobe River. A visit to the vast Makgadikgadi Salt Pans at sunset adds a surreal experience. Finally, explore the pristine Okavango Delta with mokoro rides and guided nature walks offering close encounters with wildlife in one of Africa's most unique ecosystems.",
+        duration: { days: 9, nights: 8 },
+        groupSize: { min: 2, max: 12, type: "Small Group" },
+        difficulty: "Moderate",
+        price: 3900,
+        priceOptions: [
+            { label: "Budget - Sharing (2+ Pax)", price: 3900 },
+            { label: "Budget - Single Supplement (1 Pax)", price: 4280 },
+            { label: "Midrange - Sharing (2+ Pax)", price: 4440 },
+            { label: "Midrange - Single Supplement (1 Pax)", price: 4880 },
+            { label: "Luxury - Sharing (2+ Pax)", price: 5980 },
+            { label: "Luxury - Single Supplement (1 Pax)", price: 6480 }
+        ],
+        featured: false,
+        bestSeller: false,
+        newPackage: true,
+        image: "/images/safari/victoria-falls-close.jpg",
+        images: [
+            "/images/safari/victoria-falls-close.jpg",
+            "/images/safari/elephant-river.jpg",
+            "/images/safari/wild-dogs.jpg",
+            "/images/safari/elephants-waterhole.jpg"
+        ],
+        inclusions: [
+            "Accommodation: 8 nights in selected lodges, safari camps, and hotels",
+            "All meals: Breakfast, lunch, and dinner as per the itinerary",
+            "Transport: Luxury transfers between destinations and 4x4 vehicles for game drives",
+            "Park and activity fees: All entrance fees for Victoria Falls (Zambia & Zimbabwe), Chobe National Park, Makgadikgadi Salt Pans, and Okavango Delta",
+            "Professional guides: Experienced guides for game drives, nature walks, and cultural tours",
+            "Guided tours of Victoria Falls (both Zambia and Zimbabwe sides)",
+            "Zambezi River sunset dinner cruise",
+            "Animal interaction – lion",
+            "Livingstone day tour – rhino tracking, falls tour, city and market visit",
+            "Chobe National Park morning and afternoon game drives",
+            "Chobe River afternoon boat cruise",
+            "Makgadikgadi Salt Pans sunset visit",
+            "Okavango Delta mokoro rides and nature walks"
+        ],
+        exclusions: [
+            "International and regional flights: Flights to/from Livingstone or onward destinations",
+            "Visas: Entry visas for Zambia, Zimbabwe, or Botswana (if required)",
+            "Travel insurance: Medical, evacuation, or trip cancellation insurance",
+            "Optional activities: Any additional excursions not listed in the itinerary, such as helicopter flights over Victoria Falls, bungee jumping, or spa treatments",
+            "Alcohol and soft drinks: Unless specified in meals or cruises",
+            "Personal expenses: Souvenirs, phone calls, laundry, tips, and gratuities",
+            "Medical requirements: Vaccinations, malaria prophylaxis, or personal medications",
+            "Additional transfers outside the scheduled program",
+            "Early check-in or late check-out at lodges"
+        ],
+        highlights: [
+            "Guided tour of Victoria Falls – Zambia and Zimbabwe sides: Spectacular views of the falls, rainforest walks, and photo opportunities",
+            "Animal interaction - Lion interaction",
+            "Zambezi River sunset dinner cruise: Scenic sunset with hippos, crocodiles, and elephants along the riverbanks",
+            "Livingstone day tour: Includes falls tour, rhino tracking in Mosi-oa-Tunya National Park, and cultural immersion at the city and local markets",
+            "Chobe National Park safari: Morning and afternoon game drives spotting elephants, lions, buffalo, giraffes, and diverse birds",
+            "Chobe River afternoon boat cruise: Close wildlife encounters including hippos, elephants, crocodiles, and birdlife from the water",
+            "Makgadikgadi Salt Pans visit at sunset: Dramatic landscapes, flamingos, and other seasonal wildlife",
+            "Okavango Delta exploration: Mokoro rides and guided nature walks for intimate wildlife encounters including elephants, antelope, and birds",
+            "This tour combines waterfalls, wildlife, and cultural experiences for a complete Southern Africa safari adventure"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Victoria Falls",
+                description: "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
+                accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Dinner cruise"
+            },
+            {
+                day: 2,
+                title: "Victoria Falls",
+                description: "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning 'The Smoke That Thunders.' During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It's an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
+                accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Victoria Falls guided tour",
+                optionalActivities: "Rafting, gorge swing, slide / day tour in Livingstone – Devils pool, rhino tracking / game drive"
+            },
+            {
+                day: 3,
+                title: "Livingstone Day Tour (Zambia)",
+                description: "A day tour in Livingstone offers a rich mix of nature, wildlife, and culture. The experience begins with a guided tour of the Victoria Falls on the Zambian side, where you witness the powerful cascades and scenic viewpoints along the rainforest paths. The adventure continues with rhino tracking in Mosi-oa-Tunya National Park, giving you a rare chance to walk alongside these endangered animals under expert guidance. A visit to the Livingstone Museum follows, offering insights into Zambia's history, culture, and the explorations of David Livingstone. The tour also includes a city and market visit, where you experience local life, interact with residents, and browse vibrant stalls filled with crafts and fresh produce, creating a well-rounded and memorable day.",
+                route: "Victoria Falls to Livingstone back to Victoria Falls",
+                accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Double/twin/Triple or family room",
+                highlights: "Rhino tracking, guided tour of the Falls in Zambia side, Livingstone city and market tour"
+            },
+            {
+                day: 4,
+                title: "Chobe National Park (Botswana)",
+                description: "Chobe national park is one of Africa's premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments.",
+                route: "Victoria Falls to Kasane — 2 hours — 90km",
+                accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Afternoon boat cruise"
+            },
+            {
+                day: 5,
+                title: "Chobe National Park",
+                description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
+                accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Morning and afternoon game drive"
+            },
+            {
+                day: 6,
+                title: "Makgadikgadi Salt Pans",
+                description: "The Makgadikgadi Salt Pans are among the largest salt flats in the world, located in northeastern Botswana. These vast, shimmering plains are the remnants of an ancient super-lake that dried up thousands of years ago, leaving behind a surreal, lunar-like landscape of white salt crust stretching to the horizon. During the dry season, the pans appear barren and stark, offering dramatic scenery and incredible stargazing under clear skies. However, in the rainy season, parts of the pans fill with water, attracting thousands of flamingos and migratory birds, along with wildlife such as zebras and wildebeest during one of Africa's lesser-known migrations. Nearby areas like Nata Bird Sanctuary become vibrant with birdlife. Visitors can enjoy quad biking, guided walks with meerkats, and cultural experiences with local communities, making the Makgadikgadi a uniquely diverse and captivating destination.",
+                route: "Kasane to Nata — 5 hours — 320km",
+                accommodation: "Nata Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Pan drive – Makgadikgadi Salt Pans sunset pan drive"
+            },
+            {
+                day: 7,
+                title: "Okavango Delta",
+                description: "After breakfast in Nata, depart on a scenic drive toward the magnificent Okavango Delta via the safari gateway town of Maun. The journey takes you through beautiful wilderness landscapes, passing between Makgadikgadi National Park and Nxai Pan National Park, where vast open plains, acacia woodlands, and occasional wildlife sightings create an unforgettable African safari atmosphere. Upon arrival near the delta, leave the vehicles behind and board a traditional mokoro canoe for a peaceful ride into the heart of the Okavango Delta. Quietly gliding through narrow water channels surrounded by reeds and birdlife offers a true wilderness experience. Later, enjoy a guided nature walk on the delta islands, where your guide shares knowledge about animal tracks, plants, and the ecosystem. Spend the night in the bush under the stars, surrounded by the magical sounds of the African wilderness.",
+                accommodation: "Bush camp",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin tent",
+                highlights: "Okavango delta overnight excursion – Mokoro ride and nature walks"
+            },
+            {
+                day: 8,
+                title: "Maun",
+                description: "Discover the beauty of the Okavango Delta with an early morning guided nature walk through its untouched wilderness. Accompanied by experienced local guides, walk quietly along island trails while learning about animal tracks, birdlife, medicinal plants, and the delicate ecosystem of this UNESCO World Heritage wilderness. The peaceful morning atmosphere offers opportunities to spot antelope, elephants, hippos, and colorful bird species in their natural habitat. Later, enjoy a traditional mokoro ride through the crystal-clear channels of the delta. Gliding silently in a dugout canoe, surrounded by reeds and water lilies, provides a truly relaxing and authentic safari experience. After the excursion, transfer back to Maun while enjoying scenic views of Botswana's vast landscapes along the journey. For guests seeking a breathtaking aerial perspective, an optional scenic flight over the Okavango Delta offers unforgettable panoramic views of winding waterways, wildlife, and remote islands from above.",
+                route: "Okavango Delta – Maun – 50km – 3 hours",
+                accommodation: "Sedia Hotel / Island Safari Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family room",
+                highlights: "Okavango delta overnight excursion – Mokoro ride and nature walks",
+                optionalActivities: "Scenic flight over the Delta"
+            },
+            {
+                day: 9,
+                title: "Flying out from Maun International Airport",
+                description: "After breakfast enjoy a relaxing morning in Maun, giving you time to unwind after your unforgettable safari adventure. You may enjoy breakfast at your lodge, take in the peaceful atmosphere, or simply reflect on the incredible wildlife and landscapes experienced during your journey through Botswana. Later, you will be transferred to Maun Airport for check-in and your onward flight. This marks the end of your memorable African safari experience filled with beautiful wilderness moments and lasting memories.",
+                route: "Okavango Delta to Maun",
+                optionalActivities: "Tour end at Maun International Airport"
+            }
+        ]
     }];
 
 export const packages: Package[] = [...packagesData].sort((a, b) => {
