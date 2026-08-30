@@ -14,7 +14,6 @@ import {
     Calendar, MapPin, Camera
 } from 'lucide-react';
 import FacebookReviews from '@/components/marketing/FacebookReviews';
-import ReviewsSection from '@/components/reviews/ReviewsSection';
 
 const staticTeamMembers = [
     {
@@ -236,8 +235,17 @@ export default function AboutPage() {
             {/* Testimonials */}
             <FacebookReviews />
 
-            {/* Custom Reviews System */}
-            <ReviewsSection />
+            {/* Custom Reviews Link */}
+            <section className="py-20 bg-gray-50 border-t border-gray-100 text-center">
+                <div className="container mx-auto px-4">
+                    <span className="inline-block py-1 px-3 rounded-full bg-accent/10 text-accent font-bold text-xs uppercase tracking-wider mb-4 border border-accent/20">Reviews</span>
+                    <h2 className="text-4xl font-display font-bold text-dark-deep mb-4">What Our Guests Say</h2>
+                    <p className="text-warm-gray mb-8 max-w-xl mx-auto leading-relaxed">Read detailed accounts of our safaris and share your own travel experiences with us.</p>
+                    <Link href="/reviews" className="btn btn--primary">
+                        Read Guest Reviews
+                    </Link>
+                </div>
+            </section>
 
             {/* CTA Section */}
             <section className="py-24 bg-white">
