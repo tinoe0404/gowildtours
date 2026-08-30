@@ -1,6 +1,7 @@
 "use client";
 
 import ComparisonBar from "@/components/features/ComparisonBar";
+import { usePathname } from "next/navigation";
 
 export default function ConditionalLayout({ 
     children,
@@ -11,7 +12,13 @@ export default function ConditionalLayout({
     header?: React.ReactNode;
     footer?: React.ReactNode;
 }) {
-    // Public routes: full layout
+    const pathname = usePathname();
+    const isAdminRoute = pathname?.startsWith("/admin");
+
+    if (isAdminRoute) {
+        return <main className="min-h-screen bg-gray-50">{children}</main>;
+    }
+
     return (
         <>
             {header}

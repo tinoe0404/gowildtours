@@ -14,6 +14,7 @@ import OrderSummary from "./OrderSummary";
 const checkoutSchema = z.object({
     name: z.string().min(2, "Full name is required"),
     email: z.string().email("Invalid email address"),
+    confirmEmail: z.string().email("Invalid email address"),
     phone: z.string().min(5, "Phone number is required"),
     nationality: z.string().min(2, "Nationality/Country is required"),
     specialRequests: z.string().optional(),
@@ -24,6 +25,9 @@ const checkoutSchema = z.object({
     policyAccepted: z.literal(true, {
         errorMap: () => ({ message: "You must agree to the cancellation policy" })
     })
+}).refine((data) => data.email === data.confirmEmail, {
+    message: "Email addresses must match",
+    path: ["confirmEmail"]
 });
 
 type CheckoutFormData = z.infer<typeof checkoutSchema>;
@@ -35,6 +39,7 @@ export default function CheckoutForm() {
     const [mobileSummaryOpen, setMobileSummaryOpen] = useState(false);
 
     const [isProcessing, setIsProcessing] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const { register, handleSubmit, formState: { errors } } = useForm<CheckoutFormData>({
         resolver: zodResolver(checkoutSchema)
@@ -44,13 +49,13 @@ export default function CheckoutForm() {
         setMounted(true);
     }, []);
 
-    // Redirect if cart is empty on mount
+    // Redirect if cart is empty on mount (only if not currently submitted/submitting)
     useEffect(() => {
-        if (mounted && items.length === 0) {
+        if (mounted && items.length === 0 && !isSubmitted && !isProcessing) {
             toast.error("Your cart is empty", { description: "Please select a safari first." });
             router.push("/safaris");
         }
-    }, [mounted, items.length, router]);
+    }, [mounted, items.length, router, isSubmitted, isProcessing]);
 
     const onSubmit = useCallback(async (data: CheckoutFormData) => {
         setIsProcessing(true);
@@ -73,6 +78,7 @@ export default function CheckoutForm() {
             const result = await response.json();
 
             if (result.success) {
+                setIsSubmitted(true);
                 clearCart();
                 toast.success("Booking request submitted!", {
                     description: "Our team will contact you shortly to confirm details.",
@@ -151,6 +157,17 @@ export default function CheckoutForm() {
                                         placeholder="jane@example.com"
                                     />
                                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                                </div>
+                                <div>
+                                    <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">Confirm Email Address *</label>
+                                    <input 
+                                        type="email"
+                                        {...register("confirmEmail")} 
+                                        disabled={isProcessing}
+                                        className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg outline-none focus:border-savanna focus:ring-2 focus:ring-savanna/20 transition-all shadow-sm disabled:opacity-60"
+                                        placeholder="jane@example.com"
+                                    />
+                                    {errors.confirmEmail && <p className="text-red-500 text-xs mt-1">{errors.confirmEmail.message}</p>}
                                 </div>
                                 <div>
                                     <label className="block text-xs font-accent font-semibold text-dark-deep mb-1.5 uppercase">Phone Number *</label>

@@ -17,6 +17,7 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 import InstagramFeed from "@/components/marketing/InstagramFeed";
+import MovingReviews from "@/components/reviews/MovingReviews";
 import Card from "@/components/ui/Card";
 import {
     Compass,
@@ -371,47 +372,14 @@ export default function HomeClient({ images, featuredPackages, testimonials, why
                 </Container>
             </Section>
 
-            {/* ═══════════════ TESTIMONIALS ═══════════════ */}
-            <Section spacing="lg" className="bg-cream">
+            <Section spacing="lg" className="bg-cream overflow-hidden">
                 <Container>
                     <SectionHeading
                         title="What Our Guests Say"
                         subtitle="Hear from travellers who have experienced the magic."
                     />
-
-                    <motion.div
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                    >
-                        {testimonials.map((testimonial) => (
-                            <motion.div key={testimonial.id} variants={staggerItem}>
-                                <div
-                                    className="relative p-8 bg-white rounded-[var(--radius-feature)] h-full flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-1"
-                                    style={{ border: '1px solid var(--color-border)', boxShadow: 'var(--shadow-card)' }}
-                                >
-                                    {/* Terracotta accent bar */}
-                                    <div className="absolute top-0 left-0 right-0" style={{ height: '3px', background: 'linear-gradient(90deg, #C8832A, #E5A95A, #C8832A)' }} />
-                                    <Quote style={{ width: '32px', height: '32px', color: 'var(--color-savanna)', opacity: 0.2 }} className="mb-4" />
-                                    <div className="flex gap-1 mb-4">
-                                        {Array.from({ length: testimonial.rating }).map((_, i) => (
-                                            <Star key={i} style={{ width: '16px', height: '16px', fill: 'var(--color-savanna)', color: 'var(--color-savanna)' }} />
-                                        ))}
-                                    </div>
-                                    <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--color-text-muted)', lineHeight: 1.7, fontStyle: 'italic' }} className="flex-1 truncate-3-lines">
-                                        &ldquo;{testimonial.reviewText}&rdquo;
-                                    </p>
-                                    <div style={{ marginTop: 'var(--space-6)', paddingTop: 'var(--space-4)', borderTop: '1px solid var(--color-border)' }}>
-                                        <p style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-earth)' }}>{testimonial.reviewerName}</p>
-                                        <p style={{ fontSize: '0.75rem', color: 'var(--color-savanna)', marginTop: '2px' }}>{testimonial.reviewerCountry}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
                 </Container>
+                <MovingReviews />
             </Section>
 
             <InstagramFeed />

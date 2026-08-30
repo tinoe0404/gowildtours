@@ -1,18 +1,122 @@
 [
   {
-    "name": "Jane Smith",
+    "name": "Kevin Steward",
     "rating": 5,
-    "message": "Absolutely breathtaking safari! The guides were incredibly knowledgeable and we saw the Big Five on our very first day.",
-    "country": "Australia",
+    "message": "Praised guide Muza as organized/knowledgeable; highlights: desert, bushmen, Chobe, Okavango mokoro ride, ending at Vic Falls.",
+    "country": "Windhoek to Victoria Falls",
     "approved": true,
-    "date": "2026-04-15T10:30:00Z"
+    "date": "2024-12-24T12:00:00Z"
   },
   {
-    "name": "Michael Chen",
-    "rating": 4,
-    "message": "Great experience overall. The accommodations were top-notch, though the morning drives started a bit earlier than I'm used to!",
-    "country": "Canada",
+    "name": "Ann",
+    "rating": 5,
+    "message": "Guide Muza welcoming; saw 4/5 'big five' plus crocs; loved Okavango mokoros and nature walks; well organized.",
+    "country": "The Great Botswana Highlights Tour",
     "approved": true,
-    "date": "2026-03-22T14:15:00Z"
+    "date": "2025-11-20T12:00:00Z"
+  },
+  {
+    "name": "Mikkel",
+    "rating": 5,
+    "message": "\"Experience of a lifetime\" — praised sites, safaris, lodging, food.",
+    "country": "The Great Botswana Highlights Tour",
+    "approved": true,
+    "date": "2024-12-20T12:00:00Z"
+  },
+  {
+    "name": "Melonie Diaz",
+    "rating": 5,
+    "message": "Called it \"unforgettable\"; highlighted Hwange/Chobe leopards & elephants, Matopos rhino tracking, Okavango night camping.",
+    "country": "The Circle Tour of Botswana & Zimbabwe",
+    "approved": true,
+    "date": "2025-01-18T12:00:00Z"
+  },
+  {
+    "name": "Mick Smith",
+    "rating": 5,
+    "message": "Short, enthusiastic — \"out of this world,\" praised guide Muza.",
+    "country": "7 Days Hwange, Chobe & Victoria Falls",
+    "approved": true,
+    "date": "2024-12-17T12:00:00Z"
+  },
+  {
+    "name": "Ann Oehlin",
+    "rating": 5,
+    "message": "Saw 4/5 big five (no rhino); praised mokoro rides and guide Muza.",
+    "country": "5 Days Chobe & Okavango Delta",
+    "approved": true,
+    "date": "2025-11-18T12:00:00Z"
+  },
+  {
+    "name": "Stephen Brouky",
+    "rating": 5,
+    "message": "Called it a trip \"of my lifetime\"; wildlife, stargazing, guides praised.",
+    "country": "5 Days Chobe & Okavango Delta",
+    "approved": true,
+    "date": "2024-12-24T12:00:00Z"
+  },
+  {
+    "name": "Amadi A.",
+    "rating": 5,
+    "message": "Well-planned itinerary, praised Muza, would recommend.",
+    "country": "3 Days Victoria Falls Adventure",
+    "approved": true,
+    "date": "2025-06-06T12:00:00Z"
+  },
+  {
+    "name": "Smith Mick",
+    "rating": 5,
+    "message": "Praised Muza's professionalism/flexibility; called experience \"life changing.\"",
+    "country": "5 Days Hwange & Chobe Safari",
+    "approved": true,
+    "date": "2025-07-21T12:00:00Z"
+  },
+  {
+    "name": "Janine Austere",
+    "rating": 5,
+    "message": "Detailed praise — booking process, guide knowledge, Chobe cruise, Makgadikgadi sunset, Okavango mokoro, lodges, food.",
+    "country": "6 Days Botswana Waterways & Wildlife",
+    "approved": true,
+    "date": "2024-12-25T12:00:00Z"
+  },
+  {
+    "name": "Peter Chang",
+    "rating": 5,
+    "message": "\"Bucket list trip\"; Muza arranged everything perfectly.",
+    "country": "4 Days Victoria Falls & Chobe",
+    "approved": true,
+    "date": "2024-12-20T12:00:00Z"
+  },
+  {
+    "name": "Andy Leskowitz",
+    "rating": 5,
+    "message": "Long-time repeat client (met guide in 2014); praised trip planning during Covid; \"epic journey.\"",
+    "country": "21 Days Victoria Falls to Windhoek",
+    "approved": true,
+    "date": "2024-12-17T12:00:00Z"
+  },
+  {
+    "name": "Catherine Adams",
+    "rating": 5,
+    "message": "Praised Chobe cruise and game drive (big four); called company reliable/trustworthy.",
+    "country": "3 Days Chobe",
+    "approved": true,
+    "date": "2024-12-23T12:00:00Z"
+  },
+  {
+    "name": "Thomas Taylor",
+    "rating": 5,
+    "message": "Terse — praised Muza's knowledge on a cycling trip.",
+    "country": "7 Days Victoria Falls to Okavango Delta",
+    "approved": true,
+    "date": "2025-03-18T12:00:00Z"
+  },
+  {
+    "name": "James Toler",
+    "rating": 5,
+    "message": "Detailed — big four sightings, comfortable lodges, catered to vegan diet.",
+    "country": "7 Days Victoria Falls to Okavango Delta",
+    "approved": true,
+    "date": "2025-01-20T12:00:00Z"
   }
 ]

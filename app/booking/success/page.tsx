@@ -19,20 +19,20 @@ export default function BookingSuccessPage() {
                     </h1>
                     
                     <p className="text-lg text-warm-gray mb-8">
-                        Thank you for choosing Go Wild Tours. We have received your booking request and our team will be in touch with you shortly via email with your complete itinerary and next steps.
+                        Thank you for booking with Go Wild Tours. We have received your booking request and our team will be in touch with you shortly via email with your complete itinerary and next steps.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/safaris" className="w-full sm:w-auto">
-                            <Button variant="outline" className="w-full">
-                                <Calendar className="w-5 h-5 mr-2" />
-                                Browse More Safaris
-                            </Button>
-                        </Link>
                         <Link href="/" className="w-full sm:w-auto">
                             <Button className="w-full">
                                 Return Home
                                 <ArrowRight className="w-5 h-5 ml-2" />
+                            </Button>
+                        </Link>
+                        <Link href="/safaris" className="w-full sm:w-auto">
+                            <Button variant="outline" className="w-full">
+                                <Calendar className="w-5 h-5 mr-2" />
+                                Browse More Safaris
                             </Button>
                         </Link>
                     </div>

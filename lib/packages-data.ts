@@ -1216,9 +1216,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/dunes-namibia.jpg",
+        image: "/images/safari/dunes-panorama.jpg",
         images: [
-            "/images/safari/dunes-namibia.jpg",
+            "/images/safari/dunes-panorama.jpg",
             "/images/safari/etosha-elephants.jpg",
             "/images/safari/rhino.jpg",
             "/images/safari/wild-dogs.jpg",

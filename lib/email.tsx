@@ -53,7 +53,7 @@ export const emailService = {
             const emailHtml = await render(<ContactConfirmationEmail {...data} />);
 
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: data.email,
                 subject: 'We received your message - Go Wild Tours',
                 html: emailHtml,
@@ -61,7 +61,7 @@ export const emailService = {
 
             // Simple notification to business
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: businessEmail,
                 subject: `New Inquiry: ${data.subject}`,
                 text: `New contact form submission from ${data.name} (${data.email})\n\nMessage: ${data.message}`,
@@ -78,7 +78,7 @@ export const emailService = {
             const emailHtml = await render(<BookingConfirmationEmail {...data} />);
 
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: data.customerEmail,
                 subject: `Booking Confirmation - ${data.bookingReference}`,
                 html: emailHtml,
@@ -86,7 +86,7 @@ export const emailService = {
 
             // Notify business
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: businessEmail,
                 subject: `New Booking: ${data.bookingReference}`,
                 text: `New ${data.type} booking from ${data.customerName} (${data.customerEmail})\nReference: ${data.bookingReference}`,
@@ -104,7 +104,7 @@ export const emailService = {
             const emailHtml = await render(<BookingConfirmationEmail {...data} type="safari package" totalPrice={data.subtotal} />);
 
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: data.customerEmail,
                 subject: `Your Safari Booking Request - Ref #${data.bookingReference}`,
                 html: emailHtml,
@@ -122,7 +122,7 @@ export const emailService = {
             const emailHtml = await render(<OperatorAlertEmail {...data} />);
 
             await transporter.sendMail({
-                from: fromEmail,
+                from: `Go Wild Tours <${fromEmail}>`,
                 to: businessEmail,
                 subject: `[NEW BOOKING] Ref #${data.bookingReference} — ${data.customerName}`,
                 html: emailHtml,
