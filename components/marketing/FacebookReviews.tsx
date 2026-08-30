@@ -49,7 +49,7 @@ export default function FacebookReviews() {
                         </div>
                     </div>
 
-                    <a href="https://facebook.com/gowildtours/reviews" target="_blank" className="text-[#1877F2] font-semibold hover:underline">
+                    <a href="https://www.facebook.com/share/1HiexqeiEB/?mibextid=wwXIfr" target="_blank" className="text-[#1877F2] font-semibold hover:underline">
                         Write a Review
                     </a>
                 </div>

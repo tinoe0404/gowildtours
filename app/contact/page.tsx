@@ -108,6 +108,33 @@ export default function ContactPage() {
                                         <p className="flex justify-between text-red-500"><span>Emergency:</span> <span>+263 77 289 9096</span></p>
                                     </div>
                                 </div>
+
+                                <div className="p-8 bg-white rounded-[var(--radius-lg)] group hover:shadow-xl transition-all relative overflow-hidden" style={{ border: '1px solid rgba(200,135,58,0.2)', boxShadow: 'var(--shadow-card)' }}>
+                                    <div className="absolute top-0 left-0 w-1 h-full" style={{ background: 'var(--color-savanna)' }} />
+                                    <h3 className="text-lg font-bold font-display text-dark-deep mb-4 uppercase tracking-tight">Follow Us</h3>
+                                    <div className="flex gap-4">
+                                        <a
+                                            href="https://www.facebook.com/share/1HiexqeiEB/?mibextid=wwXIfr"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Facebook"
+                                            className="w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition-transform"
+                                            style={{ background: 'linear-gradient(135deg, #1877F2, #0C63D4)' }}
+                                        >
+                                            <Facebook className="w-5 h-5" />
+                                        </a>
+                                        <a
+                                            href="https://www.instagram.com/gowildtourszimbabwe?igsi=MWhqNXEwN3l3d2Y4cQ=="
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="Instagram"
+                                            className="w-11 h-11 rounded-xl flex items-center justify-center text-white shadow-md hover:scale-110 transition-transform"
+                                            style={{ background: 'linear-gradient(135deg, #F58529, #DD2A7B, #8134AF)' }}
+                                        >
+                                            <Instagram className="w-5 h-5" />
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

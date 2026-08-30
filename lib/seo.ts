@@ -6,9 +6,8 @@ export const siteConfig = {
     url: 'https://gowildtours.com',
     ogImage: '/images/logo/go-wild-tours-full.svg',
     links: {
-        twitter: 'https://twitter.com/gowildtours',
-        facebook: 'https://facebook.com/gowildtours',
-        instagram: 'https://www.instagram.com/gowildtourszimbabwe?igsh=bTR1MWJlaXQ1YWJr&utm_source=ig_contact_invite',
+        facebook: 'https://www.facebook.com/share/1HiexqeiEB/?mibextid=wwXIfr',
+        instagram: 'https://www.instagram.com/gowildtourszimbabwe?igsi=MWhqNXEwN3l3d2Y4cQ==',
     },
 };
 

@@ -7,10 +7,8 @@ export const siteConfig = {
     phone: "+263 77 123 4567",
     location: "Victoria Falls, Zimbabwe",
     socials: {
-        instagram: "https://www.instagram.com/gowildtourszimbabwe?igsh=bTR1MWJlaXQ1YWJr&utm_source=ig_contact_invite",
-        facebook: "https://facebook.com/gowildtours",
-        twitter: "https://twitter.com/gowildtours",
-        youtube: "https://youtube.com/gowildtours",
+        instagram: "https://www.instagram.com/gowildtourszimbabwe?igsi=MWhqNXEwN3l3d2Y4cQ==",
+        facebook: "https://www.facebook.com/share/1HiexqeiEB/?mibextid=wwXIfr",
     },
     logos: {
         dark: "/logo.png",

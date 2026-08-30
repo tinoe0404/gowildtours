@@ -103,8 +103,6 @@ export default async function Footer() {
                             {[
                                 { icon: Instagram, href: socials.instagram, label: "Instagram" },
                                 { icon: Facebook, href: socials.facebook, label: "Facebook" },
-                                { icon: Twitter, href: socials.twitter, label: "Twitter" },
-                                { icon: Youtube, href: socials.youtube, label: "YouTube" },
                             ].map((social) => social.href && (
                                 <a
                                     key={social.label}

@@ -47,7 +47,7 @@ export default function InstagramFeed() {
 
                 <div className="mt-12 text-center">
                     <Link
-                        href="https://www.instagram.com/gowildtourszimbabwe?igsh=bTR1MWJlaXQ1YWJr&utm_source=ig_contact_invite"
+                        href="https://www.instagram.com/gowildtourszimbabwe?igsi=MWhqNXEwN3l3d2Y4cQ=="
                         target="_blank"
                         className="inline-flex items-center gap-2 px-8 py-3 bg-dark-deep text-white font-bold rounded-full hover:bg-accent hover:text-dark-deep transition-colors"
                     >
