@@ -2881,6 +2881,110 @@ const packagesData: Package[] = [
                 optionalActivities: "Tour end at Maun International Airport"
             }
         ]
+    },
+    {
+        id: "21",
+        slug: "5-days-chobe-to-okavango-delta",
+        title: "5-days Chobe to Okavango Delta",
+        category: ["Wildlife Safari", "Adventure"],
+        destinations: ["Chobe National Park", "Makgadikgadi Salt Pans", "Okavango Delta", "Maun"],
+        shortDescription: "This 5-day safari offers a fast-paced but rich journey from Chobe National Park to the surreal Makgadikgadi Salt Pans and the beautiful, pristine Okavango Delta.",
+        longDescription: "This unforgettable journey begins at the iconic Victoria Falls where you meet your safari guide heading to Botswana to Chobe. The safari continues to Chobe National Park, featuring a scenic afternoon boat cruise along the Chobe River. The following day morning and afternoon game drive. A visit to the vast Makgadikgadi Salt Pans at sunset adds a surreal experience. Finally, explore the pristine Okavango Delta with mokoro rides and guided nature walks offering close encounters with wildlife in one of Africa's most unique ecosystems.",
+        duration: { days: 5, nights: 4 },
+        groupSize: { min: 2, max: 12, type: "Small Group" },
+        difficulty: "Easy",
+        price: 1840,
+        priceOptions: [
+            { label: "Sharing (2+ Pax)", price: 1840 },
+            { label: "Single Supplement (1 Pax)", price: 2480 }
+        ],
+        featured: false,
+        bestSeller: false,
+        newPackage: true,
+        image: "/images/safari/elephant-river.jpg",
+        images: [
+            "/images/safari/elephant-river.jpg",
+            "/images/safari/elephants-waterhole.jpg",
+            "/images/safari/hippos-grass.jpg",
+            "/images/safari/river-aerial.jpg"
+        ],
+        inclusions: [
+            "Accommodation: 4 nights in selected lodges, safari camps, and hotels",
+            "All meals: Breakfast, lunch, and dinner as per the itinerary",
+            "Transport: Luxury transfers between destinations and 4x4 vehicles for game drives",
+            "Park and activity fees: All entrance fees for Chobe National Park, Makgadikgadi Salt Pans, and Okavango Delta",
+            "Professional guides: Experienced guides for game drives, nature walks, and cultural tours",
+            "Chobe National Park morning and afternoon game drives",
+            "Chobe River afternoon boat cruise",
+            "Makgadikgadi Salt Pans sunset visit",
+            "Okavango Delta mokoro rides and nature walks"
+        ],
+        exclusions: [
+            "International and regional flights: Flights to/from Livingstone or onward destinations",
+            "Visas: Entry visas for Zambia, Zimbabwe, or Botswana (if required)",
+            "Travel insurance: Medical, evacuation, or trip cancellation insurance",
+            "Optional activities: Any additional excursions not listed in the itinerary, such as helicopter flights over Victoria Falls, bungee jumping, or spa treatments",
+            "Alcohol and soft drinks: Unless specified in meals or cruises",
+            "Personal expenses: Souvenirs, phone calls, laundry, tips, and gratuities",
+            "Medical requirements: Vaccinations, malaria prophylaxis, or personal medications",
+            "Additional transfers outside the scheduled program",
+            "Early check-in or late check-out at lodges"
+        ],
+        highlights: [
+            "Chobe National Park safari: Morning and afternoon game drives spotting elephants, lions, buffalo, giraffes, and diverse birds",
+            "Chobe River afternoon boat cruise: Close wildlife encounters including hippos, elephants, crocodiles, and birdlife from the water",
+            "Makgadikgadi Salt Pans visit at sunset: Dramatic landscapes, flamingos, and other seasonal wildlife",
+            "Okavango Delta exploration: Mokoro rides and guided nature walk for intimate wildlife encounters including elephants, antelope, and birds",
+            "This tour combines waterfalls, wildlife, and cultural experiences for a complete Southern Africa safari adventure"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Chobe National Park (Botswana)",
+                description: "Welcomed by your safari guide, then short briefing of the safari and drive to Chobe. Chobe national park is one of Africa's premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments.",
+                route: "Victoria Falls to Kasane — 2 hours — 90km",
+                accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Afternoon boat cruise"
+            },
+            {
+                day: 2,
+                title: "Chobe National Park",
+                description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
+                accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Morning and afternoon game drive"
+            },
+            {
+                day: 3,
+                title: "Makgadikgadi Salt Pans",
+                description: "The Makgadikgadi Salt Pans are among the largest salt flats in the world, located in northeastern Botswana. These vast, shimmering plains are the remnants of an ancient super-lake that dried up thousands of years ago, leaving behind a surreal, lunar-like landscape of white salt crust stretching to the horizon. During the dry season, the pans appear barren and stark, offering dramatic scenery and incredible stargazing under clear skies. However, in the rainy season, parts of the pans fill with water, attracting thousands of flamingos and migratory birds, along with wildlife such as zebras and wildebeest during one of Africa's lesser-known migrations. Nearby areas like Nata Bird Sanctuary become vibrant with birdlife. Visitors can enjoy quad biking, guided walks with meerkats, and cultural experiences with local communities, making the Makgadikgadi a uniquely diverse and captivating destination.",
+                route: "Kasane to Nata — 5 hours — 320km",
+                accommodation: "Nata Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple and Family Room",
+                highlights: "Pan drive – Makgadikgadi Salt Pans sunset pan drive"
+            },
+            {
+                day: 4,
+                title: "Okavango Delta",
+                description: "We depart early morning to Okavango Delta, we drive passing between Nxai and Makgadikgadi national park enroute to Maun, high opportunity to see game. An overnight trip to the Okavango Delta offers a rewarding glimpse into one of Africa's most unique wetlands. The journey begins with a scenic road transfer to the delta's edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, you enjoy guided nature walks, learning about animal tracks, plants, and the delicate ecosystem. Wildlife such as antelope and smaller species may be seen. In the evening we sit around the fire hearing different sounds of wildlife, bush camping experience.",
+                route: "Nata to Okavango Delta — 360km — 8 hours",
+                accommodation: "Bush camp",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin tent",
+                highlights: "Mokoro ride and nature walks"
+            },
+            {
+                day: 5,
+                title: "Maun / Flying out",
+                description: "A morning nature walk, then mokoro ride getting out of the Okavango Delta. You will be dropped off at Maun International Airport to mark the end of the tour.",
+                accommodation: "Own arrangements",
+                optionalActivities: "Tour end at Maun International Airport"
+            }
+        ]
     }];
 
 export const packages: Package[] = [...packagesData].sort((a, b) => {
