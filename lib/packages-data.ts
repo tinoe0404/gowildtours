@@ -2587,6 +2587,145 @@ const packagesData: Package[] = [
                 optionalActivities: "Rafting, gorge swing, slide, helicopter flights and more",
             },
         ],
+    },
+    {
+        id: "19",
+        slug: "7-days-victoria-falls-chobe-hwange",
+        title: "7days Victoria Falls, Chobe and Hwange",
+        category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
+        destinations: ["Victoria Falls", "Chobe National Park", "Hwange National Park"],
+        shortDescription: "This 7-day safari combines the best of Victoria Falls, Chobe National Park, and Hwange National Park. Experience the thunderous falls, abundant wildlife, and authentic cultural village traditions.",
+        longDescription: "This 7-day safari combines the best of Victoria Falls, Chobe National Park, and Hwange National Park. In Victoria Falls, enjoy a relaxing Zambezi sunset dinner cruise with wildlife sightings and stunning river views, followed by a guided tour of the Falls, where the thunder of water and rainforest scenery create an unforgettable experience. Continue to Chobe for an afternoon-to-sunset boat cruise along the Chobe River, famous for elephants and hippos, plus morning and afternoon game drives offering close encounters with diverse wildlife. In Hwange, explore Zimbabwe's largest park on a full-day game drive, visit the inspiring Painted Dog's Project, and experience local traditions through a Nambya Cultural Educational Village tour. This journey blends iconic landscapes, rich wildlife, and authentic cultural encounters.",
+        duration: { days: 7, nights: 6 },
+        groupSize: { min: 2, max: 12, type: "Small Group" },
+        difficulty: "Easy",
+        price: 2800,
+        priceOptions: [
+            { label: "Per Person Sharing", price: 2800 }
+        ],
+        featured: true,
+        bestSeller: false,
+        newPackage: true,
+        image: "/images/safari/victoria-falls-close.jpg",
+        images: [
+            "/images/safari/victoria-falls-close.jpg",
+            "/images/safari/elephant-river.jpg",
+            "/images/safari/wild-dogs.jpg",
+            "/images/safari/elephants-waterhole.jpg"
+        ],
+        inclusions: [
+            "6 nights' accommodation (lodges / safari camps)",
+            "All meals throughout the tour (breakfast, lunch, and dinner)",
+            "All scheduled activities as per itinerary",
+            "Zambezi sunset dinner cruise in Victoria Falls",
+            "Guided tour of Victoria Falls",
+            "Chobe River afternoon to sunset boat cruise",
+            "Morning and afternoon game drives in Chobe National Park",
+            "Full-day game drive in Hwange National Park",
+            "Visit to the Painted Dog's Project",
+            "Nambya Cultural Educational Village tour",
+            "All park entry and conservation fees",
+            "Transport in comfortable luxury vehicles for transfers",
+            "Open 4x4 safari vehicles for all game drives",
+            "Professional, experienced safari guides",
+            "Bottled water during activities and transfers",
+            "Pick-up and drop-off (Victoria Falls Airport and/or lodge)"
+        ],
+        exclusions: [
+            "International and domestic flights",
+            "Visa fees for Zimbabwe and Botswana",
+            "Travel insurance (highly recommended)",
+            "Personal expenses (souvenirs, laundry, phone calls)",
+            "Alcoholic and non-alcoholic beverages not specified",
+            "Optional activities (e.g., helicopter flights, bungee jumping)",
+            "Tips and gratuities for guides, drivers, and lodge staff",
+            "Any meals not specified in the itinerary",
+            "Medical expenses and vaccinations",
+            "Additional transfers outside the scheduled program",
+            "Early check-in or late check-out at lodges"
+        ],
+        highlights: [
+            "Zambezi sunset dinner cruise with scenic views and wildlife sightings",
+            "Guided tour of Victoria Falls (both rainforest and main viewpoints)",
+            "Chobe River afternoon to sunset boat cruise (elephants, hippos, crocodiles)",
+            "Morning game drive in Chobe National Park",
+            "Afternoon game drive in Chobe National Park",
+            "Full-day game drive in Hwange National Park (rich wildlife and diverse landscapes)",
+            "Visit to the Painted Dog's Project conservation center",
+            "Nambya Cultural Educational Village tour (local traditions and lifestyle)",
+            "Cross-border safari experience between Zimbabwe and Botswana",
+            "Combination of river, land, and cultural safari activities"
+        ],
+        itinerary: [
+            {
+                day: 1,
+                title: "Victoria Falls",
+                description: "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience. Likely to be back to the accommodation around past 8pm.",
+                accommodation: "Victoria Falls Oasis Hotel / Telescope Boutique Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single Room",
+                highlights: "Dinner Cruise",
+                optionalActivities: "Zipline, jetboat, helicopter flight and many more"
+            },
+            {
+                day: 2,
+                title: "Victoria Falls",
+                description: "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning 'The Smoke That Thunders.' During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It's an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
+                accommodation: "Victoria Falls Oasis Hotel / Telescope Boutique Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single/Twin/Double/Triple or Family Room",
+                highlights: "Guided tour of the Falls",
+                optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more"
+            },
+            {
+                day: 3,
+                title: "Chobe National Park (Botswana)",
+                description: "Chobe national park is one of Africa's premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments. Sunset boat cruise is one of the most not miss activity in Chobe national park since it has got a say to your safari. Chobe river provides a very broad habitat for the bird life and it is possible to see many beautiful species.",
+                route: "Victoria Falls to Kasane — 2 hours — 90km",
+                accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single Room",
+                highlights: "Afternoon boat cruise (3 hours activity)"
+            },
+            {
+                day: 4,
+                title: "Chobe National Park",
+                description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
+                accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single Room",
+                highlights: "Morning and afternoon game drive (each game drive is 3 hours)"
+            },
+            {
+                day: 5,
+                title: "Hwange National Park",
+                description: "Depart from Chobe national park early morning after breakfast and enjoy a scenic road transfer south toward Hwange National Park, Zimbabwe's largest and most famous wildlife reserve. Along the journey, stop at the inspiring Painted Dog Conservation project near Hwange. This remarkable conservation center is dedicated to protecting the endangered African painted dog through rehabilitation, conservation education, and anti-poaching initiatives. During the guided visit, learn about the behavior and challenges facing these rare predators and discover how local communities are involved in wildlife protection efforts. After the tour, continue through the beautiful landscapes of Hwange, where changing scenery and occasional wildlife sightings make the drive enjoyable. Arrive at your safari lodge in the afternoon, relax, and prepare for the exciting wildlife experiences awaiting you in Hwange National Park.",
+                route: "Kasane to Hwange — 7 hours — 290km",
+                accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single Room",
+                highlights: "Painted dog's project",
+                optionalActivities: "Afternoon and night game drive in concession"
+            },
+            {
+                day: 6,
+                title: "Hwange National Park",
+                description: "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa's most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
+                accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                meals: "Lunch, Dinner, Breakfast",
+                facilities: "Single Room",
+                highlights: "Full day game drive"
+            },
+            {
+                day: 7,
+                title: "Victoria Falls / Fly out",
+                description: "After breakfast, enjoy an immersive visit to the traditional Nambya Cultural Village, located near Hwange National Park in Dete. The Nambya people are one of Zimbabwe's rich cultural communities, known for their warm hospitality, traditional homesteads, music, dance, and storytelling. During the guided village tour, guests interact with local villagers, learn about ancient customs, daily rural life, traditional cooking methods, and the importance of cattle in Nambya culture. Experience vibrant cultural performances featuring traditional songs, drumming, and energetic dances that reflect the community's heritage and history. The visit also offers opportunities to view handcrafted souvenirs and support local artisans. After this authentic cultural experience, depart Dete and enjoy a scenic drive through rural Zimbabwe toward Victoria Falls, where your unforgettable safari and cultural adventure come to a memorable end.",
+                route: "Hwange to Victoria Falls — 4 hours — 200km",
+                meals: "Lunch",
+                highlights: "Nambya educational cultural village tour",
+                optionalActivities: "Tour ends at lunch time in Victoria Falls"
+            }
+        ]
     }];
 
 export const packages: Package[] = [...packagesData].sort((a, b) => {
