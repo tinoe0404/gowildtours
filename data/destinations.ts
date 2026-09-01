@@ -49,7 +49,7 @@ export const destinations: Destination[] = [
     accommodation: [],
     wildlife: ["Elephant", "Lion", "Wild Dog", "Leopard", "Rhino"],
     coordinates: { lat: -19.0154, lng: 29.1549 },
-    knownPlaces: ["Zimbabwe", "Victoria Falls", "Hwange National Park", "Bulawayo", "Matobo National Park", "Great Zimbabwe", "Harare", "Lake Kariba", "Matopos"]
+    knownPlaces: ["Zimbabwe", "Victoria Falls", "Hwange National Park", "Bulawayo", "Matobo National Park", "Matopos National Park", "Great Zimbabwe", "Great Zimbabwe Ruins", "Harare", "Lake Kariba", "Matopos", "Masvingo"]
   },
   {
     slug: "botswana",
@@ -106,7 +106,7 @@ export const destinations: Destination[] = [
     accommodation: [],
     wildlife: ["Leopard", "Lion", "Elephant", "Hippo", "Wild Dog"],
     coordinates: { lat: -13.1339, lng: 27.8493 },
-    knownPlaces: ["Zambia", "Livingstone", "Devil's Pool", "South Luangwa", "Lower Zambezi", "Kafue National Park"]
+    knownPlaces: ["Zambia", "Livingstone", "Devil's Pool", "South Luangwa", "South Luangwa National Park", "Lower Zambezi", "Lower Zambezi National Park", "Kafue National Park", "Lusaka", "Choma", "Petauke", "Siavonga"]
   },
   {
     slug: "malawi",
@@ -125,6 +125,6 @@ export const destinations: Destination[] = [
     accommodation: [],
     wildlife: ["Hippo", "Crocodile", "Cichlids", "Elephant", "Black Rhino"],
     coordinates: { lat: -13.2543, lng: 34.3015 },
-    knownPlaces: ["Malawi", "Lake Malawi", "Lilongwe", "Blantyre", "Liwonde", "Majete"]
+    knownPlaces: ["Malawi", "Lake Malawi", "Central Lake Malawi", "Lilongwe", "Blantyre", "Liwonde", "Majete"]
   }
 ];

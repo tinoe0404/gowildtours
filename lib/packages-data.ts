@@ -2991,6 +2991,713 @@ const packagesData: Package[] = [
                     highlights: "Nambya Cultural Village tour"
                 }
             ]
+        },
+        {
+            id: "23",
+            slug: "22-days-maun-to-lilongwe",
+            title: "22-Days Maun to Lilongwe (Botswana, Zimbabwe, Zambia and Malawi)",
+            category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
+            destinations: [
+                "Maun",
+                "Okavango Delta",
+                "Makgadikgadi Pans",
+                "Chobe National Park",
+                "Hwange National Park",
+                "Victoria Falls",
+                "Livingstone",
+                "Choma",
+                "Lower Zambezi National Park",
+                "Lusaka",
+                "Petauke",
+                "South Luangwa National Park",
+                "Central Lake Malawi",
+                "Lilongwe"
+            ],
+            shortDescription:
+                "This 22-day Southern Africa adventure begins in Maun, the gateway to the magnificent Okavango Delta, exploring Botswana, Zimbabwe, Zambia and Malawi with game drives, river cruises, and cultural encounters.",
+            longDescription:
+                "This 22-day Southern Africa adventure begins in Maun, the gateway to the magnificent Okavango Delta, where you experience mokoro excursions, nature walks and unforgettable wildlife encounters. Continue through Maun and the Makgadikgadi Salt Pans before heading to Chobe National Park for boat cruises and exciting game drives. Cross into Zimbabwe to explore Hwange National Park and the spectacular Victoria Falls, then continue to Livingstone for the Zambian side of the Falls and city experiences. Travel onwards through Choma to the Lower Zambezi, enjoying its beautiful landscapes and wildlife. Continue to Lusaka and Petauke before exploring South Luangwa National Park, renowned for exceptional wildlife viewing. The journey then takes you into Malawi, with time at Central Lake Malawi for cultural experiences, relaxation and optional watersports, before concluding in Lilongwe, where your unforgettable 22-day adventure comes to an end.",
+            duration: { days: 22, nights: 21 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 8400,
+            featured: true,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/delta-aerial.jpg",
+            images: [
+                "/images/safari/delta-aerial.jpg",
+                "/images/safari/elephants-waterhole.jpg",
+                "/images/safari/victoria-falls-wide.jpg",
+                "/images/safari/leopard-walking-path.jpg",
+                "/images/safari/elephant-river.jpg"
+            ],
+            inclusions: [
+                "21 nights’ accommodation in carefully selected lodges, hotels and safari camps",
+                "Meals as stated in the itinerary – breakfast, lunch and dinner where indicated",
+                "All scheduled road transportation in a comfortable, air-conditioned safari vehicle",
+                "Professional English-speaking safari guides throughout the tour",
+                "Airport transfers as specified in the itinerary",
+                "Okavango Delta – Mokoro excursion and guided nature walk",
+                "Makgadikgadi Salt Pans – Salt-pan visit and scenic/sunset experience",
+                "Chobe National Park – Morning/afternoon game drives and afternoon boat cruise",
+                "Hwange National Park – Guided game drive",
+                "Victoria Falls, Zimbabwe – Guided tour of the Falls",
+                "Livingstone, Zambia – Zambia-side Falls tour and Livingstone city/local market tour",
+                "Rhino tracking – Guided rhino tracking experience",
+                "Lower Zambezi – Safari and wildlife activities as stated",
+                "Lusaka – City and local market tour",
+                "South Luangwa National Park – Guided game drives and wildlife viewing",
+                "Central Lake Malawi – Cultural village and local market tour",
+                "Lake Malawi – Time for relaxation and optional watersports activities",
+                "Lilongwe – City and local market tour",
+                "National Park and conservation fees for included activities, where applicable",
+                "Bottled drinking water during scheduled road transfers and safari activities",
+                "All activities specifically listed as included in the final itinerary"
+            ],
+            exclusions: [
+                "International flights to Maun and from Lilongwe",
+                "Domestic or regional flights not specifically stated as included",
+                "Visas and border crossing fees, where applicable",
+                "Travel insurance and medical insurance",
+                "Personal expenses such as souvenirs, gifts and shopping",
+                "Alcoholic drinks and beverages not specified in the itinerary",
+                "Soft drinks and other drinks outside the included meal plan",
+                "Laundry services",
+                "Telephone calls, internet charges and other personal communication costs",
+                "Tips and gratuities for guides, drivers and lodge staff",
+                "Optional activities not listed as included",
+                "Lake Malawi optional watersports and equipment, unless specifically included",
+                "Helicopter, scenic flights or other aerial activities, unless stated",
+                "Any additional accommodation required before or after the 22-day tour",
+                "Meals and activities outside those specified in the itinerary",
+                "Any expenses arising from flight delays, cancellations or unforeseen circumstances",
+                "Items of a personal nature not mentioned under What's Included"
+            ],
+            highlights: [
+                "Maun – Gateway to the Okavango Delta",
+                "Okavango Delta – Mokoro ride and guided nature walks",
+                "Wildlife safari – Game viewing in the Okavango region",
+                "Makgadikgadi Salt Pans – Scenic landscapes and sunset experience",
+                "Chobe National Park – Morning and afternoon game drives",
+                "Chobe River – Afternoon boat cruise and wildlife viewing",
+                "Hwange National Park – Full-day game drive and diverse wildlife",
+                "Victoria Falls, Zimbabwe – Guided tour of the magnificent Falls",
+                "Livingstone, Zambia – Zambia-side Falls and city/market tour",
+                "Choma – Local town and cultural experience",
+                "Lower Zambezi National Park – Wildlife and spectacular Zambezi scenery",
+                "Lusaka – City and local market experience",
+                "Petauke – Scenic journey through rural Zambia",
+                "South Luangwa National Park – Exceptional game drives and wildlife",
+                "Central Lake Malawi – Village and local market tour",
+                "Lake Malawi – Relaxation and optional watersports",
+                "Lilongwe – City and local market tour",
+                "Cultural experiences – Meet local communities and discover traditional lifestyles",
+                "Scenic road journeys – Experience the changing landscapes of Botswana, Zimbabwe, Zambia and Malawi",
+                "Four-country adventure – Explore Botswana, Zimbabwe, Zambia and Malawi in one incredible journey",
+                "22 days of wildlife, nature, culture and adventure across Southern Africa"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Maun",
+                    description:
+                        "Arrival at Maun International Airport, our crew will welcome you and transfer you to our overnight accommodation. Checking in, lunch and relaxing afternoon getting ready for the next day safari.",
+                    accommodation: "Sedia Hotel / Island Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/Triple/ Family room",
+                    highlights: "Picked up at Maun International Airport"
+                },
+                {
+                    day: 2,
+                    title: "Okavango Delta",
+                    description:
+                        "After breakfast in Maun, depart on a scenic drive toward the magnificent Okavango Delta. The journey takes you through beautiful wilderness landscapes and mopani woodlands as we cruise in our 4x4 vehicles. Upon arrival near the delta, leave the vehicles behind and board a traditional mokoro canoe for a peaceful ride into the heart of the Okavango Delta. Quietly gliding through narrow water channels surrounded by reeds and birdlife offers a true wilderness experience. Later, enjoy a guided nature walk on the delta islands, where your guide shares knowledge about animal tracks, plants, and the ecosystem. Spend the night in the bush under the stars, surrounded by the magical sounds of the African wilderness.",
+                    accommodation: "Bush Camp",
+                    meals: "LDB",
+                    facilities: "Single/ Twin tent",
+                    highlights: "Okavango Delta overnight excursion — Mokoro ride and nature walks"
+                },
+                {
+                    day: 3,
+                    title: "Maun",
+                    description:
+                        "Discover the beauty of the Okavango Delta with an early morning guided nature walk through its untouched wilderness. Accompanied by experienced local guides, walk quietly along island trails while learning about animal tracks, birdlife, medicinal plants, and the delicate ecosystem of this UNESCO World Heritage wilderness. The peaceful morning atmosphere offers opportunities to spot antelope, elephants, hippos, and colorful bird species in their natural habitat. Later, enjoy a traditional mokoro ride through the crystal-clear channels of the delta. Gliding silently in a dugout canoe, surrounded by reeds and water lilies, provides a truly relaxing and authentic safari experience. After the excursion, transfer back to Maun while enjoying scenic views of Botswana’s vast landscapes along the journey. For guests seeking a breathtaking aerial perspective, an optional scenic flight over the Okavango Delta offers unforgettable panoramic views of winding waterways, wildlife, and remote islands from above.",
+                    route: "Okavango Delta to Maun — 50km — 3 hours",
+                    accommodation: "Sedia Hotel / Island Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/Twin/Double/Triple and Family room",
+                    highlights: "Okavango Delta overnight excursion — Mokoro ride and nature walks",
+                    optionalActivities: "Scenic flight over the Delta"
+                },
+                {
+                    day: 4,
+                    title: "Makgadikgadi Salt Pans",
+                    description:
+                        "The Makgadikgadi Salt Pans are among the largest salt flats in the world, located in northeastern Botswana. These vast, shimmering plains are the remnants of an ancient super-lake that dried up thousands of years ago, leaving behind a surreal, lunar-like landscape of white salt crust stretching to the horizon. During the dry season, the pans appear barren and stark, offering dramatic scenery and incredible stargazing under clear skies. However, in the rainy season, parts of the pans fill with water, attracting thousands of flamingos and migratory birds, along with wildlife such as zebras and wildebeest during one of Africa’s lesser-known migrations. Nearby areas like Nata Bird Sanctuary become vibrant with birdlife. Visitors can enjoy quad biking, guided walks with meerkats, and cultural experiences with local communities, making the Makgadikgadi a uniquely diverse and captivating destination.",
+                    route: "Maun to Nata — 5 hours — 320km",
+                    accommodation: "Nata Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive"
+                },
+                {
+                    day: 5,
+                    title: "Chobe National Park",
+                    description:
+                        "Chobe National Park is one of Africa’s premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments.",
+                    route: "Nata to Kasane — 5 hours — 320km",
+                    accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Afternoon boat cruise"
+                },
+                {
+                    day: 6,
+                    title: "Chobe National Park",
+                    description:
+                        "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants — Chobe’s signature attraction — are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa’s top wildlife destinations.",
+                    accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Morning and afternoon game drive"
+                },
+                {
+                    day: 7,
+                    title: "Hwange National Park",
+                    description:
+                        "After breakfast, depart Chobe and journey south to the world-renowned Hwange National Park, Zimbabwe's largest and most celebrated wildlife reserve. Along the way, enjoy a meaningful stop at the Painted Dog Conservation Centre, where you will learn about the remarkable efforts to protect the endangered African painted dog. Guided by knowledgeable staff, explore the educational displays, meet rescued painted dogs where possible, and discover how conservation, research, and community outreach are helping this iconic species survive. After the visit, continue through the scenic countryside towards Hwange National Park, watching for wildlife and rural village life along the route. Upon arrival at your lodge, settle into your comfortable accommodation and enjoy a delicious lunch before taking time to relax. As the afternoon unfolds, immerse yourself in the peaceful wilderness atmosphere while anticipating the exciting game-viewing adventures that await in one of Africa's finest safari destinations.",
+                    route: "Kasane to Hwange — 7 hours — 290km",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ twin/ double/ triple/ family tent",
+                    highlights: "Painted dog’s project",
+                    optionalActivities: "Afternoon and night game drive in concession"
+                },
+                {
+                    day: 8,
+                    title: "Hwange National Park",
+                    description:
+                        "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple/ family room",
+                    highlights: "Full day game drive"
+                },
+                {
+                    day: 9,
+                    title: "Victoria Falls",
+                    description:
+                        "After breakfast, enjoy an immersive visit to the traditional Nambya Cultural Village, located near Hwange National Park in Dete. The Nambya people are one of Zimbabwe’s rich cultural communities, known for their warm hospitality, traditional homesteads, music, dance, and storytelling. During the guided village tour, guests interact with local villagers, learn about ancient customs, daily rural life, traditional cooking methods, and the importance of cattle in Nambya culture. Experience vibrant cultural performances featuring traditional songs, drumming, and energetic dances that reflect the community’s heritage and history. The visit also offers opportunities to view handcrafted souvenirs and support local artisans. After this authentic cultural experience, depart Dete and enjoy a scenic drive through rural Zimbabwe toward Victoria Falls, where your day concludes with a memorable Zambezi River Sunset dinner cruise.",
+                    route: "Hwange to Victoria Falls — 4 hours — 200km",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple/ family room",
+                    highlights: "Nambya educational cultural village tour and dinner cruise"
+                },
+                {
+                    day: 10,
+                    title: "Victoria Falls",
+                    description:
+                        "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning “The Smoke That Thunders.” During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It’s an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LBD",
+                    facilities: "Single/ Twin/ Double/ triple/ family room",
+                    highlights: "Guided tour of the Falls",
+                    optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more"
+                },
+                {
+                    day: 11,
+                    title: "Livingstone",
+                    description:
+                        "Livingstone experience begins with a guided tour of the magnificent Victoria Falls from the Zambian side, where you will walk through Mosi-oa-Tunya National Park and enjoy spectacular viewpoints of the cascading Zambezi River. Your guide will share the history, geology, wildlife and local stories surrounding this iconic natural wonder. After the Falls, continue into Livingstone city for a fascinating cultural and historical tour. Explore the city’s colonial heritage, important landmarks and local way of life before visiting the lively markets. Browse traditional crafts, handmade souvenirs, colorful fabrics, fresh produce and other locally made products while interacting with friendly local vendors. This combination of the Falls and city tour offers a wonderful introduction to Zambia’s natural beauty, history and vibrant culture.",
+                    route: "Victoria Falls to Livingstone — 20km — 1-2 hours",
+                    accommodation: "Protea Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "Guided tour of falls Zambia side and Livingstone city tour"
+                },
+                {
+                    day: 12,
+                    title: "Choma",
+                    description:
+                        "Begin your morning with an exciting rhino tracking experience, accompanied by an experienced guide and conservation team. Set out early while the temperatures are cool and wildlife is most active, following fresh tracks, footprints and other signs that may lead you to white rhinos. Along the way, learn about rhino behavior, their importance to the ecosystem and the conservation efforts protecting these magnificent animals. The experience provides an opportunity to observe rhinos responsibly in their natural environment while enjoying the surrounding wilderness and other wildlife sightings. After the tracking activity, return for breakfast and prepare for the next stage of your journey. You will then depart Livingstone and travel towards Choma, enjoying scenic landscapes and rural Zambian communities along the way.",
+                    route: "Livingstone to Choma — 220km — 5 hours",
+                    accommodation: "Kozo Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "Rhino tracking at Mosi-oa-Tunya National Park"
+                },
+                {
+                    day: 13,
+                    title: "Lower Zambezi National Park",
+                    description:
+                        "Lower Zambezi National Park is an unspoiled safari destination offering luxury experiences, incredible wildlife, greatest wilderness and breathing space. The remoteness of the Lower Zambezi is one of the biggest drawcards for most travelers as traces of people are hard to find — a rarity in the modern world. The park has big herds of elephants and buffalo, sunbathing crocodiles, sleeping lions, stealthy leopards, lively African wild dogs and many more. In the afternoon we enjoy a relaxing sunset boat cruise.",
+                    route: "Choma to Lower Zambezi — 350km — 6 hours",
+                    accommodation: "Mvuu Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ triple/ family chalet or tent",
+                    highlights: "Sunset boat cruise",
+                    optionalActivities: "Night game drive, bird watching and many more"
+                },
+                {
+                    day: 14,
+                    title: "Lower Zambezi National Park",
+                    description:
+                        "The Lower Zambezi, a key national park of Zambia, lies between the rugged and dramatic Zambezi escarpment and the wide and spectacular Zambezi River. It lies opposite the famous Mana Pools National Park in Zimbabwe, so the whole area on both sides of the Zambezi River is a massive wildlife sanctuary. It covers an area of 4,092 square kilometers and has good birdlife in the riverine. Today we have a full day exploring the park on a full-day game drive.",
+                    accommodation: "Mvuu Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ triple/ family chalet or tent",
+                    highlights: "Full day game drive",
+                    optionalActivities: "Sunset boat cruise, canoeing and many more"
+                },
+                {
+                    day: 15,
+                    title: "Lusaka",
+                    description:
+                        "Lusaka is the capital and largest city of Zambia. It is one of the fastest-developing cities in Southern Africa. Lusaka is the Centre of both commerce and government in Zambia and connects to the four main highways heading north, south, east and west. The late afternoon can be your option to walk around the city and explore it by foot.",
+                    accommodation: "Protea Hotel at Cairo Road or similar",
+                    meals: "LB",
+                    facilities: "Single/ twin/ Double/ triple/ family room",
+                    highlights: "City and market tour"
+                },
+                {
+                    day: 16,
+                    title: "Petauke",
+                    description:
+                        "Petauke is a town and seat of Petauke District located in the Eastern Province of Zambia. The town is situated in an agricultural area where farmers produce maize, cotton and many more crops. The local tribe found in the area is called Nsenga. Before we head out, we can visit the tribal textile workshops and learn how they make their traditional textiles.",
+                    route: "Lusaka to Petauke — 410km — 7 hours",
+                    accommodation: "Chimwemwe Executive Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "Local market tour and tribal textile visit"
+                },
+                {
+                    day: 17,
+                    title: "South Luangwa National Park",
+                    description:
+                        "South Luangwa National Park is in the east of Zambia’s Luangwa River valley. It’s known for its abundant wildlife; the river is often crowded with hippos. The woodland savannah is home to hundreds of bird species. In the late afternoon, we embark on an exciting night game drive from 4:00 PM to 8:00 PM, giving us daylight game viewing and thrilling night spotlighting when predators are most active.",
+                    route: "Petauke to South Luangwa",
+                    accommodation: "Msandile Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family tent",
+                    highlights: "Night game drive"
+                },
+                {
+                    day: 18,
+                    title: "South Luangwa National Park",
+                    description:
+                        "Covering over 9,050 square kilometers, South Luangwa is celebrated as the birthplace of walking safaris in Zambia. Very few places in Africa can offer the unique combination of open grassy plains, mature woodlands, and the impressive Luangwa River. Today includes a morning walking safari and an afternoon/night game drive, delivering exceptional wildlife viewing of leopards, lions, elephants, buffalo, and hippos in an uncrowded wilderness.",
+                    accommodation: "Msandile Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family tent",
+                    highlights: "Morning walking safari and night game drive"
+                },
+                {
+                    day: 19,
+                    title: "Central Lake Malawi",
+                    description:
+                        "Central Lake Malawi offers a beautiful blend of sparkling waters, sandy beaches, scenic landscapes and authentic local culture. This peaceful region is ideal for relaxing beside the lake, swimming, enjoying boat trips or simply taking in breathtaking sunsets over the water. Visitors can explore nearby fishing villages and local markets, where friendly communities showcase traditional lifestyles, colorful crafts and freshly caught fish.",
+                    route: "Mfuwe to Ngala — 410km — 9-10 hours",
+                    accommodation: "Ngala Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "Scenic journey across the border to Lake Malawi"
+                },
+                {
+                    day: 20,
+                    title: "Central Lake Malawi",
+                    description:
+                        "After breakfast, enjoy a morning cultural village and local market tour around Central Lake Malawi, offering an authentic glimpse into the traditions and daily life of local communities. Visit a nearby village to learn about traditional customs, livelihoods, crafts and fishing practices. In the afternoon, enjoy free time on the beach or choose from optional watersports like kayaking, canoeing, sailing, snorkeling, or swimming.",
+                    accommodation: "Ngala Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "Local village and market tour",
+                    optionalActivities: "Watersports — snorkeling, diving, fishing, boating, sailing cruise"
+                },
+                {
+                    day: 21,
+                    title: "Lilongwe",
+                    description:
+                        "After breakfast, depart Ngala Beach heading to Malawi's capital city, Lilongwe. In the afternoon, explore Lilongwe on a guided city and local market tour, discovering key landmarks, bustling market stalls filled with colorful fabrics and handmade crafts, and experiencing the friendly, welcoming culture of Malawi.",
+                    route: "Ngala Beach to Lilongwe — 310km — 5 hours",
+                    accommodation: "Riverside Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    highlights: "City and local market tour"
+                },
+                {
+                    day: 22,
+                    title: "Lilongwe / Flying Out",
+                    description:
+                        "Enjoy a relaxed final morning in Lilongwe after an incredible 22-day journey from Maun through Botswana, Zimbabwe, Zambia, and Malawi. Take time for breakfast, unwind, and reflect on the unforgettable memories. You will be transferred to Lilongwe International Airport for your departure flight, marking the end of your Southern Africa expedition.",
+                    accommodation: "Own arrangements",
+                    meals: "Breakfast",
+                    highlights: "Airport transfer and flight departure"
+                }
+            ]
+        },
+        {
+            id: "24",
+            slug: "5-days-zimbabwe",
+            title: "5 Days Zimbabwe",
+            category: ["Wildlife Safari", "Cultural Tour", "History"],
+            destinations: ["Victoria Falls", "Hwange National Park", "Matopos National Park", "Great Zimbabwe", "Harare"],
+            shortDescription:
+                "Experience an exciting 5-day journey from Victoria Falls to Harare, combining wildlife, culture, ancient rock art in Matopos, and Zimbabwe’s rich heritage at Great Zimbabwe.",
+            longDescription:
+                "Experience an exciting 5-day journey from Victoria Falls to Harare, combining wildlife, culture and Zimbabwe’s rich heritage. Travel to Hwange National Park, stopping at the Painted Dog Conservation Project to learn about efforts to protect Africa’s endangered wild dogs. Continue to a Nambya Cultural Village for an authentic cultural experience before enjoying a full-day game drive in Hwange, home to elephants, lions, buffalo and many other species. Continue to Matopos National Park for rhino tracking and spectacular ancient rock paintings. Journey onward to the historic Great Zimbabwe Ruins, then travel to Harare, where the memorable safari ends.",
+            duration: { days: 5, nights: 4 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 2000,
+            featured: true,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/rhino-walking-green.jpg",
+            images: [
+                "/images/safari/rhino-walking-green.jpg",
+                "/images/safari/elephants-waterhole.jpg",
+                "/images/safari/victoria-falls-wide.jpg",
+                "/images/safari/wild-dogs.jpg"
+            ],
+            inclusions: [
+                "4 nights’ accommodation in selected lodges/hotels",
+                "Meals as specified in the itinerary (Breakfast, Lunch and Dinner)",
+                "Private/shared road transport in a comfortable safari vehicle throughout the tour",
+                "Professional English-speaking safari guide/driver",
+                "Nambya Cultural Village Tour – cultural experience and interaction with the local community",
+                "Painted Dog Conservation Project visit",
+                "Hwange National Park full-day game drive in a 4x4 safari vehicle",
+                "National Park entry fees and applicable conservation fees",
+                "Matopos National Park rhino tracking with a professional guide",
+                "Visit to ancient rock paintings in the Matopos area",
+                "Great Zimbabwe Ruins guided visit and entrance fees",
+                "Bottled drinking water during road transfers and safari activities",
+                "Transfers between destinations from Victoria Falls through to Harare"
+            ],
+            exclusions: [
+                "International and domestic flights",
+                "Visa fees and travel documentation",
+                "Travel and medical insurance",
+                "Alcoholic drinks and soft drinks, unless specified",
+                "Tips and gratuities for guides, drivers and lodge staff",
+                "Personal expenses such as souvenirs, telephone calls and laundry",
+                "Optional activities not mentioned in the itinerary",
+                "Additional meals or drinks outside those specified",
+                "Airport transfers if not specifically included in the final booking",
+                "Any costs arising from flight delays, cancellations or changes",
+                "Anything not specifically listed under “What’s Included”"
+            ],
+            highlights: [
+                "Victoria Falls – Begin your adventure in the spectacular Victoria Falls",
+                "Painted Dog Conservation Project – Learn about Zimbabwe’s endangered African wild dogs and conservation efforts",
+                "Nambya Cultural Village – Experience traditional Nambya culture, customs, crafts and local life",
+                "Hwange National Park – Enjoy a full-day game drive in Zimbabwe’s largest national park",
+                "Matopos National Park – Experience guided rhino tracking in the dramatic granite landscape",
+                "Ancient Rock Paintings – Discover fascinating San rock art and prehistoric heritage",
+                "Great Zimbabwe Ruins – Explore the country’s iconic ancient stone city and archaeological heritage",
+                "Scenic Road Journey – Travel through Zimbabwe’s diverse landscapes from Victoria Falls to Harare",
+                "Harare – Finish the 5-day adventure in Zimbabwe’s capital city"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Hwange National Park",
+                    description:
+                        "Hwange National Park is Zimbabwe’s largest and most diverse wildlife reserve, known for its vast landscapes and abundant game. Located in the northwest of the country, it features open plains, teak forests, and waterholes that attract large concentrations of animals, especially during the dry season. Hwange is famous for its huge elephant population, one of the largest in Africa, as well as lions, buffalo, giraffes, zebras, and a variety of antelope species. The park is also a haven for birdlife and endangered species like African wild dogs. With fewer crowds than other parks, Hwange offers an authentic and peaceful safari experience rich in wildlife and natural beauty.",
+                    route: "Victoria Falls to Hwange — 5 hours — 190km",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    highlights: "Nambya cultural village tour and painted dog’s project",
+                    optionalActivities: "Afternoon and night game drive in concession"
+                },
+                {
+                    day: 2,
+                    title: "Hwange National Park",
+                    description:
+                        "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    highlights: "Full day game drive"
+                },
+                {
+                    day: 3,
+                    title: "Matopos National Park",
+                    description:
+                        "Matopos National Park, near Bulawayo, is a UNESCO World Heritage Site renowned for dramatic granite hills and deep cultural history. Visitors enjoy guided rhino tracking on foot, encountering black and white rhino in a pristine wilderness. Ancient San rock paintings decorate hidden caves, revealing stories of early inhabitants. The park is also home to the historic graves at World’s View, including Cecil John Rhodes and early pioneers. Scenic drives, walking safaris, birdlife, and spiritual landscapes make Matopos a powerful blend of wildlife, history, and natural beauty. Guides share conservation insights and respectful customs during visits for all guests.",
+                    accommodation: "Banff Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    highlights: "Rhino tracking, rock paintings and monuments"
+                },
+                {
+                    day: 4,
+                    title: "Great Zimbabwe",
+                    description:
+                        "The ruins at Great Zimbabwe are remarkable, lofty, majestic, awe-inspiring and timeless. The quality of the building in the places is outstanding. It was built by craftsmen who took pride in their work. There is nothing to compare with it in Africa, however when viewed in the context of history, it is more remarkable still. Bantu-speaking people — those who built Great Zimbabwe — are not the original inhabitants of this part of Africa.",
+                    route: "Matopos to Masvingo — 5 hours — 345km",
+                    accommodation: "Great Zimbabwe Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    highlights: "The Great Zimbabwe ruins guided tour"
+                },
+                {
+                    day: 5,
+                    title: "Harare",
+                    description:
+                        "Harare is Zimbabwe’s vibrant capital and largest city, blending modern life with rich cultural heritage. Known for its leafy avenues, open spaces, and warm climate, the city offers attractions such as the National Gallery of Zimbabwe, Harare Gardens, and bustling markets like Mbare Musika. Harare is a key commercial and administrative center, reflecting the country’s political and economic heartbeat. Surrounding areas feature golf courses, wildlife parks, and art studios, providing balance between urban energy and leisure. With friendly locals, diverse cuisine, and creative arts, Harare serves as an engaging gateway to exploring Zimbabwe.",
+                    route: "Masvingo to Harare — 240km — 5 hours",
+                    accommodation: "Own arrangements",
+                    meals: "L",
+                    highlights: "City tour and tour ending"
+                }
+            ]
+        },
+        {
+            id: "25",
+            slug: "the-circle-tour-of-botswana-and-zimbabwe",
+            title: "14 Days The Circle Tour of Botswana and Zimbabwe",
+            category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
+            destinations: [
+                "Victoria Falls",
+                "Hwange National Park",
+                "Bulawayo",
+                "Matopos National Park",
+                "Makgadikgadi Pans",
+                "Maun",
+                "Okavango Delta",
+                "Elephant Sands",
+                "Chobe National Park"
+            ],
+            shortDescription:
+                "Embark on an unforgettable 14-day circle tour through Zimbabwe and Botswana, combining Victoria Falls, Hwange, Matopos rhino tracking, Makgadikgadi Pans, the Okavango Delta, Elephant Sands, and Chobe.",
+            longDescription:
+                "Embark on an unforgettable circle tour through Zimbabwe and Botswana, combining spectacular waterfalls, rich cultural heritage and some of Southern Africa’s finest wildlife destinations. Begin in Victoria Falls, exploring one of the world’s natural wonders before travelling to Hwange National Park for exciting wildlife encounters. Continue to Bulawayo and Matopos National Park, where dramatic granite landscapes, ancient rock paintings and rhino tracking await. Cross into Botswana and discover the vast Makgadikgadi Salt Pans before continuing to Maun, the gateway to the Okavango Delta. Enjoy mokoro excursions, nature walks and wildlife experiences in the Delta. Travel onward to Elephant Sands, then continue to Chobe National Park for game drives and a river safari. Finally, return to Victoria Falls, completing this remarkable Zimbabwe-Botswana adventure.",
+            duration: { days: 14, nights: 13 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 5800,
+            featured: true,
+            bestSeller: true,
+            newPackage: true,
+            image: "/images/safari/elephant-river-blue.jpg",
+            images: [
+                "/images/safari/elephant-river-blue.jpg",
+                "/images/safari/victoria-falls-wide.jpg",
+                "/images/safari/delta-aerial.jpg",
+                "/images/safari/rhino-walking-green.jpg",
+                "/images/safari/elephants-waterhole.jpg"
+            ],
+            inclusions: [
+                "13 nights’ accommodation in selected lodges, hotels and safari camps",
+                "Meals as specified in the itinerary – breakfast, lunch and dinner",
+                "Transportation throughout the tour in a comfortable, air-conditioned safari vehicle",
+                "Professional English-speaking safari guide/driver throughout the journey",
+                "Victoria Falls guided tour on the Zimbabwean side",
+                "Zambezi River sunset dinner cruise",
+                "The Boma – Dinner & Drum Show experience",
+                "Hwange National Park full-day game drive with a 4x4 safari vehicle",
+                "Painted Dog Conservation Project visit",
+                "Bulawayo city tour, National and Railway Museum visit",
+                "Matopos National Park entrance and guided rhino tracking",
+                "Visit to ancient San rock paintings and monuments in Matopos",
+                "Makgadikgadi Salt Pans visit and sunset pan drive",
+                "Okavango Delta mokoro excursion",
+                "Guided nature walks in the Okavango Delta",
+                "Elephant Sands wildlife experience and waterhole viewing",
+                "Chobe National Park game drives",
+                "Chobe River afternoon boat cruise",
+                "National Park and conservation fees for included activities",
+                "Bottled drinking water during road transfers and safari activities",
+                "Cross-border assistance between Zimbabwe and Botswana",
+                "All road transfers and sightseeing mentioned in the itinerary",
+                "Return transfer to Victoria Falls, marking the end of the tour"
+            ],
+            exclusions: [
+                "International and domestic flights",
+                "Visa fees and passport-related expenses",
+                "Travel and medical insurance",
+                "Alcoholic drinks and soft drinks, unless specifically stated",
+                "Tips and gratuities for guides, drivers and lodge staff",
+                "Personal expenses such as laundry, telephone calls and souvenirs",
+                "Optional activities not mentioned in the itinerary",
+                "Meals and drinks outside those specified",
+                "Photography or video fees where applicable",
+                "Additional accommodation required because of early arrival or late departure",
+                "Costs resulting from flight delays, cancellations or itinerary changes",
+                "Any border or immigration charges not specifically listed",
+                "Any other services or expenses not specifically mentioned under “What’s Included”"
+            ],
+            highlights: [
+                "Victoria Falls – Guided exploration of one of the world’s greatest natural wonders",
+                "Hwange National Park – Full-day game drives with opportunities to see elephants, lions, buffalo and other wildlife",
+                "Bulawayo – Discover Zimbabwe’s historic second-largest city and its cultural heritage",
+                "Matopos National Park – Rhino tracking, dramatic granite scenery and ancient San rock paintings",
+                "Makgadikgadi Salt Pans – Experience vast landscapes, spectacular sunsets and unique desert wildlife",
+                "Maun – Gateway to the Okavango Delta and Botswana’s safari capital",
+                "Okavango Delta – Mokoro rides, guided nature walks and incredible wildlife viewing",
+                "Elephant Sands – Enjoy close-up encounters with elephants around the waterhole",
+                "Chobe National Park – Morning and afternoon game drives and an exciting Chobe River boat cruise",
+                "Botswana–Zimbabwe scenic road journey – Experience diverse landscapes, wildlife and local communities",
+                "Victoria Falls return – Complete the 14-day adventure back in Victoria Falls"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Victoria Falls",
+                    description:
+                        "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple or Family room",
+                    highlights: "Zambezi River sunset dinner cruise",
+                    optionalActivities: "Zipline, jetboat, city tour and many more"
+                },
+                {
+                    day: 2,
+                    title: "Victoria Falls",
+                    description:
+                        "Enjoy an unforgettable experience in Victoria Falls, beginning with a guided tour of one of the world’s largest and most spectacular waterfalls. Accompanied by an experienced guide, explore the rainforest pathways and scenic viewpoints while learning about the history, geology, and local legends surrounding this natural wonder. Feel the refreshing spray and hear the thunderous roar as the mighty Zambezi River plunges into the gorge below. After the tour, continue your evening at The Boma – Dinner & Drum Show for a vibrant cultural dining experience. Enjoy a delicious traditional buffet featuring local and international dishes, accompanied by energetic traditional dances, interactive drumming performances, and storytelling.",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LBD",
+                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    highlights: "Guided tour of the Falls and Boma dinner and drum show",
+                    optionalActivities: "Animal interactions (lion, elephant, cheetah), rafting, gorge swing, Zambia side falls"
+                },
+                {
+                    day: 3,
+                    title: "Hwange National Park",
+                    description:
+                        "Depart from Victoria Falls early morning after breakfast and enjoy a scenic road transfer south toward Hwange National Park, Zimbabwe’s largest and most famous wildlife reserve. Along the journey, stop at the inspiring Painted Dog Conservation project near Hwange. During the guided visit, learn about the behavior and challenges facing these rare predators and discover how local communities are involved in wildlife protection efforts. After the tour, continue through the beautiful landscapes of Hwange to arrive at your safari lodge in the afternoon, relax, and prepare for the exciting wildlife experiences ahead.",
+                    route: "Victoria Falls to Hwange — 4 hours — 190km",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single Room",
+                    highlights: "Painted Dog's Conservation project",
+                    optionalActivities: "Afternoon and night game drive in concession"
+                },
+                {
+                    day: 4,
+                    title: "Hwange National Park",
+                    description:
+                        "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration.",
+                    accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single Room",
+                    highlights: "Full day game drive"
+                },
+                {
+                    day: 5,
+                    title: "Bulawayo",
+                    description:
+                        "Bulawayo is Zimbabwe’s second-largest city and a historic industrial and cultural hub in the southwest of the country. Known for its wide streets and colonial architecture, it reflects a rich railway and mining heritage. The Railway Museum is a major highlight, showcasing vintage steam locomotives, royal carriages, and railway history that shaped the city’s growth. Bulawayo is also the gateway to Matobo Hills National Park, famous for dramatic granite landscapes, rock art, and rhino tracking.",
+                    route: "Hwange to Bulawayo — 255km — 4-5 hours",
+                    accommodation: "Banff Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Double room",
+                    highlights: "Bulawayo city tour, National and Railway Museum visit"
+                },
+                {
+                    day: 6,
+                    title: "Matopos National Park",
+                    description:
+                        "Matopos National Park, near Bulawayo, is a UNESCO World Heritage Site renowned for dramatic granite hills and deep cultural history. Visitors enjoy guided rhino tracking on foot, encountering black and white rhino in a pristine wilderness. Ancient San rock paintings decorate hidden caves, revealing stories of early inhabitants. The park is also home to the historic graves at World’s View, including Cecil John Rhodes and early pioneers. Scenic drives, walking safaris, birdlife, and spiritual landscapes make Matopos a powerful blend of wildlife, history, and natural beauty.",
+                    accommodation: "Banff Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Double room",
+                    highlights: "Rhino tracking, San rock paintings and World's View monuments"
+                },
+                {
+                    day: 7,
+                    title: "Makgadikgadi Salt Pans",
+                    description:
+                        "The Makgadikgadi Salt Pans are among the largest salt flats in the world, located in northeastern Botswana. These vast, shimmering plains are the remnants of an ancient super-lake that dried up thousands of years ago, leaving behind a surreal, lunar-like landscape of white salt crust stretching to the horizon. During the dry season, the pans appear barren and stark, offering dramatic scenery and incredible stargazing under clear skies. However, in the rainy season, parts of the pans fill with water, attracting thousands of flamingos and migratory birds.",
+                    route: "Bulawayo to Nata — 7 hours — 320km",
+                    accommodation: "Nata Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive"
+                },
+                {
+                    day: 8,
+                    title: "Maun",
+                    description:
+                        "Maun is the gateway into the Okavango Delta, Moremi and Kalahari for tourists in Botswana. It is the tourism capital and administrative Centre of Ngamiland district. We drive passing between Nxai and Makgadikgadi national park en route to Maun, offering opportunities to spot game along the way. The afternoon is set aside for relaxation or an optional scenic flight over the delta.",
+                    route: "Nata to Maun — 310km — 5 hours",
+                    accommodation: "Sedia Hotel / Island Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/Twin/Double/Triple and Family room",
+                    optionalActivities: "Scenic flight over the Okavango Delta"
+                },
+                {
+                    day: 9,
+                    title: "Okavango Delta",
+                    description:
+                        "An overnight trip to the Okavango Delta from Maun offers a rewarding glimpse into one of Africa’s most unique wetlands. The journey begins with a scenic road transfer to the delta’s edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, enjoy relaxation and guided nature walks, learning about animal tracks, plants, and the delicate ecosystem.",
+                    accommodation: "Bush Camp or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin tent",
+                    highlights: "Mokoro ride and guided nature walks"
+                },
+                {
+                    day: 10,
+                    title: "Maun",
+                    description:
+                        "Discover the beauty of the Okavango Delta with an early morning guided nature walk through its untouched wilderness. Accompanied by experienced local guides, walk quietly along island trails while learning about animal tracks, birdlife, and the delicate ecosystem. Later, enjoy a traditional mokoro ride through the crystal-clear channels of the delta before transferring back to Maun while enjoying scenic views along the journey.",
+                    route: "Okavango Delta to Maun — 50km — 3 hours",
+                    accommodation: "Sedia Hotel / Island Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/Twin/Double/Triple and Family room",
+                    highlights: "Nature walks and Mokoro ride",
+                    optionalActivities: "Scenic flight over the Delta"
+                },
+                {
+                    day: 11,
+                    title: "Elephant Sands",
+                    description:
+                        "Experience the wild beauty of Botswana at Elephant Sands Lodge, located near Nata on a private unfenced conservancy where elephants roam freely around the camp. This unique bush lodge is famous for its natural waterhole, where guests can watch large herds of elephants drinking just a few meters from the restaurant or pool deck. In the afternoon, enjoy an exciting game drive through the conservancy guided by experienced trackers, followed by sundowners in the wilderness before dinner under the stars.",
+                    route: "Maun to Elephant Sands — 385km — 7 hours",
+                    accommodation: "Elephant Sands Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/Twin/Double/Triple and Family room",
+                    highlights: "Watching elephants at the natural waterhole and afternoon game drive",
+                    optionalActivities: "Horse ride, walking safaris"
+                },
+                {
+                    day: 12,
+                    title: "Chobe National Park",
+                    description:
+                        "Chobe National Park is one of Africa’s premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River, providing a wonderful perspective as animals gather along the riverbanks to drink and cool off.",
+                    route: "Elephant Sands to Kasane — 4 hours — 270km",
+                    accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Afternoon Chobe River boat cruise"
+                },
+                {
+                    day: 13,
+                    title: "Chobe National Park",
+                    description:
+                        "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. After a midday rest, the afternoon game drive resumes as the golden light creates perfect conditions for photography and spotting large elephant herds, predators, and plains game.",
+                    accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Morning and afternoon game drives in Chobe"
+                },
+                {
+                    day: 14,
+                    title: "Victoria Falls",
+                    description:
+                        "Travel from Chobe in Botswana to the world-famous Victoria Falls on a scenic road journey through the beautiful landscapes of northern Botswana and Zimbabwe. Departing after breakfast, drive towards Kazungula Border enjoying views near the meeting point of four countries before crossing into Zimbabwe. Arriving in Victoria Falls in the afternoon marks the official end of your remarkable 14-day circle tour.",
+                    route: "Kasane to Victoria Falls — 90km — 2 hours",
+                    accommodation: "Own Arrangements",
+                    meals: "L",
+                    highlights: "Scenic drive crossing Kazungula Border and tour conclusion in Victoria Falls"
+                }
+            ]
         }
 ];
 
