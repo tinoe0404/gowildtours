@@ -1686,7 +1686,7 @@ const packagesData: Package[] = [
                 description: "Lusaka is the capital and largest city of Zambia. It is one of the fastest-developing cities in Southern Africa. Lusaka is the Centre of both commerce and government in Zambia and connects to the four main highways heading north, south, east and west. The later afternoon can be your optional to walk around the city, try to explore it by foot.",
                 accommodation: "Protea Hotel at Cairo Road or similar",
                 meals: "LB",
-                facilities: "Double room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "City and market tour",
             },
             {
@@ -1787,7 +1787,7 @@ const packagesData: Package[] = [
                 route: "Matusadona to Siavonga",
                 accommodation: "Lodge or similar",
                 meals: "LDB",
-                facilities: "Double room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Lake Kariba Bridge tour and fish market",
             },
             {
@@ -1797,7 +1797,7 @@ const packagesData: Package[] = [
                 route: "Siavonga to Lusaka",
                 accommodation: "M'kango Golfview Hotel or similar",
                 meals: "LBD",
-                facilities: "Double room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Culture market tour. Tour ends after lunch in Lusaka.",
             },
             {
@@ -1872,7 +1872,7 @@ const packagesData: Package[] = [
                 description: "Victoria Falls is also known as Mosi-OA-Tunya which means “The Smoke That Thunder” in the local Tonga language, highlighting the powerful mist and noise created by the falls. The mist from the falls creates a microclimate, supporting a rainforest ecosystem on the surrounding cliffs. Our tour guide for the safari we will pick you up from Victoria Falls International Airport then welcome you Victoria Falls Zimbabwe then transfer you to your overnight accommodation for checking in and tour briefing. The guide will arrange the place for lunch then around past 4pm you will be picked up for Zambezi River Sunset Dinner cruise which is the main highlight of the day, cruising in the Zambezi River and having drinks, alcohol and dinner included on the cruise. Likely back to the accommodation around past 8pm.",
                 accommodation: "Telescope Boutique Lodge or similar",
                 meals: "LDB. (Likely to have lunch in town if time allows)",
-                facilities: "Single/ Twin/ Double/ Triple or Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Zambezi River Dinner cruise",
                 optionalActivities: "Zipline, jetboat, city tour and many more"
             },
@@ -1882,7 +1882,7 @@ const packagesData: Package[] = [
                 description: "It is a UNESCO World Heritage Site and is considered one of the largest and most famous waterfall system in the world. The area around Victoria Falls is known for various adrenaline pumping activities such as white- water rafting, bungee jumping and many more. After breakfast we go for guided tour of the Victoria Falls for 2-3hours then lunch at Lookout Cafe a stunning view of the Zambezi River, gorge and the Victoria Falls bridge or at Baines restaurant overlooking the Zambezi River just the upper part of the Falls. Then the afternoon is free for optional activities and relaxing. 6:30pm, we depart for Boma dinner and drum beat and back around 9:30pm.",
                 accommodation: "Telescope Boutique Lodge or similar",
                 meals: "LBD. (Lunch at Lookout Café or Baines restaurant depends with availabilities for space.)",
-                facilities: "Single/ Twin/Double/ Triple or Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Guided tour of the Falls and Boma dinner and drum show",
                 optionalActivities: "Animal interactions (lion, elephant and cheetah) rafting, gorge swing, Zambia side falls need a Kaza visa, and many more"
             },
@@ -1893,7 +1893,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Hwange—7hour—290km",
                 accommodation: "Miombo Safari Camp or similar",
                 meals: "LDB",
-                facilities: "Single Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Painted dog’s project",
                 optionalActivities: "Afternoon and night game drive in concession"
             },
@@ -1903,7 +1903,7 @@ const packagesData: Package[] = [
                 description: "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
                 accommodation: "Miombo Safari Camp or similar",
                 meals: "LDB",
-                facilities: "Single Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Full day game drive"
             },
             {
@@ -2021,7 +2021,7 @@ const packagesData: Package[] = [
                 route: "Mfuwe International Airport to Livingstone- (by Proflight Zambia)",
                 accommodation: "Radisson Hotel or similar",
                 meals: "LDB",
-                facilities: "Single/ Twin/ Double/ Triple and Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Mukuni Boma Dinner"
             },
             {
@@ -2030,7 +2030,7 @@ const packagesData: Package[] = [
                 description: "Visiting Victoria Falls and enjoying walking safaris in Livingstone offers an unforgettable blend of adventure and wildlife. At the falls, guests explore viewpoints like Knife-Edge Bridge, Boiling Pot, and the Main Falls, witnessing the thunderous spray and dramatic gorges. Walking safaris in Mosi-oa-Tunya National Park provide a close-up encounter with nature, including tracking the protected white rhinos with experienced rangers. These immersive experiences showcase Livingstone’s beauty, combining breathtaking scenery with intimate wildlife moments for a truly remarkable visit.",
                 accommodation: "Radisson Hotel or similar",
                 meals: "LDB",
-                facilities: "Single/ Twin/ Double/ Triple and Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Victoria Falls guided tour in Zambia side and rhino tracking",
                 optionalActivities: "Rafting, animal interactions and many more"
             },
@@ -2040,7 +2040,7 @@ const packagesData: Package[] = [
                 description: "Our crew we will welcome you to the 7days Victoria Falls, Chobe and Okavango Delta Safari at the Victoria Falls international Airport then transferred to your overnight accommodation. The Tour Leader, we will brief you the tour program and make sure everything is done perfectly.\n\nVictoria Falls is also known as Mosi-OA-Tunya which means “The Smoke That Thunder” in the local Tonga language, highlighting the powerful mist and noise created by the falls. The mist from the falls creates a microclimate, supporting a rainforest ecosystem on the surrounding cliffs. Later afternoon we depart for Zambezi Sunset dinner cruise and back after 8pm.",
                 accommodation: "Insika Lodge or similar",
                 meals: "LDB",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin tent",
                 highlights: "City, local market and museum tour in Livingstone and Dinner cruise in Zimbabwe side on Zambezi River",
                 optionalActivities: "Zipline, jetboat, city tour and many more"
             },
@@ -2050,7 +2050,7 @@ const packagesData: Package[] = [
                 description: "It is a UNESCO World Heritage Site and is considered one of the largest and most famous waterfall system in the world. The area around Victoria Falls is known for various adrenaline pumping activities such as white- water rafting, bungee jumping and many more. After breakfast we visit the Victoria Falls for the guided tour of the falls then afternoon is free for optional activities.",
                 accommodation: "Insika Lodge or similar",
                 meals: "LDB",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Victoria Falls guided tour of the Falls and Boma Dinner and drum beat",
                 optionalActivities: "Rafting, gorge swing, helicopter flight over the Falls, white rafting, animal interaction with lions, cheetah and elephants and many more"
             },
@@ -2061,7 +2061,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Chobe- (Border crossing Kazungula Border post)",
                 accommodation: "River View Lodge or similar",
                 meals: "LDB",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon boat cruise in Chobe River"
             },
             {
@@ -2070,7 +2070,7 @@ const packagesData: Package[] = [
                 description: "Experience abundant of wildlife in the Chobe national park. Africa largest concentration of elephants, buffalos, impalas, legendary fish eagle and more bird life along the river. As we continue searching for wildlife by doing morning and afternoon game drives will meander along the banks of the Chobe River, the day set aside to explore the Chobe national park with these 2 game drives the morning and afternoon give us more chances to see game.",
                 accommodation: "River View Lodge or similar",
                 meals: "BDL",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Morning and afternoon game drive",
                 optionalActivities: "Full day and night game drive"
             },
@@ -2081,7 +2081,7 @@ const packagesData: Package[] = [
                 route: "Kasane to Maun-Okavango Delta",
                 accommodation: "Xaoo Camp or similar",
                 meals: "LDB",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin tent",
                 highlights: "Mokoro ride afternoon"
             },
             {
@@ -2090,7 +2090,7 @@ const packagesData: Package[] = [
                 description: "Morning nature walks safaris with a guide with a gun, experiencing nature, learning a lot of stuff small to big stuffs, animal spoors, droppings, plants and many more. In the afternoon we do boating cruise safaris in the Okavango delta.",
                 accommodation: "Xaoo Camp or similar",
                 meals: "LDB",
-                facilities: "Single/ twin/ double/ Triple or family room",
+                facilities: "Single/ Twin tent",
                 highlights: "Nature walks and boating safaris"
             },
             {
@@ -2100,7 +2100,7 @@ const packagesData: Package[] = [
                 route: "Okavango Delta to Maun to Windhoek",
                 accommodation: "Avani Windhoek Hotel or similar",
                 meals: "LDB",
-                facilities: "Single/ Twin/ Double/ Triple and Family room",
+                facilities: "Single/ Twin tent",
                 highlights: "City tour"
             },
             {
@@ -2119,7 +2119,7 @@ const packagesData: Package[] = [
                 description: "A half-day Sandwich Harbour tour explores the dramatic meeting point of towering dunes and the Atlantic Ocean near Sandwich Harbour, within Namib-Naukluft National Park. Departing from Walvis Bay, you travel in a 4x4 along the beach and over golden dunes shaped by coastal winds. Along the way, spot flamingos, pelicans, and other birdlife in the lagoon. Guides share insights into the unique desert ecosystem and local history. The highlight is reaching Sandwich Harbour itself, where dunes plunge into the sea. The experience often includes scenic stops, photography opportunities, and light refreshments before returning.",
                 accommodation: "Swakopmund Luxury Suites or similar",
                 meals: "B",
-                facilities: "Single/Twin/ Double/ Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Full day combination of Dolphin and Seal Catamaran Cruise + Sandwich Harbour",
                 optionalActivities: "Sky diving, quadbikes, catamaran, Dolphin cruise and many more"
             },
@@ -2141,7 +2141,7 @@ const packagesData: Package[] = [
                 route: "Sesriem to Sossusvlei",
                 accommodation: "Desert Hills Camp or similar",
                 meals: "LDB",
-                facilities: "Single /Twin/ Double/ Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Dune 45, Dead vlei, Sossusvlei and Big Daddy",
                 optionalActivities: "Scenic flights or Hot air Ballon over the Dunes"
             },
@@ -2328,7 +2328,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Kasane",
                 accommodation: "Tlou Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon boat cruise",
                 optionalActivities: "Kazungula bridge tour and night game drive",
             },
@@ -2338,7 +2338,7 @@ const packagesData: Package[] = [
                 description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants — Chobe's signature attraction — are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
                 accommodation: "Tlou Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Morning and afternoon game drive",
                 optionalActivities: "Impalila village tour, full day and night game drive",
             },
@@ -2448,7 +2448,7 @@ const packagesData: Package[] = [
                 route: "Windhoek to Etosha — 5 hours — 460km",
                 accommodation: "Etosha Omusati Lodge / Eldorado Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple or Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon game drive",
             },
             {
@@ -2457,7 +2457,7 @@ const packagesData: Package[] = [
                 description: "Etosha National Park is a world-renowned safari destination, spanning over 22,000 square kilometers of salt pans, savannahs, and acacia woodlands. The park is home to a remarkable diversity of wildlife, including elephants, lions, leopards, rhinos, giraffes, zebras, and a variety of antelope species. Its permanent and seasonal waterholes provide excellent opportunities for observing animals in their natural habitats. A full-day game drive in Etosha allows travelers to explore deeper into the park with morning and afternoon excursions. Experienced guides track wildlife, explain animal behavior, and point out unique flora and fauna. Stops at waterholes offer close-up encounters, while the changing light throughout the day enhances photography and provides a complete safari experience across Etosha's striking landscapes.",
                 accommodation: "Etosha Omusati Lodge / Eldorado Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Full day game drive",
             },
             {
@@ -2467,7 +2467,7 @@ const packagesData: Package[] = [
                 route: "Etosha to Swakopmund",
                 accommodation: "Ocean House / Swakopmund Luxury Suites or similar",
                 meals: "Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "City tour",
             },
             {
@@ -2476,7 +2476,7 @@ const packagesData: Package[] = [
                 description: "A half-day Sandwich Harbour tour explores the dramatic meeting point of towering dunes and the Atlantic Ocean near Sandwich Harbour, within Namib-Naukluft National Park. Departing from Walvis Bay, you travel in a 4x4 along the beach and over golden dunes shaped by coastal winds. Along the way, spot flamingos, pelicans, and other birdlife in the lagoon. Guides share insights into the unique desert ecosystem and local history. The highlight is reaching Sandwich Harbour itself, where dunes plunge into the sea. The experience often includes scenic stops, photography opportunities, and light refreshments before returning.",
                 accommodation: "Ocean House / Swakopmund Luxury Suites or similar",
                 meals: "Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Half day Sandwich Harbour tour",
                 optionalActivities: "Skydiving, quad bikes, catamaran, dolphin cruise and many more",
             },
@@ -2487,7 +2487,7 @@ const packagesData: Package[] = [
                 route: "Swakopmund to Sesriem",
                 accommodation: "Wekebi Safari Lodge / Desert Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Flamingos at Walvis Bay, Moon landscape, Tropic of Capricorn and Sesriem Canyon",
                 optionalActivities: "Scenic flights over the sand dunes and afternoon game drive",
             },
@@ -2498,7 +2498,7 @@ const packagesData: Package[] = [
                 route: "Sesriem to Sossusvlei",
                 accommodation: "Wekebi Safari Lodge / Desert Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Dune 45, Deadvlei, Sossusvlei and Big Daddy",
                 optionalActivities: "Scenic flights or hot air balloon over the dunes",
             },
@@ -2509,7 +2509,7 @@ const packagesData: Package[] = [
                 route: "Sesriem to Windhoek — 330km — 5 hours",
                 accommodation: "Protea Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "City tour",
             },
             {
@@ -2519,7 +2519,7 @@ const packagesData: Package[] = [
                 route: "Windhoek to Ghanzi — 620km — 10 hours",
                 accommodation: "Symponia Guesthouse Ghanzi or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple or Family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Bushman/San walk tour",
             },
             {
@@ -2529,7 +2529,7 @@ const packagesData: Package[] = [
                 route: "Ghanzi to Okavango Delta — 350km — 6 hours",
                 accommodation: "Bush camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin tent",
+                facilities: "Single/ Twin tent",
                 highlights: "Mokoro ride and nature walks",
             },
             {
@@ -2539,7 +2539,7 @@ const packagesData: Package[] = [
                 route: "Okavango Delta to Maun — 50km — 3 hours",
                 accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family room",
+                facilities: "Single/ Twin tent",
                 highlights: "Nature walks and mokoro ride",
                 optionalActivities: "Scenic flight over the Delta",
             },
@@ -2550,7 +2550,7 @@ const packagesData: Package[] = [
                 route: "Maun to Nata — 5 hours — 320km",
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive",
             },
             {
@@ -2560,7 +2560,7 @@ const packagesData: Package[] = [
                 route: "Nata to Kasane — 5 hours — 320km",
                 accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon boat cruise",
             },
             {
@@ -2569,7 +2569,7 @@ const packagesData: Package[] = [
                 description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants — Chobe's signature attraction — are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
                 accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Morning and afternoon game drive",
             },
             {
@@ -2579,7 +2579,7 @@ const packagesData: Package[] = [
                 route: "Kasane to Victoria Falls — 90km — 2 hours",
                 accommodation: "Victoria Falls Oasis Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Dinner cruise",
             },
             {
@@ -2588,7 +2588,7 @@ const packagesData: Package[] = [
                 description: "A guided tour of the Victoria Falls on the Zimbabwean side offers some of the most spectacular and panoramic views of this natural wonder. Led by an experienced guide, you explore well-maintained pathways and viewpoints, learning about the falls' formation, local history, and unique rainforest ecosystem created by the constant spray. In the evening, enjoy an unforgettable cultural experience at The Boma – Dinner & Drum Show. This lively event combines a traditional buffet featuring local dishes, including game meat, with vibrant entertainment. Guests are invited to join interactive drumming sessions, traditional dance performances, and storytelling. The energetic atmosphere, rich flavors, and cultural immersion make it a perfect way to end the day in Victoria Falls.",
                 accommodation: "Victoria Falls Oasis Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single / Twin / Double / Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Victoria Falls guided tour, Boma dinner and drum beat",
                 optionalActivities: "Rafting, gorge swing, slide, day tour in Livingstone, Devil's Pool, rhino tracking, game drive",
             },
@@ -2680,7 +2680,7 @@ const packagesData: Package[] = [
                 description: "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
                 accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin tent",
                 highlights: "Dinner cruise"
             },
             {
@@ -2689,7 +2689,7 @@ const packagesData: Package[] = [
                 description: "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning 'The Smoke That Thunders.' During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It's an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
                 accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Victoria Falls guided tour",
                 optionalActivities: "Rafting, gorge swing, slide / day tour in Livingstone – Devils pool, rhino tracking / game drive"
             },
@@ -2700,7 +2700,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Livingstone back to Victoria Falls",
                 accommodation: "Kabakwe Lodge / Victoria Falls Oasis Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Double/twin/Triple or family room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Rhino tracking, guided tour of the Falls in Zambia side, Livingstone city and market tour"
             },
             {
@@ -2710,7 +2710,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Kasane — 2 hours — 90km",
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon boat cruise"
             },
             {
@@ -2719,7 +2719,7 @@ const packagesData: Package[] = [
                 description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Morning and afternoon game drive"
             },
             {
@@ -2729,7 +2729,7 @@ const packagesData: Package[] = [
                 route: "Kasane to Nata — 5 hours — 320km",
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Pan drive – Makgadikgadi Salt Pans sunset pan drive"
             },
             {
@@ -2738,7 +2738,7 @@ const packagesData: Package[] = [
                 description: "After breakfast in Nata, depart on a scenic drive toward the magnificent Okavango Delta via the safari gateway town of Maun. The journey takes you through beautiful wilderness landscapes, passing between Makgadikgadi National Park and Nxai Pan National Park, where vast open plains, acacia woodlands, and occasional wildlife sightings create an unforgettable African safari atmosphere. Upon arrival near the delta, leave the vehicles behind and board a traditional mokoro canoe for a peaceful ride into the heart of the Okavango Delta. Quietly gliding through narrow water channels surrounded by reeds and birdlife offers a true wilderness experience. Later, enjoy a guided nature walk on the delta islands, where your guide shares knowledge about animal tracks, plants, and the ecosystem. Spend the night in the bush under the stars, surrounded by the magical sounds of the African wilderness.",
                 accommodation: "Bush camp",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin tent",
+                facilities: "Single/ Twin tent",
                 highlights: "Okavango delta overnight excursion – Mokoro ride and nature walks"
             },
             {
@@ -2748,7 +2748,7 @@ const packagesData: Package[] = [
                 route: "Okavango Delta – Maun – 50km – 3 hours",
                 accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family room",
+                facilities: "Single/ Twin tent",
                 highlights: "Okavango delta overnight excursion – Mokoro ride and nature walks",
                 optionalActivities: "Scenic flight over the Delta"
             },
@@ -2824,7 +2824,7 @@ const packagesData: Package[] = [
                 route: "Victoria Falls to Kasane — 2 hours — 90km",
                 accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Afternoon boat cruise"
             },
             {
@@ -2833,7 +2833,7 @@ const packagesData: Package[] = [
                 description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
                 accommodation: "Tlou Safari Lodge / Greenland Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Morning and afternoon game drive"
             },
             {
@@ -2843,7 +2843,7 @@ const packagesData: Package[] = [
                 route: "Kasane to Nata — 5 hours — 320km",
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin/Double/Triple and Family Room",
+                facilities: "Single/ Twin/ Double/ Triple and Family Room",
                 highlights: "Pan drive – Makgadikgadi Salt Pans sunset pan drive"
             },
             {
@@ -2853,7 +2853,7 @@ const packagesData: Package[] = [
                 route: "Nata to Okavango Delta — 360km — 8 hours",
                 accommodation: "Bush camp",
                 meals: "Lunch, Dinner, Breakfast",
-                facilities: "Single/Twin tent",
+                facilities: "Single/ Twin tent",
                 highlights: "Mokoro ride and nature walks"
             },
             {
@@ -3105,7 +3105,7 @@ const packagesData: Package[] = [
                         "Arrival at Maun International Airport, our crew will welcome you and transfer you to our overnight accommodation. Checking in, lunch and relaxing afternoon getting ready for the next day safari.",
                     accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/Triple/ Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Picked up at Maun International Airport"
                 },
                 {
@@ -3126,7 +3126,7 @@ const packagesData: Package[] = [
                     route: "Okavango Delta to Maun — 50km — 3 hours",
                     accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/Twin/Double/Triple and Family room",
+                    facilities: "Single/ Twin tent",
                     highlights: "Okavango Delta overnight excursion — Mokoro ride and nature walks",
                     optionalActivities: "Scenic flight over the Delta"
                 },
@@ -3170,7 +3170,7 @@ const packagesData: Package[] = [
                     route: "Kasane to Hwange — 7 hours — 290km",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ twin/ double/ triple/ family tent",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Painted dog’s project",
                     optionalActivities: "Afternoon and night game drive in concession"
                 },
@@ -3181,7 +3181,7 @@ const packagesData: Package[] = [
                         "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/ Triple/ family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Full day game drive"
                 },
                 {
@@ -3192,7 +3192,7 @@ const packagesData: Package[] = [
                     route: "Hwange to Victoria Falls — 4 hours — 200km",
                     accommodation: "Victoria Falls Oasis Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/ Triple/ family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Nambya educational cultural village tour and dinner cruise"
                 },
                 {
@@ -3202,7 +3202,7 @@ const packagesData: Package[] = [
                         "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning “The Smoke That Thunders.” During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It’s an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
                     accommodation: "Victoria Falls Oasis Hotel or similar",
                     meals: "LBD",
-                    facilities: "Single/ Twin/ Double/ triple/ family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Guided tour of the Falls",
                     optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more"
                 },
@@ -3214,7 +3214,7 @@ const packagesData: Package[] = [
                     route: "Victoria Falls to Livingstone — 20km — 1-2 hours",
                     accommodation: "Protea Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Guided tour of falls Zambia side and Livingstone city tour"
                 },
                 {
@@ -3225,7 +3225,7 @@ const packagesData: Package[] = [
                     route: "Livingstone to Choma — 220km — 5 hours",
                     accommodation: "Kozo Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Rhino tracking at Mosi-oa-Tunya National Park"
                 },
                 {
@@ -3258,7 +3258,7 @@ const packagesData: Package[] = [
                         "Lusaka is the capital and largest city of Zambia. It is one of the fastest-developing cities in Southern Africa. Lusaka is the Centre of both commerce and government in Zambia and connects to the four main highways heading north, south, east and west. The late afternoon can be your option to walk around the city and explore it by foot.",
                     accommodation: "Protea Hotel at Cairo Road or similar",
                     meals: "LB",
-                    facilities: "Single/ twin/ Double/ triple/ family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "City and market tour"
                 },
                 {
@@ -3269,7 +3269,7 @@ const packagesData: Package[] = [
                     route: "Lusaka to Petauke — 410km — 7 hours",
                     accommodation: "Chimwemwe Executive Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Local market tour"
                 },
                 {
@@ -3301,7 +3301,7 @@ const packagesData: Package[] = [
                     route: "Mfuwe to Ngala — 410km — 9-10 hours",
                     accommodation: "Ngala Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Scenic journey across the border to Lake Malawi"
                 },
                 {
@@ -3311,7 +3311,7 @@ const packagesData: Package[] = [
                         "After breakfast, enjoy a morning cultural village and local market tour around Central Lake Malawi, offering an authentic glimpse into the traditions and daily life of local communities. Visit a nearby village to learn about traditional customs, livelihoods, crafts and fishing practices. In the afternoon, enjoy free time on the beach or choose from optional watersports like kayaking, canoeing, sailing, snorkeling, or swimming.",
                     accommodation: "Ngala Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Local village and market tour",
                     optionalActivities: "Watersports — snorkeling, diving, fishing, boating, sailing cruise"
                 },
@@ -3323,7 +3323,7 @@ const packagesData: Package[] = [
                     route: "Ngala Beach to Lilongwe — 310km — 5 hours",
                     accommodation: "Riverside Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Double/ twin/ Triple or family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "City and local market tour"
                 },
                 {
@@ -3409,7 +3409,7 @@ const packagesData: Package[] = [
                     route: "Victoria Falls to Hwange — 5 hours — 190km",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Nambya cultural village tour and painted dog’s project",
                     optionalActivities: "Afternoon and night game drive in concession"
                 },
@@ -3420,7 +3420,7 @@ const packagesData: Package[] = [
                         "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Full day game drive"
                 },
                 {
@@ -3430,7 +3430,7 @@ const packagesData: Package[] = [
                         "Matopos National Park, near Bulawayo, is a UNESCO World Heritage Site renowned for dramatic granite hills and deep cultural history. Visitors enjoy guided rhino tracking on foot, encountering black and white rhino in a pristine wilderness. Ancient San rock paintings decorate hidden caves, revealing stories of early inhabitants. The park is also home to the historic graves at World’s View, including Cecil John Rhodes and early pioneers. Scenic drives, walking safaris, birdlife, and spiritual landscapes make Matopos a powerful blend of wildlife, history, and natural beauty. Guides share conservation insights and respectful customs during visits for all guests.",
                     accommodation: "Banff Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Rhino tracking, rock paintings and monuments"
                 },
                 {
@@ -3441,7 +3441,7 @@ const packagesData: Package[] = [
                     route: "Matopos to Masvingo — 5 hours — 345km",
                     accommodation: "Great Zimbabwe Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "The Great Zimbabwe ruins guided tour"
                 },
                 {
@@ -3552,7 +3552,7 @@ const packagesData: Package[] = [
                         "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
                     accommodation: "Victoria Falls Oasis Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Zambezi River sunset dinner cruise",
                     optionalActivities: "Zipline, jetboat, city tour and many more"
                 },
@@ -3563,7 +3563,7 @@ const packagesData: Package[] = [
                         "Enjoy an unforgettable experience in Victoria Falls, beginning with a guided tour of one of the world’s largest and most spectacular waterfalls. Accompanied by an experienced guide, explore the rainforest pathways and scenic viewpoints while learning about the history, geology, and local legends surrounding this natural wonder. Feel the refreshing spray and hear the thunderous roar as the mighty Zambezi River plunges into the gorge below. After the tour, continue your evening at The Boma – Dinner & Drum Show for a vibrant cultural dining experience. Enjoy a delicious traditional buffet featuring local and international dishes, accompanied by energetic traditional dances, interactive drumming performances, and storytelling.",
                     accommodation: "Victoria Falls Oasis Hotel or similar",
                     meals: "LBD",
-                    facilities: "Single/ Twin/Double/ Triple or Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Guided tour of the Falls and Boma dinner and drum show",
                     optionalActivities: "Animal interactions (lion, elephant, cheetah), rafting, gorge swing, Zambia side falls"
                 },
@@ -3575,7 +3575,7 @@ const packagesData: Package[] = [
                     route: "Victoria Falls to Hwange — 4 hours — 190km",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single Room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Nambya cultural village tour and Painted Dog's Conservation project",
                     optionalActivities: "Afternoon and night game drive in concession"
                 },
@@ -3586,7 +3586,7 @@ const packagesData: Package[] = [
                         "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration.",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single Room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Full day game drive"
                 },
                 {
@@ -3597,7 +3597,7 @@ const packagesData: Package[] = [
                     route: "Hwange to Bulawayo — 255km — 4-5 hours",
                     accommodation: "Banff Lodge or similar",
                     meals: "LDB",
-                    facilities: "Double room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Bulawayo city tour, National and Railway Museum visit"
                 },
                 {
@@ -3607,7 +3607,7 @@ const packagesData: Package[] = [
                         "Matopos National Park, near Bulawayo, is a UNESCO World Heritage Site renowned for dramatic granite hills and deep cultural history. Visitors enjoy guided rhino tracking on foot, encountering black and white rhino in a pristine wilderness. Ancient San rock paintings decorate hidden caves, revealing stories of early inhabitants. The park is also home to the historic graves at World’s View, including Cecil John Rhodes and early pioneers. Scenic drives, walking safaris, birdlife, and spiritual landscapes make Matopos a powerful blend of wildlife, history, and natural beauty.",
                     accommodation: "Banff Lodge or similar",
                     meals: "LDB",
-                    facilities: "Double room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Rhino tracking, San rock paintings and World's View monuments"
                 },
                 {
@@ -3629,7 +3629,7 @@ const packagesData: Package[] = [
                     route: "Nata to Maun — 310km — 5 hours",
                     accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/Twin/Double/Triple and Family room",
+                    facilities: "Single/ Twin tent",
                     optionalActivities: "Scenic flight over the Okavango Delta"
                 },
                 {
@@ -3650,7 +3650,7 @@ const packagesData: Package[] = [
                     route: "Okavango Delta to Maun — 50km — 3 hours",
                     accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/Twin/Double/Triple and Family room",
+                    facilities: "Single/ Twin tent",
                     highlights: "Nature walks and Mokoro ride",
                     optionalActivities: "Scenic flight over the Delta"
                 },
@@ -3662,7 +3662,7 @@ const packagesData: Package[] = [
                     route: "Maun to Elephant Sands — 385km — 7 hours",
                     accommodation: "Elephant Sands Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/Twin/Double/Triple and Family room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Watching elephants at the natural waterhole and afternoon game drive",
                     optionalActivities: "Horse ride, walking safaris"
                 },
@@ -3848,7 +3848,7 @@ const packagesData: Package[] = [
                     route: "Kasane to Elephant Sands — 270km — 4 hours",
                     accommodation: "Elephant Sands Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/Triple and Family Room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     highlights: "Waterhole elephant viewing and afternoon game drive"
                 },
                 {
@@ -3871,7 +3871,7 @@ const packagesData: Package[] = [
                     route: "Gweta to Maun — 3 hours — 210km",
                     accommodation: "Sedia Hotel or similar",
                     meals: "LDB",
-                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    facilities: "Single/ Twin tent",
                     optionalActivities: "Scenic airplane or helicopter flight over the Okavango Delta"
                 },
                 {
@@ -3881,7 +3881,7 @@ const packagesData: Package[] = [
                         "After breakfast in Maun, depart on a scenic drive toward the magnificent Okavango Delta through beautiful wilderness landscapes and mopani woodlands in 4x4 vehicles. Upon arrival near the delta waterways, board a traditional mokoro canoe for a peaceful ride into the heart of the delta, quietly gliding through narrow channels surrounded by reeds and birdlife. After the mokoro ride, enjoy an afternoon game drive en route to Kazikini Community Camp bordering Moremi, spending the night under canvas in the bush.",
                     accommodation: "Kazikini Community Camp",
                     meals: "LDB",
-                    facilities: "Single / Twin tent",
+                    facilities: "Single/ Twin tent",
                     highlights: "Okavango Delta mokoro ride and afternoon game drive in Kazikini bordering Moremi"
                 },
                 {
@@ -3891,7 +3891,7 @@ const packagesData: Package[] = [
                         "Enjoy a full-day game drive through Moremi Game Reserve, one of Botswana’s premier wildlife destinations. Depart early with your experienced safari guide and explore the reserve’s diverse landscapes of open grasslands, woodlands, lagoons, and seasonal floodplains. Keep watch for elephants, buffalo, giraffes, zebras, antelopes, and abundant birdlife, with opportunities to encounter lions, leopards, wild dogs, and other predators, stopping for a picnic lunch in the wilderness.",
                     accommodation: "Kazikini Community Camp",
                     meals: "LDB",
-                    facilities: "Single / Twin tent",
+                    facilities: "Single/ Twin tent",
                     highlights: "Full-day game drive in Moremi Game Reserve"
                 },
                 {
@@ -3902,7 +3902,7 @@ const packagesData: Package[] = [
                     route: "Kazikini to Central Kalahari / Rakops — 6 hours — 261km",
                     accommodation: "Rakops River Lodge or similar",
                     meals: "LDB",
-                    facilities: "Single and twin tent / room",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
                     optionalActivities: "Game drive in Makgadikgadi Pans National Park"
                 },
                 {
