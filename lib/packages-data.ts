@@ -142,6 +142,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Painted Dog Conservation Project",
                 optionalActivities: "Afternoon and night game drive in concession",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -150,6 +151,7 @@ const packagesData: Package[] = [
                 accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -159,6 +161,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Dinner cruise",
                 optionalActivities: "Morning game drive, Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -168,6 +171,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Breakfast, Dinner",
                 highlights: "Guided tour of the Falls",
                 optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -177,6 +181,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 6,
@@ -197,6 +202,7 @@ const packagesData: Package[] = [
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 8,
@@ -206,6 +212,7 @@ const packagesData: Package[] = [
                 accommodation: "Bush Camping",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Okavango Delta overnight tour — Mokoro ride and nature walks",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 9,
@@ -216,6 +223,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Nature walks and mokoro ride",
                 optionalActivities: "Scenic flight over the Delta",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 10,
@@ -225,6 +233,7 @@ const packagesData: Package[] = [
                 accommodation: "Elephant Sands Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Watching elephants drinking at the waterhole and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 11,
@@ -234,6 +243,7 @@ const packagesData: Package[] = [
                 accommodation: "Own arrangements",
                 meals: "Lunch",
                 highlights: "Tour concludes in Victoria Falls",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -296,6 +306,7 @@ const packagesData: Package[] = [
                 accommodation: "Etosha Omusati Lodge / Eldorado Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -304,6 +315,7 @@ const packagesData: Package[] = [
                 accommodation: "Etosha Omusati Lodge / Eldorado Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -313,6 +325,7 @@ const packagesData: Package[] = [
                 accommodation: "Ocean House / Swakopmund Luxury Suites or similar",
                 meals: "Breakfast",
                 highlights: "City tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -322,6 +335,7 @@ const packagesData: Package[] = [
                 meals: "Breakfast",
                 highlights: "Half day Sandwich Harbour tour",
                 optionalActivities: "Skydiving, quad bikes, catamaran, dolphin cruise and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -332,6 +346,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Flamingos at Walvis Bay, Moon landscape, Tropic of Capricorn and Sesriem Canyon",
                 optionalActivities: "Scenic flights over the sand dunes and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 6,
@@ -342,6 +357,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Dune 45, Deadvlei, Sossusvlei and Big Daddy",
                 optionalActivities: "Scenic flights or hot air balloon over the dunes",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 7,
@@ -350,6 +366,7 @@ const packagesData: Package[] = [
                 route: "Sesriem to Windhoek",
                 meals: "Breakfast",
                 highlights: "Tour concludes — transfer to Windhoek Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -424,6 +441,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -432,6 +450,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Morning and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -441,6 +460,7 @@ const packagesData: Package[] = [
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -450,6 +470,7 @@ const packagesData: Package[] = [
                 accommodation: "Bush Camping",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Okavango Delta overnight tour — Mokoro ride and nature walks",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 5,
@@ -460,6 +481,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Nature walks and mokoro ride",
                 optionalActivities: "Scenic flight over the Delta",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 6,
@@ -469,6 +491,7 @@ const packagesData: Package[] = [
                 accommodation: "Elephant Sands Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Watching elephants drinking at the waterhole and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 7,
@@ -478,6 +501,7 @@ const packagesData: Package[] = [
                 accommodation: "Own arrangements",
                 meals: "Lunch",
                 highlights: "Tour concludes in Victoria Falls",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -541,6 +565,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Dinner cruise",
                 optionalActivities: "Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -550,6 +575,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Breakfast, Dinner",
                 highlights: "Guided tour of the Falls and Boma dinner and drum show",
                 optionalActivities: "Animal interactions (lion, elephant and cheetah), rafting, gorge swing, Zambia side falls (need a Kaza visa), and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -557,6 +583,7 @@ const packagesData: Package[] = [
                 description: "In the morning you do optional activities before you take the flight back home. After breakfast the tour ends at Victoria Falls International Airport where you will be dropped to get your flight to your next destination. NB: We recommend prebooking of optional activities due to limited space — seasonal demand and busy periods may lead to not being able to do your dream activities in Victoria Falls.",
                 meals: "Breakfast",
                 highlights: "Tour concludes — transfer to Victoria Falls Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -619,6 +646,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -627,6 +655,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Morning and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -636,6 +665,7 @@ const packagesData: Package[] = [
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Pan drive — Makgadikgadi Salt Pans sunset pan drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -645,6 +675,7 @@ const packagesData: Package[] = [
                 accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 optionalActivities: "Scenic flight over the Delta",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 5,
@@ -653,6 +684,7 @@ const packagesData: Package[] = [
                 accommodation: "Bush Camping",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Okavango day tour — Mokoro ride and nature walks",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 6,
@@ -661,6 +693,7 @@ const packagesData: Package[] = [
                 accommodation: "Own arrangements",
                 meals: "Breakfast",
                 highlights: "Tour ends at Maun International Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -734,6 +767,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Victoria Falls guided tour",
                 optionalActivities: "Rafting, gorge swing, slide / day tour in Livingstone — Devils pool, rhino tracking / game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -744,6 +778,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Painted Dog Conservation Project",
                 optionalActivities: "Afternoon and night game drive in concession",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -752,6 +787,7 @@ const packagesData: Package[] = [
                 accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -761,6 +797,7 @@ const packagesData: Package[] = [
                 accommodation: "Banff Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Bulawayo city tour and museum visit",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -770,6 +807,7 @@ const packagesData: Package[] = [
                 accommodation: "Banff Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day at Matobo National Park including rhino tracking, rock paintings and national monuments",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 6,
@@ -779,6 +817,7 @@ const packagesData: Package[] = [
                 accommodation: "Great Zimbabwe Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "The Great Zimbabwe Ruins guided tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 7,
@@ -788,6 +827,7 @@ const packagesData: Package[] = [
                 accommodation: "Own arrangements",
                 meals: "Lunch",
                 highlights: "Drive to the Capital City of Zimbabwe — the tour ends after lunch time in Harare",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -859,6 +899,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Painted Dog's Project",
                 optionalActivities: "Afternoon and night game drive in concession",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -867,6 +908,7 @@ const packagesData: Package[] = [
                 accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -875,6 +917,7 @@ const packagesData: Package[] = [
                 route: "Hwange to Victoria Falls — 4 hours — 200km",
                 meals: "Lunch",
                 highlights: "Nambya educational cultural village tour — Tour ends at lunch time in Victoria Falls",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -941,6 +984,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast (Likely to have lunch in town if time allows)",
                 highlights: "Dinner cruise",
                 optionalActivities: "Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -950,6 +994,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Breakfast, Dinner (Lunch at Lookout Café or Baines restaurant depends with availabilities for space)",
                 highlights: "Guided tour of the Falls and Boma dinner and drum show",
                 optionalActivities: "Animal interactions (lion, elephant and cheetah), rafting, gorge swing, Zambia side falls (need a Kaza visa), and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -959,6 +1004,7 @@ const packagesData: Package[] = [
                 accommodation: "Telescope Boutique Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Rhino tracking, guided tour of the Falls in Zambia side, Livingstone city and market tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -966,6 +1012,7 @@ const packagesData: Package[] = [
                 description: "In the morning you do optional activities before you take the flight back home. After breakfast the tour ends at Victoria Falls International Airport where you will be dropped to get your flight to your next destination. NB: We recommend prebooking of optional activities due to limited space — seasonal demand and busy periods may lead to not being able to do your dream activities in Victoria Falls.",
                 meals: "Breakfast",
                 highlights: "Tour concludes — transfer to Victoria Falls Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -1046,6 +1093,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast (Likely to have lunch in town if time allows)",
                 highlights: "Dinner cruise",
                 optionalActivities: "Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -1055,6 +1103,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Breakfast, Dinner (Lunch at Lookout Café or Baines restaurant)",
                 highlights: "Guided tour of the Falls and Boma dinner and drum show",
                 optionalActivities: "Animal interactions (lion, elephant and cheetah), rafting, gorge swing, Zambia side falls (need a Kaza visa), and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -1064,6 +1113,7 @@ const packagesData: Package[] = [
                 accommodation: "Telescope Boutique Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Rhino tracking, guided tour of the Falls in Zambia side, Livingstone city and market tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -1073,6 +1123,7 @@ const packagesData: Package[] = [
                 accommodation: "Telescope Boutique Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Mid-morning boat cruise and game drive (Full day Chobe tour)",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -1080,6 +1131,7 @@ const packagesData: Package[] = [
                 description: "In the morning you do optional activities before you take the flight back home. After breakfast the tour ends at Victoria Falls International Airport where you will be dropped to get your flight to your next destination. NB: We recommend prebooking of optional activities due to limited space — seasonal demand and busy periods may lead to not being able to do your dream activities in Victoria Falls.",
                 meals: "Breakfast",
                 highlights: "Tour concludes — transfer to Victoria Falls Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -1148,6 +1200,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Dinner cruise",
                 optionalActivities: "Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 2,
@@ -1157,6 +1210,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Victoria Falls guided tour and Boma Dinner and drum beat",
                 optionalActivities: "Rafting, gorge swing, helicopter flight over the Falls, animal interaction with lions, cheetah and elephants and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -1166,6 +1220,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlouwana Safari Camp / Chobe Safari Lodge / Jackalberry Chobe or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise on the Chobe River",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -1175,6 +1230,7 @@ const packagesData: Package[] = [
                 meals: "Breakfast, Dinner, Lunch",
                 highlights: "Morning and afternoon game drives",
                 optionalActivities: "Full day and night game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -1184,6 +1240,7 @@ const packagesData: Package[] = [
                 accommodation: "Xaoo Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon mokoro ride",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 6,
@@ -1192,6 +1249,7 @@ const packagesData: Package[] = [
                 accommodation: "Xaoo Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Nature walks and boating safaris",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 7,
@@ -1199,6 +1257,7 @@ const packagesData: Package[] = [
                 description: "After breakfast, you will be transferred to Maun International Airport to take your flight home or to your next destination. This marks the end of your 7-day safari with us.",
                 route: "Okavango Delta to Maun",
                 highlights: "Tour ends at Maun International Airport",
+                    facilities: "Single/ Twin tent"
             },
         ],
     },
@@ -1265,6 +1324,7 @@ const packagesData: Package[] = [
                 accommodation: "Avani Windhoek Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "City tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -1274,6 +1334,7 @@ const packagesData: Package[] = [
                 accommodation: "Etosha Omusati Lodge / Etosha Village or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -1282,6 +1343,7 @@ const packagesData: Package[] = [
                 accommodation: "Etosha Omusati Lodge / Etosha Village or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -1291,6 +1353,7 @@ const packagesData: Package[] = [
                 accommodation: "Twyfelfontein Country Lodge / Brandberg White Lady Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Petrified Forest, Burnt mountains, Twyfelfontein Heritage Site and Organ pipes",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -1300,6 +1363,7 @@ const packagesData: Package[] = [
                 accommodation: "Beach Lodge / Hansa Hotel / Swakopmund Luxury Suites or similar",
                 meals: "Breakfast",
                 highlights: "City tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 6,
@@ -1309,6 +1373,7 @@ const packagesData: Package[] = [
                 meals: "Breakfast",
                 highlights: "Full day — Dolphin and Seal Catamaran Cruise + Sandwich Harbour 4x4 Tour",
                 optionalActivities: "Sky diving, quadbikes and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 7,
@@ -1319,6 +1384,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Flamingos at Walvis Bay, Moon landscape, Tropic of Capricorn and Sesriem canyon",
                 optionalActivities: "Scenic flights over the Sand Dunes and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 8,
@@ -1329,6 +1395,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Dune 45, Deadvlei, Sossusvlei and Big Daddy",
                 optionalActivities: "Scenic flights or Hot air Balloon over the Dunes",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 9,
@@ -1336,6 +1403,7 @@ const packagesData: Package[] = [
                 description: "After breakfast we drive back to Windhoek Hosea Kutako International Airport to mark the end of the safari.",
                 route: "Sesriem to Windhoek",
                 highlights: "Tour ends with transfer to Windhoek Hosea Kutako International Airport",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -1403,6 +1471,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Victoria Falls guided tour, Boma dinner and drum beat",
                 optionalActivities: "Rafting, gorge swing, slide / day tour in Livingstone-Devils pool, rhino tracking / game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -1412,6 +1481,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -1420,6 +1490,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Morning and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -1429,6 +1500,7 @@ const packagesData: Package[] = [
                 accommodation: "Nata Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Pan drive - Makgadikgadi Salt Pans sunset pan drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -1438,6 +1510,7 @@ const packagesData: Package[] = [
                 accommodation: "Sedia Hotel / Island Safari Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 optionalActivities: "Scenic flight over the Delta",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 6,
@@ -1446,6 +1519,7 @@ const packagesData: Package[] = [
                 accommodation: "Bush camp or similar (Camping)",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Mokoro ride and nature walks",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 7,
@@ -1453,6 +1527,7 @@ const packagesData: Package[] = [
                 description: "Early morning nature walks, then have our brunch back on the mokoro ride getting out of the Okavango Delta to Maun to mark the end of the tour. After breakfast, you will be transferred to Maun international airport to take your flight to your home or next destination.",
                 route: "Okavango Delta to Maun",
                 highlights: "Tour ends at Maun International Airport",
+                    facilities: "Single/ Twin tent"
             },
         ],
     },
@@ -1528,6 +1603,7 @@ const packagesData: Package[] = [
                 accommodation: "The Painted Dog's Lagoon / Mfuwe Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Night game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 2,
@@ -1536,6 +1612,7 @@ const packagesData: Package[] = [
                 accommodation: "The Painted Dog's Lagoon / Mfuwe Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Morning and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 3,
@@ -1544,6 +1621,7 @@ const packagesData: Package[] = [
                 accommodation: "The Painted Dog's Lagoon / Mfuwe Lodge or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Morning walk and night game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 4,
@@ -1553,6 +1631,7 @@ const packagesData: Package[] = [
                 accommodation: "Protea Hotel / Avani Victoria Falls Resort / Radisson Hotel or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Mukuni Boma Dinner",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 5,
@@ -1562,6 +1641,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Victoria Falls guided tour (Zambia side) and rhino tracking",
                 optionalActivities: "Rafting, animal interactions and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 6,
@@ -1571,6 +1651,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "City, local market and museum tour in Livingstone and Dinner cruise in Zimbabwe side on Zambezi River",
                 optionalActivities: "Zipline, jetboat, city tour and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 7,
@@ -1580,6 +1661,7 @@ const packagesData: Package[] = [
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Victoria Falls guided tour and Boma Dinner and drum beat",
                 optionalActivities: "Rafting, gorge swing, helicopter flight over the Falls, white rafting, animal interaction with lions, cheetah and elephants",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 8,
@@ -1589,6 +1671,7 @@ const packagesData: Package[] = [
                 accommodation: "Tlouwana Safari Camp / River View Lodge / Jackalberry Chobe or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Afternoon boat cruise on the Chobe River",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 9,
@@ -1598,6 +1681,7 @@ const packagesData: Package[] = [
                 meals: "Breakfast, Dinner, Lunch",
                 highlights: "Morning and afternoon game drive",
                 optionalActivities: "Full day and night game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
             {
                 day: 10,
@@ -1607,6 +1691,7 @@ const packagesData: Package[] = [
                 accommodation: "Xaoo Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Mokoro ride in the afternoon",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 11,
@@ -1615,6 +1700,7 @@ const packagesData: Package[] = [
                 accommodation: "Xaoo Camp or similar",
                 meals: "Lunch, Dinner, Breakfast",
                 highlights: "Nature walks and boating safaris",
+                    facilities: "Single/ Twin tent"
             },
             {
                 day: 12,
@@ -1622,6 +1708,7 @@ const packagesData: Package[] = [
                 description: "After breakfast, you will be transferred to Maun International Airport to take your flight home or to your next destination. This marks the end of your 12-day safari with us.",
                 route: "Okavango Delta to Maun",
                 highlights: "Tour ends at Maun International Airport",
+                    facilities: "Single/ Twin tent"
             },
         ],
     },
@@ -1805,6 +1892,7 @@ const packagesData: Package[] = [
                 title: "Lusaka — Departure",
                 description: "Flying out from Lusaka.",
                 highlights: "Flying out",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -1912,7 +2000,8 @@ const packagesData: Package[] = [
                 description: "Driving from Hwange National Park to Victoria Falls Airport typically takes around 3.5 to 4.5hours, depending on road conditions. The route passes through scenic rural landscapes, small villages, and stretches of open savannah, offering glimpses of local wildlife along the way. Travelers experience a smooth transition from the wilderness of Hwange to the bustling town of Victoria Falls, with opportunities for photos or short stops. The journey ends at the airport, ready for onward flights or connections.",
                 route: "Hwange to Victoria Falls—4hours—200km",
                 meals: "L",
-                highlights: "Nambya educational cultural village tour. Tour end at lunch time in Victoria Falls."
+                highlights: "Nambya educational cultural village tour. Tour end at lunch time in Victoria Falls.",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             }
         ]
     },
@@ -2150,7 +2239,8 @@ const packagesData: Package[] = [
                 title: "Windhoek / Flying out",
                 description: "After breakfast we drive back to Windhoek Hosea Kutako International Airport to mark the end of the safari.",
                 route: "Sesriem to Windhoek",
-                highlights: "Flying out"
+                highlights: "Flying out",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             }
         ]
     },
@@ -2263,7 +2353,8 @@ const packagesData: Package[] = [
                 route: "Kasane to Victoria Falls",
                 accommodation: "Own arrangement",
                 highlights: "Victoria Falls guided tour of the Falls",
-                optionalActivities: "Boma dinner, Sunset cruise and many more"
+                optionalActivities: "Boma dinner, Sunset cruise and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             }
         ]
     },
@@ -2351,6 +2442,7 @@ const packagesData: Package[] = [
                 meals: "Lunch",
                 highlights: "Optional: Victoria Falls guided tour of the Falls",
                 optionalActivities: "Boma dinner, Sunset cruise and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -2600,6 +2692,7 @@ const packagesData: Package[] = [
                 meals: "Breakfast",
                 highlights: "Tour ends after breakfast",
                 optionalActivities: "Rafting, gorge swing, slide, helicopter flights and more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
             },
         ],
     },
@@ -2757,7 +2850,8 @@ const packagesData: Package[] = [
                 title: "Flying out from Maun International Airport",
                 description: "After breakfast enjoy a relaxing morning in Maun, giving you time to unwind after your unforgettable safari adventure. You may enjoy breakfast at your lodge, take in the peaceful atmosphere, or simply reflect on the incredible wildlife and landscapes experienced during your journey through Botswana. Later, you will be transferred to Maun Airport for check-in and your onward flight. This marks the end of your memorable African safari experience filled with beautiful wilderness moments and lasting memories.",
                 route: "Okavango Delta to Maun",
-                optionalActivities: "Tour end at Maun International Airport"
+                optionalActivities: "Tour end at Maun International Airport",
+                    facilities: "Single/ Twin tent"
             }
         ]
     },
@@ -2861,7 +2955,8 @@ const packagesData: Package[] = [
                 title: "Maun / Flying out",
                 description: "A morning nature walk, then mokoro ride getting out of the Okavango Delta. You will be dropped off at Maun International Airport to mark the end of the tour.",
                 accommodation: "Own arrangements",
-                optionalActivities: "Tour end at Maun International Airport"
+                optionalActivities: "Tour end at Maun International Airport",
+                    facilities: "Single/ Twin tent"
             },
         ]
         },
@@ -2936,7 +3031,8 @@ const packagesData: Package[] = [
                     accommodation: "Victoria Falls Oasis Hotel / Telescope Boutique Lodge or similar",
                     meals: "LDB",
                     highlights: "Dinner Cruise",
-                    optionalActivities: "Zipline, jetboat, helicopter flight and many more"
+                    optionalActivities: "Zipline, jetboat, helicopter flight and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 2,
@@ -2945,7 +3041,8 @@ const packagesData: Package[] = [
                     accommodation: "Victoria Falls Oasis Hotel / Telescope Boutique Lodge or similar",
                     meals: "LBD",
                     highlights: "Guided tour of the Falls",
-                    optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more"
+                    optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 3,
@@ -2954,7 +3051,8 @@ const packagesData: Package[] = [
                     route: "Victoria Falls to Kasane – 2 hours – 90km",
                     accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                     meals: "LDB",
-                    highlights: "Afternoon boat cruise"
+                    highlights: "Afternoon boat cruise",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 4,
@@ -2962,7 +3060,8 @@ const packagesData: Package[] = [
                     description: "Morning and afternoon game drives in Chobe National Park.",
                     accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                     meals: "LDB",
-                    highlights: "Morning and afternoon game drive"
+                    highlights: "Morning and afternoon game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 5,
@@ -2972,7 +3071,8 @@ const packagesData: Package[] = [
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
                     highlights: "Painted Dog's Project",
-                    optionalActivities: "Afternoon and night game drive in concession"
+                    optionalActivities: "Afternoon and night game drive in concession",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 6,
@@ -2980,7 +3080,8 @@ const packagesData: Package[] = [
                     description: "Full‑day game drive exploring Hwange’s diverse wildlife.",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
-                    highlights: "Full day game drive"
+                    highlights: "Full day game drive",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 7,
@@ -2988,7 +3089,8 @@ const packagesData: Package[] = [
                     description: "Visit Nambya Cultural Educational Village, then transfer back to Victoria Falls for departure.",
                     route: "Hwange to Victoria Falls — 4 hours — 200km",
                     meals: "L",
-                    highlights: "Nambya Cultural Village tour"
+                    highlights: "Nambya Cultural Village tour",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
         },
@@ -3333,7 +3435,8 @@ const packagesData: Package[] = [
                         "Enjoy a relaxed final morning in Lilongwe after an incredible 22-day journey from Maun through Botswana, Zimbabwe, Zambia, and Malawi. Take time for breakfast, unwind, and reflect on the unforgettable memories. You will be transferred to Lilongwe International Airport for your departure flight, marking the end of your Southern Africa expedition.",
                     accommodation: "Own arrangements",
                     meals: "Breakfast",
-                    highlights: "Airport transfer and flight departure"
+                    highlights: "Airport transfer and flight departure",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
         },
@@ -3452,7 +3555,8 @@ const packagesData: Package[] = [
                     route: "Masvingo to Harare — 240km — 5 hours",
                     accommodation: "Own arrangements",
                     meals: "L",
-                    highlights: "City tour and tour ending"
+                    highlights: "City tour and tour ending",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
         },
@@ -3695,7 +3799,8 @@ const packagesData: Package[] = [
                     route: "Kasane to Victoria Falls — 90km — 2 hours",
                     accommodation: "Own Arrangements",
                     meals: "L",
-                    highlights: "Scenic drive crossing Kazungula Border and tour conclusion in Victoria Falls"
+                    highlights: "Scenic drive crossing Kazungula Border and tour conclusion in Victoria Falls",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
         },
@@ -3947,7 +4052,8 @@ const packagesData: Package[] = [
                     accommodation: "Own Arrangements",
                     meals: "Lunch",
                     highlights: "Scenic transfer crossing into Zimbabwe and tour conclusion in Victoria Falls",
-                    optionalActivities: "Sunrise pan drive, sunset boat cruise, Boma dinner"
+                    optionalActivities: "Sunrise pan drive, sunset boat cruise, Boma dinner",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
         }

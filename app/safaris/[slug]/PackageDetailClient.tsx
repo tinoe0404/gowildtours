@@ -295,7 +295,7 @@ function ItineraryItem({ item, isLastDay }: { item: { day: number; title: string
                         </div>
                         <div>
                             <span className="font-bold text-dark-deep block mb-1">Facilities:</span>
-                            <span>{item.facilities || "En-suite, Wi-Fi (where available), Restaurant"}</span>
+                            <span>{item.facilities || "Single/ Twin/ Double/ Triple and Family Room"}</span>
                         </div>
                         <div>
                             <span className="font-bold text-dark-deep block mb-1">Highlights included:</span>
