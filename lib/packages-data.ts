@@ -201,11 +201,11 @@ const packagesData: Package[] = [
             {
                 day: 8,
                 title: "Okavango Delta",
-                description: "An overnight excursion trip to the Okavango Delta offers a rewarding glimpse into one of Africa's most unique wetlands. The journey begins with a scenic road transfer to the delta's edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, you enjoy guided nature walks, learning about animal tracks, plants, and the delicate ecosystem. Wildlife such as antelope and smaller species may be seen. After a relaxing picnic and time to absorb the tranquil surroundings, you return by mokoro and transfer back to Maun the same day.",
+                description: "An overnight excursion trip to the Okavango Delta offers a rewarding glimpse into one of Africa's most unique wetlands. The journey begins with a scenic road transfer to the delta's edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, you enjoy guided nature walks, learning about animal tracks, plants, and the delicate ecosystem. Spend the afternoon soaking in the tranquil surroundings before enjoying a campfire dinner and an unforgettable night of bush camping under the stars.",
                 route: "Nata to Okavango Delta — 340km — 8 hours",
                 accommodation: "Bush Camping",
                 meals: "Lunch, Dinner, Breakfast",
-                highlights: "Okavango day tour — Mokoro ride and nature walks",
+                highlights: "Okavango Delta overnight tour — Mokoro ride and nature walks",
             },
             {
                 day: 9,
@@ -445,11 +445,11 @@ const packagesData: Package[] = [
             {
                 day: 4,
                 title: "Okavango Delta",
-                description: "An overnight excursion trip to the Okavango Delta offers a rewarding glimpse into one of Africa's most unique wetlands. The journey begins with a scenic road transfer to the delta's edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, you enjoy guided nature walks, learning about animal tracks, plants, and the delicate ecosystem. Wildlife such as antelope and smaller species may be seen. After a relaxing picnic and time to absorb the tranquil surroundings, you return by mokoro and transfer back to Maun the same day.",
+                description: "An overnight excursion trip to the Okavango Delta offers a rewarding glimpse into one of Africa's most unique wetlands. The journey begins with a scenic road transfer to the delta's edge, where local guides welcome you. You then glide through narrow channels in a traditional mokoro, quietly navigating reed-lined waterways while spotting birds and aquatic life. Reaching a secluded island, you enjoy guided nature walks, learning about animal tracks, plants, and the delicate ecosystem. Spend the afternoon soaking in the tranquil surroundings before enjoying a campfire dinner and an unforgettable night of bush camping under the stars.",
                 route: "Nata to Okavango Delta — 340km — 8 hours",
                 accommodation: "Bush Camping",
                 meals: "Lunch, Dinner, Breakfast",
-                highlights: "Okavango day tour — Mokoro ride and nature walks",
+                highlights: "Okavango Delta overnight tour — Mokoro ride and nature walks",
             },
             {
                 day: 5,
@@ -2227,7 +2227,7 @@ const packagesData: Package[] = [
         itinerary: [
             {
                 day: 1,
-                title: "Victoria Falls (Zambezi River Dinner Cruise)",
+                title: "Victoria Falls",
                 description: "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
                 accommodation: "Insika Lodge or similar",
                 meals: "LDB",
@@ -2237,7 +2237,7 @@ const packagesData: Package[] = [
             },
             {
                 day: 2,
-                title: "Chobe National Park (Kasane & Chobe River Sunset Boat Cruise)",
+                title: "Chobe National Park",
                 description: "Chobe national park is one of Africa's premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments. Sunset boat cruise is one of the most not miss activity in Chobe national park since it has got a say to your safari. Chobe river provides a very broad habitat for the bird life and it is possible to see many beautiful species.",
                 route: "Victoria Falls to Kasane",
                 accommodation: "River View Lodge or similar",
@@ -2248,7 +2248,7 @@ const packagesData: Package[] = [
             },
             {
                 day: 3,
-                title: "Chobe National Park (Morning & Afternoon Game Drives)",
+                title: "Chobe National Park ",
                 description: "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe's signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa's top wildlife destinations.",
                 accommodation: "River View Lodge or similar",
                 meals: "LDB",
@@ -2258,7 +2258,7 @@ const packagesData: Package[] = [
             },
             {
                 day: 4,
-                title: "Victoria Falls (Guided Tour of the Falls & Departure)",
+                title: "Victoria Falls",
                 description: "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning \"The Smoke That Thunders.\" During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It's an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
                 route: "Kasane to Victoria Falls",
                 accommodation: "Own arrangement",
