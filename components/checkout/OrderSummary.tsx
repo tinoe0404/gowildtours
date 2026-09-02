@@ -102,8 +102,8 @@ export default function OrderSummary() {
                     </div>
                     <div className="flex items-center gap-2">
                         <Phone className="w-4 h-4 text-accent" />
-                        <a href="tel:+263771234567" className="hover:text-accent transition-colors">
-                            +263 77 123 4567
+                        <a href="tel:+263716707132" className="hover:text-accent transition-colors">
+                            +263 71 670 7132
                         </a>
                     </div>
                 </div>

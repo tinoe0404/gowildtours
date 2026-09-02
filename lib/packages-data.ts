@@ -3027,10 +3027,10 @@ const packagesData: Package[] = [
             image: "/images/safari/delta-aerial.jpg",
             images: [
                 "/images/safari/delta-aerial.jpg",
-                "/images/safari/elephants-waterhole.jpg",
+                "/images/safari/lake-malawi.jpg",
                 "/images/safari/victoria-falls-wide.jpg",
                 "/images/safari/leopard-walking-path.jpg",
-                "/images/safari/elephant-river.jpg"
+                "/images/safari/elephants-waterhole.jpg"
             ],
             inclusions: [
                 "21 nights’ accommodation in carefully selected lodges, hotels and safari camps",
@@ -3265,12 +3265,12 @@ const packagesData: Package[] = [
                     day: 16,
                     title: "Petauke",
                     description:
-                        "Petauke is a town and seat of Petauke District located in the Eastern Province of Zambia. The town is situated in an agricultural area where farmers produce maize, cotton and many more crops. The local tribe found in the area is called Nsenga. Before we head out, we can visit the tribal textile workshops and learn how they make their traditional textiles.",
+                        "Petauke is a town and seat of Petauke District located in the Eastern Province of Zambia. The town is situated in an agricultural area where farmers produce maize, cotton and many more crops. The local tribe found in the area is called Nsenga.",
                     route: "Lusaka to Petauke — 410km — 7 hours",
                     accommodation: "Chimwemwe Executive Lodge or similar",
                     meals: "LDB",
                     facilities: "Single/ Double/ twin/ Triple or family room",
-                    highlights: "Local market tour and tribal textile visit"
+                    highlights: "Local market tour"
                 },
                 {
                     day: 17,
@@ -3500,7 +3500,7 @@ const packagesData: Package[] = [
                 "Zambezi River sunset dinner cruise",
                 "The Boma – Dinner & Drum Show experience",
                 "Hwange National Park full-day game drive with a 4x4 safari vehicle",
-                "Painted Dog Conservation Project visit",
+                "Nambya Cultural Village tour and Painted Dog Conservation Project visit",
                 "Bulawayo city tour, National and Railway Museum visit",
                 "Matopos National Park entrance and guided rhino tracking",
                 "Visit to ancient San rock paintings and monuments in Matopos",
@@ -3571,12 +3571,12 @@ const packagesData: Package[] = [
                     day: 3,
                     title: "Hwange National Park",
                     description:
-                        "Depart from Victoria Falls early morning after breakfast and enjoy a scenic road transfer south toward Hwange National Park, Zimbabwe’s largest and most famous wildlife reserve. Along the journey, stop at the inspiring Painted Dog Conservation project near Hwange. During the guided visit, learn about the behavior and challenges facing these rare predators and discover how local communities are involved in wildlife protection efforts. After the tour, continue through the beautiful landscapes of Hwange to arrive at your safari lodge in the afternoon, relax, and prepare for the exciting wildlife experiences ahead.",
+                        "Depart from Victoria Falls early morning after breakfast and enjoy a scenic road transfer south toward Hwange National Park, Zimbabwe’s largest and most famous wildlife reserve. Along the journey, enjoy an authentic visit to the traditional Nambya Cultural Village to experience local customs, traditional crafts and rural life, followed by a stop at the inspiring Painted Dog Conservation project near Hwange. During the guided visit, learn about the behavior and challenges facing these rare predators and discover how local communities are involved in wildlife protection efforts. After the tour, continue through the beautiful landscapes of Hwange to arrive at your safari lodge in the afternoon, relax, and prepare for the exciting wildlife experiences ahead.",
                     route: "Victoria Falls to Hwange — 4 hours — 190km",
                     accommodation: "Miombo Safari Camp / Hwange Safari Lodge or similar",
                     meals: "LDB",
                     facilities: "Single Room",
-                    highlights: "Painted Dog's Conservation project",
+                    highlights: "Nambya cultural village tour and Painted Dog's Conservation project",
                     optionalActivities: "Afternoon and night game drive in concession"
                 },
                 {
@@ -3696,6 +3696,258 @@ const packagesData: Package[] = [
                     accommodation: "Own Arrangements",
                     meals: "L",
                     highlights: "Scenic drive crossing Kazungula Border and tour conclusion in Victoria Falls"
+                }
+            ]
+        },
+        {
+            id: "26",
+            slug: "14-day-rediscover-botswana-safari",
+            title: "14-Day Rediscover Botswana Safari",
+            category: ["Wildlife Safari", "Adventure", "Group"],
+            destinations: [
+                "Victoria Falls",
+                "Chobe National Park",
+                "Elephant Sands",
+                "Makgadikgadi Pans",
+                "Maun",
+                "Okavango Delta",
+                "Moremi Game Reserve",
+                "Central Kalahari Game Reserve",
+                "Khama Rhino Sanctuary",
+                "Nata"
+            ],
+            shortDescription:
+                "Rediscover Botswana on an unforgettable 14-day safari starting and ending in Victoria Falls, exploring Chobe, Elephant Sands, Makgadikgadi meerkats, Okavango Delta, Moremi, the Central Kalahari, and Khama Rhino Sanctuary.",
+            longDescription:
+                "Rediscover Botswana on an unforgettable safari adventure starting and ending in Victoria Falls. Begin with the wildlife-rich Chobe National Park, enjoying game drives and a river cruise before travelling to Elephant Sands, famous for close encounters with elephants. Continue to the Central Makgadikgadi Salt Pans for a unique meerkat experience and overnight wilderness stay. From there, travel to Maun, the gateway to the Okavango Delta, before exploring Kazikini and Moremi through exciting game drives, mokoro excursions, and nature experiences. Continue south to the vast Central Kalahari Game Reserve, discovering its remote landscapes and desert-adapted wildlife. Visit Khama Rhino Sanctuary for rhino encounters and conservation experiences, then explore Nata Bird Sanctuary and its spectacular wetlands. Finally, return to Victoria Falls, bringing your Botswana safari full circle with unforgettable memories of wildlife, culture, landscapes, and adventure.",
+            duration: { days: 14, nights: 13 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 5850,
+            featured: true,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/delta-aerial.jpg",
+            images: [
+                "/images/safari/delta-aerial.jpg",
+                "/images/safari/elephant-river.jpg",
+                "/images/safari/rhino-walking-green.jpg",
+                "/images/safari/elephants-waterhole.jpg",
+                "/images/safari/victoria-falls-wide.jpg"
+            ],
+            inclusions: [
+                "13 nights’ accommodation in selected lodges, camps and safari accommodation",
+                "Meals as specified in the itinerary, including breakfast, lunch and dinner",
+                "Private/safari transport throughout the tour in a comfortable safari vehicle",
+                "Professional English-speaking safari guide/driver",
+                "Park and conservation fees for included national parks and reserves",
+                "Victoria Falls guided tour on the Zimbabwean side",
+                "Zambezi River sunset dinner cruise",
+                "Chobe National Park game drives",
+                "Chobe River afternoon boat cruise",
+                "Elephant Sands elephant viewing experience",
+                "Central Makgadikgadi Salt Pans visit",
+                "Guided meerkat experience",
+                "Overnight experience in the Makgadikgadi Salt Pans",
+                "Maun visit and transfers",
+                "Okavango Delta mokoro excursion",
+                "Okavango Delta guided nature walk",
+                "Kazikini morning and afternoon game drives",
+                "Moremi Game Reserve full-day game drive",
+                "Central Kalahari Game Reserve game drives",
+                "Khama Rhino Sanctuary wildlife and rhino viewing",
+                "Nata Bird Sanctuary visit",
+                "Bottled drinking water during road transfers and activities",
+                "All road transfers between destinations included in the itinerary",
+                "Assistance and support from our safari team throughout the tour"
+            ],
+            exclusions: [
+                "International and domestic flights, unless specifically stated",
+                "Visa fees and passport expenses",
+                "Travel and medical insurance",
+                "Alcoholic drinks and premium beverages",
+                "Soft drinks and other drinks not specified in the itinerary",
+                "Personal expenses such as souvenirs and shopping",
+                "Laundry services",
+                "Telephone and internet charges",
+                "Tips and gratuities for guides, drivers and lodge staff",
+                "Optional activities not mentioned in the itinerary",
+                "Private or personal expenses outside the scheduled program",
+                "Any extra accommodation required before or after the tour",
+                "Meals and activities not specifically listed as included",
+                "Any costs arising from flight delays, cancellations or other unforeseen circumstances",
+                "Personal travel equipment, clothing and other items needed for the safari"
+            ],
+            highlights: [
+                "Zimbabwe – Start and finish in Victoria Falls",
+                "Chobe National Park – Morning and afternoon game drives",
+                "Chobe River – Scenic wildlife boat cruise",
+                "Elephant Sands – Close-up elephant viewing around the lodge",
+                "Central Makgadikgadi Salt Pans – Meerkat experience",
+                "Overnight camping experience in the salt pans",
+                "Maun – Gateway to the Okavango Delta",
+                "Okavango Delta – Mokoro excursion and nature walks",
+                "Kazikini – Morning and afternoon game drives",
+                "Moremi Game Reserve – Full-day wildlife safari",
+                "Central Kalahari Game Reserve – Desert wildlife and spectacular landscapes",
+                "Khama Rhino Sanctuary – Rhino viewing and conservation",
+                "Nata Bird Sanctuary – Birdwatching and beautiful wetlands",
+                "Scenic drives through Botswana's diverse landscapes",
+                "Exceptional opportunities to see elephants, lions, rhinos, giraffes, zebras, antelope and abundant birdlife",
+                "Authentic wilderness and cultural experiences throughout Botswana",
+                "Professional safari guides and unforgettable African sunsets"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Victoria Falls",
+                    description:
+                        "On arrival at Victoria Falls Airport, you are warmly welcomed by your professional safari guide, who will assist with your luggage and introduce you to the adventure ahead. You are then transferred in comfort to your selected accommodation in Victoria Falls, where you can check in, unwind, and soak in the tranquil surroundings after your journey. Enjoy time at leisure—perhaps relax by the pool, refresh in your room, or take a short stroll around the property. Later in the afternoon, you are picked up for a memorable Zambezi River dinner cruise. As the sun sets over the river, indulge in a delicious meal served on board while drifting past scenic landscapes, spotting wildlife, and enjoying the peaceful ambiance—an unforgettable start to your safari experience.",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Zambezi River sunset dinner cruise"
+                },
+                {
+                    day: 2,
+                    title: "Victoria Falls",
+                    description:
+                        "A guided tour of the Victoria Falls on the Zimbabwean side offers one of the most complete and breathtaking views of this natural wonder. Accompanied by a knowledgeable guide, you walk through a well-maintained rainforest trail with multiple viewpoints, each revealing different angles of the falls. Learn about the history, geology, and local legends surrounding the falls, known locally as Mosi-oa-Tunya, meaning “The Smoke That Thunders.” During high water season, feel the refreshing spray as it rises dramatically into the air. The tour also provides excellent opportunities for photography, with panoramic views of the Main Falls, Horseshoe Falls, and Rainbow Falls. It’s an immersive experience combining natural beauty, cultural insight, and unforgettable scenery.",
+                    accommodation: "Victoria Falls Oasis Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Victoria Falls guided tour on Zimbabwean side",
+                    optionalActivities: "Rafting, gorge swing, slide, animal interactions (lion, cheetah, elephant)"
+                },
+                {
+                    day: 3,
+                    title: "Chobe National Park",
+                    description:
+                        "Chobe National Park is one of Africa’s premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments.",
+                    route: "Victoria Falls to Kasane — 2 hours — 90km",
+                    accommodation: "Tlou Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Afternoon Chobe River boat cruise"
+                },
+                {
+                    day: 4,
+                    title: "Chobe National Park",
+                    description:
+                        "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants — Chobe’s signature attraction — are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights.",
+                    accommodation: "Tlou Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Morning and afternoon game drives in Chobe"
+                },
+                {
+                    day: 5,
+                    title: "Elephant Sands",
+                    description:
+                        "Elephant Sands is a conservancy in Botswana that drills boreholes to provide supplemental water for wildlife traversing the land escaping threats of human-wildlife conflict, poaching, and drought. Elephants and buffalos migrate between Hwange and Botswana across areas with natural and man-made waterholes. Elephants congregate at the natural waterhole right in front of the lodge, modified with man-made waterholes to sustain wildlife during the dry season, giving guests unmatched close-up elephant sightings from the lodge.",
+                    route: "Kasane to Elephant Sands — 270km — 4 hours",
+                    accommodation: "Elephant Sands Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/Triple and Family Room",
+                    highlights: "Waterhole elephant viewing and afternoon game drive"
+                },
+                {
+                    day: 6,
+                    title: "Central Makgadikgadi Salt Pans",
+                    description:
+                        "The Central Makgadikgadi Salt Pans offer a unique and unforgettable desert adventure in Botswana. After arriving in the area, enjoy an exciting meerkat experience, observing these curious and social animals as they emerge from their burrows and interact with their family groups. Guided by experienced local trackers, you will learn about their behavior, survival skills, and adaptation to the harsh Kalahari environment. Later, venture deep into the vast salt pans for an unforgettable overnight wilderness experience. As the sun sets, the landscape transforms into a spectacular panorama of golden colors, followed by a campfire dinner and sleeping under canvas beneath the peaceful African stars.",
+                    route: "Elephant Sands to Gweta — 150km — 3 hours",
+                    accommodation: "Overnight Salt Pans Camp / Planet Baobab Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Bushman / San walk tour, meerkat experience and overnight salt pan stay",
+                    optionalActivities: "Quad bike hire"
+                },
+                {
+                    day: 7,
+                    title: "Maun",
+                    description:
+                        "Maun is the tourism capital and administrative Centre of Ngamiland district and the seat of power of the Batawana people of Botswana. It is the gateway into the Okavango Delta, Moremi, and Kalahari. Following a morning game drive, drive to Maun for an overnight stay in preparation for the Central Kalahari Game Reserve expedition. You will have the opportunity to take an optional scenic airplane or helicopter flight over the Okavango Delta.",
+                    route: "Gweta to Maun — 3 hours — 210km",
+                    accommodation: "Sedia Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    optionalActivities: "Scenic airplane or helicopter flight over the Okavango Delta"
+                },
+                {
+                    day: 8,
+                    title: "Okavango Delta / Kazikini",
+                    description:
+                        "After breakfast in Maun, depart on a scenic drive toward the magnificent Okavango Delta through beautiful wilderness landscapes and mopani woodlands in 4x4 vehicles. Upon arrival near the delta waterways, board a traditional mokoro canoe for a peaceful ride into the heart of the delta, quietly gliding through narrow channels surrounded by reeds and birdlife. After the mokoro ride, enjoy an afternoon game drive en route to Kazikini Community Camp bordering Moremi, spending the night under canvas in the bush.",
+                    accommodation: "Kazikini Community Camp",
+                    meals: "LDB",
+                    facilities: "Single / Twin tent",
+                    highlights: "Okavango Delta mokoro ride and afternoon game drive in Kazikini bordering Moremi"
+                },
+                {
+                    day: 9,
+                    title: "Moremi Game Reserve",
+                    description:
+                        "Enjoy a full-day game drive through Moremi Game Reserve, one of Botswana’s premier wildlife destinations. Depart early with your experienced safari guide and explore the reserve’s diverse landscapes of open grasslands, woodlands, lagoons, and seasonal floodplains. Keep watch for elephants, buffalo, giraffes, zebras, antelopes, and abundant birdlife, with opportunities to encounter lions, leopards, wild dogs, and other predators, stopping for a picnic lunch in the wilderness.",
+                    accommodation: "Kazikini Community Camp",
+                    meals: "LDB",
+                    facilities: "Single / Twin tent",
+                    highlights: "Full-day game drive in Moremi Game Reserve"
+                },
+                {
+                    day: 10,
+                    title: "Central Kalahari Game Reserve",
+                    description:
+                        "The Central Kalahari Game Reserve is the largest and most remotely situated reserve in Southern Africa and the second largest wildlife reserve in the world, encompassing 52,800 square kilometers. Providing a unique desert ecosystem, it features vast open spaces, desert-adapted wildlife, and a rich history as home to the indigenous San people. We stay outside the game reserve in preparation for a full day of game viewing the following day.",
+                    route: "Kazikini to Central Kalahari / Rakops — 6 hours — 261km",
+                    accommodation: "Rakops River Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single and twin tent / room",
+                    optionalActivities: "Game drive in Makgadikgadi Pans National Park"
+                },
+                {
+                    day: 11,
+                    title: "Central Kalahari Game Reserve",
+                    description:
+                        "Experience the wild and mysterious beauty of the Central Kalahari Game Reserve on a full-day game drive. Waist-high golden grasses stretch to the horizon where wide, empty pans appear as vast white stretches of pancake-flat earth meeting soft blue skies. Search for Kalahari black-maned lions, cheetahs, leopards, oryx (gemsbok), springbok, brown hyenas, and rich desert birdlife in this untouched wilderness.",
+                    route: "Central Kalahari to Rakops",
+                    accommodation: "Rakops River Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Full-day game drive in Central Kalahari Game Reserve"
+                },
+                {
+                    day: 12,
+                    title: "Khama Rhino Sanctuary",
+                    description:
+                        "Khama Rhino Sanctuary is a community-based wildlife project established in 1992 to save vanishing black and white rhinoceros in Botswana. Managed by local village residents, this sanctuary protects rhinos alongside giraffes, zebras, wildebeest, and diverse bird species. In the afternoon, embark on an exciting guided game drive in search of white and black rhinos in their natural environment.",
+                    route: "Rakops to Khama Rhino Sanctuary — 316km — 5 hours",
+                    accommodation: "Serowe Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Game drive in search of rhinos at Khama Rhino Sanctuary"
+                },
+                {
+                    day: 13,
+                    title: "Makgadikgadi Salt Pans & Nata",
+                    description:
+                        "The Makgadikgadi Salt Pans are the largest in the world, spanning over 30,000 square kilometers of unique, shimmering white expanse. In the afternoon, visit the pans for an unforgettable sunset pan drive at Nata Bird Sanctuary, enjoying magnificent vistas and rich birdlife across the wetlands.",
+                    route: "Khama Rhino Sanctuary to Nata — 350km — 6 hours",
+                    accommodation: "Nata Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Makgadikgadi pan drive at sunset"
+                },
+                {
+                    day: 14,
+                    title: "Victoria Falls",
+                    description:
+                        "After breakfast, depart Nata heading to Victoria Falls, Zimbabwe, to mark the end of your 14-day safari. Arrive in Victoria Falls in the afternoon where the tour concludes after lunch.",
+                    route: "Nata to Victoria Falls — 390km — 7 hours",
+                    accommodation: "Own Arrangements",
+                    meals: "Lunch",
+                    highlights: "Scenic transfer crossing into Zimbabwe and tour conclusion in Victoria Falls",
+                    optionalActivities: "Sunrise pan drive, sunset boat cruise, Boma dinner"
                 }
             ]
         }

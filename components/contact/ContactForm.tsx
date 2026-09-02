@@ -70,7 +70,7 @@ export const ContactForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="form-group">
                     <label htmlFor="phone" className="form-label">Phone Number</label>
-                    <input id="phone" name="phone" type="tel" placeholder="+263 71 635 5176" className="form-input" />
+                    <input id="phone" name="phone" type="tel" placeholder="+263 71 670 7132" className="form-input" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="type" className="form-label">Inquiry Type *</label>

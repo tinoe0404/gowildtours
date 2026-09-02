@@ -94,7 +94,7 @@ export const BookingConfirmationEmail = ({
 
                     <Hr style={hr} />
                     <Text style={footer}>
-                        If you have any questions, please reply to this email or call us at +263 77 123 4567.<br />
+                        If you have any questions, please reply to this email or call us at +263 71 670 7132.<br />
                         &copy; {new Date().getFullYear()} Go Wild Tours & Travels. Victoria Falls, Zimbabwe.
                     </Text>
                 </Container>

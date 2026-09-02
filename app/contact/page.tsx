@@ -87,8 +87,8 @@ export default function ContactPage() {
                                     </div>
                                     <h3 className="text-lg font-bold font-display text-dark-deep mb-2 uppercase tracking-tight">Direct Contact</h3>
                                     <div className="space-y-3">
-                                        <a href="tel:+263716355176" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
-                                            <Phone className="w-4 h-4" /> +263 71 635 5176
+                                        <a href="tel:+263716707132" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
+                                            <Phone className="w-4 h-4" /> +263 71 670 7132
                                         </a>
                                         <a href="mailto:info@gowildtourszim.com" className="flex items-center gap-3 text-[var(--color-dusk)] hover:text-[var(--color-savanna)] transition-colors font-medium">
                                             <Mail className="w-4 h-4" /> info@gowildtourszim.com
@@ -167,7 +167,7 @@ export default function ContactPage() {
 
                         <div className="text-center mt-12 p-8 bg-white rounded-[var(--radius-lg)] border border-[var(--color-sand)] shadow-sm">
                             <p className="text-[var(--color-dusk)] font-medium mb-4">Still have more questions?</p>
-                            <a href="tel:+263716355176" className="inline-flex items-center gap-2 btn btn--primary">
+                            <a href="tel:+263716707132" className="inline-flex items-center gap-2 btn btn--primary">
                                 <Phone className="w-5 h-5" /> Call our Experts
                             </a>
                         </div>

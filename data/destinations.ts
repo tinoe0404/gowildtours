@@ -68,7 +68,7 @@ export const destinations: Destination[] = [
     accommodation: [],
     wildlife: ["Elephant", "Hippo", "Lion", "Leopard", "Cheetah"],
     coordinates: { lat: -22.3285, lng: 24.6849 },
-    knownPlaces: ["Botswana", "Chobe National Park", "Makgadikgadi Pans", "Okavango Delta", "Elephant Sands", "Maun", "Kasane", "Nata", "Moremi Game Reserve"]
+    knownPlaces: ["Botswana", "Chobe National Park", "Makgadikgadi Pans", "Okavango Delta", "Elephant Sands", "Maun", "Kasane", "Nata", "Moremi Game Reserve", "Central Kalahari Game Reserve", "Khama Rhino Sanctuary", "Gweta", "Rakops", "Kazikini"]
   },
   {
     slug: "namibia",
@@ -113,8 +113,8 @@ export const destinations: Destination[] = [
     name: "Malawi",
     tagline: "The Warm Heart of Africa",
     region: "Southern Africa",
-    image: "/images/safari/hippos-mud.jpg",
-    heroImage: "/images/safari/hippos-mud.jpg",
+    image: "/images/safari/lake-malawi.jpg",
+    heroImage: "/images/safari/lake-malawi.jpg",
     highlights: ["Lake Malawi", "Liwonde National Park", "Majete Wildlife Reserve", "Mount Mulanje"],
     bestFor: ["Beaches & Lakes", "Cultural Encounters", "Snorkeling", "Scenic Drives"],
     bestTime: "May – October",
