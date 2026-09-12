@@ -4056,6 +4056,570 @@ const packagesData: Package[] = [
                     facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 }
             ]
+        },
+        {
+            id: "27",
+            slug: "5-days-chobe-and-hwange",
+            title: "5days Chobe and Hwange.",
+            category: ["Wildlife Safari", "Adventure"],
+            destinations: ["Victoria Falls", "Chobe National Park", "Hwange National Park"],
+            shortDescription:
+                "5‑day safari combining Chobe and Hwange National Parks with river boat cruises, game drives, conservation visits, and Nambya cultural encounters.",
+            longDescription:
+                "This 5-day safari combines the best of Chobe National Park, and Hwange National Park. Picked up in Victoria Falls drive straight to Chobe for an afternoon-to-sunset boat cruise along the Chobe River, famous for elephants and hippos, plus morning and afternoon game drives offering close encounters with diverse wildlife. In Hwange, explore Zimbabwe’s largest park on a full-day game drive, visit the inspiring Painted Dog’s Project, and experience local traditions through a Nambya Cultural Educational Village tour. This journey blends iconic landscapes, rich wildlife, and authentic cultural encounters.",
+            duration: { days: 5, nights: 4 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 1900,
+            featured: false,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/elephant-river.jpg",
+            images: [
+                "/images/safari/elephant-river.jpg",
+                "/images/safari/wild-dogs.jpg",
+                "/images/safari/elephants-waterhole.jpg",
+                "/images/safari/hippos-grass.jpg"
+            ],
+            inclusions: [
+                "4 nights’ accommodation (lodges / safari camps)",
+                "All meals throughout the tour (breakfast, lunch, and dinner)",
+                "All scheduled activities as per itinerary",
+                "Chobe River afternoon to sunset boat cruise",
+                "Morning and afternoon game drives in Chobe National Park",
+                "Full-day game drive in Hwange National Park",
+                "Visit to the Painted Dog’s Project",
+                "Nambya Cultural Educational Village tour",
+                "All park entry and conservation fees",
+                "Transport in comfortable luxury vehicles for transfers",
+                "Open 4x4 safari vehicles for all game drives",
+                "Professional, experienced safari guides",
+                "Bottled water during activities and transfers",
+                "Pick-up and drop-off (Victoria Falls Airport and/or lodge)"
+            ],
+            exclusions: [
+                "International and domestic flights",
+                "Visa fees for Zimbabwe and Botswana",
+                "Travel insurance (highly recommended)",
+                "Personal expenses (souvenirs, laundry, phone calls)",
+                "Alcoholic and non-alcoholic beverages not specified",
+                "Optional activities (e.g., helicopter flights, bungee jumping)",
+                "Tips and gratuities for guides, drivers, and lodge staff",
+                "Any meals not specified in the itinerary",
+                "Medical expenses and vaccinations",
+                "Additional transfers outside the scheduled program",
+                "Early check-in or late check-out at lodges"
+            ],
+            highlights: [
+                "Chobe River afternoon to sunset boat cruise (elephants, hippos, crocodiles)",
+                "Morning game drive in Chobe National Park",
+                "Afternoon game drive in Chobe National Park",
+                "Full-day game drive in Hwange National Park (rich wildlife and diverse landscapes)",
+                "Visit to the Painted Dog’s Project conservation center",
+                "Nambya Cultural Educational Village tour (local traditions and lifestyle)",
+                "Cross-border safari experience between Zimbabwe and Botswana",
+                "Combination of river, land, and cultural safari activities"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Chobe National Park (Botswana)",
+                    description:
+                        "Chobe national park is one of Africa’s premier safari destinations, famous for its large elephant population and rich wildlife diversity. Located along the Chobe River, the park offers exceptional game viewing with frequent sightings of lions, buffalo, giraffes, zebras, and numerous bird species. A highlight of any visit is the afternoon to sunset boat cruise on the Chobe River. This relaxing experience provides a different perspective of the park, as animals gather along the riverbanks to drink and cool off. Elephants are often seen swimming, while hippos and crocodiles thrive in the water. As the sun sets, the sky reflects beautifully over the river, creating a peaceful and scenic end to the day, perfect for photography and unforgettable safari moments. Sunset boat cruise is one of the most not miss activity in Chobe national park since it has got a say to your safari. Chobe river provides a very broad habitat for the bird life and it is possible to see many beautiful species.",
+                    route: "Victoria Falls to Kasane – 2 hours – 90km",
+                    accommodation: "Tlou Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double Room",
+                    highlights: "Afternoon boat cruise (3 hours activity)"
+                },
+                {
+                    day: 2,
+                    title: "Chobe National Park",
+                    description:
+                        "A safari in Chobe National Park offers unforgettable morning and afternoon game drives, each providing a unique wildlife experience. The early morning drive begins at sunrise, when temperatures are cool and animals are most active. Predators such as lions and leopards may still be on the move, while elephants, buffalo, and antelope gather near water sources to drink. After a midday rest, the afternoon game drive resumes as the heat eases. Wildlife becomes active again, and the golden light creates perfect conditions for photography. Herds of elephants—Chobe’s signature attraction—are often seen in large numbers, alongside giraffes, zebras, and diverse birdlife. Both drives are led by experienced guides who track animals and share insights, ensuring a rich, educational, and thrilling safari experience in one of Africa’s top wildlife destinations.",
+                    accommodation: "Tlou Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double Room",
+                    highlights: "Morning and afternoon game drive (each game drive is 3 hours)"
+                },
+                {
+                    day: 3,
+                    title: "Hwange National Park",
+                    description:
+                        "After breakfast, depart Chobe and journey south to the world-renowned Hwange National Park, Zimbabwe's largest and most celebrated wildlife reserve. Along the way, enjoy a meaningful stop at the Painted Dog Conservation Centre, where you will learn about the remarkable efforts to protect the endangered African painted dog. Guided by knowledgeable staff, explore the educational displays, meet rescued painted dogs where possible, and discover how conservation, research, and community outreach are helping this iconic species survive. After the visit, continue through the scenic countryside towards Hwange National Park, watching for wildlife and rural village life along the route. Upon arrival at your lodge, settle into your comfortable accommodation and enjoy a delicious lunch before taking time to relax. As the afternoon unfolds, immerse yourself in the peaceful wilderness atmosphere while anticipating the exciting game-viewing adventures that await in one of Africa's finest safari destinations.",
+                    route: "Kasane to Hwange — 7 hours — 290km",
+                    accommodation: "Miombo Safari Camp or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double Room",
+                    highlights: "Painted dog’s project visit",
+                    optionalActivities: "Afternoon and night game drive in concession"
+                },
+                {
+                    day: 4,
+                    title: "Hwange National Park",
+                    description:
+                        "A full-day safari in Hwange National Park offers an immersive wildlife experience across one of Africa’s most diverse ecosystems. Departing early, you spend the day exploring vast plains, woodlands, and waterholes that attract a wide range of animals. Expect to encounter large herds of elephants, buffalo, zebras, and giraffes, along with predators such as lions and possibly wild dogs. A packed lunch is enjoyed at a scenic rest spot, allowing time to relax while surrounded by nature. The extended game drive increases your chances of varied sightings and deeper exploration, making it ideal for photography and wildlife enthusiasts seeking a rich and rewarding safari experience.",
+                    accommodation: "Miombo Safari Camp or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double Room",
+                    highlights: "Full day game drive in Hwange National Park"
+                },
+                {
+                    day: 5,
+                    title: "Victoria Falls / Departure",
+                    description:
+                        "After breakfast, enjoy an immersive visit to the traditional Nambya Cultural Village, located near Hwange National Park in Dete. The Nambya people are one of Zimbabwe’s rich cultural communities, known for their warm hospitality, traditional homesteads, music, dance, and storytelling. During the guided village tour, guests interact with local villagers, learn about ancient customs, daily rural life, traditional cooking methods, and the importance of cattle in Nambya culture. Experience vibrant cultural performances featuring traditional songs, drumming, and energetic dances that reflect the community’s heritage and history. The visit also offers opportunities to view handcrafted souvenirs and support local artisans. After this authentic cultural experience, depart Dete and enjoy a scenic drive through rural Zimbabwe toward Victoria Falls, where your unforgettable safari and cultural adventure come to a memorable end at lunch time.",
+                    route: "Hwange to Victoria Falls — 4 hours — 200km",
+                    accommodation: "Own Arrangements",
+                    meals: "Lunch",
+                    facilities: "Single/ Twin/ Double Room",
+                    highlights: "Nambya educational cultural village tour"
+                }
+            ]
+        },
+        {
+            id: "28",
+            slug: "15-days-zambia-and-malawi-tour",
+            title: "15-Day Zambia & Malawi Tour",
+            category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
+            destinations: [
+                "Livingstone",
+                "Victoria Falls",
+                "Choma",
+                "Lower Zambezi National Park",
+                "Kafue National Park",
+                "Lusaka",
+                "Petauke",
+                "South Luangwa National Park",
+                "Central Lake Malawi",
+                "Lilongwe"
+            ],
+            shortDescription:
+                "Embark on an unforgettable 15-day safari through Zambia and Malawi, exploring Victoria Falls, Lower Zambezi, Kafue, South Luangwa, and Central Lake Malawi.",
+            longDescription:
+                "Embark on an unforgettable 15-day safari through Zambia and Malawi, exploring spectacular landscapes, wildlife-rich national parks and vibrant local communities. Your journey begins in Livingstone, home to the magnificent Victoria Falls, before travelling to Choma, where you experience Zambia’s southern region and its cultural heritage. Continue to Lower Zambezi National Park for exciting wildlife viewing along the Zambezi River, followed by Kafue National Park, one of Zambia’s largest and most diverse wilderness areas. Travel onwards to Lusaka, Zambia’s lively capital, before heading east through Petauke towards South Luangwa National Park, renowned for exceptional wildlife and walking safari experiences. Crossing into Malawi, continue to the beautiful Central Lake Malawi area, where you can relax beside the clear waters and enjoy optional activities. The adventure concludes in Lilongwe, Malawi’s capital, marking the end of your memorable 15-day Southern Africa safari.",
+            duration: { days: 15, nights: 14 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 6700,
+            featured: false,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/lake-malawi.jpg",
+            images: [
+                "/images/safari/lake-malawi.jpg",
+                "/images/safari/victoria-falls-wide.jpg",
+                "/images/safari/leopard-walking.jpg",
+                "/images/safari/river-aerial.jpg"
+            ],
+            inclusions: [
+                "14 nights’ accommodation in selected lodges, hotels, safari camps and comfortable guesthouses",
+                "Meals – Breakfast, lunch and dinner as specified in the itinerary",
+                "Transport – Comfortable road transfers throughout Zambia and Malawi",
+                "Professional safari guides – Experienced and knowledgeable guides throughout the tour",
+                "Victoria Falls guided tour – Guided sightseeing of Victoria Falls from the Zambia side",
+                "Rhino tracking – Guided rhino-tracking experience in the Livingstone area",
+                "Game drives – Wildlife-viewing activities in Lower Zambezi, Kafue and South Luangwa National Parks",
+                "South Luangwa safari activities – Guided wildlife experiences and opportunities for walking safaris where available",
+                "National Park entry fees – Park and conservation fees for included activities",
+                "Central Lake Malawi – Time to enjoy the lake and surrounding scenery",
+                "Bottled drinking water during road transfers and safari activities",
+                "Airport transfers – Arrival transfer from Livingstone Airport and departure transfer to Lilongwe Airport",
+                "All activities specifically stated as included in the final itinerary"
+            ],
+            exclusions: [
+                "International and domestic flights unless specifically stated in the itinerary",
+                "Visas and immigration fees for Zambia and Malawi",
+                "Travel insurance and medical insurance",
+                "Alcoholic drinks and soft drinks unless specifically included",
+                "Meals not mentioned in the itinerary",
+                "Optional activities and excursions not listed as included",
+                "Personal expenses and shopping",
+                "Laundry services",
+                "Telephone calls, internet/data charges and other communication costs",
+                "Tips and gratuities for guides, drivers, hotel staff and other service providers",
+                "Excess baggage charges",
+                "Early check-in or late check-out charges",
+                "Any additional costs arising from changes to the itinerary, delays or circumstances beyond the operator’s control",
+                "Souvenirs, gifts and personal purchases",
+                "Personal medical expenses or emergency evacuation costs"
+            ],
+            highlights: [
+                "Livingstone & Victoria Falls – Experience one of Africa’s greatest natural wonders",
+                "Choma – Discover Zambia’s southern region and local culture",
+                "Lower Zambezi National Park – Enjoy spectacular wildlife viewing along the Zambezi River",
+                "Kafue National Park – Explore one of Zambia’s largest wilderness areas with game drives",
+                "Lusaka – Discover Zambia’s capital and experience its vibrant atmosphere",
+                "Petauke – Travel through eastern Zambia and experience local landscapes and communities",
+                "South Luangwa National Park – Enjoy excellent game viewing and an opportunity for a walking safari",
+                "Zambezi & Luangwa wildlife – Look out for elephants, hippos, crocodiles, lions, leopards and abundant birdlife",
+                "Central Lake Malawi – Relax beside the beautiful freshwater lake and enjoy optional water activities",
+                "Malawi Experience – Discover the scenery, culture and hospitality of Malawi",
+                "Lilongwe – Finish your 15-day adventure in Malawi’s capital city",
+                "Scenic landscapes & photography – Capture diverse African scenery, wildlife and unforgettable safari moments"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "Livingstone",
+                    description:
+                        "Upon arrival at Livingstone Airport, you will be warmly welcomed by our friendly and professional safari guide, who will assist you with your luggage before transferring you comfortably to your accommodation. After check-in, you will have some time to relax and freshen up after your journey. Later in the afternoon, we depart for a memorable Zambezi River sunset dinner cruise. As the boat gently cruises along the mighty Zambezi River, enjoy spectacular views of the African sunset while watching wildlife along the riverbanks, including elephants, hippos, crocodiles and a variety of bird species. Enjoy a delicious dinner and refreshing drinks on board as the African evening unfolds around you. The cruise offers the perfect start to your safari adventure, combining relaxation, beautiful scenery, wildlife and an unforgettable African sunset.",
+                    route: "Livingstone Airport to Livingstone — 10km — 20 mins",
+                    accommodation: "Protea Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Zambezi River dinner cruise",
+                    optionalActivities: "Micro-light, helicopter flight, rafting, gorge swing"
+                },
+                {
+                    day: 2,
+                    title: "Livingstone",
+                    description:
+                        "Livingstone experience begins with a guided tour of the magnificent Victoria Falls from the Zambian side, where you will walk through Mosi-oa-Tunya National Park and enjoy spectacular viewpoints of the cascading Zambezi River. Your guide will share the history, geology, wildlife and local stories surrounding this iconic natural wonder. After the Falls, continue into Livingstone city for a fascinating cultural and historical tour. Explore the city’s colonial heritage, important landmarks and local way of life before visiting the lively markets. Browse traditional crafts, handmade souvenirs, colorful fabrics, fresh produce and other locally made products while interacting with friendly local vendors. This combination of the Falls and city tour offers a wonderful introduction to Zambia’s natural beauty, history and vibrant culture.",
+                    accommodation: "Protea Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Guided tour of Victoria Falls (Zambian side) and Livingstone city tour"
+                },
+                {
+                    day: 3,
+                    title: "Choma",
+                    description:
+                        "Begin your morning with an exciting rhino tracking experience, accompanied by an experienced guide and conservation team. Set out early while the temperatures are cool and wildlife is most active, following fresh tracks, footprints and other signs that may lead you to white rhinos. Along the way, learn about rhino behavior, their importance to the ecosystem and the conservation efforts protecting these magnificent animals. The experience provides an opportunity to observe rhinos responsibly in their natural environment while enjoying the surrounding wilderness and other wildlife sightings. After the tracking activity, return for breakfast and prepare for the next stage of your journey. You will then depart Livingstone and travel towards Choma, enjoying scenic landscapes and rural Zambian communities along the way.",
+                    route: "Livingstone to Choma — 220km — 5 hours",
+                    accommodation: "Kozo Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Rhino tracking at Mosi-oa-Tunya National Park"
+                },
+                {
+                    day: 4,
+                    title: "Lower Zambezi National Park",
+                    description:
+                        "Lower Zambezi National Park is an unspoiled safari destination offering luxury experiences, incredible wildlife, greatest wilderness and breathing landscapes. The remoteness of the Lower Zambezi is one of the biggest drawcards for most travelers as traces of people are hard to find—a rarity in the modern world. The park has big herds of elephants and buffalo, sunbathing crocodiles, sleeping lions, stealthy leopards, lively African wild dogs and many more. In the afternoon, enjoy a scenic sunset boat cruise along the Zambezi River.",
+                    route: "Choma to Lower Zambezi — 350km — 6 hours",
+                    accommodation: "Mvuu Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Chalet or Tent",
+                    highlights: "Sunset boat cruise on the Zambezi River",
+                    optionalActivities: "Night game drive, bird watching"
+                },
+                {
+                    day: 5,
+                    title: "Lower Zambezi National Park",
+                    description:
+                        "The Lower Zambezi, a key national park of Zambia, lies between the rugged and dramatic Zambezi escarpment and the wide and spectacular Zambezi River. It lies opposite the famous Mana Pools National Park in Zimbabwe, so the whole area on both sides the Zambezi River is a massive wildlife sanctuary. It covers an area of 4,092 square kilometers and boasts extraordinary birdlife in the riverine woodland. Spend the day exploring the park on an extensive full-day game drive.",
+                    accommodation: "Mvuu Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Chalet or Tent",
+                    highlights: "Full day game drive in Lower Zambezi National Park",
+                    optionalActivities: "Sunset boat cruise, canoeing"
+                },
+                {
+                    day: 6,
+                    title: "Kafue National Park",
+                    description:
+                        "Kafue National Park is Zambia’s largest and oldest park, known for vast wilderness, rivers, and diverse wildlife. It hosts lions, leopards, cheetahs, elephants, and rare antelope species, offering uncrowded safaris, scenic landscapes, boat cruises, and exceptional birdlife experiences. Enjoy an afternoon game drive exploring the park's diverse habitats.",
+                    route: "Lower Zambezi NP to Kafue National Park — 190km — 5 hours",
+                    accommodation: "Hippo Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room or Tent",
+                    highlights: "Afternoon game drive in Kafue National Park",
+                    optionalActivities: "Boat cruise"
+                },
+                {
+                    day: 7,
+                    title: "Kafue National Park",
+                    description:
+                        "A full-day game drive in Kafue National Park offers immersive wildlife viewing across vast plains, rivers, and woodlands. Guided by professionals, guests search for lions, leopards, cheetahs, elephants, and rare antelope species, with picnic breaks in nature. The experience combines scenic beauty, rich birdlife, and authentic, uncrowded safari encounters.",
+                    accommodation: "Hippo Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room or Tent",
+                    highlights: "Morning and afternoon game drives in Kafue National Park",
+                    optionalActivities: "Bird watching"
+                },
+                {
+                    day: 8,
+                    title: "Lusaka",
+                    description:
+                        "Lusaka is the capital and largest city of Zambia. It is one of the fastest-developing cities in Southern Africa. Lusaka is the centre of both commerce and government in Zambia and connects to four main trans-African highways heading north, south, east and west. Enjoy an insightful city and market tour, with the late afternoon offering an opportunity to explore vibrant downtown areas on foot.",
+                    route: "Kafue National Park to Lusaka — 250km — 5 hours",
+                    accommodation: "Protea Hotel at Cairo Road or similar",
+                    meals: "LB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Lusaka city and cultural market tour"
+                },
+                {
+                    day: 9,
+                    title: "Petauke",
+                    description:
+                        "Petauke is a town and administrative seat of Petauke District located in the Eastern Province of Zambia. The town is situated in an agricultural heartland producing maize, cotton and other crops, and is home to the Nsenga people. Before reaching Petauke, visit tribal textile artisans to learn about traditional fabric production, followed by a guided local market tour.",
+                    route: "Lusaka to Petauke — 410km — 7 hours",
+                    accommodation: "Chimwemwe Executive Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Eastern Zambia scenic transfer and local market tour"
+                },
+                {
+                    day: 10,
+                    title: "South Luangwa National Park",
+                    description:
+                        "South Luangwa National Park is situated in eastern Zambia’s Luangwa River valley. It is celebrated worldwide for abundant wildlife; the river is often crowded with hippos, and woodland savannah provides habitat for hundreds of bird species. In the late afternoon, set out on an exciting night game drive from 4:00 PM to 8:00 PM, providing two hours of daylight game viewing followed by two hours spotlighting active predators.",
+                    route: "Petauke to South Luangwa — 240km — 4.5 hours",
+                    accommodation: "Msandile Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Late afternoon into night spotlight game drive"
+                },
+                {
+                    day: 11,
+                    title: "South Luangwa National Park",
+                    description:
+                        "Covering 9,050 square kilometers, South Luangwa is celebrated as the birthplace of walking safaris in Zambia. Very few places in Africa can offer the unique combination of open grassy plains and mature woodlands, crowned by the pristine Luangwa River. Enjoy a morning walking safari and an afternoon/night game drive exploring riverbanks and open plains in search of leopards, lions, elephants, buffalo, and hippos.",
+                    accommodation: "Msandile Safari Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Morning walking safari and afternoon/night game drive"
+                },
+                {
+                    day: 12,
+                    title: "Central Lake Malawi",
+                    description:
+                        "Central Lake Malawi offers a beautiful blend of sparkling waters, sandy beaches, scenic landscapes and authentic local culture. This peaceful region is ideal for relaxing beside the lake, swimming, enjoying boat trips or simply taking in breathtaking sunsets over the water. Cross the border from Zambia into Malawi and travel through rural vistas to arrive at the tranquil shores of Lake Malawi.",
+                    route: "Mfuwe to Ngala Beach — 410km — 9–10 hours",
+                    accommodation: "Ngala Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Scenic cross-border journey from Zambia into Malawi"
+                },
+                {
+                    day: 13,
+                    title: "Central Lake Malawi",
+                    description:
+                        "After breakfast, enjoy a morning cultural village and local market tour around Central Lake Malawi, offering an authentic glimpse into the traditions and daily life of local communities. Visit a nearby village to learn about traditional customs, local livelihoods, music, crafts and fishing practices. In the afternoon, enjoy free time by the lake or select from optional watersports including snorkeling, sailing, kayaking, or boat cruises.",
+                    accommodation: "Ngala Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Local village cultural tour and market visit",
+                    optionalActivities: "Watersports, snorkeling, diving, fishing, boat cruise"
+                },
+                {
+                    day: 14,
+                    title: "Lilongwe",
+                    description:
+                        "After breakfast, depart Ngala Beach heading to Malawi’s capital city, Lilongwe. In the afternoon, explore Lilongwe on a guided city and local market tour, discovering the vibrant capital and its fascinating blend of modern life and traditional culture. Browse stalls selling fresh fruits, traditional fabrics, handmade crafts, and souvenirs while interacting with friendly vendors.",
+                    route: "Ngala Beach to Lilongwe — 310km — 5 hours",
+                    accommodation: "Riverside Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Lilongwe capital city and market tour"
+                },
+                {
+                    day: 15,
+                    title: "Lilongwe / Flying Out",
+                    description:
+                        "Enjoy a relaxed final morning in Lilongwe after an incredible 15-day safari across Zambia and Malawi. Take time to have a leisurely breakfast, unwind at your accommodation, or reflect on your unforgettable experiences from Victoria Falls, Lower Zambezi, and Kafue to South Luangwa and Lake Malawi. Later, transfer to Lilongwe International Airport for your onward flight home, marking the conclusion of your remarkable journey.",
+                    route: "Hotel to Lilongwe International Airport — 30km — 35 mins",
+                    accommodation: "Own arrangements",
+                    meals: "Breakfast",
+                    highlights: "Airport departure transfer and tour conclusion"
+                }
+            ]
+        },
+        {
+            id: "29",
+            slug: "11-days-ultimate-malawi-and-south-luangwa",
+            title: "11-Day Ultimate Malawi and South Luangwa Safari",
+            category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
+            destinations: [
+                "Lilongwe",
+                "South Luangwa National Park",
+                "Salima",
+                "Lake Malawi",
+                "Liwonde National Park",
+                "Majete Wildlife Reserve"
+            ],
+            shortDescription:
+                "11-day safari and cultural adventure combining South Luangwa game drives with Senga Bay on Lake Malawi, Liwonde National Park, and Majete Wildlife Reserve.",
+            longDescription:
+                "Experience the best of Malawi and Zambia on this unforgettable 11-day safari and cultural adventure. Your journey begins in Lilongwe before crossing into Zambia for an exciting wildlife experience in South Luangwa National Park, one of Africa’s finest safari destinations, renowned for its abundant wildlife and spectacular game viewing. Return to Malawi and relax on the beautiful shores of Lake Malawi at Senga Bay, where you can enjoy cultural encounters with local communities and optional water-based activities. Continue to Liwonde National Park for rewarding game drives through diverse habitats rich in elephants, hippos, crocodiles, and birdlife. The adventure then takes you to Majete Wildlife Reserve, a remarkable conservation success story and one of the few places in Malawi where you can search for the Big Five. This well-balanced itinerary combines wildlife, culture, scenic landscapes, and lakeside relaxation, creating a truly memorable Southern African experience.",
+            duration: { days: 11, nights: 10 },
+            groupSize: { min: 2, max: 12, type: "Small Group" },
+            difficulty: "Moderate",
+            price: 4800,
+            featured: false,
+            bestSeller: false,
+            newPackage: true,
+            image: "/images/safari/lake-malawi.jpg",
+            images: [
+                "/images/safari/lake-malawi.jpg",
+                "/images/safari/leopard-walking.jpg",
+                "/images/safari/hippos-grass.jpg",
+                "/images/safari/elephants-river-drinking.jpg"
+            ],
+            inclusions: [
+                "10 nights accommodation in safari lodges, beach resorts, and hotels",
+                "All meals as specified in the itinerary (breakfast, lunch, and dinner)",
+                "Airport transfers in Malawi (Lilongwe)",
+                "All ground transportation throughout the tour",
+                "Professional English-speaking safari guide",
+                "Park entry fees as per itinerary",
+                "Game drives in South Luangwa National Park",
+                "Full-day game drive in Liwonde National Park",
+                "Night game drive in Majete Wildlife Reserve",
+                "Full-day game drive in Majete Wildlife Reserve",
+                "Cultural village tour at Senga Bay on Lake Malawi",
+                "Local guide for cultural activities and community visits",
+                "Bottled drinking water during transfers and activities",
+                "Safari vehicle, driver-guide allowances, and fuel costs",
+                "Government taxes and tourism levies where applicable"
+            ],
+            exclusions: [
+                "International and domestic flights",
+                "Visa fees and border crossing fees",
+                "Travel and medical insurance",
+                "Optional water sports and leisure activities at Lake Malawi",
+                "Alcoholic and non-alcoholic beverages not specified",
+                "Personal expenses and laundry services",
+                "Telephone calls and internet charges",
+                "Tips and gratuities for guides, drivers, lodge staff, and porters",
+                "Souvenirs and personal shopping",
+                "Additional meals not specified in the itinerary",
+                "Early check-in or late check-out charges"
+            ],
+            highlights: [
+                "Arrival and sightseeing in Lilongwe",
+                "Scenic road journey between Malawi and Zambia",
+                "Safari experience in South Luangwa National Park (morning, afternoon & night game drives)",
+                "Opportunities to spot leopards, lions, elephants, hippos, and abundant birdlife",
+                "Relaxing stay at Senga Bay on the shores of Lake Malawi",
+                "Cultural village tour and interaction with local communities",
+                "Free time for optional water sports and beach relaxation at Lake Malawi",
+                "Full-day safari experience in Liwonde National Park",
+                "Majete Wildlife Reserve safaris with thrilling night game drive and full-day game drive",
+                "Opportunity to search for the Big Five in Majete",
+                "Local roadside market stopover experience",
+                "Departure from Lilongwe at the end of the tour"
+            ],
+            itinerary: [
+                {
+                    day: 1,
+                    title: "South Luangwa National Park",
+                    description:
+                        "South Luangwa National Park is situated in eastern Zambia’s Luangwa River valley, renowned for its abundant wildlife with the river often crowded with hippos and woodland savannah home to hundreds of bird species. Mid-morning transfer from Lilongwe across the border into Zambia to your lodge. In the late afternoon, set out for an exciting night game drive from 4:00 PM to 8:00 PM, providing two hours of daylight game viewing and two hours spotlighting active predators.",
+                    route: "Lilongwe to South Luangwa — 260km — 5 hours",
+                    accommodation: "Msandile Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Late afternoon into night spotlight game drive"
+                },
+                {
+                    day: 2,
+                    title: "South Luangwa National Park",
+                    description:
+                        "A full-day game drive in South Luangwa National Park delivers exceptional wildlife viewing in one of Africa’s finest safari areas. Accompanied by expert guides, explore riverbanks and open plains searching for leopards, lions, elephants, buffalo, and hippos. With relaxed picnic stops, the day showcases rich birdlife, dramatic scenery, and an authentic, uncrowded safari experience.",
+                    accommodation: "Msandile Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Morning and afternoon game drives in South Luangwa"
+                },
+                {
+                    day: 3,
+                    title: "South Luangwa National Park",
+                    description:
+                        "Covering 9,050 square kilometers, South Luangwa is considered the birthplace of walking safaris in Zambia. Very few places in Africa can offer this unique combination of open grassy plains and mature woodlands crowned with the pristine Luangwa River. Enjoy an invigorating morning walking safari and an afternoon/night game drive to maximize your wildlife viewing opportunities.",
+                    accommodation: "Msandile Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Morning walking safari and night game drive"
+                },
+                {
+                    day: 4,
+                    title: "Senga Bay (Salima)",
+                    description:
+                        "After an early breakfast in South Luangwa National Park, depart for a scenic drive across the border to Senga Bay on the shores of beautiful Lake Malawi. The journey takes you through rural villages, rolling landscapes, and picturesque countryside. Upon arrival at your lakeside accommodation, check in and enjoy the afternoon at leisure, relaxing on the sandy beach, swimming in crystal-clear waters, or unwinding beneath palm trees.",
+                    route: "South Luangwa to Salima / Senga Bay — 340km — 7 hours",
+                    accommodation: "Sunbird Livingstonia Beach or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Scenic transfer from Zambia to the shores of Lake Malawi"
+                },
+                {
+                    day: 5,
+                    title: "Senga Bay (Salima)",
+                    description:
+                        "Start your day with an enriching cultural village tour in Senga Bay on the shores of Lake Malawi. Accompanied by a local guide, visit a nearby community to interact with residents, learn about traditional customs, fishing practices, and village livelihoods. The remainder of the day is free for optional water-based activities such as swimming, kayaking, boat cruises, snorkeling, or simply relaxing on the beach.",
+                    accommodation: "Sunbird Livingstonia Beach or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Cultural village tour and Lake Malawi beach relaxation",
+                    optionalActivities: "Kayaking, snorkeling, boat cruises, sailing"
+                },
+                {
+                    day: 6,
+                    title: "Liwonde National Park",
+                    description:
+                        "After breakfast, depart Senga Bay and enjoy a scenic drive south through rural Malawi toward the renowned Liwonde National Park. Along the way, pass through traditional villages, local markets, and countryside landscapes. Upon arrival, check in and enjoy lunch before heading out on an afternoon game drive exploring riverbanks and savannahs home to elephants, buffalo, hippos, antelopes, and birdlife.",
+                    route: "Salima to Liwonde — 180km — 3 hours",
+                    accommodation: "Liwonde Safari Camp or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Afternoon game drive in Liwonde National Park"
+                },
+                {
+                    day: 7,
+                    title: "Liwonde National Park",
+                    description:
+                        "Spend a full day exploring the wilderness of Liwonde National Park, one of Malawi’s most celebrated wildlife reserves. Set out on morning and afternoon game drives through floodplains, riverine woodlands, and open grasslands in search of elephants, hippos, crocodiles, buffalo, and waterbucks, enjoying a scenic picnic lunch during the heat of midday.",
+                    accommodation: "Liwonde Safari Camp or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Tent",
+                    highlights: "Full-day game drive in Liwonde National Park"
+                },
+                {
+                    day: 8,
+                    title: "Majete Wildlife Reserve",
+                    description:
+                        "After breakfast, depart Liwonde National Park and journey through Malawi’s countryside toward Majete Wildlife Reserve. Check in and relax before an exciting evening activity. As darkness falls, embark on a thrilling night game drive with an experienced guide and spotlight operator to search for nocturnal wildlife such as hyenas, civets, genets, bushbabies, and porcupines.",
+                    route: "Liwonde to Majete — 160km — 3.5 hours",
+                    accommodation: "Ngona Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Night game drive in Majete Wildlife Reserve"
+                },
+                {
+                    day: 9,
+                    title: "Majete Wildlife Reserve",
+                    description:
+                        "Enjoy a full day of wildlife viewing in Majete Wildlife Reserve, one of Malawi’s greatest conservation success stories. Accompanied by an experienced safari guide, search for the reserve’s abundant wildlife, including elephants, buffaloes, zebras, antelopes, and the Big Five across riverine forests and open woodlands, with a relaxing picnic lunch in nature.",
+                    accommodation: "Ngona Lodge or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room or Tent",
+                    highlights: "Full-day game drive in Majete Wildlife Reserve"
+                },
+                {
+                    day: 10,
+                    title: "Lilongwe",
+                    description:
+                        "After breakfast, depart Majete Wildlife Reserve and journey back towards Lilongwe. The drive passes traditional villages, farmlands, and bustling trading centers. Stop at a local roadside market to experience everyday Malawian commerce, interact with local vendors, and pick up authentic handicrafts before continuing to Lilongwe for your final evening.",
+                    route: "Majete to Lilongwe — 320km — 5.5 hours",
+                    accommodation: "Lilongwe Sunbird Hotel or similar",
+                    meals: "LDB",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Roadside market stopover and scenic drive to Lilongwe"
+                },
+                {
+                    day: 11,
+                    title: "Lilongwe / Flying Out",
+                    description:
+                        "Enjoy a relaxed morning at your accommodation, taking time for breakfast and reflection on your memorable safari across South Luangwa, Lake Malawi, Liwonde, and Majete. At the scheduled time, transfer to Kamuzu International Airport for your onward departure flight, marking the end of your extraordinary journey.",
+                    route: "Hotel to Kamuzu International Airport — 25km — 30 mins",
+                    accommodation: "Own arrangements",
+                    meals: "Breakfast",
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room",
+                    highlights: "Airport transfer and tour conclusion"
+                }
+            ]
         }
 ];
 
