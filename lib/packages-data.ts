@@ -264,8 +264,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/dunes-moody.jpg",
+        image: "/images/safari/7-days-etosha-and-desert.jpeg",
         images: [
+            "/images/safari/7-days-etosha-and-desert.jpeg",
             "/images/safari/dunes-moody.jpg",
             "/images/safari/dead-tree-desert.jpg",
             "/images/safari/dunes-panorama.jpg",
@@ -387,9 +388,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/elephant-river.jpg",
+        image: "/images/safari/the-great-botswana-highlights-tour.jpeg",
         images: [
-            "/images/safari/elephant-river.jpg",
+            "/images/safari/the-great-botswana-highlights-tour.jpeg",
             "/images/safari/hippos-grass.jpg",
             "/images/safari/elephants-waterhole.jpg",
             "/images/safari/river-aerial.jpg",
@@ -714,8 +715,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/victoria-falls-wide.jpg",
+        image: "/images/safari/7-days-across-zimbabwe.jpeg",
         images: [
+            "/images/safari/7-days-across-zimbabwe.jpeg",
             "/images/safari/victoria-falls-wide.jpg",
             "/images/safari/elephants-waterhole.jpg",
             "/images/safari/rhino.jpg",
@@ -848,8 +850,9 @@ const packagesData: Package[] = [
         featured: false,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/wild-dogs.jpg",
+        image: "/images/safari/3-days-hwange.jpeg",
         images: [
+            "/images/safari/3-days-hwange.jpeg",
             "/images/safari/wild-dogs.jpg",
             "/images/safari/elephants-waterhole.jpg",
             "/images/safari/elephant-tusker.jpg",
@@ -1033,9 +1036,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/victoria-falls-close.jpg",
+        image: "/images/safari/5-days-victoria-falls-livingstone-and-chobe.jpeg",
         images: [
-            "/images/safari/victoria-falls-close.jpg",
+            "/images/safari/5-days-victoria-falls-livingstone-and-chobe.jpeg",
             "/images/safari/victoria-falls-wide.jpg",
             "/images/safari/elephant-river.jpg",
             "/images/safari/victoria-falls-aerial.jpg",
@@ -1278,9 +1281,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/dunes-panorama.jpg",
+        image: "/images/safari/9-days-namibia-etosha-damaraland-ocean-and-desert.jpeg",
         images: [
-            "/images/safari/dunes-panorama.jpg",
+            "/images/safari/9-days-namibia-etosha-damaraland-ocean-and-desert.jpeg",
             "/images/safari/etosha-elephants.jpg",
             "/images/safari/rhino.jpg",
             "/images/safari/wild-dogs.jpg",
@@ -1424,9 +1427,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/victoria-falls-wide.jpg",
+        image: "/images/safari/7-days-victoria-falls-to-okavango-delta.jpeg",
         images: [
-            "/images/safari/victoria-falls-wide.jpg",
+            "/images/safari/7-days-victoria-falls-to-okavango-delta.jpeg",
             "/images/safari/elephant-river.jpg",
             "/images/safari/hippos-grass.jpg",
             "/images/safari/river-aerial.jpg",
@@ -1911,9 +1914,9 @@ const packagesData: Package[] = [
         featured: false,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/victoria-falls-wide.jpg",
+        image: "/images/safari/5-days-victoria-falls-hwange-nw.jpeg",
         images: [
-            "/images/safari/victoria-falls-wide.jpg",
+            "/images/safari/5-days-victoria-falls-hwange-nw.jpeg",
             "/images/safari/wild-dogs.jpg",
             "/images/safari/elephants-waterhole.jpg"
         ],
@@ -2020,9 +2023,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/dunes-panorama.jpg",
+        image: "/images/safari/17-days-southern-africa-flying-safari.jpeg",
         images: [
-            "/images/safari/dunes-panorama.jpg",
+            "/images/safari/17-days-southern-africa-flying-safari.jpeg",
             "/images/safari/victoria-falls-aerial.jpg",
             "/images/safari/elephant-river.jpg",
             "/images/safari/leopard-walking.jpg"
@@ -2376,9 +2379,9 @@ const packagesData: Package[] = [
         featured: false,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/elephant-river.jpg",
+        image: "/images/safari/3-days-chobe.jpeg",
         images: [
-            "/images/safari/elephant-river.jpg",
+            "/images/safari/3-days-chobe.jpeg",
             "/images/safari/elephants-waterhole.jpg",
             "/images/safari/hippos-grass.jpg",
             "/images/safari/river-aerial.jpg",
@@ -2474,8 +2477,9 @@ const packagesData: Package[] = [
         featured: false,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/dunes-moody.jpg",
+        image: "/images/safari/16-days-windhoek-to-victoria-falls.jpeg",
         images: [
+            "/images/safari/16-days-windhoek-to-victoria-falls.jpeg",
             "/images/safari/dunes-moody.jpg",
             "/images/safari/oryx-dunes.jpg",
             "/images/safari/elephant-river.jpg",
@@ -2874,9 +2878,9 @@ const packagesData: Package[] = [
         featured: false,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/elephant-river.jpg",
+        image: "/images/safari/5-days-chobe-to-okavango-delta.jpeg",
         images: [
-            "/images/safari/elephant-river.jpg",
+            "/images/safari/5-days-chobe-to-okavango-delta.jpeg",
             "/images/safari/elephants-waterhole.jpg",
             "/images/safari/hippos-grass.jpg",
             "/images/safari/river-aerial.jpg"
@@ -3457,8 +3461,9 @@ const packagesData: Package[] = [
             featured: true,
             bestSeller: false,
             newPackage: true,
-            image: "/images/safari/rhino-walking-green.jpg",
+            image: "/images/safari/5-days-zimbabwe.jpeg",
             images: [
+                "/images/safari/5-days-zimbabwe.jpeg",
                 "/images/safari/rhino-walking-green.jpg",
                 "/images/safari/elephants-waterhole.jpg",
                 "/images/safari/victoria-falls-wide.jpg",
@@ -3587,8 +3592,9 @@ const packagesData: Package[] = [
             featured: true,
             bestSeller: true,
             newPackage: true,
-            image: "/images/safari/elephant-river-blue.jpg",
+            image: "/images/safari/the-circle-tour-of-zimbabwe-and-botswana.jpeg",
             images: [
+                "/images/safari/the-circle-tour-of-zimbabwe-and-botswana.jpeg",
                 "/images/safari/elephant-river-blue.jpg",
                 "/images/safari/victoria-falls-wide.jpg",
                 "/images/safari/delta-aerial.jpg",
@@ -3832,8 +3838,9 @@ const packagesData: Package[] = [
             featured: true,
             bestSeller: false,
             newPackage: true,
-            image: "/images/safari/delta-aerial.jpg",
+            image: "/images/safari/14-day-rediscover-botswana.jpeg",
             images: [
+                "/images/safari/14-day-rediscover-botswana.jpeg",
                 "/images/safari/delta-aerial.jpg",
                 "/images/safari/elephant-river.jpg",
                 "/images/safari/rhino-walking-green.jpg",
@@ -4074,9 +4081,9 @@ const packagesData: Package[] = [
             featured: false,
             bestSeller: false,
             newPackage: true,
-            image: "/images/safari/elephant-river.jpg",
+            image: "/images/safari/5-days-chobe-and-hwange.jpeg",
             images: [
-                "/images/safari/elephant-river.jpg",
+                "/images/safari/5-days-chobe-and-hwange.jpeg",
                 "/images/safari/wild-dogs.jpg",
                 "/images/safari/elephants-waterhole.jpg",
                 "/images/safari/hippos-grass.jpg"
@@ -4180,7 +4187,7 @@ const packagesData: Package[] = [
         {
             id: "28",
             slug: "15-days-zambia-and-malawi-tour",
-            title: "15-Day Zambia & Malawi Tour",
+            title: "15-Day Zambia & Malawi Grand Safari Adventure",
             category: ["Wildlife Safari", "Adventure", "Cultural Tour"],
             destinations: [
                 "Livingstone",
@@ -4205,8 +4212,9 @@ const packagesData: Package[] = [
             featured: false,
             bestSeller: false,
             newPackage: true,
-            image: "/images/safari/lake-malawi.jpg",
+            image: "/images/safari/15-day-zambia-and-malawi-grand-safari-adventure.jpeg",
             images: [
+                "/images/safari/15-day-zambia-and-malawi-grand-safari-adventure.jpeg",
                 "/images/safari/lake-malawi.jpg",
                 "/images/safari/victoria-falls-wide.jpg",
                 "/images/safari/leopard-walking.jpg",
