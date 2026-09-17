@@ -941,9 +941,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: true,
         newPackage: false,
-        image: "/images/safari/victoria-falls-aerial.jpg",
+        image: "/images/safari/4-days-victoria-falls-and-livingstone-holiday.jpeg",
         images: [
-            "/images/safari/victoria-falls-aerial.jpg",
+            "/images/safari/4-days-victoria-falls-and-livingstone-holiday.jpeg",
             "/images/safari/victoria-falls-close.jpg",
             "/images/safari/victoria-falls-wide.jpg",
             "/images/safari/elephant-river.jpg",
@@ -2277,9 +2277,9 @@ const packagesData: Package[] = [
         featured: true,
         bestSeller: false,
         newPackage: true,
-        image: "/images/safari/victoria-falls-wide.jpg",
+        image: "/images/safari/4-days-victoria-falls-and-chobe.jpeg",
         images: [
-            "/images/safari/victoria-falls-wide.jpg",
+            "/images/safari/4-days-victoria-falls-and-chobe.jpeg",
             "/images/safari/elephant-river.jpg",
             "/images/safari/victoria-falls-close.jpg",
             "/images/safari/hippos-grass.jpg"
