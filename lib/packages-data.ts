@@ -3039,7 +3039,7 @@ const packagesData: Package[] = [
                     meals: "LDB",
                     highlights: "Dinner Cruise",
                     optionalActivities: "Zipline, jetboat, helicopter flight and many more",
-                    facilities: "Single room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 2,
@@ -3049,7 +3049,7 @@ const packagesData: Package[] = [
                     meals: "LBD",
                     highlights: "Guided tour of the Falls",
                     optionalActivities: "Afternoon game drive, helicopter flight, rafting, gorge swing and many more",
-                    facilities: "Single/ Twin/Double/ Triple or Family room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 3,
@@ -3059,7 +3059,7 @@ const packagesData: Package[] = [
                     accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                     meals: "LDB",
                     highlights: "Afternoon boat cruise (3hours activity)",
-                    facilities: "Single Room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 4,
@@ -3068,7 +3068,7 @@ const packagesData: Package[] = [
                     accommodation: "Tlou Safari Lodge / Two Rivers Hotel or similar",
                     meals: "LDB",
                     highlights: "Morning and afternoon game drive (each game drive is 3hours)",
-                    facilities: "Single Room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 5,
@@ -3079,7 +3079,7 @@ const packagesData: Package[] = [
                     meals: "LDB",
                     highlights: "Painted Dog's Project",
                     optionalActivities: "Afternoon and night game drive in concession",
-                    facilities: "Single Room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 6,
@@ -3088,7 +3088,7 @@ const packagesData: Package[] = [
                     accommodation: "Hwange Safari Lodge or similar",
                     meals: "LDB",
                     highlights: "Full day game drive",
-                    facilities: "Single Room"
+                    facilities: "Single/ Twin/ Double/ Triple and Family Room"
                 },
                 {
                     day: 7,
