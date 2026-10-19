@@ -47,7 +47,7 @@ export default async function AdminBookings() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Booking Info</h4>
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-700 mb-3">
                     <span className="font-medium text-gray-900">Status: </span> 
                     <span className={`inline-block px-2 py-0.5 rounded text-xs font-semibold ${
                       booking.status === 'CONFIRMED' 
@@ -59,11 +59,37 @@ export default async function AdminBookings() {
                       {booking.status}
                     </span>
                   </p>
-                  <div className="text-sm mt-2">
-                    <span className="font-medium text-gray-900 block mb-1">Items:</span>
-                    <pre className="bg-gray-50 p-3 rounded-md text-xs overflow-x-auto border border-gray-100 text-gray-700">
-                      {JSON.stringify(booking.items, null, 2)}
-                    </pre>
+                  {booking.specialRequests && (
+                    <p className="text-sm text-gray-700 mb-3">
+                      <span className="font-medium text-gray-900">Special Requests: </span>
+                      {booking.specialRequests}
+                    </p>
+                  )}
+                  <span className="font-medium text-gray-900 text-sm block mb-2">Booked Tours:</span>
+                  <div className="space-y-2">
+                    {(Array.isArray(booking.items) ? booking.items as Array<Record<string, unknown>> : []).map((item, idx) => (
+                      <div key={idx} className="bg-gray-50 border border-gray-100 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                        <div className="flex-1 min-w-0">
+                          <p className="font-semibold text-gray-900 text-sm truncate">{String(item.name || 'Tour')}</p>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-xs text-gray-500">
+                            {item.date && (
+                              <span>📅 {String(item.date)}</span>
+                            )}
+                            {item.duration && (
+                              <span>🕐 {String(item.duration)}</span>
+                            )}
+                            {item.travelers && (
+                              <span>👥 {String(item.travelers)} traveler{Number(item.travelers) !== 1 ? 's' : ''}</span>
+                            )}
+                          </div>
+                        </div>
+                        {item.pricePerPerson && (
+                          <div className="text-sm font-semibold text-green-700 whitespace-nowrap">
+                            ${Number(item.pricePerPerson).toLocaleString()} <span className="text-xs font-normal text-gray-400">/person</span>
+                          </div>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
