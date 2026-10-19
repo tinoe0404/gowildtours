@@ -21,6 +21,7 @@ export default function ReviewForm() {
     const payload = {
       name: formData.get("name"),
       country: formData.get("country"),
+      tourId: formData.get("tourTitle") || formData.get("tourId") || "General Safari Experience",
       rating,
       message: formData.get("message"),
     };
@@ -129,6 +130,36 @@ export default function ReviewForm() {
               className="form-input"
               placeholder="e.g. United Kingdom"
             />
+          </div>
+        </div>
+
+        {/* Tour / Safari Name */}
+        <div className="form-field" style={{ marginBottom: 0 }}>
+          <label htmlFor="review-tour" className="form-label">Tour / Experience Name (Optional)</label>
+          <input
+            type="text"
+            id="review-tour"
+            name="tourTitle"
+            list="safari-tours-list"
+            maxLength={100}
+            className="form-input"
+            placeholder="e.g. 7 Days Victoria Falls, Chobe and Hwange"
+          />
+          <datalist id="safari-tours-list">
+            <option value="3 Days Victoria Falls Holiday — Luxury" />
+            <option value="7 Days Victoria Falls, Chobe and Hwange" />
+            <option value="Hwange and Botswana Wildlife" />
+            <option value="The Best of Zambia, Zimbabwe and Botswana Luxury Safari" />
+            <option value="The Great Botswana Highlights Tour" />
+            <option value="5 Days Chobe & Okavango Delta" />
+            <option value="7 Days Across Zimbabwe" />
+            <option value="6 Days Botswana Waterways and Wildlife" />
+            <option value="7 Days Etosha and Desert" />
+            <option value="3 Days Hwange National Park" />
+            <option value="General Safari Experience" />
+          </datalist>
+          <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginTop: '4px' }}>
+            Choose from the list or type the specific tour or safari you participated in.
           </div>
         </div>
 

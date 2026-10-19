@@ -24,7 +24,7 @@ export default async function AdminReviews() {
                 <div>
                   <h3 className="text-lg font-bold text-gray-900">{review.customerName}</h3>
                   <p className="text-sm text-gray-500">
-                    Tour ID: {review.tourId} • {format(new Date(review.createdAt), 'MMM dd, yyyy')}
+                    <span className="font-medium text-gray-700">Tour / Experience:</span> {review.tourId} • {format(new Date(review.createdAt), 'MMM dd, yyyy')}
                   </p>
                 </div>
                 <div className="flex items-center text-yellow-500 mt-2 md:mt-0 bg-white px-2 py-1 rounded-md border border-gray-100 shadow-sm">

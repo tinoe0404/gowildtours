@@ -24,9 +24,12 @@ export default async function ReviewsPage() {
 
   const formattedDbReviews: Review[] = dbReviews.map((r) => {
     const match = r.customerName.match(/^(.*?)(?:\s*\((.*?)\))?$/);
+    const country = match?.[2]?.trim();
+    const tourLabel = r.tourId && r.tourId !== "general" ? r.tourId : (country || undefined);
+
     return {
-      name: match?.[1]?.trim() || r.customerName,
-      country: match?.[2]?.trim() || r.tourId || undefined,
+      name: country ? `${match?.[1]?.trim() || r.customerName} (${country})` : r.customerName,
+      country: tourLabel,
       rating: r.rating,
       message: r.content,
       approved: true,
