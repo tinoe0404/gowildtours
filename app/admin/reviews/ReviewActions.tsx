@@ -10,6 +10,11 @@ export default function ReviewActions({ reviewId, isApproved }: { reviewId: stri
   const router = useRouter();
 
   const handleAction = async (action: 'approve' | 'reject' | 'delete') => {
+    if (action === 'delete') {
+      const confirmed = window.confirm('Are you sure you want to permanently delete this review?');
+      if (!confirmed) return;
+    }
+
     setIsLoading(true);
     try {
       const res = await fetch(`/api/admin/reviews/${reviewId}`, {
@@ -19,10 +24,11 @@ export default function ReviewActions({ reviewId, isApproved }: { reviewId: stri
       });
 
       if (res.ok) {
-        toast.success(`Review ${action}d successfully`);
+        toast.success(`Review ${action === 'delete' ? 'deleted' : action === 'approve' ? 'approved' : 'unapproved'} successfully`);
         router.refresh();
       } else {
-        toast.error(`Failed to ${action} review`);
+        const data = await res.json().catch(() => null);
+        toast.error(data?.error || `Failed to ${action} review`);
       }
     } catch (error) {
       toast.error('An error occurred');
