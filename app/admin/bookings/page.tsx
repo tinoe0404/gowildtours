@@ -67,27 +67,33 @@ export default async function AdminBookings() {
                   )}
                   <span className="font-medium text-gray-900 text-sm block mb-2">Booked Tours:</span>
                   <div className="space-y-2">
-                    {(Array.isArray(booking.items) ? booking.items as Array<Record<string, unknown>> : []).map((item, idx) => (
+                    {((Array.isArray(booking.items) ? booking.items : []) as Array<{
+                      name?: string;
+                      date?: string;
+                      duration?: string;
+                      travelers?: number | string;
+                      pricePerPerson?: number | string;
+                    }>).map((item, idx) => (
                       <div key={idx} className="bg-gray-50 border border-gray-100 rounded-lg p-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                         <div className="flex-1 min-w-0">
                           <p className="font-semibold text-gray-900 text-sm truncate">{String(item.name || 'Tour')}</p>
                           <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-xs text-gray-500">
-                            {item.date && (
+                            {item.date ? (
                               <span>📅 {String(item.date)}</span>
-                            )}
-                            {item.duration && (
+                            ) : null}
+                            {item.duration ? (
                               <span>🕐 {String(item.duration)}</span>
-                            )}
-                            {item.travelers && (
+                            ) : null}
+                            {item.travelers ? (
                               <span>👥 {String(item.travelers)} traveler{Number(item.travelers) !== 1 ? 's' : ''}</span>
-                            )}
+                            ) : null}
                           </div>
                         </div>
-                        {item.pricePerPerson && (
+                        {item.pricePerPerson ? (
                           <div className="text-sm font-semibold text-green-700 whitespace-nowrap">
                             ${Number(item.pricePerPerson).toLocaleString()} <span className="text-xs font-normal text-gray-400">/person</span>
                           </div>
-                        )}
+                        ) : null}
                       </div>
                     ))}
                   </div>
