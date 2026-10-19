@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { revalidatePath } from 'next/cache';
 
 export async function PATCH(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -10,6 +11,10 @@ export async function PATCH(req: Request, { params }: { params: Promise<{ id: st
       where: { id },
       data: { isApproved },
     });
+
+    revalidatePath('/reviews');
+    revalidatePath('/admin/reviews');
+    revalidatePath('/admin/dashboard');
 
     return NextResponse.json(review);
   } catch (error) {
@@ -24,6 +29,10 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     await prisma.review.delete({
       where: { id },
     });
+
+    revalidatePath('/reviews');
+    revalidatePath('/admin/reviews');
+    revalidatePath('/admin/dashboard');
 
     return NextResponse.json({ success: true });
   } catch (error) {

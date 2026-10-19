@@ -3,7 +3,7 @@
 import { Star, Quote } from "lucide-react";
 import reviewsData from "../../data/reviews.json";
 
-interface Review {
+export interface Review {
   name: string;
   rating: number;
   message: string;
@@ -12,9 +12,9 @@ interface Review {
   date: string;
 }
 
-export default function MovingReviews() {
-  const approvedReviews: Review[] = (reviewsData as Review[])
-    .filter((review) => review.approved);
+export default function MovingReviews({ reviews }: { reviews?: Review[] } = {}) {
+  const sourceReviews = reviews && reviews.length > 0 ? reviews : (reviewsData as Review[]);
+  const approvedReviews: Review[] = sourceReviews.filter((review) => review.approved);
 
   if (approvedReviews.length === 0) return null;
 

@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
-// Simple in-memory rate limiting (Note: In a true serverless environment, 
-// this is per-instance, but it satisfies the basic requirement)
+// Simple in-memory rate limiting
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
 const RATE_LIMIT_WINDOW_MS = 60 * 1000; // 1 minute
-const MAX_REQUESTS_PER_WINDOW = 3;
+const MAX_REQUESTS_PER_WINDOW = 5;
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -46,14 +47,14 @@ export async function POST(req: Request) {
     }
 
     const body = await req.json();
-    const { name, rating, message, country } = body;
+    const { name, rating, message, country, tourId } = body;
 
     // Validation
-    if (!name || typeof name !== "string" || name.length > 50) {
+    if (!name || typeof name !== "string" || name.trim().length === 0 || name.length > 50) {
       return NextResponse.json({ error: "Invalid name (max 50 characters)" }, { status: 400 });
     }
-    if (!message || typeof message !== "string" || message.length > 500) {
-      return NextResponse.json({ error: "Invalid message (max 500 characters)" }, { status: 400 });
+    if (!message || typeof message !== "string" || message.trim().length === 0 || message.length > 1000) {
+      return NextResponse.json({ error: "Invalid message (max 1000 characters)" }, { status: 400 });
     }
     if (typeof rating !== "number" || rating < 1 || rating > 5) {
       return NextResponse.json({ error: "Invalid rating (must be 1-5)" }, { status: 400 });
@@ -62,48 +63,37 @@ export async function POST(req: Request) {
     const sanitizedName = sanitizeInput(name);
     const sanitizedMessage = sanitizeInput(message);
     const sanitizedCountry = sanitizeInput(country || "");
+    const sanitizedTourId = sanitizeInput(tourId || "General Safari Experience");
 
-    const payload = {
-      name: sanitizedName,
-      rating,
-      message: sanitizedMessage,
-      country: sanitizedCountry,
-      approved: false,
-      date: new Date().toISOString()
-    };
+    const customerName = sanitizedCountry
+      ? `${sanitizedName} (${sanitizedCountry})`
+      : sanitizedName;
 
-    const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-    const GITHUB_REPO = process.env.GITHUB_REPO; // e.g., "owner/repo"
-
-    if (!GITHUB_TOKEN || !GITHUB_REPO) {
-      console.warn("GitHub integration missing. Falling back to success response for development.");
-      return NextResponse.json({ success: true, message: "Review received (dev mode)" });
-    }
-
-    const issueTitle = `New Review from ${sanitizedName}`;
-    const issueBody = `### New Review Submission\n\nPlease review the following submission and add it to \`data/reviews.json\` if approved.\n\n\`\`\`json\n${JSON.stringify(payload, null, 2)}\n\`\`\``;
-
-    const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/issues`, {
-      method: "POST",
-      headers: {
-        Authorization: `token ${GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
+    // Save directly to Postgres database
+    const review = await prisma.review.create({
+      data: {
+        tourId: sanitizedTourId,
+        customerName,
+        rating: Math.round(rating),
+        content: sanitizedMessage,
+        isApproved: false, // Requires admin approval
       },
-      body: JSON.stringify({
-        title: issueTitle,
-        body: issueBody,
-        labels: ["review", "pending-approval"]
-      }),
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("GitHub API Error:", errorText);
-      return NextResponse.json({ error: "Failed to submit review" }, { status: 500 });
-    }
+    // Revalidate admin dashboard and reviews page
+    revalidatePath("/admin/reviews");
+    revalidatePath("/admin/dashboard");
 
-    return NextResponse.json({ success: true, message: "Review submitted successfully" });
+    return NextResponse.json({
+      success: true,
+      message: "Review submitted successfully for approval",
+      review: {
+        id: review.id,
+        name: review.customerName,
+        rating: review.rating,
+        createdAt: review.createdAt,
+      },
+    });
   } catch (error) {
     console.error("Review submission error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

@@ -1,13 +1,41 @@
 import ReviewForm from '@/components/reviews/ReviewForm';
-import MovingReviews from '@/components/reviews/MovingReviews';
+import MovingReviews, { Review } from '@/components/reviews/MovingReviews';
 import Container from '@/components/ui/Container';
+import { prisma } from '@/lib/prisma';
+import reviewsData from '@/data/reviews.json';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Reviews – Go Wild Tours',
   description: 'Read customer reviews and share your safari experience with Go Wild Tours',
 };
 
-export default function ReviewsPage() {
+export default async function ReviewsPage() {
+  let dbReviews: any[] = [];
+  try {
+    dbReviews = await prisma.review.findMany({
+      where: { isApproved: true },
+      orderBy: { createdAt: 'desc' },
+    });
+  } catch (err) {
+    console.error('Failed to fetch approved reviews:', err);
+  }
+
+  const formattedDbReviews: Review[] = dbReviews.map((r) => {
+    const match = r.customerName.match(/^(.*?)(?:\s*\((.*?)\))?$/);
+    return {
+      name: match?.[1]?.trim() || r.customerName,
+      country: match?.[2]?.trim() || r.tourId || undefined,
+      rating: r.rating,
+      message: r.content,
+      approved: true,
+      date: r.createdAt.toISOString(),
+    };
+  });
+
+  const allReviews: Review[] = [...formattedDbReviews, ...(reviewsData as Review[])];
+
   return (
     <main className="min-h-screen bg-[var(--color-mist)] pt-32 pb-24">
       {/* Header section */}
@@ -22,7 +50,7 @@ export default function ReviewsPage() {
 
       {/* Moving reviews marquee spanning full width */}
       <section className="mb-16">
-        <MovingReviews />
+        <MovingReviews reviews={allReviews} />
       </section>
 
       {/* Submission form section */}
