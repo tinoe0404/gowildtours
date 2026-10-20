@@ -7,7 +7,7 @@ const contactSchema = z.object({
     email: z.string().email(),
     phone: z.string().optional(),
     subject: z.string().min(1),
-    message: z.string().min(20),
+    message: z.string().min(5),
     inquiry_type: z.enum(['General Inquiry', 'Safari Package Info', 'Booking Assistance', 'Custom Request', 'Feedback']).default('General Inquiry'),
 });
 

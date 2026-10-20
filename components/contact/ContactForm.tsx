@@ -5,10 +5,12 @@ import { Send, CheckCircle2 } from 'lucide-react';
 
 export const ContactForm = () => {
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus('submitting');
+        setErrorMessage('');
 
         const formData = new FormData(e.currentTarget);
         const inquiryType = formData.get('type') as string || 'General Inquiry';
@@ -28,10 +30,14 @@ export const ContactForm = () => {
                 body: JSON.stringify(data),
             });
 
-            if (!res.ok) throw new Error('Failed to send message');
+            if (!res.ok) {
+                const result = await res.json().catch(() => null);
+                throw new Error(result?.error || 'Failed to send message');
+            }
             setStatus('success');
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
+            setErrorMessage(err?.message || 'Something went wrong. Please try again or email us directly.');
             setStatus('error');
         }
     };
@@ -92,7 +98,7 @@ export const ContactForm = () => {
             </div>
 
             {status === 'error' && (
-                <p className="text-red-500 text-sm text-center">Something went wrong. Please try again or email us directly.</p>
+                <p className="text-red-500 text-sm text-center">{errorMessage || 'Something went wrong. Please try again or email us directly.'}</p>
             )}
 
             <button
