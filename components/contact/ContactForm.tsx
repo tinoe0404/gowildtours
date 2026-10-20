@@ -11,16 +11,18 @@ export const ContactForm = () => {
         setStatus('submitting');
 
         const formData = new FormData(e.currentTarget);
+        const inquiryType = formData.get('type') as string || 'General Inquiry';
         const data = {
             name: formData.get('name'),
             email: formData.get('email'),
             phone: formData.get('phone'),
-            type: formData.get('type') === 'General Inquiry' ? 'contact' : 'custom_quote',
+            subject: `${inquiryType} from ${formData.get('name')}`,
+            inquiry_type: inquiryType,
             message: formData.get('message'),
         };
 
         try {
-            const res = await fetch('/api/inquiries', {
+            const res = await fetch('/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
