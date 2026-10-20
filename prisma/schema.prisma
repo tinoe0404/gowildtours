@@ -44,3 +44,15 @@ model Review {
   isApproved   Boolean  @default(false)
   createdAt    DateTime @default(now())
 }
+
+model Message {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  subject     String
+  message     String
+  inquiryType String   @default("General Inquiry")
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
