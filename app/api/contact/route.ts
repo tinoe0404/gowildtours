@@ -37,8 +37,10 @@ export async function POST(req: Request) {
             await emailService.sendContactConfirmation({
                 name: validatedData.name,
                 email: validatedData.email,
+                phone: validatedData.phone || undefined,
                 subject: validatedData.subject,
                 message: validatedData.message,
+                inquiryType: validatedData.inquiry_type,
             });
         } catch (emailError) {
             console.error('Failed to dispatch emails, but message was saved to database:', emailError);

@@ -66,8 +66,10 @@ export async function POST(req: Request) {
       await emailService.sendContactConfirmation({
         name: data.name,
         email: data.email,
+        phone: data.phone || undefined,
         subject,
         message: details,
+        inquiryType: 'Safari Package Info',
       });
     } catch (emailError) {
       console.error('Email sending failed for package inquiry, but saved to DB:', emailError);
