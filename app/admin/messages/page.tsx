@@ -1,7 +1,8 @@
 import { prisma } from '@/lib/prisma';
 import { format } from 'date-fns';
-import { Mail, Phone, Clock, MessageSquare, Tag } from 'lucide-react';
+import { Mail, Phone, Clock, MessageSquare, Tag, Users, Calendar, Compass } from 'lucide-react';
 import MessageActions from './MessageActions';
+import { parseInquiryDetails } from '@/lib/inquiry';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,27 +12,34 @@ export default async function AdminMessages() {
   });
 
   const unreadCount = messages.filter((m) => !m.isRead).length;
+  const packageCount = messages.filter((m) => parseInquiryDetails(m).isPackageInquiry).length;
 
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Tourist Messages & Inquiries</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Tourist Inquiries & Messages</h1>
           <p className="text-sm text-gray-500 mt-1">
-            Messages and inquiries submitted by visitors from the contact form
+            All leads and messages submitted via the website (Safari Inquiries and Contact Us)
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="bg-white border border-gray-200 px-4 py-2 rounded-lg shadow-sm text-sm">
+          <div className="bg-white border border-gray-200 px-3.5 py-1.5 rounded-lg shadow-xs text-sm">
+            <span className="text-gray-500">Safari Leads:</span>{' '}
+            <span className="font-bold text-amber-700">{packageCount}</span>
+          </div>
+          <div className="bg-white border border-gray-200 px-3.5 py-1.5 rounded-lg shadow-xs text-sm">
             <span className="text-gray-500">Total:</span>{' '}
             <span className="font-bold text-gray-900">{messages.length}</span>
           </div>
-          <div className={`px-4 py-2 rounded-lg text-sm border shadow-sm ${
-            unreadCount > 0 
-              ? 'bg-amber-50 text-amber-800 border-amber-200' 
-              : 'bg-green-50 text-green-800 border-green-200'
-          }`}>
-            <span className="font-semibold">{unreadCount}</span> Unread
+          <div
+            className={`px-3.5 py-1.5 rounded-lg text-sm border shadow-xs ${
+              unreadCount > 0
+                ? 'bg-amber-50 text-amber-800 border-amber-200 font-medium'
+                : 'bg-green-50 text-green-800 border-green-200'
+            }`}
+          >
+            <span>{unreadCount}</span> Unread
           </div>
         </div>
       </div>
@@ -46,81 +54,129 @@ export default async function AdminMessages() {
         </div>
       ) : (
         <div className="grid gap-5">
-          {messages.map((msg) => (
-            <div
-              key={msg.id}
-              className={`p-6 rounded-xl border shadow-sm transition-all ${
-                msg.isRead
-                  ? 'border-gray-200 bg-white'
-                  : 'border-blue-300 bg-blue-50/40 ring-1 ring-blue-100'
-              }`}
-            >
-              {/* Header */}
-              <div className="pb-4 border-b border-gray-100 flex flex-col md:flex-row md:items-start justify-between gap-3 mb-4">
-                <div>
-                  <div className="flex items-center gap-3 flex-wrap">
-                    <h3 className="text-lg font-bold text-gray-900">{msg.name}</h3>
-                    <span
-                      className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
-                        msg.isRead
-                          ? 'bg-gray-100 text-gray-600'
-                          : 'bg-blue-600 text-white animate-pulse'
-                      }`}
-                    >
-                      {msg.isRead ? 'Read' : 'New / Unread'}
-                    </span>
-                    <span className="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
-                      <Tag className="h-3 w-3 mr-1" />
-                      {msg.inquiryType}
-                    </span>
-                  </div>
+          {messages.map((msg) => {
+            const details = parseInquiryDetails(msg);
 
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-600">
-                    <a
-                      href={`mailto:${msg.email}`}
-                      className="flex items-center hover:text-green-700 underline underline-offset-2"
-                    >
-                      <Mail className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                      {msg.email}
-                    </a>
-                    {msg.phone && (
-                      <a
-                        href={`tel:${msg.phone}`}
-                        className="flex items-center hover:text-green-700"
+            return (
+              <div
+                key={msg.id}
+                className={`p-6 rounded-xl border shadow-sm transition-all ${
+                  msg.isRead
+                    ? 'border-gray-200 bg-white'
+                    : details.isPackageInquiry
+                    ? 'border-amber-300 bg-amber-50/30 ring-1 ring-amber-100'
+                    : 'border-blue-300 bg-blue-50/30 ring-1 ring-blue-100'
+                }`}
+              >
+                {/* Header */}
+                <div className="pb-4 border-b border-gray-100 flex flex-col md:flex-row md:items-start justify-between gap-3 mb-4">
+                  <div>
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <h3 className="text-lg font-bold text-gray-900">{msg.name}</h3>
+                      <span
+                        className={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+                          msg.isRead
+                            ? 'bg-gray-100 text-gray-600'
+                            : 'bg-blue-600 text-white animate-pulse'
+                        }`}
                       >
-                        <Phone className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                        {msg.phone}
+                        {msg.isRead ? 'Read' : 'New / Unread'}
+                      </span>
+                      {details.isPackageInquiry ? (
+                        <span className="inline-flex items-center text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
+                          <Compass className="h-3 w-3 mr-1 text-amber-700" />
+                          Prefer to Inquire (Safari Lead)
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center text-xs font-medium px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                          <Tag className="h-3 w-3 mr-1" />
+                          {msg.inquiryType}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-gray-600">
+                      <a
+                        href={`mailto:${msg.email}`}
+                        className="flex items-center hover:text-green-700 underline underline-offset-2"
+                      >
+                        <Mail className="h-3.5 w-3.5 mr-1 text-gray-400" />
+                        {msg.email}
                       </a>
-                    )}
-                    <span className="flex items-center text-gray-400 text-xs">
-                      <Clock className="h-3.5 w-3.5 mr-1 text-gray-400" />
-                      {format(new Date(msg.createdAt), 'MMM dd, yyyy • HH:mm')}
-                    </span>
+                      {msg.phone && (
+                        <a href={`tel:${msg.phone}`} className="flex items-center hover:text-green-700">
+                          <Phone className="h-3.5 w-3.5 mr-1 text-gray-400" />
+                          {msg.phone}
+                        </a>
+                      )}
+                      <span className="flex items-center text-gray-400 text-xs">
+                        <Clock className="h-3.5 w-3.5 mr-1 text-gray-400" />
+                        {format(new Date(msg.createdAt), 'MMM dd, yyyy • HH:mm')}
+                      </span>
+                    </div>
                   </div>
+
+                  <MessageActions
+                    messageId={msg.id}
+                    isRead={msg.isRead}
+                    email={msg.email}
+                    subject={msg.subject}
+                    name={msg.name}
+                  />
                 </div>
 
-                <MessageActions
-                  messageId={msg.id}
-                  isRead={msg.isRead}
-                  email={msg.email}
-                  subject={msg.subject}
-                  name={msg.name}
-                />
-              </div>
+                {/* Prefer to Inquire (Safari Inquiry) Highlight Box */}
+                {details.isPackageInquiry ? (
+                  <div className="space-y-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-white p-4 rounded-lg border border-amber-200/80 shadow-xs">
+                      <div>
+                        <span className="text-xs text-gray-500 font-medium block">Inquired Safari Package</span>
+                        <span className="text-sm font-bold text-gray-900">
+                          {details.packageTitle || 'Safari Tour'}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-xs text-gray-500 font-medium block">Travelers Group</span>
+                        <span className="text-sm font-semibold text-gray-900 flex items-center gap-1.5 mt-0.5">
+                          <Users className="h-4 w-4 text-amber-700" />
+                          {details.travelers || '2'} Travelers
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-xs text-gray-500 font-medium block">Preferred Travel Date</span>
+                        <span className="text-sm font-semibold text-gray-900 flex items-center gap-1.5 mt-0.5">
+                          <Calendar className="h-4 w-4 text-amber-700" />
+                          {details.preferredDate || 'Flexible'}
+                        </span>
+                      </div>
+                    </div>
 
-              {/* Subject & Content */}
-              <div className="space-y-2">
-                <h4 className="font-semibold text-gray-900 text-base">
-                  <span className="text-gray-500 font-normal">Subject:</span> {msg.subject}
-                </h4>
-                <div className="bg-gray-50/80 rounded-lg p-4 border border-gray-100">
-                  <p className="text-gray-800 whitespace-pre-wrap leading-relaxed text-sm">
-                    {msg.message}
-                  </p>
-                </div>
+                    {/* Customer Message / Questions */}
+                    <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                      <h5 className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-1">
+                        Tourist Message / Questions:
+                      </h5>
+                      <p className="text-gray-800 text-sm whitespace-pre-wrap leading-relaxed">
+                        {details.customerNote}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  /* Standard Contact Message */
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 text-base">
+                      <span className="text-gray-500 font-normal">Subject:</span> {msg.subject}
+                    </h4>
+                    <div className="bg-gray-50/80 rounded-lg p-4 border border-gray-100">
+                      <p className="text-gray-800 whitespace-pre-wrap leading-relaxed text-sm">
+                        {msg.message}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>

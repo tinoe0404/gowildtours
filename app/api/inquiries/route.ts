@@ -55,6 +55,9 @@ export async function POST(req: Request) {
         subject,
         message: details,
         inquiryType: 'Safari Package Info',
+        packageTitle: packageName,
+        travelers: typeof travelersCount === 'number' ? travelersCount : parseInt(String(travelersCount)) || 2,
+        preferredDate: chosenDate !== 'Flexible / Not specified' ? chosenDate : null,
       },
     });
 
