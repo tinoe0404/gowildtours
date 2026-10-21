@@ -32,7 +32,7 @@ export default function BookingForm({ packageTitle, className }: BookingFormProp
         reset,
     } = useForm<FormData>();
 
-    const onSubmit = async (data: FormData) => {
+        const onSubmit = async (data: FormData) => {
         setIsSubmitting(true);
         setError(null);
         try {
@@ -40,21 +40,26 @@ export default function BookingForm({ packageTitle, className }: BookingFormProp
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    ...data,
-                    type: "package_inquiry",
-                    packageId: packageTitle, // Sending title as ID for now or map properly
-                    preferredDate: data.date,
-                    numberOfTravelers: data.travelers,
+                    name: data.name,
+                    email: data.email,
+                    phone: data.phone || undefined,
+                    travelers: Number(data.travelers) || 2,
+                    date: data.date,
+                    message: data.message,
+                    packageTitle: packageTitle,
                 }),
             });
 
-            if (!res.ok) throw new Error("Failed to send inquiry");
+            if (!res.ok) {
+                const errData = await res.json().catch(() => null);
+                throw new Error(errData?.error || "Failed to send inquiry. Please try again.");
+            }
 
             setIsSuccess(true);
             reset();
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
-            setError("Something went wrong. Please try again later.");
+            setError(err?.message || "Something went wrong. Please try again later.");
         } finally {
             setIsSubmitting(false);
         }
