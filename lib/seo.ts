@@ -4,7 +4,7 @@ export const siteConfig = {
     name: 'Go Wild Tours',
     description: 'Expertly curated safari adventures in Zimbabwe. Experience Victoria Falls, Hwange National Park, and more with our professional wildlife guides.',
     url: 'https://gowildtours.com',
-    ogImage: '/images/logo/go-wild-tours-full.svg',
+    ogImage: '/logo.png',
     links: {
         facebook: 'https://www.facebook.com/share/1HiexqeiEB/?mibextid=wwXIfr',
         instagram: 'https://www.instagram.com/gowildtourszimbabwe?igsi=MWhqNXEwN3l3d2Y4cQ==',
@@ -49,9 +49,13 @@ export function constructMetadata({
             creator: '@gowildtours',
         },
         icons: {
-            icon: '/images/logo/go-wild-tours-icon.png',
-            shortcut: '/images/logo/go-wild-tours-icon.png',
-            apple: '/images/logo/go-wild-tours-icon.png',
+            icon: [
+                { url: '/favicon.ico' },
+                { url: '/icon.png', type: 'image/png' },
+                { url: '/images/logo/go-wild-tours-icon.png', sizes: '512x512', type: 'image/png' },
+            ],
+            shortcut: '/favicon.ico',
+            apple: '/apple-icon.png',
         },
         metadataBase: new URL(siteConfig.url),
         ...(noIndex && {
